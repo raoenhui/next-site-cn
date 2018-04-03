@@ -1,0 +1,23 @@
+{
+  "name": "next-website",
+  "description": "Next.js Official Homepage",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeit/next-website.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://nextjs.org",
+  "bugs": {
+    "url": "https://github.com/zeit/next-website/issues"
+  },
+  "dependencies": {
+    "next": "^5.1.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  }
+}
