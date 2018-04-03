@@ -66,6 +66,12 @@ const Header = () => (
         height: 16px;
         background-image: url('/static/images/logotype-white.png')
       };
+      nav:hover .zeit-logo {
+        background-image: url('/static/images/logotype-black.png')
+      };
+      nav:hover .mid a {
+        color: #000000
+      }
     `}</style>
   </header>
 )
