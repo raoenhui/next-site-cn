@@ -76,6 +76,59 @@ const Header = () => (
   </header>
 )
 
+const Hero = () => (
+  <section>
+    <aside className='title'>
+      <h1>Minimalistic Framework for Server-Rendered React Applications</h1>
+      <p><span className='highlight'>Next 5 is out!</span> — Universal Webpack, CSS Imports, Plugins and Zones</p>
+    </aside>
+    <aside className='hero'>
+      <img src="/static/images/video.png" alt="demo video"/>
+    </aside>
+    <style jsx>{`
+      section {
+        display: flex;
+        flex-direction: column;
+      };
+      aside {
+        display: flex;
+        justify-content: center;
+      };
+      aside.title {
+        flex-direction: column;
+        justify-content: center;
+      };
+      aside.title p {
+        border: 1px solid #EAEAEA;
+        border-radius: 30px;
+        height: 24px;
+        margin: 41px auto 0 auto;
+        font-size: 14px;
+        color: #666666;
+        line-height: 26px;
+        background-image: url('/static/images/rectangle.png');
+        background-repeat: no-repeat;
+        background-position: 11px 7px;
+        padding: 0px 11px 1px 31px;
+      };
+      aside.title h1 {
+        width: 772px;
+        height: 116px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 100;
+        margin: 68px auto 0 auto;
+      }
+      aside.hero {
+        margin: 106px 0 0 0;
+      };
+      .highlight {
+        color: black;
+      };
+    `}</style>
+  </section>
+)
+
 export default () => (
   <div>
     <Head>
@@ -83,6 +136,7 @@ export default () => (
     </Head>
     <main>
       <Header />
+      <Hero />
     </main>
     <footer>
     </footer>
@@ -93,6 +147,8 @@ export default () => (
         min-height: 100%;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing:  antialiased;
+        -webkit-font-smoothing: antialiased;
       };
     `}</style>
   </div>
