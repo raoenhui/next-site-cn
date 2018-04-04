@@ -129,6 +129,56 @@ const Hero = () => (
   </section>
 )
 
+const Strap = () => (
+  <div>
+      <i className='arrow top'></i>
+      <i className='arrow bottom'></i>
+      <style jsx>{`
+        div {
+          width: 50px;
+          height: 50px;
+          border-radius: 50px;
+          border: 1px solid #333333;
+          margin: 97px auto 75px auto;
+          cursor: pointer;
+          overflow: hidden;
+          transition: background-color 0.2s;
+        };
+        div:hover {
+          background-color: #333333;
+        };
+        i {
+          display: block;
+          position: relative;
+          border: solid black;
+          border-width: 0 2px 2px 0;
+          padding: 2px;
+          transition: top 0.2s ease-in-out;
+        };
+        i.top {
+          top: 18px;
+          border-color: #333333;
+        };
+        div:hover i.top {
+          top: -50px
+        };
+        i.bottom {
+          top: 50px;
+          border-color: #FFFFFF;
+        };
+        div:hover i.bottom {
+          top: 5px
+        };
+        .arrow{
+          width: 6px;
+          height: 6px;
+          border-width: 2px 2px 0 0;
+          transform:translateX(19px) rotate(134deg);
+         };
+      `}</style>
+  </div>
+)
+
 export default () => (
   <div>
     <Head>
@@ -137,6 +187,7 @@ export default () => (
     <main>
       <Header />
       <Hero />
+      <Strap />
     </main>
     <footer>
     </footer>
