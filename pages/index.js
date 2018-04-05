@@ -129,53 +129,45 @@ const Hero = () => (
   </section>
 )
 
+const Arrow = ({color}) => (
+  <svg width="16px" height="16px" viewBox="0 0 27 14" version="1.1">
+    <g id="Page-1" fill={color} stroke="none" strokeWidth="1" fillRule="evenodd">
+      <polygon id="Arrow" fillRule="nonzero" points="13.4999996 13.9214282 0.6 1.17499997 1.82857139 0.1 13.4999996 11.7714282 25.1714278 0.1 26.3999992 1.17499997"></polygon>
+    </g>
+  </svg>
+)
+
 const Strap = () => (
-  <div>
-      <i className='arrow top'></i>
-      <i className='arrow bottom'></i>
-      <style jsx>{`
-        div {
-          width: 50px;
-          height: 50px;
-          border-radius: 50px;
-          border: 1px solid #333333;
-          margin: 97px auto 75px auto;
-          cursor: pointer;
-          overflow: hidden;
-          transition: background-color 0.2s;
-        };
-        div:hover {
-          background-color: #333333;
-        };
-        i {
-          display: block;
-          position: relative;
-          border: solid black;
-          border-width: 0 2px 2px 0;
-          padding: 2px;
-          transition: top 0.2s ease-in-out;
-        };
-        i.top {
-          top: 18px;
-          border-color: #333333;
-        };
-        div:hover i.top {
-          top: -50px
-        };
-        i.bottom {
-          top: 50px;
-          border-color: #FFFFFF;
-        };
-        div:hover i.bottom {
-          top: 5px
-        };
-        .arrow{
-          width: 6px;
-          height: 6px;
-          border-width: 2px 2px 0 0;
-          transform:translateX(19px) rotate(134deg);
-         };
-      `}</style>
+  <div className='button'>
+    <div><Arrow /></div>
+    <div><Arrow color='white' /></div>
+    <style jsx>{`
+      .button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        border: 1px solid #333333;
+        margin: 97px auto 75px auto;
+        cursor: pointer;
+        overflow: hidden;
+        transition: background-color 0.2s;
+      };
+      .button:hover {
+        background-color: #333333;
+      };
+      .button div {
+        position: relative;
+        top: 16px;
+        transition: top 0.2s ease-in-out;
+        text-align: center;
+      };
+      .button div:first-child {
+        margin-bottom: 42px;
+      };
+      .button:hover div {
+        top: -50px;
+      };
+    `}</style>
   </div>
 )
 
