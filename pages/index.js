@@ -35,7 +35,7 @@ const Header = () => (
         justify-content: center;
         align-items: center;
         box-shadow: 0 2px 4px rgba(73, 60, 60, 0.12)
-      }
+      };
       nav {
         display: flex;
         width: 1000px;
@@ -63,7 +63,7 @@ const Header = () => (
         position: relative;
         background-size: contain;
         background-repeat: no-repeat;
-      }
+      };
       .next-logo {
         width: 82px;
         height: 50px;
@@ -79,7 +79,7 @@ const Header = () => (
       };
       nav:hover .mid a {
         color: #000000
-      }
+      };
     `}</style>
   </header>
 )
@@ -221,7 +221,7 @@ const Showcase = () => (
         font-size: 35px;
         font-weight: 100;
         margin: 92px auto 0 auto;
-      }
+      };
       .title .subtitle {
         color: #999999;
         line-height: 24px;
@@ -260,7 +260,7 @@ const Showcase = () => (
         font-size: 14px;
         line-height: 16px;
         height: 16px;
-      }
+      };
     `}</style>
   </section>
 )
@@ -299,7 +299,7 @@ const Description = ({icon, title, desc}) => (
       };
       .desc {
         margin-top: 28px;
-      }
+      };
     `}</style>
   </div>
 )
@@ -341,11 +341,11 @@ const Descriptions = () => (
         margin: -460px auto 0 auto;
         display: flex;
         justify-content: center;
-      }
+      };
       .hero img {
         border: 1px solid #EAEAEA;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
-      }
+      };
     `}</style>
   </section>
 )
@@ -407,7 +407,7 @@ const Footer = () => (
       .github-icon:hover {
         opacity: 1.0;
         cursor: pointer;
-      }
+      };
     `}</style>
   </footer>
 )
