@@ -1,0 +1,14 @@
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="nextjs.org" transform="translate(-1177.000000, -2274.000000)">
+          <g id="Features" transform="translate(471.000000, 2274.000000)">
+              <g id="Feature" transform="translate(706.000000, 0.000000)">
+                  <g id="Icon">
+                      <rect id="Rectangle-2-Copy-2" stroke="#EAEAEA" x="0.5" y="0.5" width="39" height="39" rx="5"></rect>
+                      <path d="M28.4,29 L11.6,29 C11.2685,29 11,28.7314955 11,28.39999 L11,11.60001 C11,11.2688045 11.2685,11 11.6,11 L28.4,11 C28.7312,11 29,11.2688045 29,11.60001 L29,28.39999 C28.9997,28.7317955 28.7312,29 28.4,29 Z M28,12.6674442 C28,12.2989004 27.7243077,12 27.3846154,12 L12.6153846,12 C12.2756923,12 12,12.2985671 12,12.6674442 L12,16 L28,16 L28,12.6674442 Z M28,17 L12,17 L12,27.3877007 C12,27.7256264 12.2756923,28 12.6153846,28 L27.3846154,28 C27.7243077,28 28,27.7259319 28,27.3877007 L28,17 Z M14,14 L13,14 L13,13 L14,13 L14,14 Z M17,14 L16,14 L16,13 L17,13 L17,14 Z M19,14 L18,14 L18,13 L19,13 L19,14 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                  </g>
+              </g>
+          </g>
+      </g>
+  </g>
+</svg>
