@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Icons from '../components/icons'
 
 const Header = () => (
   <header>
@@ -118,7 +119,7 @@ const Hero = () => (
         font-size: 50px;
         font-weight: 100;
         margin: 68px auto 0 auto;
-      }
+      };
       aside.hero {
         margin: 106px 0 0 0;
       };
@@ -129,18 +130,10 @@ const Hero = () => (
   </section>
 )
 
-const Arrow = ({color}) => (
-  <svg width="16px" height="16px" viewBox="0 0 27 14" version="1.1">
-    <g id="Page-1" fill={color} stroke="none" strokeWidth="1" fillRule="evenodd">
-      <polygon id="Arrow" fillRule="nonzero" points="13.4999996 13.9214282 0.6 1.17499997 1.82857139 0.1 13.4999996 11.7714282 25.1714278 0.1 26.3999992 1.17499997"></polygon>
-    </g>
-  </svg>
-)
-
 const Strap = () => (
   <div className='button'>
-    <div><Arrow /></div>
-    <div><Arrow color='white' /></div>
+    <div><Icons.Arrow /></div>
+    <div><Icons.Arrow color='white' /></div>
     <style jsx>{`
       .button {
         width: 50px;
@@ -171,6 +164,100 @@ const Strap = () => (
   </div>
 )
 
+const Showcase = () => (
+  <section>
+    <aside className='title'>
+      <h1>The World's Leading Companies Use and Love Next.js</h1>
+      <p className="subtitle">We're honored some of the most talented creatives out there build with Next.js.</p>
+    </aside>
+    <aside className='hero'>
+      <div className="icons">
+        <span><Icons.OpenCollective /></span>
+        <span><Icons.Eaze /></span>
+        <span><Icons.MagicLeap /></span>
+        <span><Icons.Trulia /></span>
+        <span><Icons.MozillaVR /></span>
+        <span><Icons.Netflix /></span>
+        <span><Icons.Github /></span>
+        <span><Icons.Scale /></span>
+        <span><Icons.Auth0 /></span>
+        <span><Icons.Ticketmaster /></span>
+      </div>
+    </aside>
+    <aside>
+      <div className='button'>
+          <span>View Showcase</span>
+      </div>
+    </aside>
+    <style jsx>{`
+      section {
+        display: flex;
+        flex-direction: column;
+        background-color: #FAFAFA;
+        border-top: 1px solid #EAEAEA;
+        border-bottom: 1px solid #EAEAEA;
+        height: 900px;
+        overflow: hidden;
+      };
+      aside {
+        display: flex;
+        justify-content: center;
+      };
+      .title {
+        flex-direction: column;
+        justify-content: center;
+      };
+      .title h1 {
+        width: 904px;
+        height: 42px;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 100;
+        margin: 92px auto 0 auto;
+      }
+      .title .subtitle {
+        color: #999999;
+        line-height: 24px;
+        font-size: 14px;
+        margin: 13px auto 0 auto;
+      };
+      .icons {
+        display: flex;
+        margin: 66px auto 0 auto;
+        justify-content: center;
+      };
+      .icons {
+        display: flex;
+        align-content: center;
+        align-items: center;
+      };
+      .icons span {
+        margin-right: 58px;
+      };
+      .icons span:last-child {
+        margin-right: 0px;
+      };
+      .button {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        background-color: #FFFFFF;
+        border-radius: 50px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+        margin: 53px auto 0 auto;
+      };
+      .button span {
+        font-size: 14px;
+        line-height: 16px;
+        height: 16px;
+      }
+    `}</style>
+  </section>
+)
+
 export default () => (
   <div>
     <Head>
@@ -180,6 +267,7 @@ export default () => (
       <Header />
       <Hero />
       <Strap />
+      <Showcase />
     </main>
     <footer>
     </footer>
