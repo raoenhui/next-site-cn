@@ -139,8 +139,8 @@ const Hero = () => (
 
 const Strap = () => (
   <div className='button'>
-    <div><Icons.Arrow /></div>
-    <div><Icons.Arrow color='white' /></div>
+    <div className='arrow top'><Icons.Arrow /></div>
+    <div className='arrow bottom'><Icons.Arrow color='white' /></div>
     <style jsx>{`
       .button {
         width: 50px;
@@ -151,21 +151,31 @@ const Strap = () => (
         cursor: pointer;
         overflow: hidden;
         transition: background-color 0.2s;
+        position: relative;
       };
       .button:hover {
         background-color: #333333;
       };
-      .button div {
-        position: relative;
-        top: 16px;
+      .arrow {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
         transition: top 0.2s ease-in-out;
         text-align: center;
+        padding: 0;
       };
-      .button div:first-child {
-        margin-bottom: 42px;
+      .button .top {
+        top: 12px;
       };
-      .button:hover div {
-        top: -50px;
+      .button:hover .top {
+        top: -20px;
+      };
+      .button .bottom {
+        top: 50px;
+      };
+      .button:hover .bottom {
+        top: 12px;
       };
     `}</style>
   </div>
