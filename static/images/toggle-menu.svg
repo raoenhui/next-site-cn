@@ -1,0 +1,10 @@
+<svg width="28px" height="12px" viewBox="0 0 28 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+      <g id="nextjs.org" transform="translate(-253.000000, -40.000000)" stroke="#000000" stroke-width="1.5">
+          <g id="Group" transform="translate(254.000000, 40.000000)">
+              <path d="M0.5,1.5 L25.5,1.5" id="Line"></path>
+              <path d="M0.5,10.5 L25.5,10.5" id="Line"></path>
+          </g>
+      </g>
+  </g>
+</svg>
