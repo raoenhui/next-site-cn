@@ -99,10 +99,10 @@ export default class Header extends Component {
           };
           .menu {
             display: none;
+            flex-direction: column;
           };
           .menu.toggled {
             display: flex;
-            flex-direction: column;
           }
           .menu a {
             font-size: 14px;
