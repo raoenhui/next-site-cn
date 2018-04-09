@@ -12,6 +12,12 @@ import Next from '../static/images/next.svg'
 import Zeit from '../static/images/zeit.svg'
 import ZeitWhite from '../static/images/zeit-white.svg'
 import ToggleMenu from '../static/images/toggle-menu.svg'
+import MobileFriendly from '../static/images/mobile-friendly.svg'
+import FullApps from '../static/images/full-apps.svg'
+import StaticWebSites from '../static/images/static-websites.svg'
+import PWA from '../static/images/pwa.svg'
+import PluginEcosystem from '../static/images/plugin-ecosystem.svg'
+import SimpleAndEasy from '../static/images/simple-and-easy.svg'
 
 const Arrow = ({color}) => (
   <svg width="13px" height="7px" viewBox="0 0 27 14" version="1.1">
@@ -36,5 +42,11 @@ export default {
   Next,
   Zeit,
   ZeitWhite,
-  ToggleMenu
+  ToggleMenu,
+  MobileFriendly,
+  FullApps,
+  StaticWebSites,
+  PWA,
+  PluginEcosystem,
+  SimpleAndEasy
 }

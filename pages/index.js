@@ -1,12 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Icons from '../components/icons'
-import DescIcon01 from '../static/images/desc-icon-01.svg'
-import DescIcon02 from '../static/images/desc-icon-02.svg'
-import DescIcon03 from '../static/images/desc-icon-03.svg'
-import DescIcon04 from '../static/images/desc-icon-04.svg'
-import DescIcon05 from '../static/images/desc-icon-05.svg'
-import DescIcon06 from '../static/images/desc-icon-06.svg'
 import GithubIcon from '../static/images/github-icon.svg'
 
 const Hero = () => (
@@ -247,7 +241,7 @@ const Showcase = () => (
 )
 
 const Description = ({icon, title, desc}) => (
-  <div className='container'>
+  <aside className='container'>
     <span>{icon}</span>
     <h2>{title}</h2>
     <div className='desc'>
@@ -256,7 +250,8 @@ const Description = ({icon, title, desc}) => (
     </div>
     <style jsx>{`
       .container {
-        width: 273px;
+        max-width: 273px;
+        margin-bottom: 24px;
       };
       h2 {
         padding: 0px;
@@ -281,8 +276,13 @@ const Description = ({icon, title, desc}) => (
       .desc {
         margin-top: 28px;
       };
+      @media (min-width: 979px) {
+        .container {
+
+        }
+      }
     `}</style>
-  </div>
+  </aside>
 )
 
 const Descriptions = () => (
@@ -290,32 +290,29 @@ const Descriptions = () => (
     <aside className='hero'>
       <img src="/static/images/showcases.png" alt="showcases"/>
     </aside>
-    <article>
-      <aside>
-        <Description clasName='desc-item' icon={<DescIcon01 />} title='Mobile Friendly'/>
-        <Description clasName='desc-item' icon={<DescIcon02 />} title='Full Apps'/>
-        <Description clasName='desc-item' icon={<DescIcon03 />} title='Static Websites'/>
-      </aside>
-      <aside>
-        <Description clasName='desc-item' icon={<DescIcon04 />} title='PWA'/>
-        <Description clasName='desc-item' icon={<DescIcon05 />} title='Plugin Ecosystem'/>
-        <Description clasName='desc-item' icon={<DescIcon06 />} title='Simple and Easy'/>
-      </aside>
-    </article>
+    <div className='desc top'>
+      <Description icon={<Icons.MobileFriendly />} title='Mobile Friendly'/>
+      <Description icon={<Icons.FullApps />} title='Full Apps'/>
+      <Description icon={<Icons.StaticWebSites />} title='Static Websites'/>
+    </div>
+    <div className='desc bottom'>
+      <Description icon={<Icons.PWA />} title='PWA'/>
+      <Description icon={<Icons.PluginEcosystem />} title='Plugin Ecosystem'/>
+      <Description icon={<Icons.SimpleAndEasy />} title='Simple and Easy'/>
+    </div>
     <style jsx>{`
-      article {
-        width: 979px;
-        margin: 131px auto 126px auto;
-      };
-      article aside {
+      .desc {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 300px;
+        margin: 0 auto 0 auto;
       };
-      article aside:nth-child(2n) {
-        margin-top: 80px;
+      .desc.top {
+        margin-top: 164px;
       };
-      article aside div {
-        flex: 30%;
+      .desc.bottom {
+        margin-bottom: 80px;
       };
       .hero {
         position: relative;
@@ -326,6 +323,16 @@ const Descriptions = () => (
       .hero img {
         border: 1px solid #EAEAEA;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
+      };
+      @media (min-width: 979px) {
+        .desc {
+          max-width: 979px;
+          justify-content: space-around;
+        };
+        .desc.bottom {
+          margin-top: 80px;
+          margin-bottom: 126px;
+        };
       };
     `}</style>
   </section>
