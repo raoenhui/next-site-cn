@@ -12,7 +12,7 @@ import GithubIcon from '../static/images/github-icon.svg'
 const Hero = () => (
   <section>
     <aside className='title'>
-      <h1>Minimalistic Framework for Server-Rendered React Applications</h1>
+      <h1>Minimalistic <br className='brc' />Framework <br className='brw' />for <br className='brc' />Server-Rendered <br className='brc' />React Applications</h1>
       <p><span className='highlight'>Next 5 is out!</span> — Universal Webpack, CSS Imports, Plugins and Zones</p>
     </aside>
     <aside className='hero'>
@@ -22,17 +22,17 @@ const Hero = () => (
       section {
         display: flex;
         flex-direction: column;
-        margin: 164px auto 0 auto;
+        margin: 16px auto 0 auto;
       };
       aside {
         display: flex;
         justify-content: center;
       };
-      aside.title {
+      .title {
         flex-direction: column;
         justify-content: center;
       };
-      aside.title p {
+      .title p {
         border: 1px solid #EAEAEA;
         border-radius: 30px;
         height: 24px;
@@ -45,19 +45,64 @@ const Hero = () => (
         background-position: 11px 7px;
         padding: 0px 11px 1px 31px;
       };
-      aside.title h1 {
-        width: 772px;
-        height: 116px;
+      .title h1 {
         text-align: center;
         font-size: 50px;
         font-weight: 100;
         margin: 0px auto 0 auto;
+        padding: 0;
       };
-      aside.hero {
+      .hero {
         margin: 106px 0 0 0;
+        min-height: 234px;
+        position: relative;
+      };
+      .hero img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
       };
       .highlight {
         color: black;
+      };
+      .brc {
+        display: inline-block;
+      };
+      .brw {
+        display: none;
+      };
+      @media (max-width: 490px) {
+        .title p {
+          padding: 0px 11px 30px 31px;
+        };
+      };
+      @media (min-width: 650px) {
+        .hero {
+          min-height: 424px;
+        };
+      };
+      @media (min-width: 1000px) {
+        section {
+          display: flex;
+          flex-direction: column;
+          margin: 164px auto 0 auto;
+        };
+        .hero img {
+          display: block;
+          max-width:1342px;
+          max-height:526px;
+          width: auto;
+          height: auto;
+        };
+        .brc {
+          display: none;
+        };
+        .brw {
+          display: inline-block;
+        }
       };
     `}</style>
   </section>
