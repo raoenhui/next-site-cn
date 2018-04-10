@@ -4,7 +4,7 @@ import MagicLeap from '../static/images/magic-leap.svg'
 import Trulia from '../static/images/trulia.svg'
 import MozillaVR from '../static/images/mozilla-vr.svg'
 import Netflix from '../static/images/netflix.svg'
-import Github from '../static/images/github.svg'
+import GithubLogo from '../static/images/github-logo.svg'
 import Scale from '../static/images/scale.svg'
 import Auth0 from '../static/images/auth0.svg'
 import Ticketmaster from '../static/images/ticketmaster.svg'
@@ -18,6 +18,7 @@ import StaticWebSites from '../static/images/static-websites.svg'
 import PWA from '../static/images/pwa.svg'
 import PluginEcosystem from '../static/images/plugin-ecosystem.svg'
 import SimpleAndEasy from '../static/images/simple-and-easy.svg'
+import GithubCI from '../static/images/github-ci.svg'
 
 const Arrow = ({color}) => (
   <svg width="13px" height="7px" viewBox="0 0 27 14" version="1.1">
@@ -35,7 +36,7 @@ export default {
   Trulia,
   MozillaVR,
   Netflix,
-  Github,
+  GithubLogo,
   Scale,
   Auth0,
   Ticketmaster,
@@ -48,5 +49,6 @@ export default {
   StaticWebSites,
   PWA,
   PluginEcosystem,
-  SimpleAndEasy
+  SimpleAndEasy,
+  GithubCI
 }
