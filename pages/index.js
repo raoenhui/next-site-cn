@@ -1,6 +1,5 @@
-import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Page from '../components/page'
+import Strap from '../components/strap'
 import Icons from '../components/icons'
 
 const Hero = () => (
@@ -12,6 +11,7 @@ const Hero = () => (
     <aside className='hero'>
       <img src="/static/images/video.png" alt="demo video"/>
     </aside>
+    <Strap />
     <style jsx>{`
       section {
         display: flex;
@@ -75,7 +75,7 @@ const Hero = () => (
       };
       @media (min-width: 650px) {
         .hero {
-          min-height: 424px;
+          min-height: 324px
         };
       };
       @media (min-width: 1000px) {
@@ -83,6 +83,9 @@ const Hero = () => (
           display: flex;
           flex-direction: column;
           margin: 164px auto 0 auto;
+        };
+        .hero {
+          min-height: 424px;
         };
         .hero img {
           display: block;
@@ -100,50 +103,6 @@ const Hero = () => (
       };
     `}</style>
   </section>
-)
-
-const Strap = () => (
-  <div className='button'>
-    <div className='arrow top'><Icons.Arrow /></div>
-    <div className='arrow bottom'><Icons.Arrow color='white' /></div>
-    <style jsx>{`
-      .button {
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        border: 1px solid #333333;
-        margin: 97px auto 75px auto;
-        cursor: pointer;
-        overflow: hidden;
-        transition: background-color 0.2s;
-        position: relative;
-      };
-      .button:hover {
-        background-color: #333333;
-      };
-      .arrow {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        transition: top 0.2s ease-in-out;
-        text-align: center;
-        padding: 0;
-      };
-      .button .top {
-        top: 12px;
-      };
-      .button:hover .top {
-        top: -20px;
-      };
-      .button .bottom {
-        top: 50px;
-      };
-      .button:hover .bottom {
-        top: 12px;
-      };
-    `}</style>
-  </div>
 )
 
 const Showcase = () => (
@@ -276,11 +235,6 @@ const Description = ({icon, title, desc}) => (
       .desc {
         margin-top: 28px;
       };
-      @media (min-width: 979px) {
-        .container {
-
-        }
-      }
     `}</style>
   </aside>
 )
@@ -339,28 +293,9 @@ const Descriptions = () => (
 )
 
 export default () => (
-  <div>
-    <Head>
-      <title>Next.js</title>
-    </Head>
-    <main>
-      <Header />
-      <Hero />
-      <Strap />
-      <Showcase />
-      <Descriptions />
-    </main>
-    <Footer />
-    <style jsx global>{`
-      body {
-        padding: 0;
-        margin: 0;
-        min-height: 100%;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-        text-rendering: optimizeLegibility;
-        -moz-osx-font-smoothing:  antialiased;
-        -webkit-font-smoothing: antialiased;
-      };
-    `}</style>
-  </div>
+  <Page>
+    <Hero />
+    <Showcase />
+    <Descriptions />
+  </Page>
 )
