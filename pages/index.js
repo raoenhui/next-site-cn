@@ -1,5 +1,6 @@
 import Page from '../components/page'
 import Strap from '../components/strap'
+import CompanySlider from '../components/company-slider'
 import Icons from '../components/icons'
 
 const Hero = () => (
@@ -111,34 +112,21 @@ const Showcase = () => (
       <h1>The World's Leading Companies Use and Love Next.js</h1>
       <p className="subtitle">We're honored some of the most talented creatives out there build with Next.js.</p>
     </aside>
-    <aside className='hero'>
-      <div className="icons">
-        <span><Icons.OpenCollective /></span>
-        <span><Icons.Eaze /></span>
-        <span><Icons.MagicLeap /></span>
-        <span><Icons.Trulia /></span>
-        <span><Icons.MozillaVR /></span>
-        <span><Icons.Netflix /></span>
-        <span><Icons.GithubLogo /></span>
-        <span><Icons.Scale /></span>
-        <span><Icons.Auth0 /></span>
-        <span><Icons.Ticketmaster /></span>
+    <CompanySlider />
+    <aside className='button'>
+      <div>
+        <span>View Showcase</span>
       </div>
     </aside>
-    <aside>
-      <div className='button'>
-          <span>View Showcase</span>
-      </div>
+    <aside className='hero'>
+      <img src="/static/images/showcases.png" alt="showcases"/>
     </aside>
     <style jsx>{`
       section {
-        display: flex;
-        flex-direction: column;
         background-color: #FAFAFA;
         border-top: 1px solid #EAEAEA;
         border-bottom: 1px solid #EAEAEA;
         height: 900px;
-        overflow: hidden;
       };
       aside {
         display: flex;
@@ -147,6 +135,7 @@ const Showcase = () => (
       .title {
         flex-direction: column;
         justify-content: center;
+        margin-bottom: 66px;
       };
       .title h1 {
         width: 904px;
@@ -162,23 +151,10 @@ const Showcase = () => (
         font-size: 14px;
         margin: 13px auto 0 auto;
       };
-      .icons {
-        display: flex;
-        margin: 66px auto 0 auto;
-        justify-content: center;
-      };
-      .icons {
-        display: flex;
-        align-content: center;
-        align-items: center;
-      };
-      .icons span {
-        margin-right: 58px;
-      };
-      .icons span:last-child {
-        margin-right: 0px;
-      };
       .button {
+        margin-top: 57px;
+      };
+      .button > div {
         display: flex;
         justify-content: center;
         align-content: center;
@@ -188,12 +164,20 @@ const Showcase = () => (
         background-color: #FFFFFF;
         border-radius: 50px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-        margin: 53px auto 0 auto;
       };
-      .button span {
+      .button > div > span {
         font-size: 14px;
         line-height: 16px;
         height: 16px;
+      };
+      .hero {
+        display: flex;
+        justify-content: center;
+        margin: 57px auto 0 auto;
+      };
+      .hero img {
+        border: 1px solid #EAEAEA;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       };
     `}</style>
   </section>
@@ -241,9 +225,6 @@ const Description = ({icon, title, desc}) => (
 
 const Descriptions = () => (
   <section>
-    <aside className='hero'>
-      <img src="/static/images/showcases.png" alt="showcases"/>
-    </aside>
     <div className='desc top'>
       <Description icon={<Icons.MobileFriendly />} title='Mobile Friendly'/>
       <Description icon={<Icons.FullApps />} title='Full Apps'/>
@@ -255,15 +236,15 @@ const Descriptions = () => (
       <Description icon={<Icons.SimpleAndEasy />} title='Simple and Easy'/>
     </div>
     <style jsx>{`
+      section {
+        padding-top: 138px;
+      };
       .desc {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         max-width: 300px;
         margin: 0 auto 0 auto;
-      };
-      .desc.top {
-        margin-top: 164px;
       };
       .desc.bottom {
         margin-bottom: 80px;
@@ -279,12 +260,14 @@ const Descriptions = () => (
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
       };
       @media (min-width: 979px) {
+        section {
+          padding-top: 274px;
+        }
         .desc {
           max-width: 979px;
           justify-content: space-around;
         };
         .desc.bottom {
-          margin-top: 80px;
           margin-bottom: 126px;
         };
       };

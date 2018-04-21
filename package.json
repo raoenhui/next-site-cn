@@ -3,7 +3,9 @@
   "description": "Next.js Official Homepage",
   "version": "0.0.1",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,9 @@
   "dependencies": {
     "next": "^5.1.0",
     "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "react-dom": "^16.3.0",
+    "react-slick": "^0.23.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^0.5.2"

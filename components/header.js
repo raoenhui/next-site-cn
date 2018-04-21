@@ -77,6 +77,9 @@ export default class Header extends Component {
           </aside>
         </nav>
         <style jsx>{`
+          header {
+            z-index: 999;
+          };
           nav {
             position: relative;
             max-width: 1000px;
