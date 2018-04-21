@@ -1,5 +1,6 @@
 import Page from '../components/page'
 import CompanySlider from '../components/company-slider'
+import RoundButton from '../components/round-button'
 import Icons from '../components/icons'
 
 const Hero = () => (
@@ -7,6 +8,9 @@ const Hero = () => (
     <aside className='title'>
       <h1>Minimalistic <br className='brc' />Framework <br className='brw' />for <br className='brc' />Server-Rendered <br className='brc' />React Applications</h1>
       <p><span className='highlight'>Next 5 is out!</span> — Universal Webpack, CSS Imports, Plugins and Zones</p>
+    </aside>
+    <aside className='button'>
+      <RoundButton color='black'>Learn More</RoundButton>
     </aside>
     <aside className='hero'>
       <img src="/static/images/video.png" alt="demo video"/>
@@ -49,7 +53,6 @@ const Hero = () => (
         padding: 0;
       };
       .hero {
-        margin: 106px 0 0 0;
         min-height: 234px;
         position: relative;
       };
@@ -104,10 +107,13 @@ const Hero = () => (
         };
         .label {
           margin: 46px auto 40px auto;
-        }
+        };
         .label div {
           font-size: 12px;
           color: #999999;
+        };
+        .button {
+          margin: 46px auto 70px auto;
         }
       };
     `}</style>
@@ -122,9 +128,7 @@ const Showcase = () => (
     </aside>
     <CompanySlider />
     <aside className='button'>
-      <div>
-        <span>View Showcase</span>
-      </div>
+      <RoundButton color='white'>View Showcase</RoundButton>
     </aside>
     <aside className='hero'>
       <img src="/static/images/showcases.png" alt="showcases"/>
@@ -161,22 +165,6 @@ const Showcase = () => (
       };
       .button {
         margin-top: 57px;
-      };
-      .button > div {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        width: 200px;
-        height: 50px;
-        background-color: #FFFFFF;
-        border-radius: 50px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-      };
-      .button > div > span {
-        font-size: 14px;
-        line-height: 16px;
-        height: 16px;
       };
       .hero {
         display: flex;
