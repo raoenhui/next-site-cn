@@ -156,9 +156,11 @@ export default class Header extends Component {
               text-transform: none;
               text-decoration: none;
               border-bottom: none;
+              transition: .2s ease-out;
             };
             .menu a:hover {
-              color: #000000
+              color: #000000;
+              transition: .2s ease-out;
             };
             .toggle-menu {
               display: none;
@@ -171,12 +173,15 @@ export default class Header extends Component {
               display: block;
               width: 18px;
               height: 16px;
+              transition: .2s ease-out;
             };
             .zeit-logo a .black {
               display: none;
+              transition: .2s ease-out;
             };
             .zeit-logo a:hover .black {
               display: block;
+              transition: .2s ease-out;
             };
             .zeit-logo a:hover .white {
               display: none;

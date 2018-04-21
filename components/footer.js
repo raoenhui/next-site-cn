@@ -27,10 +27,12 @@ export default () => (
       .email {
         font-size: 14px;
         color: #999999;
+        transition: .2s ease-out;
       };
       .email:hover {
         color: #000000;
         cursor: pointer;
+        transition: .2s ease-out;
       };
       .container {
         position: relative;
@@ -54,10 +56,12 @@ export default () => (
         border-left: 1px solid #EAEAEA;
         padding-left: 20px;
         opacity: 0.4;
+        transition: .2s ease-out;
       };
       .github-ci:hover {
         opacity: 1.0;
         cursor: pointer;
+        transition: .2s ease-out;
       };
       .brk {
         display: none;
