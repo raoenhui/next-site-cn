@@ -1,5 +1,4 @@
 import Page from '../components/page'
-import Strap from '../components/strap'
 import CompanySlider from '../components/company-slider'
 import Icons from '../components/icons'
 
@@ -12,7 +11,9 @@ const Hero = () => (
     <aside className='hero'>
       <img src="/static/images/video.png" alt="demo video"/>
     </aside>
-    <Strap />
+    <aside className='label'>
+      <div>See an app created in 9 seconds.</div>
+    </aside>
     <style jsx>{`
       section {
         display: flex;
@@ -100,6 +101,13 @@ const Hero = () => (
         };
         .brw {
           display: inline-block;
+        };
+        .label {
+          margin: 46px auto 40px auto;
+        }
+        .label div {
+          font-size: 12px;
+          color: #999999;
         }
       };
     `}</style>
