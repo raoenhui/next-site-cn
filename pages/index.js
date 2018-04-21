@@ -5,9 +5,14 @@ import Icons from '../components/icons'
 
 const Hero = () => (
   <section>
+    <aside className='banner'>
+      <p>
+        <span className='highlight'>Next 5 is out!</span> — Universal Webpack, CSS Imports, Plugins and Zones <span className='released'>Monday, April 16th 2018</span>
+      </p>
+    </aside>
     <aside className='title'>
-      <h1>Minimalistic <br className='brc' />Framework <br className='brw' />for <br className='brc' />Server-Rendered <br className='brc' />React Applications</h1>
-      <p><span className='highlight'>Next 5 is out!</span> — Universal Webpack, CSS Imports, Plugins and Zones</p>
+      <h1>React Applications <br className='brk' />Made Simple</h1>
+      <div className='subtitle'><b>Next.js</b> is a lightweight framework for static and server-rendered applications.</div>
     </aside>
     <aside className='button'>
       <RoundButton color='black'>Learn More</RoundButton>
@@ -32,25 +37,35 @@ const Hero = () => (
         flex-direction: column;
         justify-content: center;
       };
-      .title p {
+      .banner p {
         border: 1px solid #EAEAEA;
         border-radius: 30px;
         height: 24px;
-        margin: 41px auto 0 auto;
+        margin: 0 auto 0 auto;
         font-size: 14px;
         color: #666666;
         line-height: 26px;
         background-image: url('/static/images/rectangle.png');
+        background-color: #FAFAFA;
         background-repeat: no-repeat;
         background-position: 11px 7px;
         padding: 0px 11px 1px 31px;
       };
       .title h1 {
         text-align: center;
-        font-size: 50px;
-        font-weight: 100;
+        font-size: 44px;
+        font-weight: 400;
         margin: 0px auto 0 auto;
         padding: 0;
+      };
+      .subtitle {
+        color: #555555;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 7px auto 0 auto;
+      };
+      .subtitle b {
+        color: #000000;
       };
       .hero {
         min-height: 234px;
@@ -67,14 +82,15 @@ const Hero = () => (
       .highlight {
         color: black;
       };
-      .brc {
+      .released {
+        padding-left: 71px;
+        font-weight: 600;
+      };
+      .brk {
         display: inline-block;
       };
-      .brw {
-        display: none;
-      };
       @media (max-width: 490px) {
-        .title p {
+        .banner p {
           padding: 0px 11px 30px 31px;
         };
       };
@@ -87,7 +103,7 @@ const Hero = () => (
         section {
           display: flex;
           flex-direction: column;
-          margin: 164px auto 0 auto;
+          margin: 154px auto 0 auto;
         };
         .hero {
           min-height: 424px;
@@ -99,11 +115,11 @@ const Hero = () => (
           width: auto;
           height: auto;
         };
-        .brc {
-          display: none;
+        .banner {
+          margin-bottom: 50px;
         };
-        .brw {
-          display: inline-block;
+        .brk {
+          display: none;
         };
         .label {
           margin: 46px auto 40px auto;
