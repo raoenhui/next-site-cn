@@ -7,7 +7,7 @@ export default () => (
         <span className='name'>Next.js</span><span className='email'>— team@nextjs.org</span>
       </div>
       <div className='license'>
-        <span>MIT Licensed. Copyright © 2018 ZEIT, Inc. All rights reserved.</span>
+        <span>MIT Licensed. Copyright © 2018 ZEIT, Inc. <br className='brk' />All rights reserved.</span>
       </div>
       <div className='github-ci'>
         <Icons.GithubCI />
@@ -33,6 +33,7 @@ export default () => (
         cursor: pointer;
       };
       .container {
+        position: relative;
         width: 1000px;
         margin: auto;
         vertical-align: top;
@@ -58,6 +59,29 @@ export default () => (
         opacity: 1.0;
         cursor: pointer;
       };
+      .brk {
+        display: none;
+      };
+      @media (max-width: 999px) {
+        .container {
+          width: 100%;
+          padding: 62px 0 124px 0;
+        };
+        .contact {
+          display: flex;
+          align-items: center;
+        };
+        .license {
+          position: absolute;
+          bottom: 62px;
+        };
+        .github-ci {
+          margin-left: 14px;
+        };
+        .brk {
+          display: inline-block;
+        };
+      }
     `}</style>
   </footer>
 )
