@@ -12,13 +12,14 @@ const Hero = () => (
     </aside>
     <aside className='title'>
       <h1>React Applications <br className='brk' />Made Simple</h1>
-      <div className='subtitle'><b>Next.js</b> is a lightweight framework for static and server-rendered applications.</div>
+      <div className='subtitle'><b>Next.js</b> is a lightweight framework for <br className='brk' />static and server-rendered applications.</div>
     </aside>
     <aside className='button'>
       <RoundButton color='black'>Learn More</RoundButton>
     </aside>
     <aside className='hero'>
-      <img src="/static/images/video.png" alt="demo video"/>
+      <img className="img-desktop" src="/static/images/video-placeholder-desktop.png" alt="demo video"/>
+      <img className="img-mobile" src="/static/images/video-placeholder-mobile.png" alt="demo video"/>
     </aside>
     <aside className='label'>
       <div>See an app created in 9 seconds.</div>
@@ -36,6 +37,9 @@ const Hero = () => (
       .title {
         flex-direction: column;
         justify-content: center;
+      };
+      .banner {
+        display: none;
       };
       .banner p {
         border: 1px solid #EAEAEA;
@@ -59,6 +63,7 @@ const Hero = () => (
         padding: 0;
       };
       .subtitle {
+        text-align: center;
         color: #555555;
         font-size: 16px;
         font-weight: 400;
@@ -66,18 +71,6 @@ const Hero = () => (
       };
       .subtitle b {
         color: #000000;
-      };
-      .hero {
-        min-height: 234px;
-        position: relative;
-      };
-      .hero img {
-        display: block;
-        max-width: 100%;
-        max-height: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
       };
       .highlight {
         color: black;
@@ -89,14 +82,51 @@ const Hero = () => (
       .brk {
         display: inline-block;
       };
-      @media (max-width: 490px) {
+      .subtitle {
+        margin: 26px auto 0 auto;
+      };
+      .button {
+        margin: 26px auto 29px auto;
+      };
+      .label {
+        margin: 0 auto 32px auto;
+      };
+      .label div {
+        font-size: 12px;
+        color: #999999;
+      };
+      .img-desktop {
+        display: block;
+        max-width: 1258px;
+        max-height: 424px;
+      };
+      .img-mobile {
+        display: none;
+      };
+      @media (max-width: 619px) {
+        .title h1 {
+          font-size: 33px;
+        };
         .banner p {
           padding: 0px 11px 30px 31px;
         };
+        .img-desktop {
+          display: none;
+        };
+        .img-mobile {
+          display: block;
+        }
       };
-      @media (min-width: 650px) {
-        .hero {
-          min-height: 324px
+      @media (min-width: 620px) {
+        .img-desktop {
+          max-width: 700px;
+          max-height: 234px;
+        };
+      };
+      @media (min-width: 760px) {
+        .img-desktop {
+          max-width: 908px;
+          max-height: 304px;
         };
       };
       @media (min-width: 1000px) {
@@ -105,16 +135,6 @@ const Hero = () => (
           flex-direction: column;
           margin: 154px auto 0 auto;
         };
-        .hero {
-          min-height: 424px;
-        };
-        .hero img {
-          display: block;
-          max-width:1342px;
-          max-height:526px;
-          width: auto;
-          height: auto;
-        };
         .banner {
           margin-bottom: 50px;
         };
@@ -122,15 +142,18 @@ const Hero = () => (
           display: none;
         };
         .label {
-          margin: 46px auto 40px auto;
-        };
-        .label div {
-          font-size: 12px;
-          color: #999999;
+          margin: 0 auto 40px auto;
         };
         .button {
           margin: 46px auto 70px auto;
-        }
+        };
+        .banner {
+          display: flex;
+        };
+        .img-desktop {
+          max-width: 1258px;
+          max-height: 424px;
+        };
       };
     `}</style>
   </section>
@@ -139,8 +162,8 @@ const Hero = () => (
 const Showcase = () => (
   <section>
     <aside className='title'>
-      <h1>The World's Leading Companies Use and Love Next.js</h1>
-      <p className="subtitle">We're honored some of the most talented creatives out there build with Next.js.</p>
+      <h1>The World's Leading <br className='brk' />Companies Use <br className='brk' />and Love Next.js</h1>
+      <p className="subtitle">We're honored some of the most talented <br className='brk' />creatives out there build with Next.js.</p>
     </aside>
     <CompanySlider />
     <aside className='button'>
@@ -149,12 +172,16 @@ const Showcase = () => (
     <aside className='hero'>
       <img src="/static/images/showcases.png" alt="showcases"/>
     </aside>
+    <div className='pad'></div>
     <style jsx>{`
       section {
+        display: flex;
+        flex-direction: column;
         background-color: #FAFAFA;
         border-top: 1px solid #EAEAEA;
         border-bottom: 1px solid #EAEAEA;
-        height: 900px;
+        overflow-y: visible;
+        position: relative;
       };
       aside {
         display: flex;
@@ -163,33 +190,94 @@ const Showcase = () => (
       .title {
         flex-direction: column;
         justify-content: center;
-        margin-bottom: 66px;
+        margin: 22px auto 31px auto;
       };
       .title h1 {
-        width: 904px;
-        height: 42px;
         text-align: center;
-        font-size: 35px;
-        font-weight: 100;
-        margin: 92px auto 0 auto;
+        font-size: 32px;
+        font-weight: 200;
+        padding: 0;
+        margin: 0;
       };
       .title .subtitle {
+        text-align: center;
         color: #999999;
         line-height: 24px;
         font-size: 14px;
-        margin: 13px auto 0 auto;
+        margin: 11px auto 0 auto;
       };
       .button {
-        margin-top: 57px;
+        margin: 31px 0 33px 0;
+      };
+      .brk {
+        display: inline-block;
       };
       .hero {
-        display: flex;
-        justify-content: center;
-        margin: 57px auto 0 auto;
+        position: relative;
+        height: auto;
       };
       .hero img {
+        max-width: 90%;
         border: 1px solid #EAEAEA;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: -30%;
+        bottom: 0;
+      };
+      .pad {
+        width: 100%;
+        padding-bottom: 35%;
+      }
+      @media (max-width: 619px) {
+
+      };
+      @media (min-width: 590px) {
+        .hero img {
+          max-width: 70%;
+        };
+      };
+      @media (min-width: 760px) {
+        .hero img {
+          max-width: 80%;
+        };
+      };
+      @media (min-width: 860px) {
+        .hero img {
+          max-width: 80%;
+        };
+      };
+      @media (min-width: 1000px) {
+        section {
+          margin: 0 auto 0 auto;
+        };
+        .brk {
+          display: none;
+        };
+        .title {
+          margin: 92px auto 66px auto;
+        };
+        .title h1 {
+          text-align: center;
+          font-size: 35px;
+          font-weight: 200;
+        };
+        .title .subtitle {
+          margin: 13px auto 0 auto;
+        };
+        .button {
+          margin: 57px 0 57px 0;
+        };
+        .hero {
+          height: auto;
+        };
+        .hero img {
+          max-width: 80%;
+        };
+      };
+      @media (min-width: 1001px) {
+        .pad {
+          padding-bottom: 25%;
+        };
       };
     `}</style>
   </section>
@@ -249,7 +337,7 @@ const Descriptions = () => (
     </div>
     <style jsx>{`
       section {
-        padding-top: 138px;
+        padding-top: 274px;
       };
       .desc {
         display: flex;
@@ -261,20 +349,20 @@ const Descriptions = () => (
       .desc.bottom {
         margin-bottom: 80px;
       };
-      .hero {
-        position: relative;
-        margin: -460px auto 0 auto;
-        display: flex;
-        justify-content: center;
+      @media (max-width: 619px) {
+        section {
+          padding-top: 174px;
+        }
       };
-      .hero img {
-        border: 1px solid #EAEAEA;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
+      @media (min-width: 590px) {
+        section {
+          padding-top: 174px;
+        }
       };
-      @media (min-width: 979px) {
+      @media (min-width: 1000px) {
         section {
           padding-top: 274px;
-        }
+        };
         .desc {
           max-width: 979px;
           justify-content: space-around;
