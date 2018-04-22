@@ -60,9 +60,9 @@ export default class Header extends Component {
             </div>
           </aside>
           <aside className={`menu ${this.state.toggled ? 'toggled' : ''}`}>
-            <Link href='/'><a>Docs</a></Link>
             <Link href='/'><a>About</a></Link>
-            <Link href='/'><a>Showcase</a></Link>
+            <Link href='/'><a>Docs</a></Link>
+            <Link href='/showcase'><a>Showcase</a></Link>
             <Link href='/'><a>Github</a></Link>
             <Link href='/'><a>Enterprise</a></Link>
             <Link href='/'><a>Learn</a></Link>
@@ -125,7 +125,7 @@ export default class Header extends Component {
               top: 0;
               left: 0;
               width: 100%;
-              height: 70px;
+              height: 120px;
               justify-content: center;
               align-items: center;
               background-color: rgba(255, 255, 255, 0.98);

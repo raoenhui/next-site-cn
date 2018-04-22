@@ -19,6 +19,9 @@ import PWA from '../static/images/pwa.svg'
 import PluginEcosystem from '../static/images/plugin-ecosystem.svg'
 import SimpleAndEasy from '../static/images/simple-and-easy.svg'
 import GithubCI from '../static/images/github-ci.svg'
+import ArrowNext from '../static/images/arrow-next.svg'
+import ArrowPrev from '../static/images/arrow-prev.svg'
+import ExternalLink from '../static/images/external-link.svg'
 
 const Arrow = ({color}) => (
   <svg width="13px" height="7px" viewBox="0 0 27 14" version="1.1">
@@ -50,5 +53,8 @@ export default {
   PWA,
   PluginEcosystem,
   SimpleAndEasy,
-  GithubCI
+  GithubCI,
+  ArrowNext,
+  ArrowPrev,
+  ExternalLink
 }
