@@ -21,6 +21,8 @@ import SimpleAndEasy from '../static/images/simple-and-easy.svg'
 import GithubCI from '../static/images/github-ci.svg'
 import ArrowNext from '../static/images/arrow-next.svg'
 import ArrowPrev from '../static/images/arrow-prev.svg'
+import ArrowNextWhite from '../static/images/arrow-next-white.svg'
+import ArrowPrevWhite from '../static/images/arrow-prev-white.svg'
 import ExternalLink from '../static/images/external-link.svg'
 
 const Arrow = ({color}) => (
@@ -56,5 +58,7 @@ export default {
   GithubCI,
   ArrowNext,
   ArrowPrev,
+  ArrowNextWhite,
+  ArrowPrevWhite,
   ExternalLink
 }
