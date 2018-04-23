@@ -22,6 +22,10 @@ export default ({children}) => (
         -moz-osx-font-smoothing:  antialiased;
         -webkit-font-smoothing: antialiased;
       };
+      * {
+        min-height: 0;
+        min-width: 0;
+      }
     `}</style>
   </div>
 )
