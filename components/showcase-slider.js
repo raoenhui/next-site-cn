@@ -1,13 +1,15 @@
 import {Component} from 'react'
-import SlickSlider from 'react-slick'
 import Icons from '../components/icons'
 
-const Null = () => <div></div>
-
-const SliderNav = ({prev, bg, onClick}) => (
-  <div style={{backgroundImage: `url("${bg}")`}} className={`button ${prev ? 'next' : 'prev'}`} onClick={onClick}>
+const Navigation = ({children, prev, onClick}) => (
+  <div className={`button ${prev ? 'prev' : 'next'}`} onClick={onClick}>
+    <div className='thumbnail'>
+      {children}
+    </div>
     <div className='inner'></div>
-    {prev ? <Icons.ArrowPrevWhite /> : <Icons.ArrowNextWhite />}
+    <div className='arrow'>
+      {prev ? <Icons.ArrowPrevWhite /> : <Icons.ArrowNextWhite />}
+    </div>
     <style jsx>{`
       .button {
         width: 160px;
@@ -15,181 +17,96 @@ const SliderNav = ({prev, bg, onClick}) => (
         display: flex;
         align-items: center;
         justify-content: center;
-        background-repeat: no-repeat;
-        background-size: 200%;
-        background-position: 100% 0;
         cursor: pointer;
         position: relative;
-      };
-      .button.next {
-        background-position: 50% 0;
+        overflow: hidden;
+        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.12);
       };
       .inner {
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.2);
       };
+      .thumbnail {
+        position: absolute;
+        width: 200%;
+        top: 0;
+        left: 0;
+      };
+      .prev .thumbnail {
+        left: -100%;
+      }
+      .arrow {
+        position: absolute;
+      }
     `}</style>
   </div>
 )
 
-class LazyLoad extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      src: '',
-      loaded: false,
-      phClassName: 'placeholder'
-    }
-  }
-
-  load() {
-    if (!this.state.loaded) {
-      const img = new Image()
-      img.onload = () => {
-        this.setState({
-          loaded: true,
-          src: this.props.src,
-          phClassName: 'placeholder loaded'
-        })
-      }
-
-      img.src = this.props.src
-    }
+export default class Slider extends Component {
+  constructor() {
+    super()
   }
 
   render() {
     return (
       <div className='container'>
-        <img className={this.state.phClassName} src={this.props.placeholder} />
-        <img className='src' src={this.state.src}/>
+        <div className='slides'>
+          <div className='slide prev'>
+            <div className='viwer'>
+              <Navigation prev>
+                <img src='/static/images/showcases/magic-leap.png' />
+              </Navigation>
+            </div>
+          </div>
+          <div className='slide center'>
+            <div className='viwer'>
+              <img src='/static/images/showcases/magic-leap.png' />
+            </div>
+          </div>
+          <div className='slide next'>
+            <div className='viwer'>
+              <Navigation>
+                <img src='/static/images/showcases/magic-leap.png' />
+              </Navigation>
+            </div>
+          </div>
+        </div>
         <style jsx>{`
+          .container {
+            width: 100%;
+            height: auto;
+            min-height: 400px;
+          };
+          .slides {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          };
+          .slide {
+            display: flex;
+          }
+          .slide.center {
+            margin: 0 25px;
+            flex: 2.2;
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.12);
+          };
+          .slide.prev {
+            justify-content: flex-start;
+            align-items: center;
+            flex: 0.6;
+          };
+          .slide.next {
+            justify-content: flex-end;
+            align-items: center;
+            flex: 0.6;
+          };
           img {
             width: 100%
-          };
-          .src {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
           }
-          .container {
-            position: relative;
-            box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.12);
-          };
-          .placeholder {
-            opacity: 1;
-          };
-          .placeholder.loaded {
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-          }
-      `}</style>
-    </div>
-    )
-  }
-}
-
-
-export default class Slider extends Component {
-  constructor({images}) {
-    super()
-
-    this.state = {
-      images: images,
-      prevBg: images[images.length - 1].src,
-      nextBg: images[1].src,
-    }
-
-    this.slider = React.createRef()
-    this.sliders = images.map(() => React.createRef())
-    this.prev = this.prev.bind(this)
-    this.next = this.next.bind(this)
-
-    this.settings = {
-      customPaging: <Null />,
-      beforeChange: (oldIndex, newIndex) => {
-        const images = this.state.images
-        this.setState({
-          prevBg: images[(newIndex - 1 + images.length) % images.length].src,
-          nextBg: images[(newIndex + 1) % images.length].src
-        })
-
-        this.sliders[newIndex].current.load()
-      },
-      nextArrow: <Null />,
-      prevArrow: <Null />,
-      dots: false,
-      fade: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      initialSlide: 0,
-    }
-  }
-
-  componentDidMount() {
-    this.sliders[0].current.load()
-  }
-
-  next() {
-    this.slider.current.slickNext()
-  }
-
-  prev() {
-    this.slider.current.slickPrev()
-  }
-
-  render() {
-    return (
-      <div className='container'>
-        <div className='nav prev'>
-          <SliderNav prev bg={this.state.prevBg} onClick={this.prev} />
-        </div>
-        <div className='slider'>
-          <SlickSlider {...this.settings} ref={this.slider}>
-            {
-              this.state.images.map((image, i) => {
-                return <LazyLoad ref={this.sliders[i]} key={image.src} src={image.src} placeholder={image.placeholder} />
-              })
-            }
-          </SlickSlider>
-        </div>
-        <div className='nav next'>
-          <SliderNav bg={this.state.nextBg} onClick={this.next} />
-        </div>
-        <style jsx>{`
-          .container {
-            display: flex;
-            min-height: 0;
-            min-width: 0;
-            justify-content: space-between;
-            align-items: center;
-          }
-          .slider {
-            flex: 1;
-            margin: 0 25px;
-          };
-          .nav {
-            flex: 0.3;
-            display: none;
-          };
-          .nav.next {
-            justify-content: flex-end;
-          };
-          @media (min-width: 1000px) {
-            .nav {
-              display: flex;
-            };
-          };
-          @media (min-width: 1280px) {
-            .nav {
-              display: flex;
-            };
-          };
         `}</style>
       </div>
     )
