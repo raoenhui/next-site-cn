@@ -38,54 +38,56 @@ class LazyLoad extends Component {
   constructor(props) {
     super(props);
 
-    this.imgSrc = React.createRef()
-    this.placeholder = React.createRef()
-
     this.state = {
-      isShow: ''
+      src: '',
+      loaded: false,
+      phClassName: 'placeholder'
     }
-
-    this.onLoad = this.onLoad.bind(this)
   }
 
-  onLoad() {
-    console.log('load')
-    this.setState({
-      isShow: 'show'
-    })
+  load() {
+    if (!this.state.loaded) {
+      const img = new Image()
+      img.onload = () => {
+        this.setState({
+          loaded: true,
+          src: this.props.src,
+          phClassName: 'placeholder loaded'
+        })
+      }
+
+      img.src = this.props.src
+    }
   }
 
   render() {
     return (
       <div className='container'>
-        <div className={`placeholder ${this.state.isShow}`}>
-          {this.props.placeholder}
-        </div>
-        <div ref={this.imgSrc} className={`image ${this.state.isShow}`}>
-          <img className={`image ${this.state.isShow}`} src={this.props.src} onLoad={this.onLoad}/>
-        </div>
+        <img className={this.state.phClassName} src={this.props.placeholder} />
+        <img className='src' src={this.state.src}/>
         <style jsx>{`
+          img {
+            width: 100%
+          };
+          .src {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+          }
           .container {
             position: relative;
-            height: 728px;
+            box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.12);
           };
           .placeholder {
-            position: absolute;
             opacity: 1;
           };
-          .placeholder.show {
-            display: none
-          }
-          .image {
-            position: absolute;
+          .placeholder.loaded {
             opacity: 0;
-            transition: opacity 1s ease;
-          };
-          .image.show {
-            opacity: 1;
+            transition: opacity 2s ease-in-out;
           }
-        `}</style>
-      </div>
+      `}</style>
+    </div>
     )
   }
 }
@@ -98,10 +100,11 @@ export default class Slider extends Component {
     this.state = {
       images: images,
       prevBg: images[images.length - 1].src,
-      nextBg: images[1].src
+      nextBg: images[1].src,
     }
 
     this.slider = React.createRef()
+    this.sliders = images.map(() => React.createRef())
     this.prev = this.prev.bind(this)
     this.next = this.next.bind(this)
 
@@ -113,6 +116,8 @@ export default class Slider extends Component {
           prevBg: images[(newIndex - 1 + images.length) % images.length].src,
           nextBg: images[(newIndex + 1) % images.length].src
         })
+
+        this.sliders[newIndex].current.load()
       },
       nextArrow: <Null />,
       prevArrow: <Null />,
@@ -122,8 +127,12 @@ export default class Slider extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      initialSlide: 0
-    };
+      initialSlide: 0,
+    }
+  }
+
+  componentDidMount() {
+    this.sliders[0].current.load()
   }
 
   next() {
@@ -143,10 +152,8 @@ export default class Slider extends Component {
         <div className='slider'>
           <SlickSlider {...this.settings} ref={this.slider}>
             {
-              this.state.images.map(image => {
-                // return <img key={image} src={`${image.src}`} />
-                // return <div>{image.placeholder}</div>
-                return <LazyLoad key={image.src} src={image.src} placeholder={image.placeholder} />
+              this.state.images.map((image, i) => {
+                return <LazyLoad ref={this.sliders[i]} key={image.src} src={image.src} placeholder={image.placeholder} />
               })
             }
           </SlickSlider>
