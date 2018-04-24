@@ -1,163 +1,201 @@
+import {Component} from 'react'
 import Page from '../components/page'
 import CompanySlider from '../components/company-slider'
 import RoundButton from '../components/round-button'
 import Icons from '../components/icons'
 
-const Hero = () => (
-  <section>
-    <aside className='banner'>
-      <p>
-        <span className='highlight'>Next 5 is out!</span> — Universal Webpack, CSS Imports, Plugins and Zones <span className='released'>Monday, April 16th 2018</span>
-      </p>
-    </aside>
-    <aside className='title'>
-      <h1>React Applications <br className='brk' />Made Simple</h1>
-      <div className='subtitle'><b>Next.js</b> is a lightweight framework for <br className='brk' />static and server-rendered applications.</div>
-    </aside>
-    <aside className='button'>
-      <RoundButton color='black'>Learn More</RoundButton>
-    </aside>
-    <aside className='hero'>
-      <img className="img-desktop" src="/static/images/video-placeholder-desktop.png" alt="demo video"/>
-      <img className="img-mobile" src="/static/images/video-placeholder-mobile.png" alt="demo video"/>
-    </aside>
-    <aside className='label'>
-      <div>See an app created in 9 seconds.</div>
-    </aside>
-    <style jsx>{`
-      section {
-        display: flex;
-        flex-direction: column;
-        margin: 16px auto 0 auto;
-      };
-      aside {
-        display: flex;
-        justify-content: center;
-      };
-      .title {
-        flex-direction: column;
-        justify-content: center;
-      };
-      .banner {
-        display: none;
-      };
-      .banner p {
-        border: 1px solid #EAEAEA;
-        border-radius: 30px;
-        height: 24px;
-        margin: 0 auto 0 auto;
-        font-size: 14px;
-        color: #666666;
-        line-height: 26px;
-        background-image: url('/static/images/rectangle.png');
-        background-color: #FAFAFA;
-        background-repeat: no-repeat;
-        background-position: 11px 7px;
-        padding: 0px 11px 1px 31px;
-      };
-      .title h1 {
-        text-align: center;
-        font-size: 44px;
-        font-weight: 400;
-        margin: 0px auto 0 auto;
-        padding: 0;
-      };
-      .subtitle {
-        text-align: center;
-        color: #555555;
-        font-size: 16px;
-        font-weight: 400;
-        margin: 7px auto 0 auto;
-      };
-      .subtitle b {
-        color: #000000;
-      };
-      .highlight {
-        color: black;
-      };
-      .released {
-        padding-left: 71px;
-        font-weight: 600;
-      };
-      .brk {
-        display: inline-block;
-      };
-      .subtitle {
-        margin: 26px auto 0 auto;
-      };
-      .button {
-        margin: 26px auto 29px auto;
-      };
-      .label {
-        margin: 0 auto 32px auto;
-      };
-      .label div {
-        font-size: 12px;
-        color: #999999;
-      };
-      .img-desktop {
-        display: block;
-        max-width: 1258px;
-        max-height: 424px;
-      };
-      .img-mobile {
-        display: none;
-      };
-      @media (max-width: 619px) {
-        .title h1 {
-          font-size: 33px;
+class Hero extends Component {
+  constructor() {
+    super()
+
+    this.video = React.createRef()
+    this.play = this.play.bind(this)
+  }
+
+  play() {
+    this.video.current.play()
+    this.video.current.style.backgroundImage = 'none'
+  }
+
+  render() {
+    return (
+    <section>
+      <aside className='banner'>
+        <p>
+          <span className='highlight'>Next 5 is out!</span> — Universal Webpack, CSS Imports, Plugins and Zones <span className='released'>Monday, April 16th 2018</span>
+        </p>
+      </aside>
+      <aside className='title'>
+        <h1>React Applications <br className='brk' />Made Simple</h1>
+        <div className='subtitle'><b>Next.js</b> is a lightweight framework for <br className='brk' />static and server-rendered applications.</div>
+      </aside>
+      <aside className='button'>
+        <RoundButton color='black'>Learn More</RoundButton>
+      </aside>
+      <aside className='hero'>
+        <video ref={this.video} preload="none" muted loop onClick={this.play}>
+          <source src="/static/videos/hnpwa-next.mp4" type="video/mp4" />
+        </video>
+      </aside>
+      <aside className='label'>
+        <div>See an app created in 9 seconds.</div>
+      </aside>
+      <style jsx>{`
+        video {
+          background: url("/static/images/video-poster-desktop.png");
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: 80%;
+          width: 1258px;
+          height: 424px;
         };
-        .banner p {
-          padding: 0px 11px 30px 31px;
+        video[poster]{
+          object-fit: cover;
         };
-        .img-desktop {
-          display: none;
-        };
-        .img-mobile {
-          display: block;
-        }
-      };
-      @media (min-width: 620px) {
-        .img-desktop {
-          max-width: 700px;
-          max-height: 234px;
-        };
-      };
-      @media (min-width: 760px) {
-        .img-desktop {
-          max-width: 908px;
-          max-height: 304px;
-        };
-      };
-      @media (min-width: 1000px) {
         section {
           display: flex;
           flex-direction: column;
-          margin: 154px auto 0 auto;
+          margin: 16px auto 0 auto;
+        };
+        aside {
+          display: flex;
+          justify-content: center;
+        };
+        .title {
+          flex-direction: column;
+          justify-content: center;
         };
         .banner {
-          margin-bottom: 50px;
-        };
-        .brk {
           display: none;
         };
-        .label {
-          margin: 0 auto 40px auto;
+        .banner p {
+          border: 1px solid #EAEAEA;
+          border-radius: 30px;
+          height: 24px;
+          margin: 0 auto 0 auto;
+          font-size: 14px;
+          color: #666666;
+          line-height: 26px;
+          background-image: url('/static/images/rectangle.png');
+          background-color: #FAFAFA;
+          background-repeat: no-repeat;
+          background-position: 11px 7px;
+          padding: 0px 11px 1px 31px;
+        };
+        .title h1 {
+          text-align: center;
+          font-size: 44px;
+          font-weight: 400;
+          margin: 0px auto 0 auto;
+          padding: 0;
+        };
+        .subtitle {
+          text-align: center;
+          color: #555555;
+          font-size: 16px;
+          font-weight: 400;
+          margin: 7px auto 0 auto;
+        };
+        .subtitle b {
+          color: #000000;
+        };
+        .highlight {
+          color: black;
+        };
+        .released {
+          padding-left: 71px;
+          font-weight: 600;
+        };
+        .brk {
+          display: inline-block;
+        };
+        .subtitle {
+          margin: 26px auto 0 auto;
         };
         .button {
-          margin: 46px auto 70px auto;
+          margin: 26px auto 29px auto;
         };
-        .banner {
-          display: flex;
+        .label {
+          margin: 0 auto 32px auto;
+        };
+        .label div {
+          font-size: 12px;
+          color: #999999;
         };
         .img-desktop {
-          max-width: 1258px;
-          max-height: 424px;
+          display: block;
+          position: absolute;
         };
-      };
-    `}</style>
-  </section>
-)
+        .img-mobile {
+          display: none;
+        };
+        .hero {
+          position: relative;
+          height: auto;
+        };
+        @media (max-width: 619px) {
+          .title h1 {
+            font-size: 33px;
+          };
+          .banner p {
+            padding: 0px 11px 30px 31px;
+          };
+          .img-desktop {
+            display: none;
+          };
+          .img-mobile {
+            display: block;
+          };
+          video {
+            background: url("/static/images/video-poster-mobile.png");
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: 100%;
+          };
+        };
+        @media (min-width: 620px) {
+          .img-desktop {
+            max-width: 700px;
+            max-height: 234px;
+          };
+        };
+        @media (min-width: 760px) {
+          .img-desktop {
+            max-width: 908px;
+            max-height: 304px;
+          };
+        };
+        @media (min-width: 1000px) {
+          section {
+            display: flex;
+            flex-direction: column;
+            margin: 154px auto 0 auto;
+          };
+          .banner {
+            margin-bottom: 50px;
+          };
+          .brk {
+            display: none;
+          };
+          .label {
+            margin: 0 auto 40px auto;
+          };
+          .button {
+            margin: 46px auto 70px auto;
+          };
+          .banner {
+            display: flex;
+          };
+          .img-desktop {
+            max-width: 1258px;
+            max-height: 424px;
+          };
+        };
+      `}</style>
+    </section>
+    )
+  }
+}
 
 const Showcase = () => (
   <section>
