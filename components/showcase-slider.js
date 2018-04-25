@@ -1,195 +1,250 @@
 import {Component} from 'react'
-import SlickSlider from 'react-slick'
+import Link from 'next/link'
 import Icons from '../components/icons'
+import Manifest from '../components/showcase-manifest'
 
-const Null = () => <div></div>
-
-const SliderNav = ({prev, bg, onClick}) => (
-  <div style={{backgroundImage: `url("${bg}")`}} className={`button ${prev ? 'next' : 'prev'}`} onClick={onClick}>
+const Navigation = ({children, prev, onClick}) => (
+  <div className={`button ${prev ? 'prev' : 'next'}`} onClick={onClick}>
+    <div className='thumbnail'>
+      {children}
+    </div>
     <div className='inner'></div>
-    {prev ? <Icons.ArrowPrevWhite /> : <Icons.ArrowNextWhite />}
+    <div className='arrow'>
+      {prev ? <Icons.ArrowPrevWhite /> : <Icons.ArrowNextWhite />}
+    </div>
     <style jsx>{`
       .button {
-        width: 160px;
-        height: 180px;
+        width: 100%;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-repeat: no-repeat;
-        background-size: 200%;
-        background-position: 100% 0;
         cursor: pointer;
         position: relative;
-      };
-      .button.next {
-        background-position: 50% 0;
+        overflow: hidden;
+        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.12);
       };
       .inner {
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.2);
       };
+      .thumbnail {
+        position: absolute;
+        width: 200%;
+        top: 0;
+        left: 0;
+      };
+      .prev .thumbnail {
+        left: -100%;
+      }
+      .arrow {
+        position: absolute;
+      }
     `}</style>
   </div>
 )
 
-class LazyLoad extends Component {
+class LazyImage extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-      src: '',
-      loaded: false,
-      phClassName: 'placeholder'
+      src: undefined,
+      image: props.image,
+      phClassName: 'placeholder',
+      srcClassName: 'src'
+    }
+  }
+
+  componentWillMount() {
+    if (typeof window !== 'undefined') {
+      this.load()
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.image.src !== this.state.image.src) {
+      this.setState({
+        image: nextProps.image,
+        phClassName: 'placeholderd',
+        srcClassName: 'src'
+      });
+      setTimeout(() => {
+        if (typeof window !== 'undefined') {
+          this.load()
+        }
+      }, 100);
     }
   }
 
   load() {
-    if (!this.state.loaded) {
-      const img = new Image()
-      img.onload = () => {
-        this.setState({
-          loaded: true,
-          src: this.props.src,
-          phClassName: 'placeholder loaded'
-        })
-      }
-
-      img.src = this.props.src
+    const img = new Image()
+    img.onload = () => {
+      this.setState({
+        src: this.state.image.src,
+        phClassName: 'placeholder loaded',
+        srcClassName: 'src loaded'
+      })
     }
+    img.src = this.state.image.src
   }
 
   render() {
     return (
-      <div className='container'>
-        <img className={this.state.phClassName} src={this.props.placeholder} />
-        <img className='src' src={this.state.src}/>
+      <div>
+        <img src={this.state.image.data} className={this.state.phClassName} />
+        <img src={this.state.src} className={this.state.srcClassName} />
         <style jsx>{`
           img {
-            width: 100%
+            width: 100%;
+            min-height: 0;
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.12);
           };
-          .src {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-          }
-          .container {
-            position: relative;
-            box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.12);
-          };
-          .placeholder {
-            opacity: 1;
-          };
-          .placeholder.loaded {
+          img.src {
             opacity: 0;
+            position: absolute;
+            left: 0;
+          };
+          img.src.loaded {
+            opacity: 1;
             transition: opacity 2s ease-in-out;
           }
-      `}</style>
-    </div>
+          img.placeholder {
+            opacity: 1;
+            transition: opacity 2s ease-in-out;
+          };
+          img.placeholder.loaded {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+          };
+        `}</style>
+      </div>
     )
   }
 }
 
-
 export default class Slider extends Component {
-  constructor({images}) {
+  constructor() {
     super()
 
-    this.state = {
-      images: images,
-      prevBg: images[images.length - 1].src,
-      nextBg: images[1].src,
-    }
-
-    this.slider = React.createRef()
-    this.sliders = images.map(() => React.createRef())
-    this.prev = this.prev.bind(this)
     this.next = this.next.bind(this)
+    this.prev = this.prev.bind(this)
 
-    this.settings = {
-      customPaging: <Null />,
-      beforeChange: (oldIndex, newIndex) => {
-        const images = this.state.images
-        this.setState({
-          prevBg: images[(newIndex - 1 + images.length) % images.length].src,
-          nextBg: images[(newIndex + 1) % images.length].src
-        })
-
-        this.sliders[newIndex].current.load()
-      },
-      nextArrow: <Null />,
-      prevArrow: <Null />,
-      dots: false,
-      fade: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      initialSlide: 0,
+    this.state = {
+      current: 0,
+      currentImage: Manifest.manifest[0],
+      prevImage: Manifest.manifest[Manifest.prev(0)],
+      nextImage: Manifest.manifest[Manifest.next(0)]
     }
   }
 
-  componentDidMount() {
-    this.sliders[0].current.load()
+  change(current) {
+    this.setState({
+      current: current,
+      currentImage: Manifest.manifest[current],
+      prevImage: Manifest.manifest[Manifest.prev(current)],
+      nextImage: Manifest.manifest[Manifest.next(current)]
+    })
   }
 
   next() {
-    this.slider.current.slickNext()
+    this.change(Manifest.next(this.state.current))
   }
 
   prev() {
-    this.slider.current.slickPrev()
+    this.change(Manifest.prev(this.state.current))
   }
 
   render() {
     return (
       <div className='container'>
-        <div className='nav prev'>
-          <SliderNav prev bg={this.state.prevBg} onClick={this.prev} />
-        </div>
-        <div className='slider'>
-          <SlickSlider {...this.settings} ref={this.slider}>
-            {
-              this.state.images.map((image, i) => {
-                return <LazyLoad ref={this.sliders[i]} key={image.src} src={image.src} placeholder={image.placeholder} />
-              })
-            }
-          </SlickSlider>
-        </div>
-        <div className='nav next'>
-          <SliderNav bg={this.state.nextBg} onClick={this.next} />
+        <div className='slides'>
+          <div className='slide prev'>
+            <Navigation prev onClick={this.prev}>
+              <LazyImage image={this.state.prevImage} />
+            </Navigation>
+          </div>
+          <div className='slide center'>
+            <div className='image'>
+              <LazyImage ref={this.current} image={this.state.currentImage} />
+            </div>
+          </div>
+          <div className='slide next'>
+            <Navigation next onClick={this.next}>
+              <LazyImage image={this.state.nextImage} />
+            </Navigation>
+          </div>
         </div>
         <style jsx>{`
           .container {
+            display: block;
+            margin: 0 auto;
+            padding: 20px 0;
+          };
+          .slides {
+            padding: 25px 0 25px 0;
+            width: 100%;
             display: flex;
-            min-height: 0;
-            min-width: 0;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            will-change: opacity;
+          };
+          .image {
+            width: 1280px;
+            height: 734px;
+            display: block;
+            position: relative;
+          };
+          .slide.prev {
+            width: 160px;
+            min-width: 160px;
+            height: 180px;
+          };
+          .slide.next {
+            width: 160px;
+            min-width: 160px;
+            height: 180px;
+          };
+          @media (max-width: 1600px) {
+            .image {
+              width: 1024px;
+              height: 587px;
+            }
+          };
+          @media (max-width: 1360px) {
+            .image {
+              width: 720px;
+              height: 413px;
+            }
+          };
+          @media (max-width: 1060px) {
+            .image {
+              width: 470px;
+              height: 270px;
+            }
+          };
+          @media (max-width: 900px) {
+            .slide.prev {
+              width: 0;
+              min-width: 0;
+            };
+            .slide.next {
+              width: 0;
+              min-width: 0;
+            };
+            .slides {
+              width: 90%;
+              margin: 0 auto;
+            }
+            .image {
+              width: 100%;
+              height: auto;
+            }
           }
-          .slider {
-            flex: 1;
-            margin: 0 25px;
-          };
-          .nav {
-            flex: 0.3;
-            display: none;
-          };
-          .nav.next {
-            justify-content: flex-end;
-          };
-          @media (min-width: 1000px) {
-            .nav {
-              display: flex;
-            };
-          };
-          @media (min-width: 1280px) {
-            .nav {
-              display: flex;
-            };
-          };
         `}</style>
       </div>
     )

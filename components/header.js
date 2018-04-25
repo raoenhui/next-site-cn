@@ -63,7 +63,7 @@ export default class Header extends Component {
             <Link href='/'><a>About</a></Link>
             <Link href='/'><a>Docs</a></Link>
             <Link href='/showcase'><a>Showcase</a></Link>
-            <Link href='/'><a>Github</a></Link>
+            <Link href='/showcase2'><a>Github</a></Link>
             <Link href='/'><a>Enterprise</a></Link>
             <Link href='/'><a>Learn</a></Link>
           </aside>
