@@ -26,9 +26,6 @@ export default ({children}) => (
         min-height: 0;
         min-width: 0;
       };
-      .slider .slick-list {
-        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.12);
-      }
     `}</style>
   </div>
 )
