@@ -36,7 +36,7 @@ class Hero extends Component {
         <div className='subtitle'><b>Next.js</b> is a lightweight framework for <br className='brk' />static and server-rendered applications.</div>
       </aside>
       <aside className='button'>
-        <RoundButton color='black'>Learn More</RoundButton>
+        <RoundButton color='black' href='/learn'>Learn More</RoundButton>
       </aside>
       <aside className='hero'>
         <Video mobile={this.props.mobile} />
@@ -161,9 +161,9 @@ const Showcase = () => (
       <h1>The World's Leading <br className='brk' />Companies Use <br className='brk' />and Love Next.js</h1>
       <p className="subtitle">We're honored some of the most talented <br className='brk' />creatives out there build with Next.js.</p>
     </aside>
-    {/* <CompanySlider /> */}
+    <CompanySlider />
     <aside className='button'>
-      <RoundButton color='white'>View Showcase</RoundButton>
+      <RoundButton color='white' href='/showcase'>View Showcase</RoundButton>
     </aside>
     <aside className='hero'>
       <img src="/static/images/showcases.png" alt="showcases"/>
