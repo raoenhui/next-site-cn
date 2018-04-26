@@ -64,7 +64,7 @@ export default class Header extends Component {
             <Link href='/docs'><a>Docs</a></Link>
             <Link href='/showcase'><a>Showcase</a></Link>
             <Link href='/'><a>Github</a></Link>
-            <Link href='/'><a>Enterprise</a></Link>
+            <Link href='/enterprise'><a>Enterprise</a></Link>
             <Link href='/learn'><a>Learn</a></Link>
           </aside>
           <aside className='zeit-logo'>
