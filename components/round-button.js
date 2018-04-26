@@ -24,18 +24,22 @@ export default ({children, color, href}) => (
         .white {
           background-color: #FFFFFF;
           color: #000000;
+          transition: all .2s ease;
         };
         .black {
           background-color: #000000;
           color: #FFFFFF;
+          transition: all .2s ease;
         };
         a.white:hover {
           background-color: #000000;
           color: #FFFFFF;
+          transition: all .2s ease;
         };
         a.black:hover {
           background-color: #FFFFFF;
           color: #000000;
+          transition: all .2s ease;
         };
     `}</style>
     </a>
