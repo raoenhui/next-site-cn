@@ -8,14 +8,29 @@ export default class Video extends Component {
       className: this.props.mobile ? 'mobile' : ''
     }
     this.video = React.createRef()
-    this.play = this.play.bind(this)
+    this.play = this.props.mobile ? this.play.bind(this) : () => {}
   }
 
   play() {
-    this.video.current.style.backgroundImage = 'none'
-    this.video.current.style.width = '100%';
-    this.video.current.style.height = '100%';
-    this.video.current.play()
+    const video = this.video.current
+
+    video.style.backgroundImage = 'none'
+    video.style.width = '100%'
+    video.style.height = '100%'
+    video.play()
+    this.enterFullscreen()
+  }
+
+  enterFullscreen() {
+    const video = this.video.current
+
+    if (typeof(video.requestFullscreen) != "undefined") {
+      video.requestFullscreen();
+    } else if (typeof(video.webkitRequestFullscreen)  != "undefined") {
+        video.webkitRequestFullscreen();
+    } else if (typeof(video.mozRequestFullScreen)  != "undefined") {
+        video.mozRequestFullScreen();
+    }
   }
 
   render() {
