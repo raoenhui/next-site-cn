@@ -1,12 +1,18 @@
 import {Component} from 'react'
+import MobileDetect from 'mobile-detect'
 import Page from '../components/page'
 import CompanySlider from '../components/company-slider'
 import RoundButton from '../components/round-button'
+import Video from '../components/video'
 import Icons from '../components/icons'
 
 class Hero extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      className: this.props.mobile ? 'mobile' : ''
+    }
 
     this.video = React.createRef()
     this.play = this.play.bind(this)
@@ -33,25 +39,12 @@ class Hero extends Component {
         <RoundButton color='black'>Learn More</RoundButton>
       </aside>
       <aside className='hero'>
-        <video ref={this.video} preload="none" muted loop onClick={this.play}>
-          <source src="/static/videos/hnpwa-next.mp4" type="video/mp4" />
-        </video>
+        <Video mobile={this.props.mobile} />
       </aside>
       <aside className='label'>
         <div>See an app created in 9 seconds.</div>
       </aside>
       <style jsx>{`
-        video {
-          background: url("/static/images/video-poster-desktop.png");
-          background-repeat: no-repeat;
-          background-position: 50% 50%;
-          background-size: 80%;
-          width: 1258px;
-          height: 424px;
-        };
-        video[poster]{
-          object-fit: cover;
-        };
         section {
           display: flex;
           flex-direction: column;
@@ -122,13 +115,6 @@ class Hero extends Component {
           font-size: 12px;
           color: #999999;
         };
-        .img-desktop {
-          display: block;
-          position: absolute;
-        };
-        .img-mobile {
-          display: none;
-        };
         .hero {
           position: relative;
           height: auto;
@@ -139,30 +125,6 @@ class Hero extends Component {
           };
           .banner p {
             padding: 0px 11px 30px 31px;
-          };
-          .img-desktop {
-            display: none;
-          };
-          .img-mobile {
-            display: block;
-          };
-          video {
-            background: url("/static/images/video-poster-mobile.png");
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            background-size: 100%;
-          };
-        };
-        @media (min-width: 620px) {
-          .img-desktop {
-            max-width: 700px;
-            max-height: 234px;
-          };
-        };
-        @media (min-width: 760px) {
-          .img-desktop {
-            max-width: 908px;
-            max-height: 304px;
           };
         };
         @media (min-width: 1000px) {
@@ -186,10 +148,6 @@ class Hero extends Component {
           .banner {
             display: flex;
           };
-          .img-desktop {
-            max-width: 1258px;
-            max-height: 424px;
-          };
         };
       `}</style>
     </section>
@@ -203,7 +161,7 @@ const Showcase = () => (
       <h1>The World's Leading <br className='brk' />Companies Use <br className='brk' />and Love Next.js</h1>
       <p className="subtitle">We're honored some of the most talented <br className='brk' />creatives out there build with Next.js.</p>
     </aside>
-    <CompanySlider />
+    {/* <CompanySlider /> */}
     <aside className='button'>
       <RoundButton color='white'>View Showcase</RoundButton>
     </aside>
@@ -265,9 +223,6 @@ const Showcase = () => (
       .pad {
         width: 100%;
         padding-bottom: 35%;
-      }
-      @media (max-width: 619px) {
-
       };
       @media (min-width: 590px) {
         .hero img {
@@ -413,10 +368,22 @@ const Descriptions = () => (
   </section>
 )
 
-export default () => (
-  <Page>
-    <Hero />
-    <Showcase />
-    <Descriptions />
-  </Page>
-)
+export default class Index extends Component {
+  static async getInitialProps({ req }) {
+    const ua = req ? req.headers['user-agent'] : navigator.userAgen
+    const md = new MobileDetect(ua)
+    return {
+      mobile: (md.mobile() || md.phone() || md.tablet()) ? true : false,
+    }
+  }
+
+  render() {
+    return (
+      <Page>
+        <Hero mobile={this.props.mobile}/>
+        <Showcase />
+        <Descriptions />
+      </Page>
+    )
+  }
+}
