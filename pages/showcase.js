@@ -65,10 +65,7 @@ export default class Showcase extends Component {
         <section>
           <aside>
             <div>
-              <Slider className='slider'
-                ref={this.slider}
-                beforeChange={this.beforeChange}
-              />
+              <Slider className='slider' ref={this.slider} beforeChange={this.beforeChange} />
             </div>
             <div className='figure'>
               <div>

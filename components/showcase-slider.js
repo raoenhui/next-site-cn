@@ -49,55 +49,57 @@ const Navigation = ({children, prev, onClick}) => (
 )
 
 class LazyImage extends Component {
-  constructor(props) {
-    super(props)
+  state = {
+    src: '',
+    preloadSrc: '',
+    image: this.props.image,
+    phClassName: 'placeholder',
+    srcClassName: 'src'
+  }
 
-    this.state = {
-      src: undefined,
-      image: props.image,
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.image.title !== prevState.image.title) {
+      return {
+        preloadSrc: nextProps.image.src,
+        image: nextProps.image,
+        phClassName: 'placeholder',
+        srcClassName: 'src'
+      }
+    }
+
+    return {
       phClassName: 'placeholder',
       srcClassName: 'src'
     }
   }
 
-  componentWillMount() {
-    if (typeof window !== 'undefined') {
-      this.load()
-    }
+  constructor(props) {
+    super(props)
+
+    this.onLoad = this.onLoad.bind(this)
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.image.src !== this.state.image.src) {
-      this.setState({
-        image: nextProps.image,
-        phClassName: 'placeholderd',
-        srcClassName: 'src'
-      });
-      setTimeout(() => {
-        if (typeof window !== 'undefined') {
-          this.load()
-        }
-      }, 100);
-    }
+  onLoad() {
+    this.setState({
+      src: this.state.image.src,
+      phClassName: 'placeholder fadeout',
+      srcClassName: 'src fadein'
+    })
   }
 
-  load() {
-    const img = new Image()
-    img.onload = () => {
-      this.setState({
-        src: this.state.image.src,
-        phClassName: 'placeholder loaded',
-        srcClassName: 'src loaded'
-      })
-    }
-    img.src = this.state.image.src
+  componentDidMount() {
+    this.setState({
+      preloadSrc: this.state.image.src,
+    })
   }
+
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <img src={this.state.image.data} className={this.state.phClassName} />
         <img src={this.state.src} className={this.state.srcClassName} />
+        <img src={this.state.preloadSrc} className='preload' onLoad={this.onLoad}/>
         <style jsx>{`
           img {
             width: 100%;
@@ -105,21 +107,24 @@ class LazyImage extends Component {
             box-shadow: 0 30px 40px rgba(0, 0, 0, 0.12);
           };
           img.src {
-            opacity: 0;
+            opacity: 1;
             position: absolute;
             left: 0;
+            z-index: -1;
           };
-          img.src.loaded {
-            opacity: 1;
-            transition: opacity 2s ease-in-out;
-          }
+          img.src.fadeout {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+          };
           img.placeholder {
             opacity: 1;
-            transition: opacity 2s ease-in-out;
           };
-          img.placeholder.loaded {
+          img.placeholder.fadeout {
             opacity: 0;
-            transition: opacity 2s ease-in-out;
+            transition: opacity 1.5s ease-in-out;
+          };
+          img.preload {
+            display: none;
           };
         `}</style>
       </div>
@@ -128,30 +133,31 @@ class LazyImage extends Component {
 }
 
 export default class Slider extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
     this.next = this.next.bind(this)
     this.prev = this.prev.bind(this)
 
+    const images = Manifest.manifest.map(s => {
+      return <LazyImage image={s} />
+    })
+
     this.state = {
       current: 0,
-      currentImage: Manifest.manifest[0],
-      prevImage: Manifest.manifest[Manifest.prev(0)],
-      nextImage: Manifest.manifest[Manifest.next(0)]
+      images: images,
+      currentImage: images[0],
+      prevImage: images[Manifest.prev(0)],
+      nextImage: images[Manifest.next(0)]
     }
   }
 
   change(current) {
-    if (this.props.beforeChange) {
-      this.props.beforeChange(Manifest.manifest[current], current)
-    }
-
     this.setState({
       current: current,
-      currentImage: Manifest.manifest[current],
-      prevImage: Manifest.manifest[Manifest.prev(current)],
-      nextImage: Manifest.manifest[Manifest.next(current)]
+      currentImage: this.state.images[current],
+      prevImage: this.state.images[Manifest.prev(current)],
+      nextImage: this.state.images[Manifest.next(current)]
     })
   }
 
@@ -169,17 +175,17 @@ export default class Slider extends Component {
         <div className='slides'>
           <div className='slide prev'>
             <Navigation prev onClick={this.prev}>
-              <LazyImage image={this.state.prevImage} />
+              {this.state.prevImage}
             </Navigation>
           </div>
           <div className='slide center'>
             <div className='image'>
-              <LazyImage ref={this.current} image={this.state.currentImage} />
+              {this.state.currentImage}
             </div>
           </div>
           <div className='slide next'>
             <Navigation next onClick={this.next}>
-              <LazyImage image={this.state.nextImage} />
+              {this.state.nextImage}
             </Navigation>
           </div>
         </div>
@@ -202,33 +208,50 @@ export default class Slider extends Component {
             height: 734px;
             display: block;
             position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+          };
+          .slide {
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.12);
           };
           .slide.prev {
             width: 160px;
             min-width: 160px;
             height: 180px;
+            overflow: hidden;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
           };
           .slide.next {
             width: 160px;
             min-width: 160px;
             height: 180px;
+            overflow: hidden;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
           };
           @media (max-width: 1600px) {
             .image {
               width: 1024px;
               height: 587px;
+              overflow: hidden;
+              border-radius: 6px;
             }
           };
           @media (max-width: 1360px) {
             .image {
               width: 720px;
               height: 413px;
+              overflow: hidden;
+              border-radius: 6px;
             }
           };
           @media (max-width: 1060px) {
             .image {
               width: 470px;
               height: 270px;
+              overflow: hidden;
+              border-radius: 3px;
             }
           };
           @media (max-width: 900px) {
