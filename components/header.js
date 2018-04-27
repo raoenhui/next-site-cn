@@ -62,9 +62,9 @@ export default class Header extends Component {
           <aside className={`menu ${this.state.toggled ? 'toggled' : ''}`}>
             <Link href='/'><a>About</a></Link>
             <Link href='/docs'><a>Docs</a></Link>
-            <Link href='/showcase'><a>Showcase</a></Link>
+            <Link prefetch href='/showcase'><a>Showcase</a></Link>
             <Link href='/'><a>Github</a></Link>
-            <Link href='/enterprise'><a>Enterprise</a></Link>
+            <Link prefetch href='/enterprise'><a>Enterprise</a></Link>
             <Link href='/learn'><a>Learn</a></Link>
           </aside>
           <aside className='zeit-logo'>

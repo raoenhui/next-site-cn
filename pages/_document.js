@@ -10,8 +10,8 @@ export default class MyDocument extends Document {
       styles: flush()
     }
 
-    if (pathname === '/showcase') {
-      // prefetching three items of images.
+    if (pathname !== '/showcase') {
+      // prefetching three items of images from 0 to 2
       // rest of images will be pending if they are listed
       ctx.linksPrefetch = ShowcaseManifest.manifest
         .slice(0, 3)
