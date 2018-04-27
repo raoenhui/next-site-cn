@@ -12,9 +12,6 @@ const root = process.cwd()
 app.prepare().then(() => {
   createServer((req, res) => {
     if (req.url.startsWith('/static/')) {
-      if (req.url.endsWith('/sw.js')) {
-        res.setHeader('Service-Worker-Allowed', '/')
-      }
       app.serveStatic(req, res, join(root, `.${req.url}`))
     } else {
       handle(req, res, req.url)
