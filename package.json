@@ -18,6 +18,7 @@
     "url": "https://github.com/zeit/next-website/issues"
   },
   "dependencies": {
+    "mobile-detect": "^1.4.1",
     "next": "^5.1.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
