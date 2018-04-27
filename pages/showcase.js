@@ -2,6 +2,7 @@ import {Component} from 'react'
 import Icons from '../components/icons'
 import Page from '../components/page'
 import Slider from '../components/showcase-slider'
+import Manifest from '../components/showcase-manifest'
 
 const BottomNav = ({prev, onClick}) => (
   <div className={`nav ${prev ? 'prev' : 'next'}`}>
@@ -32,9 +33,15 @@ export default class Showcase extends Component {
   constructor() {
     super()
 
+    this.state = {
+      externalLink: Manifest.manifest[0].link,
+      title: Manifest.manifest[0].title
+    }
+
     this.slider = React.createRef()
     this.slidePrev = this.slidePrev.bind(this)
     this.slideNext = this.slideNext.bind(this)
+    this.beforeChange = this.beforeChange.bind(this)
   }
 
   slidePrev() {
@@ -43,6 +50,13 @@ export default class Showcase extends Component {
 
   slideNext() {
     this.slider.current.next()
+  }
+
+  beforeChange(showcase) {
+    this.setState({
+      externalLink: showcase.link,
+      title: showcase.title
+    })
   }
 
   render() {
@@ -58,11 +72,11 @@ export default class Showcase extends Component {
             </div>
             <div className='figure'>
               <div>
-                <h2>Magic Leap</h2>
+                <h2>{this.state.title}</h2>
               </div>
               <div className='external'>
-                <a target='_blank' href='https://magicleap.com'>
-                  <span>magicleap.com</span>
+                <a target='_blank' href={this.state.externalLink}>
+                  <span>{this.state.title}</span>
                   <span className='icon'><Icons.ExternalLink /></span>
                 </a>
               </div>

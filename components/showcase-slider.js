@@ -128,8 +128,8 @@ class LazyImage extends Component {
 }
 
 export default class Slider extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.next = this.next.bind(this)
     this.prev = this.prev.bind(this)
@@ -143,6 +143,10 @@ export default class Slider extends Component {
   }
 
   change(current) {
+    if (this.props.beforeChange) {
+      this.props.beforeChange(Manifest.manifest[current], current)
+    }
+
     this.setState({
       current: current,
       currentImage: Manifest.manifest[current],
