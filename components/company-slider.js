@@ -8,7 +8,7 @@ const settings = {
     return (<div></div>)
   },
   dots: false,
-  infinite: false,
+  infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
