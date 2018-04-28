@@ -60,10 +60,9 @@ export default class Header extends Component {
             </div>
           </aside>
           <aside className={`menu ${this.state.toggled ? 'toggled' : ''}`}>
-            <Link href='/'><a>About</a></Link>
             <Link href='/docs'><a>Docs</a></Link>
             <Link prefetch href='/showcase'><a>Showcase</a></Link>
-            <Link href='/'><a>Github</a></Link>
+            <Link href='https://github.com/zeit/next.js'><a>Github</a></Link>
             <Link prefetch href='/enterprise'><a>Enterprise</a></Link>
             <Link href='/learn'><a>Learn</a></Link>
           </aside>
@@ -125,7 +124,7 @@ export default class Header extends Component {
               top: 0;
               left: 0;
               width: 100%;
-              height: 120px;
+              height: 80px;
               justify-content: center;
               align-items: center;
               background-color: rgba(255, 255, 255, 0.98);
@@ -142,12 +141,14 @@ export default class Header extends Component {
             .top-menu {
               display: block;
               padding: 0;
-              margin-right: 177px;
             };
             .menu {
-              display: block;
+              display: flex;
               flex-direction: row;
               flex: 1;
+              padding-bottom: 1px;
+              justify-content: center;
+              align-items: center;
             };
             .menu a {
               padding: 0;
@@ -168,6 +169,7 @@ export default class Header extends Component {
             .zeit-logo {
               display: block;
               width: 18px;
+              padding-bottom: 1px;
             };
             .zeit-logo a {
               display: block;
