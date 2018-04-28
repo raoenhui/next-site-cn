@@ -65,7 +65,10 @@ export default class Showcase extends Component {
         <section>
           <aside>
             <div>
-              <Slider className='slider' ref={this.slider} beforeChange={this.beforeChange} />
+              <Slider className='slider'
+                ref={this.slider}
+                beforeChange={this.beforeChange}
+              />
             </div>
             <div className='figure'>
               <div>
@@ -86,21 +89,21 @@ export default class Showcase extends Component {
         </section>
         <style jsx>{`
           section {
-            margin: 0px auto 0 auto;
+            margin: 77px auto 0 auto;
           };
           aside {
             margin: 0 auto;
             text-align: center;
           };
           .figure {
-            padding: 0px 0 26px 0;
+            padding: 54px 0;
             margin: 0 auto;
             text-align: center;
           };
           h2 {
             color: #000000;
+            font-size: 32px;
             font-weight: 200;
-            margin: 0 auto 26px 0
           };
           .external {
             color: #0000FF;
@@ -131,12 +134,6 @@ export default class Showcase extends Component {
             };
             .bottom-nav {
               display: none;
-            };
-            .figure {
-              padding: 54px 0;
-            };
-            h2 {
-              margin: 26px auto 26px 0;
             };
           };
           @media (min-width: 1280px) {
