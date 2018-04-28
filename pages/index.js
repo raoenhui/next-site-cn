@@ -211,12 +211,15 @@ const Showcase = () => (
       .hero {
         position: relative;
         height: auto;
+        border-radius: 5px;
       };
       .hero img {
         max-width: 60%;
         position: absolute;
         top: -30%;
         bottom: 0;
+        border-radius: 5px;
+        box-shadow: 2px 5px 40px 10px rgba(0,0,0,0.1)
       };
       .pad {
         width: 100%;
