@@ -24,6 +24,7 @@ import ArrowPrev from '../static/images/arrow-prev.svg'
 import ArrowNextWhite from '../static/images/arrow-next-white.svg'
 import ArrowPrevWhite from '../static/images/arrow-prev-white.svg'
 import ExternalLink from '../static/images/external-link.svg'
+import Permalink from '../static/images/permalink-icon.svg'
 
 const Arrow = ({color}) => (
   <svg width="13px" height="7px" viewBox="0 0 27 14" version="1.1">
@@ -60,5 +61,6 @@ export default {
   ArrowPrev,
   ArrowNextWhite,
   ArrowPrevWhite,
-  ExternalLink
+  ExternalLink,
+  Permalink
 }
