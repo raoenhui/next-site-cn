@@ -1,16 +1,17 @@
 import {Component} from 'react'
+import Link from 'next/link'
 import Page from '../components/page'
 import Icons from '../components/icons'
 import RoundButton from '../components/round-button'
 
-const Description = ({title, stress, children}) => (
-  <aside className={`${stress ? 'stress': ''}`}>
+const Description = ({title, children, href}) => (
+  <aside>
     <h2>{title}</h2>
     <div className='desc'>
       <p>{children}</p>
     </div>
     <div className='footer'>
-      READ MORE
+      <Link href={href}><a>READ MORE</a></Link>
     </div>
     <style jsx>{`
       aside {
@@ -21,7 +22,7 @@ const Description = ({title, stress, children}) => (
         border-radius: 5px;
         margin-right: 0px;
       };
-      aside.stress {
+      aside:hover {
         border: 1px solid #000000;
       };
       h2 {
@@ -52,6 +53,22 @@ const Description = ({title, stress, children}) => (
         font-size: 12px;
         font-weight: 200;
         margin-top: 28px;
+        color: #000;
+        line-height: 14px;
+      };
+      a {
+        padding: 0;
+        color: #000000;
+        padding-right: 38px;
+        text-transform: none;
+        text-decoration: none;
+        border-bottom: none;
+        transition: .2s ease-out;
+        cursor: pointer;
+      };
+      a:hover {
+        color: #999999;
+        transition: .2s ease-out;
       };
       @media (min-width: 1000px) {
         aside {
@@ -76,19 +93,19 @@ export default class Enterprise extends Component {
             </div>
           </div>
           <div className='descriptions flex-column'>
-            <Description title='Priority Support'>
+            <Description title='Priority Support' href='https://zeit.co/teams/next-js/settings/add-ons/priority-support'>
               Emails to our support queue are given priority and are guaranteed to be handled within 24 hours.
             </Description>
-            <Description title='Advanced Priority Support'>
+            <Description title='Advanced Priority Support' href='https://zeit.co/teams/next-js/settings/add-ons/advanced-priority-support'>
               Emails to our support queue are given priority and are guaranteed to be handled within 12 hours.
             </Description>
-            <Description title='Static Websites' stress>
+            <Description title='Static Websites' href='https://zeit.co/teams/next-js/settings/add-ons/live-support'>
               Your team will have direct access to core engineers in our corporate Slack with a dedicated channel to maintain and archive your support requests and their respective bug fixes.
             </Description>
           </div>
           <div className='footer flex-column'>
             <p>For more information<br className='brk' /> about <span className='bold'>Next.js Enterprise Support</span></p>
-            <RoundButton color='black' href='/contact'>Contact us</RoundButton>
+            <RoundButton color='black' href='mailto:support@zeit.co'>Contact us</RoundButton>
           </div>
         </section>
         <style jsx>{`
@@ -112,6 +129,7 @@ export default class Enterprise extends Component {
             text-align: center;
             color: #666666;
             max-width: 284px;
+            line-height: 24px;
           };
           .descriptions {
             margin: 50px auto 0 auto;
