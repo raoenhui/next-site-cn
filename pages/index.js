@@ -77,8 +77,8 @@ class Hero extends Component {
         };
         .title h1 {
           text-align: center;
-          font-size: 44px;
-          font-weight: 400;
+          font-size: 56px;
+          font-weight: 300;
           margin: 0px auto 0 auto;
           padding: 0;
         };
@@ -96,8 +96,8 @@ class Hero extends Component {
           color: black;
         };
         .released {
-          padding-left: 71px;
-          font-weight: 600;
+          padding-left: 32px;
+          font-weight: 500;
         };
         .brk {
           display: inline-block;
