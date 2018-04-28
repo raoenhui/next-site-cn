@@ -96,7 +96,7 @@ export default class Showcase extends Component {
             text-align: center;
           };
           .figure {
-            padding: 54px 0;
+            padding: 0px 0 54px 0;
             margin: 0 auto;
             text-align: center;
           };
@@ -130,7 +130,7 @@ export default class Showcase extends Component {
           };
           @media (min-width: 1000px) {
             section {
-              margin: 127px auto 0 auto;
+              margin: 100px auto 0 auto;
             };
             .bottom-nav {
               display: none;
@@ -138,7 +138,7 @@ export default class Showcase extends Component {
           };
           @media (min-width: 1280px) {
             section {
-              margin: 127px auto 0 auto;
+              margin: 100px auto 0 auto;
             };
             .bottom-nav {
               display: none;
