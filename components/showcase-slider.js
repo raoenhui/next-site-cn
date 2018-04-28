@@ -248,6 +248,8 @@ export default class Slider extends Component {
             margin: 0 160px;
             box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.12);
             max-width: 1280px;
+            border-radius: 4px;
+            overflow: hidden;
           };
           .slider .slick-slider {
             width: 1280px;
