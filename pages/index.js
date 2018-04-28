@@ -296,18 +296,21 @@ const Description = ({icon, title, desc}) => (
         width: 33.333%;
         max-width: 33.333%;
         margin-bottom: 48px;
-      };
+      }
+
       h2 {
         padding: 0px;
         margin: 10px 0 0 59px;
         font-weight: 400;
         font-size: 20px
-      };
+      }
+
       span {
         width: 40px;
         height: 40px;
         float: left;
-      };
+      }
+
       p {
         padding: 0;
         margin: 0;
@@ -316,22 +319,17 @@ const Description = ({icon, title, desc}) => (
         font-weight: 400;
         color: #999999;
         margin-top: 18px;
-      };
-      .desc {
-        margin-top: 28px;
-      };
+      }
     `}</style>
   </aside>
 )
 
 const Descriptions = () => (
   <section>
-    <div className='desc top'>
+    <div className='desc'>
       <Description icon={<Icons.MobileFriendly />} title='Mobile Friendly'/>
       <Description icon={<Icons.FullApps />} title='Full Apps'/>
       <Description icon={<Icons.StaticWebSites />} title='Static Websites'/>
-    </div>
-    <div className='desc bottom'>
       <Description icon={<Icons.PWA />} title='PWA'/>
       <Description icon={<Icons.PluginEcosystem />} title='Plugin Ecosystem'/>
       <Description icon={<Icons.SimpleAndEasy />} title='Simple and Easy'/>
@@ -339,39 +337,43 @@ const Descriptions = () => (
     <style jsx>{`
       section {
         padding-top: 274px;
-      };
+      }
+
       .desc {
         display: flex;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
         justify-content: center;
         max-width: 300px;
-        margin: 0 auto 0 auto;
-      };
-      .desc.bottom {
-        margin-bottom: 80px;
-      };
+        margin: 0 auto;
+        padding-bottom: 64px;
+      }
+
       @media (max-width: 619px) {
         section {
           padding-top: 104px;
         }
-      };
+      }
+
       @media (min-width: 590px) {
         section {
           padding-top: 104px;
         }
-      };
+      }
+
       @media (min-width: 1000px) {
         section {
           padding-top: 274px;
-        };
+        }
+
         .desc {
           max-width: 979px;
           justify-content: space-around;
-        };
+        }
+
         .desc.bottom {
           margin-bottom: 126px;
-        };
-      };
+        }
+      }
     `}</style>
   </section>
 )
