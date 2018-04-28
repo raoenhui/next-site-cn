@@ -63,6 +63,7 @@ export default class Header extends Component {
             <Link prefetch href='/docs'><a>Docs</a></Link>
             <Link prefetch href='/showcase'><a>Showcase</a></Link>
             <Link href='https://github.com/zeit/next.js'><a>Github</a></Link>
+            <Link prefetch href='/enterprise'><a>Enterprise</a></Link>
             <Link href='/learn'><a>Learn</a></Link>
           </aside>
           <aside className='zeit-logo'>

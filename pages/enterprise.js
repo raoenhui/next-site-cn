@@ -82,9 +82,7 @@ export default class Enterprise extends Component {
             <h1 className='title'>
               Enterprise Support
             </h1>
-            <div className='slogan'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
-            </div>
+            <div className='slogan'>We offer support right from the source. We're so proud of Next.js, we're offering to help implement and maintain it for your business.</div>
           </div>
           <div className='descriptions flex-column'>
             <Description title='Priority Support'  href='https://zeit.co/teams/next-js/settings/add-ons/priority-support'>
