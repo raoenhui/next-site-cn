@@ -89,7 +89,7 @@ export default class Showcase extends Component {
         </section>
         <style jsx>{`
           section {
-            margin: 77px auto 0 auto;
+            margin: 0px auto 0 auto;
           };
           aside {
             margin: 0 auto;
