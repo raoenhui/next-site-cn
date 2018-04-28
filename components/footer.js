@@ -10,7 +10,9 @@ export default () => (
         <span>MIT Licensed. Copyright © 2018 ZEIT, Inc. <br className='brk' />All rights reserved.</span>
       </div>
       <div className='github-ci'>
-        <Icons.GithubCI />
+        <a href="https://github.com/zeit/next.js">
+          <Icons.GithubCI />
+        </a>
       </div>
     </div>
     <style jsx>{`
