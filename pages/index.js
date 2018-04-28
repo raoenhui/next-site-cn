@@ -291,14 +291,11 @@ const Description = ({icon, title, desc}) => (
   <aside className='container'>
     <span>{icon}</span>
     <h2>{title}</h2>
-    <div className='desc'>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium olorem que laudantium.</p>
-      <p>Totam rem aperiam, eaque ipsa qu ae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
-    </div>
     <style jsx>{`
       .container {
-        max-width: 273px;
-        margin-bottom: 24px;
+        width: 33.333%;
+        max-width: 33.333%;
+        margin-bottom: 48px;
       };
       h2 {
         padding: 0px;
