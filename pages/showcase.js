@@ -77,7 +77,7 @@ export default class Showcase extends Component {
               <div className='external'>
                 <a target='_blank' href={this.state.externalLink}>
                   <span>{this.state.title}</span>
-                  <span className='icon'><Icons.ExternalLink /></span>
+                  <span className='icon'><img src='/static/images/external-link.png' /></span>
                 </a>
               </div>
             </div>
