@@ -104,14 +104,7 @@ class LazyLoad extends Component {
     if (nextProps.image.src !== prevState.image.src) {
       return {
         image: nextProps.image,
-        phClassName: 'placeholder',
-        srcClassName: 'src'
       }
-    }
-
-    return {
-      phClassName: 'placeholder',
-      srcClassName: 'src'
     }
   }
 
