@@ -245,11 +245,12 @@ export default class Slider extends Component {
             flex: 1;
             margin: 0 160px;
             box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.12);
+            max-width: 1280px;
           };
           .slider .slick-slider {
             width: 1280px;
             height: 734px;
-          }
+          };
           .nav {
             overflow: hidden;
           };
