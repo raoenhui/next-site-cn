@@ -1,0 +1,7 @@
+{
+  "rules": [
+    {"pathname": "/learn/**", "dest": "https://learnnextjs-zone.now.sh"},    
+    {"pathname": "/learn", "dest": "https://learnnextjs-zone.now.sh"},
+    {"dest": "https://nextjsorg.now.sh"}
+  ]
+}
