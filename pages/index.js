@@ -28,7 +28,9 @@ class Hero extends Component {
     <section>
       <aside className='banner'>
         <p>
-          <span className='highlight'>Next 5 is out!</span> — Universal Webpack, CSS Imports, Plugins and Zones <span className='released'>Monday, April 16th 2018</span>
+          <a href="https://github.com/zeit/next.js/releases" target="_blank">
+            <span className='highlight'>Next 6 is out!</span> — Babel 7, App Component, Improved stacktraces, Improved static export <span className='released'>Saturday, April 28th 2018</span>
+          </a>
         </p>
       </aside>
       <aside className='title'>
@@ -75,6 +77,14 @@ class Hero extends Component {
           background-position: 11px 7px;
           padding: 0px 11px 1px 31px;
         };
+        .banner a {
+          color: inherit;
+          text-decoration: none;
+        }
+        .banner a:visited,
+        .banner a:focus {
+          color: inherit;
+        }
         .title h1 {
           text-align: center;
           font-size: 56px;

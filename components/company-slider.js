@@ -5,14 +5,11 @@ const Null = () => <div></div>
 
 const settings = {
   customPaging: function(i) {
-    return (<div></div>)
+    return null
   },
   dots: false,
   infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
   autoplay: true,
-  speed: 3000,
   autoplaySpeed: 1000,
   cssEase: "linear",
   variableWidth: true,
@@ -24,7 +21,19 @@ const settings = {
   swipeToSlide: false,
   swipe: false,
   touchMove: false,
-  draggable: false
+  draggable: false,
+  speed: 5000,
+  autoplay: true,
+  autoplaySpeed: 0,
+  centerMode: true,
+  cssEase: 'linear',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  variableWidth: true,
+  infinite: true,
+  initialSlide: 1,
+  arrows: false,
+  buttons: false
 };
 
 export default () => (
