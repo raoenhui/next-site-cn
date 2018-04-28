@@ -2,6 +2,20 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
 import Link from 'next/link'
 import ShowcaseManifest from '../components/showcase-manifest'
+import NProgress from 'nprogress'
+import debounce from 'lodash.debounce'
+import RouterEvents from '../lib/router-events'
+
+const start = debounce(NProgress.start, 200)
+RouterEvents.on('routeChangeStart', start)
+RouterEvents.on('routeChangeComplete', () => {
+  start.cancel()
+  NProgress.done()
+})
+RouterEvents.on('routeChangeError', () => {
+  start.cancel()
+  NProgress.done()
+})
 
 export default class MyDocument extends Document {
   static async getInitialProps({pathname, renderPage}) {
@@ -58,6 +72,22 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
           {this.props.linksPrefetch}
+
+          <style>{`
+            /* nprogress */
+            #nprogress {
+              pointer-events: none;
+            }
+            #nprogress .bar {
+              position: fixed;
+              z-index: 2000;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: black;
+            }
+          `}</style>
         </Head>
         <body>
           <Main />

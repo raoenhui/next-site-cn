@@ -1,6 +1,20 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import NProgress from 'nprogress'
+import debounce from 'lodash.debounce'
+import RouterEvents from '../lib/router-events'
+
+const start = debounce(NProgress.start, 200)
+RouterEvents.on('routeChangeStart', start)
+RouterEvents.on('routeChangeComplete', () => {
+  start.cancel()
+  NProgress.done()
+})
+RouterEvents.on('routeChangeError', () => {
+  start.cancel()
+  NProgress.done()
+})
 
 export default ({children}) => (
   <div>

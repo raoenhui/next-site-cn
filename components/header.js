@@ -60,7 +60,7 @@ export default class Header extends Component {
             </div>
           </aside>
           <aside className={`menu ${this.state.toggled ? 'toggled' : ''}`}>
-            <Link href='/docs'><a>Docs</a></Link>
+            <Link prefetch href='/docs'><a>Docs</a></Link>
             <Link prefetch href='/showcase'><a>Showcase</a></Link>
             <Link href='https://github.com/zeit/next.js'><a>Github</a></Link>
             <Link prefetch href='/enterprise'><a>Enterprise</a></Link>

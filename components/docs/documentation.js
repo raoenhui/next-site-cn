@@ -10,6 +10,20 @@ import { Blockquote } from '../../components/docs/text/quotes'
 import { InlineCode, Code } from '../../components/docs/text/code'
 import { GenericLink } from '../../components/docs/text/link'
 import Heading from '../../components/docs/heading'
+import NProgress from 'nprogress'
+import debounce from 'lodash.debounce'
+import RouterEvents from '../../lib/router-events'
+
+const start = debounce(NProgress.start, 200)
+RouterEvents.on('routeChangeStart', start)
+RouterEvents.on('routeChangeComplete', () => {
+  start.cancel()
+  NProgress.done()
+})
+RouterEvents.on('routeChangeError', () => {
+  start.cancel()
+  NProgress.done()
+})
 
 function changeHash(hash) {
   const { pathname, query } = Router
