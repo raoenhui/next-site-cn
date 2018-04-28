@@ -213,9 +213,7 @@ const Showcase = () => (
         height: auto;
       };
       .hero img {
-        max-width: 90%;
-        border: 1px solid #EAEAEA;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        max-width: 60%;
         position: absolute;
         top: -30%;
         bottom: 0;
@@ -224,19 +222,19 @@ const Showcase = () => (
         width: 100%;
         padding-bottom: 35%;
       };
-      @media (min-width: 590px) {
+      @media (max-width: 619px) {
         .hero img {
-          max-width: 70%;
+          max-width: 90%;
         };
       };
       @media (min-width: 760px) {
         .hero img {
-          max-width: 80%;
+          max-width: 60%;
         };
       };
       @media (min-width: 860px) {
         .hero img {
-          max-width: 80%;
+          max-width: 60%;
         };
       };
       @media (min-width: 1000px) {
@@ -264,7 +262,7 @@ const Showcase = () => (
           height: auto;
         };
         .hero img {
-          max-width: 80%;
+          max-width: 60%;
         };
       };
       @media (min-width: 1001px) {
@@ -344,12 +342,12 @@ const Descriptions = () => (
       };
       @media (max-width: 619px) {
         section {
-          padding-top: 174px;
+          padding-top: 104px;
         }
       };
       @media (min-width: 590px) {
         section {
-          padding-top: 174px;
+          padding-top: 104px;
         }
       };
       @media (min-width: 1000px) {
