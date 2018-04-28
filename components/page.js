@@ -19,7 +19,7 @@ RouterEvents.on('routeChangeError', () => {
 export default ({children}) => (
   <div>
     <Head>
-      <title>Nextjs.org</title>
+      <title>Next.js</title>
     </Head>
     <Header />
     <main>

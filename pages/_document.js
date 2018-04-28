@@ -2,20 +2,7 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
 import Link from 'next/link'
 import ShowcaseManifest from '../components/showcase-manifest'
-import NProgress from 'nprogress'
-import debounce from 'lodash.debounce'
-import RouterEvents from '../lib/router-events'
 
-const start = debounce(NProgress.start, 200)
-RouterEvents.on('routeChangeStart', start)
-RouterEvents.on('routeChangeComplete', () => {
-  start.cancel()
-  NProgress.done()
-})
-RouterEvents.on('routeChangeError', () => {
-  start.cancel()
-  NProgress.done()
-})
 
 export default class MyDocument extends Document {
   static async getInitialProps({pathname, renderPage}) {
@@ -54,7 +41,6 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="Next.js" />
           <meta property="og:description" content="Next.js is a lightweight framework for static and server-rendered applications" />
           <meta property="og:image" content="https://nextjs.org/static/images/twitter_card.png" />
-
 
           {/*
             Favicons
