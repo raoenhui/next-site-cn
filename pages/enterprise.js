@@ -6,30 +6,44 @@ import RoundButton from '../components/round-button'
 
 const Description = ({title, children, href}) => (
   <aside>
-    <h2>{title}</h2>
-    <div className='desc'>
-      <p>{children}</p>
-    </div>
-    <div className='footer'>
-      <Link href={href}><a>READ MORE</a></Link>
-    </div>
+    <Link href={href}>
+      <a>
+        <h2>{title}</h2>
+        <p>{children}</p>
+        <div className='footer'>READ MORE</div>
+      </a>
+    </Link>
     <style jsx>{`
       aside {
         max-width: 273px;
         margin-bottom: 24px;
-        padding: 32px 35px;
+        padding: 25px 28px 25px 28px;
         border: 1px solid #EAEAEA;
         border-radius: 5px;
         margin-right: 0px;
       };
       aside:hover {
         border: 1px solid #000000;
+        cursor: pointer;
+        transition: .2s ease-out;
+      };
+      aside a {
+        padding: 0;
+        padding-right: 38px;
+        color: #000000;
+        text-transform: none;
+        text-decoration: none;
+        border-bottom: none;
+        transition: .2s ease-out;
+        display: flex;
+        flex-direction: column;
+        min-height: 230px;
       };
       h2 {
         padding: 0px;
         margin: 0px 0 0 0px;
         font-weight: 400;
-        font-size: 20px
+        font-size: 20px;
       };
       span {
         width: 40px;
@@ -37,45 +51,25 @@ const Description = ({title, children, href}) => (
         float: left;
       };
       p {
-        padding: 0;
-        margin: 0;
+        color: rgb(153, 153, 153);
         font-size: 14px;
         line-height: 24px;
         font-weight: 400;
         color: #999999;
-        margin-top: 18px;
-      };
-      .desc {
-        margin-top: 28px;
-        min-height: 120px;
+        flex: 1;
       };
       .footer {
         font-size: 12px;
         font-weight: 200;
-        margin-top: 28px;
         color: #000;
         line-height: 14px;
-      };
-      a {
-        padding: 0;
-        color: #000000;
-        padding-right: 38px;
-        text-transform: none;
-        text-decoration: none;
-        border-bottom: none;
-        transition: .2s ease-out;
-        cursor: pointer;
-      };
-      a:hover {
-        color: #999999;
-        transition: .2s ease-out;
       };
       @media (min-width: 1000px) {
         aside {
           margin-right: 20px;
         };
       }
-    `}</style>
+      `}</style>
   </aside>
 )
 
@@ -93,7 +87,7 @@ export default class Enterprise extends Component {
             </div>
           </div>
           <div className='descriptions flex-column'>
-            <Description title='Priority Support' href='https://zeit.co/teams/next-js/settings/add-ons/priority-support'>
+            <Description title='Priority Support'  href='https://zeit.co/teams/next-js/settings/add-ons/priority-support'>
               Emails to our support queue are given priority and are guaranteed to be handled within 24 hours.
             </Description>
             <Description title='Advanced Priority Support' href='https://zeit.co/teams/next-js/settings/add-ons/advanced-priority-support'>
