@@ -4,7 +4,7 @@ export default () => (
   <footer>
     <div className='container'>
       <div className='contact'>
-        <span className='name'>Next.js</span><span className='email'>— team@nextjs.org</span>
+        <span className='name'>Next.js</span>
       </div>
       <div className='license'>
         <span>MIT Licensed. Copyright © 2018 ZEIT, Inc. <br className='brk' />All rights reserved.</span>
@@ -23,16 +23,6 @@ export default () => (
         font-size: 16px;
         color: black;
         padding-right: 13px;
-      };
-      .email {
-        font-size: 14px;
-        color: #999999;
-        transition: .2s ease-out;
-      };
-      .email:hover {
-        color: #000000;
-        cursor: pointer;
-        transition: .2s ease-out;
       };
       .container {
         position: relative;
