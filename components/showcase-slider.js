@@ -240,6 +240,7 @@ export default class Slider extends Component {
             min-width: 0;
             justify-content: space-between;
             align-items: center;
+            overflow: hidden;
           }
           .slider {
             flex: 1;
