@@ -14,6 +14,10 @@ import NProgress from 'nprogress'
 import debounce from 'lodash.debounce'
 import RouterEvents from '../../lib/router-events'
 
+if (typeof window !== 'undefined') {
+  require('intersection-observer')
+}
+
 const start = debounce(NProgress.start, 200)
 RouterEvents.on('routeChangeStart', start)
 RouterEvents.on('routeChangeComplete', () => {
