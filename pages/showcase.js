@@ -90,21 +90,25 @@ export default class Showcase extends Component {
         <style jsx>{`
           section {
             margin: 0px auto 0 auto;
-          };
+          }
+
           aside {
             margin: 0 auto;
             text-align: center;
-          };
+          }
+
           .figure {
             padding: 0px 0 54px 0;
             margin: 0 auto;
             text-align: center;
-          };
+          }
+
           h2 {
             color: #000000;
             font-size: 32px;
             font-weight: 200;
-          };
+          }
+
           .external {
             color: #0000FF;
             font-size: 14px;
@@ -113,36 +117,44 @@ export default class Showcase extends Component {
             justify-content: center;
             align-content: center;
             align-items: center;
-          };
+          }
+
           .external a {
             color:inherit;
             text-decoration: none;
-          };
+          }
+
           .external .icon {
             position: relative;
             top: 1px;
             left: 10px;
-          };
+          }
+
           .bottom-nav {
             display: flex;
             border-top: 1px solid #EAEAEA;
             margin: 0 auto 0 auto;
-          };
+          }
+
+
           @media (min-width: 1000px) {
             section {
               margin: 100px auto 0 auto;
-            };
+            }
+
             .bottom-nav {
               display: none;
-            };
-          };
+            }
+          }
+
           @media (min-width: 1280px) {
             section {
               margin: 100px auto 0 auto;
-            };
+            }
+
             .bottom-nav {
               display: none;
-            };
+            }
           };
         `}</style>
       </Page>
