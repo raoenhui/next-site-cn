@@ -42,7 +42,7 @@ class Hero extends Component {
         <Video mobile={this.props.mobile} />
       </aside>
       <aside className='label'>
-        <div>See an app created in 9 seconds.</div>
+        <div>See an app created in minutes.</div>
       </aside>
       <style jsx>{`
         section {
