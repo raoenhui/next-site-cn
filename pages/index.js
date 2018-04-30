@@ -224,7 +224,8 @@ const Showcase = () => (
         border-radius: 5px;
       };
       .hero img {
-        max-width: 60%;
+        width: 90%;
+        height: auto;
         position: absolute;
         top: -30%;
         bottom: 0;
@@ -233,26 +234,11 @@ const Showcase = () => (
       };
       .pad {
         width: 100%;
-        padding-bottom: 35%;
+        padding-bottom: 15%;
       };
-      @media (max-width: 619px) {
+      @media (min-width: 426px) {
         .hero img {
-          max-width: 90%;
-        };
-      };
-      @media (min-width: 760px) {
-        .hero img {
-          max-width: 60%;
-        };
-      };
-      @media (min-width: 860px) {
-        .hero img {
-          max-width: 60%;
-        };
-      };
-      @media (min-width: 1000px) {
-        section {
-          margin: 0 auto 0 auto;
+          width: 60%;
         };
         .brk {
           display: none;
@@ -274,15 +260,7 @@ const Showcase = () => (
         .hero {
           height: auto;
         };
-        .hero img {
-          max-width: 60%;
-        };
-      };
-      @media (min-width: 1001px) {
-        .pad {
-          padding-bottom: 25%;
-        };
-      };
+      }
     `}</style>
   </section>
 )
@@ -293,22 +271,23 @@ const Description = ({icon, title, desc}) => (
     <h2>{title}</h2>
     <style jsx>{`
       .container {
-        width: 33.333%;
-        max-width: 33.333%;
-        margin-bottom: 48px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin: 0 auto 10px auto;
+        min-width: 260px;
       }
 
       h2 {
         padding: 0px;
-        margin: 10px 0 0 59px;
+        margin: 0 0 0 19px;
         font-weight: 400;
-        font-size: 20px
+        font-size: 20px;
       }
 
       span {
         width: 40px;
         height: 40px;
-        float: left;
       }
 
       p {
@@ -326,7 +305,7 @@ const Description = ({icon, title, desc}) => (
 
 const Descriptions = () => (
   <section>
-    <div className='desc'>
+    <div className='descs'>
       <Description icon={<Icons.MobileFriendly />} title='Mobile Friendly'/>
       <Description icon={<Icons.FullApps />} title='Full Apps'/>
       <Description icon={<Icons.StaticWebSites />} title='Static Websites'/>
@@ -336,42 +315,26 @@ const Descriptions = () => (
     </div>
     <style jsx>{`
       section {
-        padding-top: 274px;
+        padding-top: 50%;
+        padding-bottom: 30px;
       }
 
-      .desc {
+      .descs {
         display: flex;
-        flex-flow: row wrap;
+        max-width: 979px;
+        flex-flow: column wrap;
         justify-content: center;
-        max-width: 300px;
         margin: 0 auto;
-        padding-bottom: 64px;
       }
 
-      @media (max-width: 619px) {
+      @media (min-width: 426px) {
         section {
-          padding-top: 104px;
-        }
-      }
-
-      @media (min-width: 590px) {
-        section {
-          padding-top: 104px;
-        }
-      }
-
-      @media (min-width: 1000px) {
-        section {
-          padding-top: 274px;
+          padding-top: 25%;
+          padding-bottom: 60px;
         }
 
-        .desc {
-          max-width: 979px;
-          justify-content: space-around;
-        }
-
-        .desc.bottom {
-          margin-bottom: 126px;
+        .descs {
+          flex-flow: row wrap;
         }
       }
     `}</style>
