@@ -50,7 +50,7 @@ class Hero extends Component {
         section {
           display: flex;
           flex-direction: column;
-          margin: 16px auto 0 auto;
+          margin: 16px auto 0;
         };
         aside {
           display: flex;
@@ -141,7 +141,7 @@ class Hero extends Component {
           section {
             display: flex;
             flex-direction: column;
-            margin: 154px auto 0 auto;
+            margin: 0 auto;
           };
           .banner {
             margin-bottom: 50px;

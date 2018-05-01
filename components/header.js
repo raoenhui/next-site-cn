@@ -1,6 +1,52 @@
-import {Component} from 'react'
+import { Component } from 'react'
 import Link from 'next/link'
 import Icons from './icons'
+
+const NavigationItems = ({ isMobile }) => (
+  <div className={`navigation-items ${isMobile ? 'is-mobile' : ''}`}>
+    <Link prefetch href='/docs'><a>Docs</a></Link>
+    <Link prefetch href='/showcase'><a>Showcase</a></Link>
+    <Link href='https://github.com/zeit/next.js'><a>GitHub</a></Link>
+    <Link href='/learn'><a>Learn</a></Link>
+
+    <style jsx>{`
+      a {
+        text-decoration: none;
+        color: #666666;
+        transition: color 0.2s ease;
+        font-size: 1.4rem;
+      }
+
+      a:hover {
+        color: black;
+      }
+
+      a:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      .is-mobile {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+      }
+
+      .is-mobile a {
+        padding: 0 32px;
+        height: 64px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: black;
+      }
+
+      .is-mobile a:not(:last-child) {
+        border-bottom: 1px solid #EEEEEE;
+      }
+
+    `}</style>
+  </div>
+)
 
 export default class Header extends Component {
   constructor() {
@@ -15,11 +61,25 @@ export default class Header extends Component {
     this.onScroll = this.onScroll.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.bindScroll(true)
+
+    if (typeof window !== 'undefined') {
+      const mobileQuery = window.matchMedia(`(max-width: 48em)`)
+
+      const breakpointChange = () => {
+        document.body.classList.remove('prevent-scroll')
+
+        this.setState({
+          toggled: false
+        })
+      }
+
+      mobileQuery.addListener(breakpointChange)
+    }
   }
 
-  componentWillUnmount() {
+  componentDidUnmount() {
     this.bindScroll(false)
   }
 
@@ -30,11 +90,11 @@ export default class Header extends Component {
   }
 
   onScroll(e) {
-    if (window.scrollY > 0 && !this.state.scrolled) {
+    if (window.scrollY >= 38) {
       this.setState({
         scrolled: true
       })
-    } else if (window.scrollY === 0 && this.state.scrolled) {
+    } else if (window.scrollY <= 38) {
       this.setState({
         scrolled: false
       })
@@ -42,6 +102,10 @@ export default class Header extends Component {
   }
 
   handleToggleMenu() {
+    if (typeof window !== 'undefined') {
+      document.body.classList.toggle('prevent-scroll', !this.state.toggled)
+    }
+
     this.setState({
       toggled: !this.state.toggled
     })
@@ -49,144 +113,133 @@ export default class Header extends Component {
 
   render () {
     return (
-      <header className={this.state.scrolled ? 'scrolled' : ''}>
-        <nav>
-          <aside className='top-menu'>
-            <div className='next-logo'>
-              <Link href='/'><a><Icons.Next /></a></Link>
-            </div>
-            <div className='toggle-menu'>
-              <a onClick={this.handleToggleMenu}><Icons.ToggleMenu /></a>
-            </div>
-          </aside>
-          <aside className={`menu ${this.state.toggled ? 'toggled' : ''}`}>
-            <Link prefetch href='/docs'><a>Docs</a></Link>
-            <Link prefetch href='/showcase'><a>Showcase</a></Link>
-            <Link href='https://github.com/zeit/next.js'><a>GitHub</a></Link>
-            <Link href='/learn'><a>Learn</a></Link>
-          </aside>
-          <aside className='zeit-logo'>
+      <header>
+        <div className={`header ${this.state.scrolled ? 'scrolled' : ''} ${this.state.toggled ? 'nav-toggled' : ''}`}>
+          <div className="header__content">
+            <Link href='/'>
+              <a className="logo"><Icons.Next /></a>
+            </Link>
+
+            <nav className="header__navigation">
+              <NavigationItems />
+            </nav>
+
             <Link href='https://zeit.co/'>
-              <a target='_blank'>
-                <span className='white'><Icons.ZeitWhite/></span>
-                <span className='black'><Icons.Zeit/></span>
+              <a target='_blank' rel="noopener" className="zeit-logo">
+                <Icons.Zeit/>
               </a>
             </Link>
-          </aside>
-        </nav>
+
+            {/* Mobile Navigation Toggle */}
+            <a className="header__nav-toggle" onClick={this.handleToggleMenu}><Icons.ToggleMenu /></a>
+          </div>
+
+          <nav className="header__mobile-navigation">
+            <NavigationItems isMobile />
+          </nav>
+        </div>
+
         <style jsx>{`
           header {
-            z-index: 999;
-          };
-          nav {
-            position: relative;
-            max-width: 1000px;
-            margin: auto;
-          };
-          .top-menu {
+            min-height: 144px;
+            width: 100%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 30px 20px;
-          };
-          .next-logo a {
-            display: block;
-            width: 82px;
-            height: 50px;
-          };
-          .toggle-menu {
-            display: block;
+          }
+
+          .header {
+            z-index: 1000;
+            width: 100%;
+            transition: box-shadow 0.2s ease-in;
+          }
+
+          .header.scrolled, .header.nav-toggled {
+            position: fixed;
+            left: 50%;
+            top: 0;
+            height: auto;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.98);
+          }
+
+          .header.scrolled {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+          }
+
+          .header__content {
+            width: 1000px;
+            max-width: 100%;
+            height: 72px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            position: relative;
+          }
+
+          .logo {
             cursor: pointer;
-          };
-          .menu {
-            display: none;
-            flex-direction: column;
-          };
-          .menu.toggled {
             display: flex;
           }
-          .menu a {
-            font-size: 14px;
-            padding: 16px 20px;
-            color: #000;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-bottom: 1px solid #eaeaea;
-          };
+
+          .header__navigation {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+
           .zeit-logo {
+            margin-left: auto;
+          }
+
+          .zeit-logo :global(svg) {
+            transition: fill 0.2s ease;
+          }
+
+          .zeit-logo:hover :global(svg) {
+            fill: black;
+          }
+
+          .header__mobile-navigation {
             display: none;
-          };
-          @media (min-width: 1000px) {
-            header {
-              display: flex;
-              position: fixed;
-              top: 0;
-              left: 0;
+            text-transform: uppercase;
+          }
+
+          .header__nav-toggle {
+            margin-left: auto;
+            display: none;
+            user-select: none;
+          }
+
+          @media (max-width: 1064px) {
+            .header__content {
               width: 100%;
-              height: 80px;
-              justify-content: center;
-              align-items: center;
-              background-color: rgba(255, 255, 255, 0.98);
-            };
-            header.scrolled {
-              box-shadow: 0 2px 4px rgba(73, 60, 60, 0.12);
-            };
-            nav {
-              display: flex;
-              min-width: 1000px;
-              height: 50px;
-              align-items: center;
-            };
-            .top-menu {
-              display: block;
-              padding: 0;
-            };
-            .menu {
-              display: flex;
-              flex-direction: row;
-              flex: 1;
-              padding-bottom: 1px;
-              justify-content: center;
-              align-items: center;
-            };
-            .menu a {
-              padding: 0;
-              padding-right: 38px;
-              color: #999999;
-              text-transform: none;
-              text-decoration: none;
-              border-bottom: none;
-              transition: .2s ease-out;
-            };
-            .menu a:hover {
-              color: #000000;
-              transition: .2s ease-out;
-            };
-            .toggle-menu {
+              padding-left: 32px;
+              padding-right: 32px;
+            }
+          }
+
+          @media (max-width: 48em) {
+            .header__navigation, .zeit-logo {
               display: none;
             }
-            .zeit-logo {
+
+            .header__nav-toggle {
               display: block;
-              width: 18px;
-              padding-bottom: 1px;
-            };
-            .zeit-logo a {
+              cursor: pointer;
+            }
+
+            .nav-toggled .header__mobile-navigation {
               display: block;
-              width: 18px;
-              height: 16px;
-              transition: .2s ease-out;
-            };
-            .zeit-logo a .black {
-              display: none;
-              transition: .2s ease-out;
-            };
-            .zeit-logo a:hover .black {
-              display: block;
-              transition: .2s ease-out;
-            };
-            .zeit-logo a:hover .white {
-              display: none;
-            };
+            }
+
+            .header.nav-toggled {
+              height: 100%;
+              overflow-y: scroll;
+            }
+
+            .header.nav-toggled .header__content {
+              height: 144px;
+            }
           }
         `}</style>
       </header>
