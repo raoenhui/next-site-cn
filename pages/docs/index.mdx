@@ -67,7 +67,7 @@ export default () =>
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/basic-css">Basic css</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/basic-css">Basic css</a></li>
 </ul>
 
 We bundle [styled-jsx](https://github.com/zeit/styled-jsx) to provide support for isolated scoped CSS. The aim is to support "shadow CSS" similar to Web Components, which unfortunately [do not support server-rendering and are JS-only](https://github.com/w3c/webcomponents/issues/71).
@@ -104,13 +104,13 @@ Please see the [styled-jsx documentation](https://www.npmjs.com/package/styled-j
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-styled-components">Styled components</a></li>
-  <li><a href="./examples/with-styletron">Styletron</a></li>
-  <li><a href="./examples/with-glamor">Glamor</a></li>
-  <li><a href="./examples/with-glamorous">Glamorous</a></li>
-  <li><a href="./examples/with-cxs">Cxs</a></li>
-  <li><a href="./examples/with-aphrodite">Aphrodite</a></li>
-  <li><a href="./examples/with-fela">Fela</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-styled-components">Styled components</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-styletron">Styletron</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-glamor">Glamor</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-glamorous">Glamorous</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-cxs">Cxs</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-aphrodite">Aphrodite</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-fela">Fela</a></li>
 </ul>
 
 It's possible to use any existing CSS-in-JS solution. The simplest one is inline styles:
@@ -125,10 +125,10 @@ To use more sophisticated CSS-in-JS solutions, you typically have to implement s
 
 To support importing `.css`, `.scss`, `.less` or `.styl` files you can use these modules, which configure sensible defaults for server rendered applications.
 
-- [@zeit/next-css](https://github.com/zeit/next-plugins/tree/master/packages/next-css)
-- [@zeit/next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass)
-- [@zeit/next-less](https://github.com/zeit/next-plugins/tree/master/packages/next-less)
-- [@zeit/next-stylus](https://github.com/zeit/next-plugins/tree/master/packages/next-stylus)
+- [@zeit/next-css](https://github.com/zeit/next-plugins/tree/canary/packages/next-css)
+- [@zeit/next-sass](https://github.com/zeit/next-plugins/tree/canary/packages/next-sass)
+- [@zeit/next-less](https://github.com/zeit/next-plugins/tree/canary/packages/next-less)
+- [@zeit/next-stylus](https://github.com/zeit/next-plugins/tree/canary/packages/next-stylus)
 
 ### Static file serving (e.g.: images)
 
@@ -142,8 +142,8 @@ export default () => <img src="/static/my-image.png" alt="my image" />
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/head-elements">Head elements</a></li>
-  <li><a href="./examples/layout-component">Layout component</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/head-elements">Head elements</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/layout-component">Layout component</a></li>
 </ul>
 
 We expose a built-in component for appending elements to the `<head>` of the page.
@@ -187,7 +187,7 @@ _Note: The contents of `<head>` get cleared upon unmounting the component, so ma
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/data-fetch">Data fetch</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/data-fetch">Data fetch</a></li>
 </ul>
 
 When you need state, lifecycle hooks or **initial data population** you can export a `React.Component` (instead of a stateless function, like shown above):
@@ -259,7 +259,7 @@ export default Page
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/hello-world">Hello World</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/hello-world">Hello World</a></li>
 </ul>
 
 Client-side transitions between routes can be enabled via a `<Link>` component. Consider these two pages:
@@ -305,7 +305,7 @@ The second `as` parameter for `push` and `replace` is an optional _decoration_ o
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-url-object-routing">With URL Object Routing</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-url-object-routing">With URL Object Routing</a></li>
 </ul>
 
 The component `<Link>` can also receive an URL object and it will automatically format it to create the URL string.
@@ -392,8 +392,8 @@ The default behaviour of `<Link>` is to scroll to the top of the page. When ther
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/using-router">Basic routing</a></li>
-  <li><a href="./examples/with-loading">With a page loading indicator</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/using-router">Basic routing</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-loading">With a page loading indicator</a></li>
 </ul>
 
 You can also do client-side page transitions using the `next/router`
@@ -506,7 +506,7 @@ Router.onRouteChangeError = (err, url) => {
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-shallow-routing">Shallow Routing</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-shallow-routing">Shallow Routing</a></li>
 </ul>
 
 Shallow routing allows you to change the URL without running `getInitialProps`. You'll receive the updated `pathname` and the `query` via the `url` prop of the same page that's loaded, without losing state.
@@ -543,7 +543,7 @@ componentWillReceiveProps(nextProps) {
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/using-with-router">Using the `withRouter` utility</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/using-with-router">Using the `withRouter` utility</a></li>
 </ul>
 
 If you want to access the `router` object inside any component in your app, you can use the `withRouter` Higher-Order Component. Here's how to use it:
@@ -580,7 +580,7 @@ The above `router` object comes with an API similar to [`next/router`](#imperati
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-prefetching">Prefetching</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-prefetching">Prefetching</a></li>
 </ul>
 
 Next.js has an API which allows you to prefetch pages.
@@ -640,12 +640,12 @@ export default ({ url }) =>
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/custom-server">Basic custom server</a></li>
-  <li><a href="./examples/custom-server-express">Express integration</a></li>
-  <li><a href="./examples/custom-server-hapi">Hapi integration</a></li>
-  <li><a href="./examples/custom-server-koa">Koa integration</a></li>
-  <li><a href="./examples/parameterized-routing">Parameterized routing</a></li>
-  <li><a href="./examples/ssr-caching">SSR caching</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/custom-server">Basic custom server</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/custom-server-express">Express integration</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/custom-server-hapi">Hapi integration</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/custom-server-koa">Koa integration</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/parameterized-routing">Parameterized routing</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/ssr-caching">SSR caching</a></li>
 </ul>
 
 Typically you start your next server with `next start`. It's possible, however, to start a server 100% programmatically in order to customize routes, use route patterns, etc.
@@ -771,7 +771,7 @@ app.prepare().then(() => {
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-dynamic-import">With Dynamic Import</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-dynamic-import">With Dynamic Import</a></li>
 </ul>
 
 Next.js supports TC39 [dynamic import proposal](https://github.com/tc39/proposal-dynamic-import) for JavaScript.
@@ -867,10 +867,10 @@ export default () => <HelloBundle title="Dynamic Bundle" />
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-app-layout">Using `_app.js` for layout</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-app-layout">Using `_app.js` for layout</a></li>
 </ul>
 <ul>
-  <li><a href="./examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li>
 </ul>
 
 Next.js uses the `App` component to initialize pages. You can override it and control the page initialization. Which allows you to do amazing things like:
@@ -909,12 +909,12 @@ export default class MyApp extends App {
 ### Custom `<Document>`
 
 <b>Examples</b>
-<ul><li><a href="./examples/with-styled-components">Styled components custom document</a></li></ul>
-<ul><li><a href="./examples/with-amp">Google AMP</a></li></ul>
+<ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-styled-components">Styled components custom document</a></li></ul>
+<ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-amp">Google AMP</a></li></ul>
 
 - Is rendered on the server side
 - Is used to change the initial server side rendered document markup
-- Commonly used to implement server side rendering for css-in-js libraries like [styled-components](./examples/with-styled-components), [glamorous](./examples/with-glamorous) or [emotion](with-emotion). [styled-jsx](https://github.com/zeit/styled-jsx) is included with Next.js by default.
+- Commonly used to implement server side rendering for css-in-js libraries like [styled-components](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-styled-components), [glamorous](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-glamorous) or [emotion](with-emotion). [styled-jsx](https://github.com/zeit/styled-jsx) is included with Next.js by default.
 
 Pages in `Next.js` skip the definition of the surrounding document's markup. For example, you never include `<html>`, `<body>`, etc. To override that default behavior, you must create a file at `./pages/_document.js`, where you can extend the `Document` class:
 
@@ -1037,7 +1037,7 @@ module.exports = (phase, {defaultConfig}) => {
 }
 ```
 
-`phase` is the current context in which the configuration is loaded. You can see all phases here: [constants](./lib/constants.js)
+`phase` is the current context in which the configuration is loaded. You can see all phases here: [constants](https://github.com/zeit/next.js/blob/master/lib/constants.js).
 Phases can be imported from `next/constants`:
 
 ```js
@@ -1096,7 +1096,7 @@ This is development-only feature. If you want to cache SSR pages in production, 
 
 #### Configuring extensions looked for when resolving pages in `pages`
 
-Aimed at modules like [`@zeit/next-typescript`](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript), that add support for pages ending in `.ts`. `pageExtensions` allows you to configure the extensions looked for in the `pages` directory when resolving pages.
+Aimed at modules like [`@zeit/next-typescript`](https://github.com/zeit/next-plugins/tree/canary/packages/next-typescript), that add support for pages ending in `.ts`. `pageExtensions` allows you to configure the extensions looked for in the `pages` directory when resolving pages.
 
 ```js
 // next.config.js
@@ -1123,7 +1123,7 @@ module.exports = {
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li>
 </ul>
 
 In order to extend our usage of `webpack`, you can define a function that extends its config via `next.config.js`.
@@ -1151,11 +1151,11 @@ module.exports = {
 
 Some commonly asked for features are available as modules:
 
-- [@zeit/next-css](https://github.com/zeit/next-plugins/tree/master/packages/next-css)
-- [@zeit/next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass)
-- [@zeit/next-less](https://github.com/zeit/next-plugins/tree/master/packages/next-less)
-- [@zeit/next-preact](https://github.com/zeit/next-plugins/tree/master/packages/next-preact)
-- [@zeit/next-typescript](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript)
+- [@zeit/next-css](https://github.com/zeit/next-plugins/tree/canary/packages/next-css)
+- [@zeit/next-sass](https://github.com/zeit/next-plugins/tree/canary/packages/next-sass)
+- [@zeit/next-less](https://github.com/zeit/next-plugins/tree/canary/packages/next-less)
+- [@zeit/next-preact](https://github.com/zeit/next-plugins/tree/canary/packages/next-preact)
+- [@zeit/next-typescript](https://github.com/zeit/next-plugins/tree/canary/packages/next-typescript)
 
 *Warning: The `webpack` function is executed twice, once for the server and once for the client. This allows you to distinguish between client and server configuration using the `isServer` property*
 
@@ -1178,7 +1178,7 @@ module.exports = withTypescript(withSass({
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-custom-babel-config">Custom babel configuration</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-custom-babel-config">Custom babel configuration</a></li>
 </ul>
 
 In order to extend our usage of `babel`, you can simply define a `.babelrc` file at the root of your app. This file is optional.
@@ -1238,7 +1238,7 @@ module.exports = {
 }
 ```
 
-Note: Next.js will automatically use that prefix in the scripts it loads, but this has no effect whatsoever on `/static`. If you want to serve those assets over the CDN, you'll have to introduce the prefix yourself. One way of introducing a prefix that works inside your components and varies by environment is documented [in this example](https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration).
+Note: Next.js will automatically use that prefix in the scripts it loads, but this has no effect whatsoever on `/static`. If you want to serve those assets over the CDN, you'll have to introduce the prefix yourself. One way of introducing a prefix that works inside your components and varies by environment is documented [in this example](https://github.com/zeit/next.js/tree/canary/examples/with-universal-configuration).
 
 ## Production deployment
 
@@ -1277,7 +1277,7 @@ Note: we recommend putting `.next`, or your [custom dist folder](https://github.
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-static-export">Static export</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-static-export">Static export</a></li>
 </ul>
 
 This is a way to run your Next.js app as a standalone static app without any Node.js server. The export app supports almost every feature of Next.js including dynamic urls, prefetching, preloading and dynamic imports.
@@ -1353,7 +1353,7 @@ So, you could only use `pathname`, `query` and `asPath` fields of the `context` 
 
 <b>Examples</b>
 <ul>
-  <li><a href="./examples/with-zones">With Zones</a></li>
+  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-zones">With Zones</a></li>
 </ul>
 
 A zone is a single deployment of a Next.js app. Just like that, you can have multiple zones. Then you can merge them as a single app.
@@ -1463,11 +1463,11 @@ It’s up to you. `getInitialProps` is an `async` function (or a regular functio
 
 Can I use it with GraphQL?
 
-Yes! Here's an example with [Apollo](./examples/with-apollo).
+Yes! Here's an example with [Apollo](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-apollo).
 
 Can I use it with Redux?
 
-Yes! Here's an [example](./examples/with-redux)
+Yes! Here's an [example](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-redux)
 
 Why aren't routes I have for my static export accessible in the development server?
 
@@ -1475,7 +1475,7 @@ This is a known issue with the architecture of Next.js. Until a solution is buil
 
 Can I use Next with my favorite Javascript library or toolkit?
 
-Since our first release we've had **many** example contributions, you can check them out in the [examples](./examples) directory
+Since our first release we've had **many** example contributions, you can check them out in the [examples](https://github.com/zeit/next.js/tree/canary/examples) directory
 
 What is this inspired by?
 
