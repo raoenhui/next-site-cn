@@ -305,14 +305,14 @@ const Description = ({icon, title, desc}) => (
 
 const Descriptions = () => (
   <section>
-    <div className='descs'>
+    {/* <div className='descs'>
       <Description icon={<Icons.MobileFriendly />} title='Mobile Friendly'/>
       <Description icon={<Icons.FullApps />} title='Full Apps'/>
       <Description icon={<Icons.StaticWebSites />} title='Static Websites'/>
       <Description icon={<Icons.PWA />} title='PWA'/>
       <Description icon={<Icons.PluginEcosystem />} title='Plugin Ecosystem'/>
       <Description icon={<Icons.SimpleAndEasy />} title='Simple and Easy'/>
-    </div>
+    </div> */}
     <style jsx>{`
       section {
         padding-top: 50%;

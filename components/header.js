@@ -79,7 +79,7 @@ export default class Header extends Component {
     }
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     this.bindScroll(false)
   }
 
