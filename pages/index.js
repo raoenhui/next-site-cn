@@ -1,5 +1,4 @@
 import {Component} from 'react'
-import MobileDetect from 'mobile-detect'
 import Page from '../components/page'
 import CompanySlider from '../components/company-slider'
 import RoundButton from '../components/round-button'
@@ -7,22 +6,6 @@ import Video from '../components/video'
 import Icons from '../components/icons'
 
 class Hero extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      className: this.props.mobile ? 'mobile' : ''
-    }
-
-    this.video = React.createRef()
-    this.play = this.play.bind(this)
-  }
-
-  play() {
-    this.video.current.play()
-    this.video.current.style.backgroundImage = 'none'
-  }
-
   render() {
     return (
     <section>
@@ -41,7 +24,7 @@ class Hero extends Component {
         <RoundButton color='black' href='/learn'>Learn More</RoundButton>
       </aside>
       <aside className='hero'>
-        <Video mobile={this.props.mobile} />
+        <Video />
       </aside>
       <aside className='label'>
         <div>See an app created in minutes.</div>
@@ -344,18 +327,10 @@ const Descriptions = () => (
 )
 
 export default class Index extends Component {
-  static async getInitialProps({ req }) {
-    const ua = req ? req.headers['user-agent'] : navigator.userAgen
-    const md = new MobileDetect(ua)
-    return {
-      mobile: (md.mobile() || md.phone() || md.tablet()) ? true : false,
-    }
-  }
-
   render() {
     return (
       <Page>
-        <Hero mobile={this.props.mobile}/>
+        <Hero/>
         <Showcase />
         <Descriptions />
       </Page>
