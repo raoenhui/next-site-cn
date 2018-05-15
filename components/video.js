@@ -7,7 +7,7 @@ export default class Video extends Component {
         autoPlay
         muted
         controls
-        poster="/static/images/video-poster-mobile.png"
+        poster="/static/videos/video-poster.png"
       >
         <source src="/static/videos/hnpwa-next-v2.mp4" type="video/mp4" />
         <style jsx>{`
