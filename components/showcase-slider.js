@@ -124,8 +124,8 @@ class LazyLoad extends Component {
   render() {
     return (
       <div className='container'>
-        <img className={this.state.phClassName} src={this.state.image.data} />
         <img className='src' src={this.state.image.src}/>
+        <img className={this.state.phClassName} src={this.state.image.data} />        
         <style jsx>{`
           img {
             width: 100%
@@ -134,7 +134,6 @@ class LazyLoad extends Component {
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -1;
           }
           .container {
             position: relative;
