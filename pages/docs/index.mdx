@@ -1425,7 +1425,7 @@ In addition, Next.js provides two built-in features that are critical for every 
 
 If you want to create re-usable React components that you can embed in your Next.js app or other React applications, using `create-react-app` is a great idea. You can later `import` it and keep your codebase clean!
 
-How do I use CSS-in-JS solutions?
+#### How do I use CSS-in-JS solutions?
 
 Next.js bundles [styled-jsx](https://github.com/zeit/styled-jsx) supporting scoped css. However you can use any CSS-in-JS solution in your Next app by just including your favorite library [as mentioned before](#css-in-js) in the document.
 
@@ -1436,7 +1436,7 @@ We track V8. Since V8 has wide support for ES6 and `async` and `await`, we trans
 See [this](https://github.com/zeit/next.js/blob/master/server/build/webpack.js#L79) and [this](https://github.com/zeit/next.js/issues/26)
 
 
-Why a new Router?
+#### Why a new Router?
 
 Next.js is special in that:
 
@@ -1451,33 +1451,33 @@ As a result, we were able to introduce a very simple approach to routing that co
 
 We tested the flexibility of the routing with some interesting scenarios. For an example, check out [nextgram](https://github.com/zeit/nextgram).
 
-How do I define a custom fancy route?
+#### How do I define a custom fancy route?
 
 We [added](#custom-server-and-routing) the ability to map between an arbitrary URL and any component by supplying a request handler.
 
 On the client side, we have a parameter call `as` on `<Link>` that _decorates_ the URL differently from the URL it _fetches_.
 
-How do I fetch data?
+#### How do I fetch data?
 
 It’s up to you. `getInitialProps` is an `async` function (or a regular function that returns a `Promise`). It can retrieve data from anywhere.
 
-Can I use it with GraphQL?
+#### Can I use it with GraphQL?
 
 Yes! Here's an example with [Apollo](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-apollo).
 
-Can I use it with Redux?
+#### Can I use it with Redux?
 
 Yes! Here's an [example](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-redux)
 
-Why aren't routes I have for my static export accessible in the development server?
+#### Why aren't routes I have for my static export accessible in the development server?
 
 This is a known issue with the architecture of Next.js. Until a solution is built into the framework, take a look at [this example solution](https://github.com/zeit/next.js/wiki/Centralizing-Routing) to centralize your routing.
 
-Can I use Next with my favorite Javascript library or toolkit?
+#### Can I use Next with my favorite Javascript library or toolkit?
 
 Since our first release we've had **many** example contributions, you can check them out in the [examples](https://github.com/zeit/next.js/tree/canary/examples) directory
 
-What is this inspired by?
+#### What is this inspired by?
 
 Many of the goals we set out to accomplish were the ones listed in [The 7 principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/) by Guillermo Rauch.
 
