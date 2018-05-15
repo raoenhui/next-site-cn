@@ -74,8 +74,10 @@ class Hero extends Component {
           background-image: url('/static/images/rectangle.png');
           background-color: #FAFAFA;
           background-repeat: no-repeat;
-          background-position: 11px 7px;
+          background-position: 11px 5.5px;
           padding: 0px 11px 1px 31px;
+          display: flex;
+          align-items: center;
         };
         .banner a {
           color: inherit;
