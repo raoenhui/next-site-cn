@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import Link from 'next/link'
-import Icons from './icons'
+import NextLogo from '../components/icons/next-logo'
+import ZeitLogoOutline from '../components/icons/zeit-logo-outline'
+import ToggleIcon from '../components/icons/toggle'
 
 const NavigationItems = ({ isMobile }) => (
   <div className={`navigation-items ${isMobile ? 'is-mobile' : ''}`}>
@@ -117,7 +119,7 @@ export default class Header extends Component {
         <div className={`header ${this.state.scrolled ? 'scrolled' : ''} ${this.state.toggled ? 'nav-toggled' : ''}`}>
           <div className="header__content">
             <Link href='/'>
-              <a className="logo"><Icons.Next /></a>
+              <a className="logo"><NextLogo /></a>
             </Link>
 
             <nav className="header__navigation">
@@ -126,12 +128,12 @@ export default class Header extends Component {
 
             <Link href='https://zeit.co/'>
               <a target='_blank' rel="noopener" className="zeit-logo">
-                <Icons.Zeit/>
+                <ZeitLogoOutline />
               </a>
             </Link>
 
             {/* Mobile Navigation Toggle */}
-            <a className="header__nav-toggle" onClick={this.handleToggleMenu}><Icons.ToggleMenu /></a>
+            <a className="header__nav-toggle" onClick={this.handleToggleMenu}><ToggleIcon /></a>
           </div>
 
           <nav className="header__mobile-navigation">
