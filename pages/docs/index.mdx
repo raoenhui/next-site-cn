@@ -914,7 +914,7 @@ export default class MyApp extends App {
 
 - Is rendered on the server side
 - Is used to change the initial server side rendered document markup
-- Commonly used to implement server side rendering for css-in-js libraries like [styled-components](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-styled-components), [glamorous](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-glamorous) or [emotion](with-emotion). [styled-jsx](https://github.com/zeit/styled-jsx) is included with Next.js by default.
+- Commonly used to implement server side rendering for css-in-js libraries like [styled-components](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-styled-components), [glamorous](https://github.com/zeit/next.js/tree/canary/examples/data-fetch/with-glamorous) or [emotion](https://github.com/zeit/next.js/tree/canary/examples/with-emotion). [styled-jsx](https://github.com/zeit/styled-jsx) is included with Next.js by default.
 
 Pages in `Next.js` skip the definition of the surrounding document's markup. For example, you never include `<html>`, `<body>`, etc. To override that default behavior, you must create a file at `./pages/_document.js`, where you can extend the `Document` class:
 
