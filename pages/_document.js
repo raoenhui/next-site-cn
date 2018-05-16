@@ -1,7 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
 import Link from 'next/link'
-import ShowcaseManifest from '../components/showcase-manifest'
+import ShowcaseManifest from '../showcase-manifest'
 
 
 export default class MyDocument extends Document {

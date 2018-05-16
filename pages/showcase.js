@@ -2,7 +2,7 @@ import {Component} from 'react'
 import Icons from '../components/icons'
 import Page from '../components/page'
 import Slider from '../components/showcase-slider'
-import Manifest from '../components/showcase-manifest'
+import Manifest from '../showcase-manifest'
 import ExternalLink from '../components/icons/external-link'
 
 const BottomNav = ({prev, onClick}) => (

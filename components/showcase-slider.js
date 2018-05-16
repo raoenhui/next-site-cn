@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import SlickSlider from 'react-slick'
-import Icons from '../components/icons'
-import Manifest from '../components/showcase-manifest'
+import Icons from './icons'
+import Manifest from '../showcase-manifest'
 
 const Null = () => <div></div>
 
