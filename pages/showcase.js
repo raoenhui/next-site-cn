@@ -3,6 +3,7 @@ import Icons from '../components/icons'
 import Page from '../components/page'
 import Slider from '../components/showcase-slider'
 import Manifest from '../components/showcase-manifest'
+import ExternalLink from '../components/icons/external-link'
 
 const BottomNav = ({prev, onClick}) => (
   <div className={`nav ${prev ? 'prev' : 'next'}`}>
@@ -77,7 +78,7 @@ export default class Showcase extends Component {
               <div className='external'>
                 <a target='_blank' href={this.state.externalLink}>
                   <span>{this.state.externalLink}</span>
-                  <span className='icon'><img src='/static/images/external-link.png' /></span>
+                  <span className='icon'><ExternalLink/></span>
                 </a>
               </div>
             </div>

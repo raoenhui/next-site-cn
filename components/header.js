@@ -175,6 +175,7 @@ export default class Header extends Component {
             margin: 0 auto;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             position: relative;
           }
 
@@ -190,7 +191,7 @@ export default class Header extends Component {
           }
 
           .zeit-logo {
-            margin-left: auto;
+            display flex;
           }
 
           .zeit-logo :global(svg) {
