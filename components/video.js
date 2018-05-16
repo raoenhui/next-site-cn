@@ -1,23 +1,41 @@
 import {Component} from 'react'
+import Image, {Video} from './image'
 
-export default class Video extends Component {
+export default class IntroVideo extends Component {
+  state = {
+    loaded: false,
+    shouldAutoPlay: true
+  }
+  componentDidMount() {
+    let shouldAutoPlay = true
+
+    if(window.matchMedia) {
+      shouldAutoPlay = window.matchMedia('(min-width: 767px)').matches
+    }
+
+    this.setState(() => ({
+      loaded: true,
+      shouldAutoPlay
+    }))
+  }
   render() {
+    const {shouldAutoPlay, loaded} = this.state
+    if(!loaded) {
+      return <Image width={1220} height={524} src="/static/videos/video-poster.png" oversize={false} />
+    }
+
     return (
-      <video
-        autoPlay
+      <Video
+        width={1220}
+        height={524}
+        autoPlay={shouldAutoPlay}
         muted
         controls
+        preload="none"
         poster="/static/videos/video-poster.png"
-      >
-        <source src="/static/videos/hnpwa-next-v2.mp4" type="video/mp4" />
-        <style jsx>{`
-          video {
-            width: 80%;
-            height: 100%;
-            max-width: 1220px;
-          }
-        `}</style>
-      </video>
+        src="/static/videos/hnpwa-next-v2.mp4"
+        oversize={false}
+      />
     )
   }
 }

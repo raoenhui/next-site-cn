@@ -23,7 +23,7 @@ class Hero extends Component {
       <aside className='button'>
         <RoundButton color='black' href='/learn'>Learn More</RoundButton>
       </aside>
-      <aside className='hero'>
+      <aside className='video'>
         <Video />
       </aside>
       <aside className='label'>
@@ -109,11 +109,7 @@ class Hero extends Component {
         .label div {
           font-size: 12px;
           color: #999999;
-        };
-        .hero {
-          position: relative;
-          height: auto;
-        };
+        }
         @media (max-width: 619px) {
           .title h1 {
             font-size: 33px;
@@ -121,7 +117,7 @@ class Hero extends Component {
           .banner p {
             padding: 0px 11px 30px 31px;
           };
-        };
+        }
         @media (min-width: 1000px) {
           section {
             display: flex;
@@ -143,7 +139,7 @@ class Hero extends Component {
           .banner {
             display: flex;
           };
-        };
+        }
       `}</style>
     </section>
     )
