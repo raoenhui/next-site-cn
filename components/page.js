@@ -43,7 +43,6 @@ export default ({children}) => (
         position: relative;
         min-height: 100%;
         margin: 0;
-        padding-bottom: 6rem;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         text-rendering: optimizeLegibility;
         line-height: 1.5;
