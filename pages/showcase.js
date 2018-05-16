@@ -76,7 +76,7 @@ export default class Showcase extends Component {
               </div>
               <div className='external'>
                 <a target='_blank' href={this.state.externalLink}>
-                  <span>{this.state.title}</span>
+                  <span>{this.state.externalLink}</span>
                   <span className='icon'><img src='/static/images/external-link.png' /></span>
                 </a>
               </div>
@@ -107,6 +107,7 @@ export default class Showcase extends Component {
             color: #000000;
             font-size: 32px;
             font-weight: 200;
+            margin-bottom: 16px;
           }
 
           .external {
