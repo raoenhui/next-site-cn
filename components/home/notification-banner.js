@@ -48,7 +48,7 @@ function Banner() {
       }
 
       @media (max-width: 1000px) {
-        a {
+        section {
           display: none;
         }
       }
