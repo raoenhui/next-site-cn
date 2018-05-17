@@ -2,149 +2,8 @@ import {Component} from 'react'
 import Page from '../components/page'
 import CompanySlider from '../components/company-slider'
 import RoundButton from '../components/round-button'
-import Video from '../components/video'
 import Icons from '../components/icons'
-
-class Hero extends Component {
-  render() {
-    return (
-    <section>
-      <aside className='banner'>
-        <p>
-          <a href="https://github.com/zeit/next.js/releases" target="_blank">
-            <span className='highlight'>Next 6 is out!</span> — Babel 7, App Component, Improved stacktraces, Improved static export <span className='released'>Saturday, April 28th 2018</span>
-          </a>
-        </p>
-      </aside>
-      <aside className='title'>
-        <h1>React Applications <br className='brk' />Made Simple</h1>
-        <div className='subtitle'><b>Next.js</b> is a lightweight framework for <br className='brk' />static and server-rendered applications.</div>
-      </aside>
-      <aside className='button'>
-        <RoundButton color='black' href='/learn'>Learn More</RoundButton>
-      </aside>
-      <aside className='video'>
-        <Video />
-      </aside>
-      <aside className='label'>
-        <div>See an app created in minutes.</div>
-      </aside>
-      <style jsx>{`
-        section {
-          display: flex;
-          flex-direction: column;
-          margin: 16px auto 0;
-        };
-        aside {
-          display: flex;
-          justify-content: center;
-        };
-        .title {
-          flex-direction: column;
-          justify-content: center;
-        };
-        .banner {
-          display: none;
-        };
-        .banner p {
-          border: 1px solid #EAEAEA;
-          border-radius: 30px;
-          height: 24px;
-          margin: 0 auto 0 auto;
-          font-size: 14px;
-          color: #666666;
-          line-height: 26px;
-          background-image: url('/static/images/rectangle.png');
-          background-color: #FAFAFA;
-          background-repeat: no-repeat;
-          background-position: 11px 5.5px;
-          padding: 0px 11px 1px 31px;
-          display: flex;
-          align-items: center;
-        };
-        .banner a {
-          color: inherit;
-          text-decoration: none;
-        }
-        .banner a:visited,
-        .banner a:focus {
-          color: inherit;
-        }
-        .title h1 {
-          text-align: center;
-          font-size: 56px;
-          font-weight: 300;
-          margin: 0px auto 0 auto;
-          padding: 0;
-        };
-        .subtitle {
-          text-align: center;
-          color: #555555;
-          font-size: 16px;
-          font-weight: 400;
-          margin: 7px auto 0 auto;
-        };
-        .subtitle b {
-          color: #000000;
-        };
-        .highlight {
-          color: black;
-        };
-        .released {
-          padding-left: 32px;
-          font-weight: 500;
-        };
-        .brk {
-          display: inline-block;
-        };
-        .subtitle {
-          margin: 26px auto 0 auto;
-        };
-        .button {
-          margin: 26px auto 29px auto;
-        };
-        .label {
-          margin: 0 auto 32px auto;
-        };
-        .label div {
-          font-size: 12px;
-          color: #999999;
-        }
-        @media (max-width: 619px) {
-          .title h1 {
-            font-size: 33px;
-          };
-          .banner p {
-            padding: 0px 11px 30px 31px;
-          };
-        }
-        @media (min-width: 1000px) {
-          section {
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-          };
-          .banner {
-            margin-bottom: 50px;
-          };
-          .brk {
-            display: none;
-          };
-          .label {
-            margin: 0 auto 40px auto;
-          };
-          .button {
-            margin: 46px auto 70px auto;
-          };
-          .banner {
-            display: flex;
-          };
-        }
-      `}</style>
-    </section>
-    )
-  }
-}
+import Intro from '../components/home/intro'
 
 const Showcase = () => (
   <section>
@@ -326,7 +185,7 @@ export default class Index extends Component {
   render() {
     return (
       <Page>
-        <Hero/>
+        <Intro/>
         <Showcase />
         <Descriptions />
       </Page>

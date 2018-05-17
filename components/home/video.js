@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import Image, {Video} from './image'
+import Image, {Video} from '../image'
 
 export default class IntroVideo extends Component {
   state = {
@@ -35,6 +35,7 @@ export default class IntroVideo extends Component {
         poster="/static/videos/video-poster.png"
         src="/static/videos/hnpwa-next-v2.mp4"
         oversize={false}
+        caption="See an app created in minutes."
       />
     )
   }
