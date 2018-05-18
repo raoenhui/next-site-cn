@@ -1,20 +1,16 @@
 import Slider from 'react-slick'
 import Icons from './icons'
 
-const Null = () => <div></div>
-
 const settings = {
-  customPaging: function(i) {
-    return null
-  },
+  customPaging: () => null,
   dots: false,
   infinite: true,
   autoplay: true,
   autoplaySpeed: 1000,
   cssEase: "linear",
   variableWidth: true,
-  nextArrow: <Null />,
-  prevArrow: <Null />,
+  nextArrow: () => null,
+  prevArrow: () => null,
   pauseOnFocus: false,
   pauseOnHover: false,
   focusOnSelect: false,

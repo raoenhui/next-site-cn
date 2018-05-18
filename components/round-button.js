@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-export default ({children, color, href}) => (
+export default ({children, color, href, className}) => (
   <Link href={href}>
-    <a className={color} style={{'textDecoration': 'none'}}>
+    <a className={`${className ? className + ' ' : ''}${color}`} style={{'textDecoration': 'none'}}>
       <span>{children}</span>
       <style jsx>{`
         a {
