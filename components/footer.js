@@ -1,7 +1,7 @@
 import ZeitLogo from './zeit-logo'
 
-export default () => (
-  <footer>
+function Footer() {
+  return <footer>
     <div className="container">
       <nav>
         <a href="https://github.com/zeit/next.js/releases">Changelog</a>
@@ -42,6 +42,10 @@ export default () => (
         padding: 62px 0;
       }
 
+      .container :global(svg) {
+        fill: #EAEAEA;
+      }
+
       @media (max-width: 999px) {
         .container {
           width: 100%;
@@ -52,4 +56,6 @@ export default () => (
       }
     `}</style>
   </footer>
-)
+}
+
+export default Footer
