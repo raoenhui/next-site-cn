@@ -4,7 +4,7 @@ import RoundButton from '../round-button'
 function Showcase() {
   return (
   <section className="showcase">
-    <h1>The World's Leading Companies Use and Love Next.js</h1>
+    <h2>The World's Leading Companies Use and Love Next.js</h2>
     <p>We're honored some of the most talented creatives out there build with Next.js.</p>
     <CompanySlider />
     <RoundButton className="button" color='white' href='/showcase'>View Showcase</RoundButton>
@@ -16,7 +16,7 @@ function Showcase() {
         padding-top: 92px;
         text-align: center;        
       }
-      h1 {
+      h2 {
         font-size: 35px;
         font-weight: 200;
         margin: 0;
@@ -39,7 +39,7 @@ function Showcase() {
       }
 
       @media (max-width: 768px) {
-        h1 {
+        h2 {
           font-size: 32px;
         }
       }
