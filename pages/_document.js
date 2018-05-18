@@ -26,9 +26,6 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          {/*
-            Meta
-          */}
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
@@ -42,9 +39,6 @@ export default class MyDocument extends Document {
           <meta property="og:description" content="Next.js is a lightweight framework for static and server-rendered applications" />
           <meta property="og:image" content="https://nextjs.org/static/images/twitter_card.png" />
 
-          {/*
-            Favicons
-          */}
           <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png" />
