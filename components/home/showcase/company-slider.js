@@ -1,5 +1,5 @@
 import Slider from 'react-slick'
-import Icons from './icons'
+import Icons from '../../icons'
 
 const settings = {
   customPaging: () => null,

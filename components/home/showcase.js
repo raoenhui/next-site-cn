@@ -1,4 +1,4 @@
-import CompanySlider from '../company-slider'
+import CompanySlider from './showcase/company-slider'
 import RoundButton from '../round-button'
 
 function Showcase() {
