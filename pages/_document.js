@@ -11,14 +11,6 @@ export default class MyDocument extends Document {
       styles: flush()
     }
 
-    if (pathname !== '/showcase') {
-      // prefetching three items of images from 0 to 2
-      // rest of images will be pending if they are listed
-      ctx.linksPrefetch = ShowcaseManifest.manifest
-        .slice(0, 3)
-        .map((s, i) => <link key={i} rel='prefetch' href={`${s.src}`} />)
-    }
-
     return ctx
   }
 
@@ -48,7 +40,6 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#000" />
-          {this.props.linksPrefetch}
           <style>{`
             /* nprogress */
             #nprogress {
