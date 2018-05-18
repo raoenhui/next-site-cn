@@ -12,7 +12,6 @@ function Showcase() {
       .showcase {
         background-color: #FAFAFA;
         border-top: 1px solid #EAEAEA;
-        border-bottom: 1px solid #EAEAEA;
         padding-top: 92px;
         text-align: center;        
       }
