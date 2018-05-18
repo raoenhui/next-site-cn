@@ -24,6 +24,12 @@ function Footer() {
       a {
         text-decoration: none;
         color: #999999;
+        font-size: 1.4rem;     
+        transition: color 0.2s ease;           
+      }
+
+      a:hover {
+        color: black;
       }
 
       a, span {
