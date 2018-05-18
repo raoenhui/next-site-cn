@@ -1,48 +1,45 @@
-import Icons from './icons'
+import ZeitLogo from './zeit-logo'
 
 export default () => (
   <footer>
     <div className="container">
-      <span className="license">
-        MIT Licensed. Copyright © 2018 ZEIT, Inc. All rights reserved.
-      </span>
-      <a className="github" href="https://github.com/zeit/next.js">
-        <Icons.GithubCI />
-      </a>
+      <nav>
+        <a href="https://github.com/zeit/next.js/releases">Changelog</a>
+        <a className="github" href="https://github.com/zeit/next.js">GitHub</a>
+        <span>
+          License: <strong>MIT</strong>
+        </span>
+      </nav>
+      <ZeitLogo />      
     </div>
     <style jsx>{`
       footer {
         background-color: #FAFAFA;
         border-top: 1px solid #EAEAEA;
         border-bottom: 1px solid #EAEAEA;
-      }
-
-      .container {
-        width: 1000px;
-        margin: 0 auto;
-        display: flex;
-        padding: 62px 0;
-      }
-
-      .license {
         color: #999999;
         font-size: 14px;
       }
 
-      .github {
-        margin-left: auto;
-        opacity: 0.4;
-        transition: .2s ease-out;
+      a {
+        text-decoration: none;
+        color: #999999;
       }
 
-      .github:hover {
-        opacity: 1.0;
-        cursor: pointer;
-        transition: .2s ease-out;
+      a, span {
+        margin-left: 10px;        
       }
 
-      .github :global(svg) {
-        -webkit-backface-visibility: hidden;
+      a:first-child {
+        margin-left: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        width: 1000px;
+        margin: 0 auto;
+        padding: 62px 0;
       }
 
       @media (max-width: 999px) {
@@ -51,11 +48,6 @@ export default () => (
           padding: 64px 0;
           flex-direction: column;
           align-items: center;
-        }
-
-        .github {
-          margin: 0;
-          margin-top: 24px;
         }
       }
     `}</style>

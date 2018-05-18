@@ -18,7 +18,6 @@ import StaticWebSites from '../static/images/static-websites.svg'
 import PWA from '../static/images/pwa.svg'
 import PluginEcosystem from '../static/images/plugin-ecosystem.svg'
 import SimpleAndEasy from '../static/images/simple-and-easy.svg'
-import GithubCI from '../static/images/github-ci.svg'
 import ArrowNext from '../static/images/arrow-next.svg'
 import ArrowPrev from '../static/images/arrow-prev.svg'
 import ArrowNextWhite from '../static/images/arrow-next-white.svg'
@@ -56,7 +55,6 @@ export default {
   PWA,
   PluginEcosystem,
   SimpleAndEasy,
-  GithubCI,
   ArrowNext,
   ArrowPrev,
   ArrowNextWhite,
