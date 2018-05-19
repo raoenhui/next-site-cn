@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import Image, {Video} from '../image'
+import Image, {Video} from '../../image'
 
 export default class IntroVideo extends Component {
   state = {

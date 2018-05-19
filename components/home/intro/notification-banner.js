@@ -1,4 +1,4 @@
-import NotificationIndicator from '../icons/notification-indicator'
+import NotificationIndicator from '../../icons/notification-indicator'
 
 function Banner() {
   return <section>

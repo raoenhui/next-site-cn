@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-export default ({children, color, href}) => (
+export default ({children, color, href, className}) => (
   <Link href={href}>
-    <a className={color} style={{'textDecoration': 'none'}}>
+    <a className={`${className ? className + ' ' : ''}${color}`}>
       <span>{children}</span>
       <style jsx>{`
         a {
@@ -15,6 +15,7 @@ export default ({children, color, href}) => (
           border-radius: 50px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
           cursor: pointer;
+          text-decoration: none;
         };
         span {
           font-size: 14px;

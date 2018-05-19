@@ -1,7 +1,7 @@
 import {Component} from 'react'
-import Video from './video'
-import NotificationBanner from './notification-banner'
-import Title from './title'
+import Video from './intro/video'
+import NotificationBanner from './intro/notification-banner'
+import Title from './intro/title'
 
 function Intro() {
   return (

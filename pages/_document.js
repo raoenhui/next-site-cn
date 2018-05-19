@@ -11,14 +11,6 @@ export default class MyDocument extends Document {
       styles: flush()
     }
 
-    if (pathname !== '/showcase') {
-      // prefetching three items of images from 0 to 2
-      // rest of images will be pending if they are listed
-      ctx.linksPrefetch = ShowcaseManifest.manifest
-        .slice(0, 3)
-        .map((s, i) => <link key={i} rel='prefetch' href={`${s.src}`} />)
-    }
-
     return ctx
   }
 
@@ -26,9 +18,6 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          {/*
-            Meta
-          */}
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
@@ -42,9 +31,6 @@ export default class MyDocument extends Document {
           <meta property="og:description" content="Next.js is a lightweight framework for static and server-rendered applications" />
           <meta property="og:image" content="https://nextjs.org/static/images/twitter_card.png" />
 
-          {/*
-            Favicons
-          */}
           <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png" />
@@ -54,26 +40,6 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#000" />
-
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-          {this.props.linksPrefetch}
-
-          <style>{`
-            /* nprogress */
-            #nprogress {
-              pointer-events: none;
-            }
-            #nprogress .bar {
-              position: fixed;
-              z-index: 2000;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 2px;
-              background: black;
-            }
-          `}</style>
         </Head>
         <body>
           <Main />
