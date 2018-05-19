@@ -66,6 +66,19 @@ export default ({children}) => (
       .prevent-scroll {
         overflow: hidden;
       }
+
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: black;
+      }
     `}</style>
     <style jsx global>{`
       .slick-slider

@@ -40,21 +40,6 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#000" />
-          <style>{`
-            /* nprogress */
-            #nprogress {
-              pointer-events: none;
-            }
-            #nprogress .bar {
-              position: fixed;
-              z-index: 2000;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 2px;
-              background: black;
-            }
-          `}</style>
         </Head>
         <body>
           <Main />
