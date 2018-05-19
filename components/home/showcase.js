@@ -10,7 +10,7 @@ function Showcase() {
     <CompanySlider />
     <RoundButton className="button" color='white' href='/showcase'>View Showcase</RoundButton>
     <div className="image">
-      <Image src="http://assets.zeit.co/image/upload/v1526678305/nextjs/home/showcase.png" width={1800}  height={1083} margin={0} oversize={false} />
+      <Image src="https://assets.zeit.co/image/upload/v1526678305/nextjs/home/showcase.png" width={1800}  height={1083} margin={0} oversize={false} />
     </div>
     <style jsx>{`
       .showcase {
