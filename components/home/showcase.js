@@ -16,6 +16,7 @@ function Showcase() {
       .showcase {
         background-color: #FAFAFA;
         border-top: 1px solid #EAEAEA;
+        border-bottom: 1px solid #EAEAEA;
         padding-top: 92px;
         text-align: center;
         margin-bottom: -140px;
@@ -24,8 +25,8 @@ function Showcase() {
         font-size: 35px;
         font-weight: 200;
         margin: 0;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 25px;
+        padding-right: 25px;
       }
       p {
         color: #999999;
@@ -33,8 +34,8 @@ function Showcase() {
         font-size: 14px;
         margin-top: 13px;
         margin-bottom: 66px;
-        padding-left: 30px;
-        padding-right: 30px;        
+        padding-left: 25px;
+        padding-right: 25px;        
       }
       .showcase :global(.button) {
         margin-top: 57px;
@@ -49,11 +50,21 @@ function Showcase() {
       .image {
         position: relative;
         z-index: 1;
-        display: flex;
         max-width: 1000px;
         margin: 0 auto;
         box-shadow: 0px 25px 65px 0px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
+      }
+
+      @media (max-width: 1036px) {
+        .showcase {
+          margin-bottom: -14.35vw;
+        }
+        .image {
+          max-width: 100%;
+          margin-left: 18px;
+          margin-right: 18px;
+        }
       }
 
       .image :global(img) {
