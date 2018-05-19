@@ -1,5 +1,6 @@
 import CompanySlider from './showcase/company-slider'
 import RoundButton from '../round-button'
+import Image from '../image'
 
 function Showcase() {
   return (
@@ -8,12 +9,16 @@ function Showcase() {
     <p>We're honored some of the most talented creatives out there build with Next.js.</p>
     <CompanySlider />
     <RoundButton className="button" color='white' href='/showcase'>View Showcase</RoundButton>
+    <div className="image">
+      <Image src="http://assets.zeit.co/image/upload/v1526678305/nextjs/home/showcase.png" width={1800}  height={1083} margin={0} oversize={false} />
+    </div>
     <style jsx>{`
       .showcase {
         background-color: #FAFAFA;
         border-top: 1px solid #EAEAEA;
         padding-top: 92px;
-        text-align: center;        
+        text-align: center;
+        margin-bottom: -140px;
       }
       h2 {
         font-size: 35px;
@@ -34,7 +39,25 @@ function Showcase() {
       .showcase :global(.button) {
         margin-top: 57px;
         margin-bottom: 57px;
-        display: inline-flex;
+      }
+
+      .showcase :global(a) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .image {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        box-shadow: 0px 25px 65px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+      }
+
+      .image :global(img) {
+        box-shadow: 0px 23px 38px 0px rgba(0,0,0, 0.12)
       }
 
       @media (max-width: 768px) {

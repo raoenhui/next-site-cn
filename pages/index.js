@@ -4,6 +4,7 @@ import RoundButton from '../components/round-button'
 import Icons from '../components/icons'
 import Intro from '../components/home/intro'
 import Showcase from '../components/home/showcase'
+import Features from '../components/home/features'
 
 export default class Index extends Component {
   render() {
@@ -11,6 +12,7 @@ export default class Index extends Component {
       <Page>
         <Intro/>
         <Showcase />
+        <Features />
       </Page>
     )
   }
