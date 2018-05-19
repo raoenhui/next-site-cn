@@ -69,6 +69,7 @@ function Showcase() {
 
       .image :global(img) {
         box-shadow: 0px 23px 38px 0px rgba(0,0,0, 0.12)
+        border-radius: 4px;
       }
 
       @media (max-width: 768px) {
