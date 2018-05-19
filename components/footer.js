@@ -52,12 +52,11 @@ function Footer() {
         fill: #EAEAEA;
       }
 
-      @media (max-width: 999px) {
+      @media (max-width: 1036px) {
         .container {
           width: 100%;
-          padding: 64px 0;
-          flex-direction: column;
-          align-items: center;
+          padding-left: 18px;
+          padding-right: 18px;
         }
       }
     `}</style>
