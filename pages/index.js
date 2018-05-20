@@ -1,4 +1,3 @@
-import {Component} from 'react'
 import Page from '../components/page'
 import Intro from '../components/home/intro'
 import Showcase from '../components/home/showcase'

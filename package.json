@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "export": "next export",
+    "start": "next start",
+    "now-build": "yarn run build && yarn run export",
+    "now-start": "serve out"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
     "react-dom": "16.3.0",
     "react-slick": "0.23.1",
     "scroll-into-view-if-needed": "1.5.0",
+    "serve": "^6.5.7",
     "slick-carousel": "1.8.1"
   },
   "devDependencies": {
