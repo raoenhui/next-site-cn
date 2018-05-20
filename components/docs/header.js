@@ -1,11 +1,14 @@
 import Icons from '../icons'
+import {GenericLink} from './text/link'
 
 export default function Header () {
   return (
     <header>
-      <a className="logo" href="/">
-        <Icons.Next />
-      </a>
+      <GenericLink href="/">
+        <a className="logo">
+          <Icons.Next />
+        </a>
+      </GenericLink>
 
       <style jsx>{`
         header {
