@@ -13,6 +13,7 @@ import Heading from '../../components/docs/heading'
 import NProgress from 'nprogress'
 import debounce from 'lodash.debounce'
 import RouterEvents from '../../lib/router-events'
+import {trackPageview} from '../../lib/analytics'
 
 if (typeof window !== 'undefined') {
   require('intersection-observer')
@@ -20,7 +21,8 @@ if (typeof window !== 'undefined') {
 
 const start = debounce(NProgress.start, 200)
 RouterEvents.on('routeChangeStart', start)
-RouterEvents.on('routeChangeComplete', () => {
+RouterEvents.on('routeChangeComplete', (url) => {
+  trackPageview(url)
   start.cancel()
   NProgress.done()
 })

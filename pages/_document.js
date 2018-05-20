@@ -3,6 +3,7 @@ import flush from 'styled-jsx/server'
 import Link from 'next/link'
 import ShowcaseManifest from '../showcase-manifest'
 
+import {GA_TRACKING_ID} from '../lib/analytics'
 
 export default class MyDocument extends Document {
   static async getInitialProps({pathname, renderPage}) {
@@ -44,6 +45,20 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}');
+              `
+            }}
+          />
         </body>
       </html>
     )

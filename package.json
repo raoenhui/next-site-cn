@@ -18,21 +18,20 @@
     "url": "https://github.com/zeit/next-website/issues"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^0.7.3",
-    "@zeit/next-mdx": "^1.0.0",
-    "intersection-observer": "^0.5.0",
-    "lodash.debounce": "^4.0.8",
-    "mitt": "^1.1.3",
-    "mobile-detect": "^1.4.1",
-    "next": "^6.0.2",
-    "nprogress": "^0.2.0",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "react-slick": "^0.23.1",
-    "scroll-into-view-if-needed": "^1.5.0",
-    "slick-carousel": "^1.8.1"
+    "@mdx-js/mdx": "0.7.3",
+    "@zeit/next-mdx": "1.0.0",
+    "intersection-observer": "0.5.0",
+    "lodash.debounce": "4.0.8",
+    "mitt": "1.1.3",
+    "next": "6.0.3",
+    "nprogress": "0.2.0",
+    "react": "16.3.0",
+    "react-dom": "16.3.0",
+    "react-slick": "0.23.1",
+    "scroll-into-view-if-needed": "1.5.0",
+    "slick-carousel": "1.8.1"
   },
   "devDependencies": {
-    "babel-plugin-inline-react-svg": "^0.5.2"
+    "babel-plugin-inline-react-svg": "0.5.2"
   }
 }
