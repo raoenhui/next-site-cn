@@ -34,12 +34,4 @@ class Screen extends React.Component {
   }
 }
 
-Screen.childContextTypes = {
-  darkBg: PropTypes.bool
-}
-
-Screen.contextTypes = {
-  darkBg: PropTypes.bool
-}
-
 export default Screen
