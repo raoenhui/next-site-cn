@@ -21,7 +21,7 @@ export default class IntroVideo extends Component {
   render() {
     const {shouldAutoPlay, loaded} = this.state
     if(!loaded) {
-      return <Image width={1220} height={524} src="/static/videos/video-poster.png" oversize={false} />
+      return <Image width={1220} height={524} src="/static/videos/video-poster.png" />
     }
 
     return (
@@ -34,7 +34,6 @@ export default class IntroVideo extends Component {
         preload="none"
         poster="/static/videos/video-poster.png"
         src="/static/videos/hnpwa-next-v2.mp4"
-        oversize={false}
         caption="See an app created in minutes."
       />
     )

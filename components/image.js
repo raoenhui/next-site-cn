@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+
 // This component might look a little complex
 // because one could argue that keeping the aspect ratio
 // of an image can be solved with `height: auto`,
@@ -24,15 +25,14 @@ class Image extends Component {
       margin = 40,
       video = false,
       captionSpacing = null,
-      oversize = true,
+      renderImage,
       ...rest
     } = this.props
 
     const aspectRatio = String(height / width * 100) + '%'
-    const classes = width > 650 && oversize ? 'oversize' : ''
 
     return (
-      <figure className={classes}>
+      <figure>
         <main style={{ width }}>
           <div style={{ paddingBottom: aspectRatio }}>
             {video && <video
@@ -42,7 +42,8 @@ class Image extends Component {
               playsInline={true}
               {...rest}              
             />}
-            {!video && <img {...rest} />}
+            {!video && !renderImage && <img {...rest} />}
+            {renderImage && renderImage(rest)}
           </div>
 
           {caption && (
@@ -66,8 +67,8 @@ class Image extends Component {
           div {
             position: relative;
           }
-          img,
-          video {
+          figure :global(img),
+          figure :global(video) {
             height: 100%;
             left: 0;
             position: absolute;
@@ -79,13 +80,6 @@ class Image extends Component {
             font-size: 12px;
             margin: 0;
             text-align: center;
-          }
-          @media (min-width: 992px) {
-            figure.oversize {
-              width: ${width}px;
-              margin: ${margin}px 0 ${margin}px
-                calc(((${width}px - 650px) / 2) * -1);
-            }
           }
         `}</style>
       </figure>
