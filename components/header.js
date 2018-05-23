@@ -6,10 +6,10 @@ import ToggleIcon from '../components/icons/toggle'
 
 const NavigationItems = ({ isMobile }) => (
   <div className={`navigation-items ${isMobile ? 'is-mobile' : ''}`}>
-    <Link prefetch href='/docs'><a>Docs</a></Link>
-    <Link prefetch href='/showcase'><a>Showcase</a></Link>
-    <Link href='https://github.com/zeit/next.js'><a>GitHub</a></Link>
-    <Link href='/learn'><a>Learn</a></Link>
+    <Link href='/docs' prefetch><a>Docs</a></Link>
+    <Link href='/showcase' prefetch><a>Showcase</a></Link>
+    <a href='https://github.com/zeit/next.js'>GitHub</a>
+    <Link href='/learn' prefetch><a>Learn</a></Link>
 
     <style jsx>{`
       a {
@@ -118,19 +118,15 @@ export default class Header extends Component {
       <header>
         <div className={`header ${this.state.scrolled ? 'scrolled' : ''} ${this.state.toggled ? 'nav-toggled' : ''}`}>
           <div className="header__content">
-            <Link href='/'>
+            <Link href='/' prefetch>
               <a className="logo"><NextLogo /></a>
             </Link>
-
             <nav className="header__navigation">
               <NavigationItems />
             </nav>
-
             <div className="zeit-logo">
               <ZeitLogo />            
             </div>
-
-            {/* Mobile Navigation Toggle */}
             <a className="header__nav-toggle" onClick={this.handleToggleMenu}><ToggleIcon /></a>
           </div>
 
