@@ -1,12 +1,12 @@
-import Icons from '../icons'
 import {GenericLink} from './text/link'
+import NextLogo from '../icons/next-logo'
 
 export default function Header () {
   return (
     <header>
       <GenericLink href="/">
         <a className="logo">
-          <Icons.Next />
+          <NextLogo />
         </a>
       </GenericLink>
 

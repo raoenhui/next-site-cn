@@ -1,4 +1,4 @@
-import Icons from '../icons'
+import PermalinkIcon from '../icons/permalink'
 
 class Heading extends React.Component {
   render() {
@@ -50,7 +50,7 @@ export default props => {
         {children}
       </a>
       <span className="permalink">
-        <Icons.Permalink />
+        <PermalinkIcon />
       </span>
       <style jsx>
         {`
