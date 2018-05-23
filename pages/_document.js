@@ -1,6 +1,4 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import Link from 'next/link'
-import ShowcaseManifest from '../showcase-manifest'
 
 import {GA_TRACKING_ID} from '../lib/analytics'
 
