@@ -1,15 +1,13 @@
 import React, {Component} from 'react'
-import Manifest from '../showcase-manifest'
-import Image from './image'
 import Link from 'next/link'
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group'
-import ImageLoader from './showcase/slider/image-loader'
-import SlideInformation from './showcase/slider/slide-information'
-import Navigation from './showcase/slider/navigation'
-import MobileNavigation from './showcase/slider/mobile-navigation'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
+
+import Manifest from '../../showcase-manifest'
+import Image from '../image'
+import ImageLoader from './slider/image-loader'
+import SlideInformation from './slider/slide-information'
+import Navigation from './slider/navigation'
+import MobileNavigation from './slider/mobile-navigation'
 
 function Slider({currentSlide, previousSlide, nextSlide}) {
   return <section>
@@ -33,7 +31,6 @@ function Slider({currentSlide, previousSlide, nextSlide}) {
       <div className='nav next'>
         <Navigation item={nextSlide} />
       </div>
-      
     </div>
     <SlideInformation title={currentSlide.title} href={currentSlide.link} />
     <div className="mobile-navigation">

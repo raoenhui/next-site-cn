@@ -1,7 +1,6 @@
 import {Component} from 'react'
-import Icons from '../components/icons'
 import Page from '../components/page'
-import Slider from '../components/showcase-slider'
+import Slider from '../components/showcase/slider'
 import {sortOrder, mapping} from '../showcase-manifest'
 import {withRouter} from 'next/router'
 import Screen from '../components/screen'
