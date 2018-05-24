@@ -1,7 +1,7 @@
 {
   "name": "next-website",
   "description": "Next.js Official Homepage",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "scripts": {
     "dev": "next",
     "build": "next build",
