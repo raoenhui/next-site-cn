@@ -9,7 +9,7 @@ const NavigationItems = ({ isMobile }) => (
     <Link href='/docs' prefetch><a>Docs</a></Link>
     <Link href='/showcase' prefetch><a>Showcase</a></Link>
     <a href='https://github.com/zeit/next.js'>GitHub</a>
-    <Link href='/learn' prefetch><a>Learn</a></Link>
+    <Link href='/learn'><a>Learn</a></Link>
 
     <style jsx>{`
       a {
