@@ -10,6 +10,7 @@ const NavigationItems = ({ isMobile }) => (
     <Link href='/showcase' prefetch><a>Showcase</a></Link>
     <a href='https://github.com/zeit/next.js'>GitHub</a>
     <Link href='/learn'><a>Learn</a></Link>
+    <a href='https://spectrum.chat/next-js' target="_blank" rel="noopener noreferrer">Chat</a>
 
     <style jsx>{`
       a {
