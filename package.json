@@ -6,8 +6,7 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "start": "next start",
-    "prepare": "yarn run build && yarn run export"
+    "start": "next start"
   },
   "repository": {
     "type": "git",
