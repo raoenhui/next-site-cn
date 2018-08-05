@@ -1,8 +1,5 @@
-import React, {Component} from 'react'
-import Link from 'next/link'
+import React from 'react'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
-
-import Manifest from '../../showcase-manifest'
 import Image from '../image'
 import ImageLoader from './slider/image-loader'
 import SlideInformation from './slider/slide-information'
@@ -20,7 +17,7 @@ function Slider({currentSlide, previousSlide, nextSlide}) {
           return <TransitionGroup>
             <CSSTransition
               key={props.src}
-              timeout={500}
+              timeout={100}
               classNames="fade"
             >
               <ImageLoader item={currentSlide} />

@@ -1,6 +1,6 @@
-import {Component} from 'react'
 import Page from '../components/page'
 import Slider from '../components/showcase/slider'
+import {generateShowcaseUrl} from '../components/showcase/slider/showcase-link'
 import {sortOrder, mapping} from '../showcase-manifest'
 import {withRouter} from 'next/router'
 import Screen from '../components/screen'
@@ -44,10 +44,44 @@ function calculateSlides(sortOrder, route) {
   }
 }
 
-function Showcase({router: {query}}) {
+class ArrowEvents extends React.Component {
+  handleKeyDown = (event) => {
+    const isLeft = event.keyCode === 37
+    const isRight = event.keyCode === 39
+
+    const {router, previousSlide, nextSlide} = this.props
+    if(isLeft) {
+      const {href, as} = generateShowcaseUrl(previousSlide)
+      router.replace(href, as)
+      return
+    }
+
+    if(isRight) {
+      const {href, as} = generateShowcaseUrl(nextSlide)
+      router.replace(href, as)
+      return
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyDown)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown)
+  }
+
+  render() {
+    return null
+  }
+}
+
+function Showcase({router}) {
+  const {query} = router
   const {item} = query
   const {currentSlide, previousSlide, nextSlide} = calculateSlides(sortOrder, item)
   return <Page>
+    <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
     <Screen offset={144}>
       <Slider currentSlide={currentSlide} previousSlide={previousSlide} nextSlide={nextSlide} />
     </Screen>

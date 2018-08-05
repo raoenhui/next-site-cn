@@ -16,7 +16,7 @@ function Navigation({previous, item}) {
           return <TransitionGroup>
             <CSSTransition
               key={props.src}
-              timeout={500}
+              timeout={100}
               classNames="fade"
             >
               <ImageLoader item={item} />
