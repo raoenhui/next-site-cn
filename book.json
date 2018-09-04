@@ -1,0 +1,78 @@
+{
+    "title": "Next.js中文文档",
+    "author": "raoenhui",
+    "description": "Next.js中文文档",
+    "language": "zh-hans",
+    "gitbook": "=3.2.3",
+    "root": ".",
+    "structure":
+    {
+        "readme": "introduction.md"
+    },
+    "links":
+    {
+        "sidebar":
+        {
+            "blog主页": "https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"
+        }
+    },
+    "plugins": ["-lunr", "-search", "-sharing",
+        "sharing-plus",
+        "highlight",
+        "github",
+        "github-buttons",
+        "tbfed-pagefooter",
+        "anchors",
+        "expandable-chapters-small",
+        "copy-code-button",
+        "versions"
+    ],
+    "pluginsConfig":
+    {
+        "sharing":
+        {
+            "douban": false,
+            "facebook": true,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": true,
+            "qzone": true,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false
+        },
+        "github":
+        {
+            "url": "https://github.com/raoenhui/next-site-cn"
+        },
+        "github-buttons":
+        {
+            "repo": "raoenhui/next-site-cn",
+            "types": [
+                "star",
+                "watch",
+                "fork"
+            ],
+            "size": "small",
+            "count": true
+        }
+    },
+    "tbfed-pagefooter":
+    {
+        "copyright": "Copyright &copy raoenhui.github.io 2018",
+        "modify_label": "该文件修订时间：",
+        "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "versions":
+    {
+        "type": "tags"
+    }
+}

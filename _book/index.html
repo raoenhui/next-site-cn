@@ -1,0 +1,1729 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Next.js中文文档 · Next.js中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="raoenhui">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-versions/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"raoenhui/next-site-cn","types":["star","watch","fork"],"size":"small","count":true};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/raoenhui/next-site-cn" target="_blank" class="custom-link">主页</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Next.js中文文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Next.js中文文档</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p><img width="112" alt="screen shot 2016-10-25 at 2 37 27 pm" src="https://cloud.githubusercontent.com/assets/13041/19686250/971bf7f8-9ac0-11e6-975c-188defd82df1.png"></p>
+<p><a href="https://www.npmjs.com/package/next" target="_blank"><img src="https://img.shields.io/npm/v/next.svg" alt="NPM version"></a>
+<a href="https://travis-ci.org/zeit/next.js" target="_blank"><img src="https://travis-ci.org/zeit/next.js.svg?branch=master" alt="Build Status"></a>
+<a href="https://ci.appveyor.com/project/arunoda/next-js/branch/master" target="_blank"><img src="https://ci.appveyor.com/api/projects/status/gqp5hs71l3ebtx1r/branch/master?svg=true" alt="Build status"></a>
+<a href="https://coveralls.io/r/zeit/next.js?branch=master" target="_blank"><img src="https://coveralls.io/repos/zeit/next.js/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://spectrum.chat/next-js" target="_blank"><img src="https://withspectrum.github.io/badge/badge.svg" alt="Join the community on Spectrum"></a></p>
+<p>Next.js &#x662F;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684; React &#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x5E94;&#x7528;&#x6846;&#x67B6;&#x3002;</p>
+<p><strong>&#x53EF;&#x8BBF;&#x95EE; <a href="https://nextjs.org/learn" target="_blank">nextjs.org/learn</a> &#x5F00;&#x59CB;&#x5B66;&#x4E60; Next.js.</strong></p>
+<p><a href="README.md">README in English</a></p>
+<hr>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- https://github.com/thlorenz/doctoc -->
+<ul>
+<li><a href="#how-to-use">&#x600E;&#x4E48;&#x4F7F;&#x7528;</a><ul>
+<li><a href="#setup">&#x5B89;&#x88C5;</a></li>
+<li><a href="#automatic-code-splitting">&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5206;&#x5272;</a></li>
+<li><a href="#css">CSS</a><ul>
+<li><a href="#built-in-css-support">&#x652F;&#x6301;&#x5D4C;&#x5165;&#x6837;&#x5F0F;</a></li>
+<li><a href="#css-in-js">&#x5185;&#x5D4C;&#x6837;&#x5F0F;</a></li>
+<li><a href="#importing-css--sass--less--stylus-files">&#x4F7F;&#x7528; CSS / Sass / Less / Stylus files</a></li>
+</ul>
+</li>
+<li><a href="#static-file-serving-eg-images">&#x9759;&#x6001;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#xFF08;&#x5982;&#x56FE;&#x50CF;)</a></li>
+<li><a href="#populating-head"><code>&lt;head&gt;</code></a></li>
+<li><a href="#fetching-data-and-component-lifecycle">&#x83B7;&#x53D6;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;</a></li>
+<li><a href="#routing">&#x8DEF;&#x7531;</a><ul>
+<li><a href="#with-link"><code>&lt;Link&gt;</code> &#x7528;&#x6CD5;</a><ul>
+<li><a href="#with-url-object">URL &#x5BF9;&#x8C61;</a></li>
+<li><a href="#replace-instead-of-push-url">&#x66FF;&#x6362;&#x8DEF;&#x7531;</a></li>
+<li><a href="#using-a-component-that-supports-onclick">&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;<code>onClick</code></a></li>
+<li><a href="#forcing-the-link-to-expose-href-to-its-child">&#x66B4;&#x9732;<code>href</code>&#x7ED9;&#x5B50;&#x5143;&#x7D20;</a></li>
+<li><a href="#disabling-the-scroll-changes-to-top-on-page">&#x7981;&#x6B62;&#x6EDA;&#x52A8;&#x5230;&#x9875;&#x9762;&#x9876;&#x90E8;</a></li>
+</ul>
+</li>
+<li><a href="#imperatively">&#x547D;&#x4EE4;&#x5F0F;</a></li>
+<li><a href="#intercepting-popstate">&#x62E6;&#x622A;&#x5668; <code>popstate</code></a><ul>
+<li><a href="#with-url-object-1">URL &#x5BF9;&#x8C61;&#x7528;&#x6CD5;</a></li>
+<li><a href="#router-events">&#x8DEF;&#x7531;&#x4E8B;&#x4EF6;</a></li>
+<li><a href="#shallow-routing">&#x6D45;&#x5C42;&#x8DEF;&#x7531;</a></li>
+</ul>
+</li>
+<li><a href="#using-a-higher-order-component">&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</a></li>
+</ul>
+</li>
+<li><a href="#prefetching-pages">&#x9884;&#x52A0;&#x8F7D;&#x9875;&#x9762;</a><ul>
+<li><a href="#with-link-1"><code>&lt;Link&gt;</code>&#x7528;&#x6CD5;</a></li>
+<li><a href="#imperatively-1">&#x547D;&#x4EE4;&#x5F0F; prefetch &#x5199;&#x6CD5;</a></li>
+</ul>
+</li>
+<li><a href="#custom-server-and-routing">&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x7AEF;&#x8DEF;&#x7531;</a><ul>
+<li><a href="#disabling-file-system-routing">&#x7981;&#x6B62;&#x6587;&#x4EF6;&#x8DEF;&#x7531;</a></li>
+<li><a href="#dynamic-assetprefix">&#x52A8;&#x6001;&#x524D;&#x7F00;</a></li>
+</ul>
+</li>
+<li><a href="#dynamic-import">&#x52A8;&#x6001;&#x5BFC;&#x5165;</a><ul>
+<li><a href="#1-basic-usage-also-does-ssr">1. &#x57FA;&#x7840;&#x652F;&#x6301; (&#x540C;&#x6837;&#x652F;&#x6301; SSR)</a></li>
+<li><a href="#2-with-custom-loading-component">2. &#x81EA;&#x5B9A;&#x4E49;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;</a></li>
+<li><a href="#3-with-no-ssr">3. &#x7981;&#x6B62;&#x4F7F;&#x7528; SSR</a></li>
+<li><a href="#4-with-multiple-modules-at-once">4. &#x540C;&#x65F6;&#x52A0;&#x8F7D;&#x591A;&#x4E2A;&#x6A21;&#x5757;</a></li>
+</ul>
+</li>
+<li><a href="#custom-app">&#x81EA;&#x5B9A;&#x4E49; <code>&lt;App&gt;</code></a></li>
+<li><a href="#custom-document">&#x81EA;&#x5B9A;&#x4E49; <code>&lt;Document&gt;</code></a></li>
+<li><a href="#custom-error-handling">&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5904;&#x7406;</a></li>
+<li><a href="#reusing-the-built-in-error-page">&#x6E32;&#x67D3;&#x5185;&#x7F6E;&#x9519;&#x8BEF;&#x9875;&#x9762;</a></li>
+<li><a href="#custom-configuration">&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;</a><ul>
+<li><a href="#setting-a-custom-build-directory">&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;&#x76EE;&#x5F55;</a></li>
+<li><a href="#disabling-etag-generation">&#x7981;&#x6B62; etag &#x751F;&#x6210;</a></li>
+<li><a href="#configuring-the-ondemandentries">&#x914D;&#x7F6E; onDemandEntries</a></li>
+<li><a href="#configuring-extensions-looked-for-when-resolving-pages-in-pages">&#x914D;&#x7F6E;&#x9875;&#x9762;&#x540E;&#x7F00;&#x540D;&#x89E3;&#x6790;&#x6269;&#x5C55;</a></li>
+<li><a href="#configuring-the-build-id">&#x914D;&#x7F6E;&#x6784;&#x5EFA; ID</a></li>
+</ul>
+</li>
+<li><a href="#customizing-webpack-config">&#x81EA;&#x5B9A;&#x4E49; webpack &#x914D;&#x7F6E;</a></li>
+<li><a href="#customizing-babel-config">&#x81EA;&#x5B9A;&#x4E49; babel &#x914D;&#x7F6E;</a></li>
+<li><a href="#exposing-configuration-to-the-server--client-side">&#x66B4;&#x9732;&#x914D;&#x7F6E;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;</a></li>
+<li><a href="#starting-the-server-on-alternative-hostname">&#x542F;&#x52A8;&#x670D;&#x52A1;&#x9009;&#x62E9; hostname</a></li>
+<li><a href="#cdn-support-with-asset-prefix">CDN &#x652F;&#x6301;&#x524D;&#x7F00;</a></li>
+</ul>
+</li>
+<li><a href="#production-deployment">&#x9879;&#x76EE;&#x90E8;&#x7F72;</a></li>
+<li><a href="#browser-support">&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;</a></li>
+<li><a href="#static-html-export">&#x5BFC;&#x51FA;&#x9759;&#x6001;&#x9875;&#x9762;</a><ul>
+<li><a href="#usage">&#x4F7F;&#x7528;</a></li>
+<li><a href="#limitation">&#x9650;&#x5236;</a></li>
+</ul>
+</li>
+<li><a href="#multi-zones">&#x591A; zone</a><ul>
+<li><a href="#how-to-define-a-zone">&#x600E;&#x4E48;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; zone</a></li>
+<li><a href="#how-to-merge-them">&#x600E;&#x4E48;&#x5408;&#x5E76;&#x4ED6;&#x4EEC;</a></li>
+</ul>
+</li>
+<li><a href="#recipes">&#x6280;&#x5DE7;</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contributing">&#x8D21;&#x732E;</a></li>
+<li><a href="#authors">&#x4F5C;&#x8005;</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<p><a id="how-to-use"></a></p>
+<h2 id="&#x600E;&#x4E48;&#x4F7F;&#x7528;"><a name="&#x600E;&#x4E48;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x600E;&#x4E48;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x600E;&#x4E48;&#x4F7F;&#x7528;</h2>
+<p><a id="setup"></a></p>
+<h3 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="plugin-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;</h3>
+<p>&#x5B89;&#x88C5;&#x5B83;:</p>
+<pre><code class="lang-bash">npm install --save next react react-dom
+</code></pre>
+<p>&#x5C06;&#x4E0B;&#x9762;&#x811A;&#x672C;&#x6DFB;&#x52A0;&#x5230; package.json &#x4E2D;:</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;dev&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+    <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;next build&quot;</span>,
+    <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;next start&quot;</span>
+  }
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;, &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x662F;&#x4E3B;&#x8981;&#x7684; API. &#x6BCF;&#x4E2A;<code>.js</code> &#x6587;&#x4EF6;&#x5C06;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#xFF0C;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x548C;&#x6E32;&#x67D3;&#x3002;</p>
+<p>&#x65B0;&#x5EFA; <code>./pages/index.js</code> &#x5230;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x4E2D;:</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Welcome to next.js!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p>&#x8FD0;&#x884C; <code>npm run dev</code> &#x547D;&#x4EE4;&#x5E76;&#x6253;&#x5F00; <code>http://localhost:3000</code>&#x3002; &#x5982;&#x679C;&#x4F60;&#x60F3;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7AEF;&#x53E3;&#xFF0C;&#x53EF;&#x8FD0;&#x884C; <code>npm run dev -- -p &lt;&#x8BBE;&#x7F6E;&#x7AEF;&#x53E3;&#x53F7;&gt;</code>.</p>
+<p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E86;&#x89E3;&#x5230;:</p>
+<ul>
+<li>&#x81EA;&#x52A8;&#x6253;&#x5305;&#x7F16;&#x8BD1; (&#x4F7F;&#x7528; webpack &#x548C; babel)</li>
+<li>&#x70ED;&#x52A0;&#x8F7D;</li>
+<li>&#x4EE5; <code>./pages</code>&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x6E32;&#x67D3;&#x548C;&#x7D22;&#x5F15;</li>
+<li>Static file serving. <code>./static/</code> is mapped to <code>/static/</code> (given you <a href="#static-file-serving-eg-images">create a <code>./static/</code> directory</a> inside your project)</li>
+<li>&#x9759;&#x6001;&#x6587;&#x4EF6;&#x670D;&#x52A1;. <code>./static/</code> &#x6620;&#x5C04;&#x5230; <code>/static/</code> (&#x53EF;&#x4EE5; <a href="#static-file-serving-eg-images">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x76EE;&#x5F55;</a> &#x5728;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x4E2D;)</li>
+</ul>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6848;&#x4F8B;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#x770B;&#x770B; <a href="https://github.com/zeit/nextgram" target="_blank">sample app - nextgram</a></p>
+<p><a id="automatic-code-splitting"></a></p>
+<h3 id="&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5206;&#x5272;"><a name="&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5206;&#x5272;" class="plugin-anchor" href="#&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5206;&#x5272;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x5206;&#x5272;</h3>
+<p>&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x53EA;&#x4F1A;&#x5BFC;&#x5165;<code>import</code>&#x4E2D;&#x7ED1;&#x5B9A;&#x4EE5;&#x53CA;&#x88AB;&#x7528;&#x5230;&#x7684;&#x4EE3;&#x7801;. &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5E76;&#x4E0D;&#x4F1A;&#x52A0;&#x8F7D;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x4EE3;&#x7801;!</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> cowsay <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;cowsay-browser&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>
+    {cowsay.say({ text: &apos;hi there!&apos; })}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span></span>
+</code></pre>
+<p><a id="css"></a></p>
+<h3 id="css"><a name="css" class="plugin-anchor" href="#css"><i class="fa fa-link" aria-hidden="true"></i></a>CSS</h3>
+<p><a id="built-in-css-support"></a></p>
+<h4 id="&#x652F;&#x6301;&#x5D4C;&#x5165;&#x6837;&#x5F0F;"><a name="&#x652F;&#x6301;&#x5D4C;&#x5165;&#x6837;&#x5F0F;" class="plugin-anchor" href="#&#x652F;&#x6301;&#x5D4C;&#x5165;&#x6837;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x652F;&#x6301;&#x5D4C;&#x5165;&#x6837;&#x5F0F;</h4>
+<p><details>
+  <summary><b>&#x6848;&#x4F8B;</b></summary>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/basic-css" target="_blank">Basic css</a></li></ul>
+</details></p>
+
+<p>&#x6211;&#x4EEC;&#x7ED1;&#x5B9A; <a href="https://github.com/zeit/styled-jsx" target="_blank">styled-jsx</a> &#x6765;&#x751F;&#x6210;&#x72EC;&#x7ACB;&#x4F5C;&#x7528;&#x57DF;&#x7684; CSS. &#x76EE;&#x6807;&#x662F;&#x652F;&#x6301; &quot;shadow CSS&quot;,&#x4F46;&#x662F; <a href="https://github.com/w3c/webcomponents/issues/71" target="_blank">&#x4E0D;&#x652F;&#x6301;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;&#x7684; JS</a>.</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Hello world
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>scoped!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">jsx</span>&gt;</span><span class="undefined">{`
+      p {
+        color: blue;
+      }
+      div {
+        background: red;
+      }
+      @media (max-width: 600px) {
+        div {
+          background: blue;
+        }
+      }
+    `}</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">global</span> <span class="hljs-attr">jsx</span>&gt;</span><span class="undefined">{`
+      body {
+        background: black;
+      }
+    `}</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p>&#x60F3;&#x67E5;&#x770B;&#x66F4;&#x591A;&#x6848;&#x4F8B;&#x53EF;&#x4EE5;&#x70B9;&#x51FB; <a href="https://www.npmjs.com/package/styled-jsx" target="_blank">styled-jsx documentation</a>&#x67E5;&#x770B;.</p>
+<p><a id="css-in-js"></a></p>
+<h4 id="&#x5185;&#x5D4C;&#x6837;&#x5F0F;"><a name="&#x5185;&#x5D4C;&#x6837;&#x5F0F;" class="plugin-anchor" href="#&#x5185;&#x5D4C;&#x6837;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5D4C;&#x6837;&#x5F0F;</h4>
+<p><details>
+  <summary>
+    <b>Examples</b>
+    </summary>
+  <ul><li><a href="examples/with-styled-components">Styled components</a></li><li><a href="examples/with-styletron">Styletron</a></li><li><a href="examples/with-glamor">Glamor</a></li><li><a href="examples/with-glamorous">Glamorous</a></li><li><a href="examples/with-cxs">Cxs</a></li><li><a href="examples/with-aphrodite">Aphrodite</a></li><li><a href="examples/with-fela">Fela</a></li></ul>
+</details></p>
+
+<p>&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; CSS &#x5185;&#x5D4C; JS &#x5199;&#x6CD5;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">color:</span> &apos;<span class="hljs-attr">red</span>&apos; }}&gt;</span>hi there<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+</code></pre>
+<p>&#x66F4;&#x590D;&#x6742;&#x7684;&#x5185;&#x5D4C;&#x6837;&#x5F0F;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x7684;&#x65F6;&#x6837;&#x5F0F;&#x66F4;&#x6539;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5305;&#x88F9;&#x81EA;&#x5B9A;&#x4E49; Document&#xFF0C;&#x6765;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;&#xFF0C;&#x6848;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;<a href="#user-content-custom-document">custom <code>&lt;Document&gt;</code></a></p>
+<p><a id="importing-css--sass--less--stylus-files"></a></p>
+<h4 id="&#x4F7F;&#x7528;-css--sass--less--stylus-files"><a name="&#x4F7F;&#x7528;-css--sass--less--stylus-files" class="plugin-anchor" href="#&#x4F7F;&#x7528;-css--sass--less--stylus-files"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528; CSS / Sass / Less / Stylus files</h4>
+<p>&#x652F;&#x6301;&#x7528;<code>.css</code>, <code>.scss</code>, <code>.less</code> or <code>.styl</code>&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x6587;&#x4EF6; next.config.js&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x67E5;&#x770B;&#x4E0B;&#x9762;&#x94FE;&#x63A5;</p>
+<ul>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-css" target="_blank">@zeit/next-css</a></li>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-sass" target="_blank">@zeit/next-sass</a></li>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-less" target="_blank">@zeit/next-less</a></li>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-stylus" target="_blank">@zeit/next-stylus</a></li>
+</ul>
+<p><a id="static-file-serving-eg-images"></a></p>
+<h3 id="&#x9759;&#x6001;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#xFF08;&#x5982;&#x56FE;&#x50CF;&#xFF09;"><a name="&#x9759;&#x6001;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#xFF08;&#x5982;&#x56FE;&#x50CF;&#xFF09;" class="plugin-anchor" href="#&#x9759;&#x6001;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#xFF08;&#x5982;&#x56FE;&#x50CF;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9759;&#x6001;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#xFF08;&#x5982;&#x56FE;&#x50CF;&#xFF09;</h3>
+<p>&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x5939;&#x53EB;<code>static</code>&#x3002;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>/static/</code>&#x6765;&#x5F15;&#x5165;&#x76F8;&#x5173;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/static/my-image.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;my image&quot;</span> /&gt;</span>
+</span></code></pre>
+<p>_&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x53EA;&#x80FD;&#x53EB;<code>static</code> &#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x6709;&#x8FD9;&#x4E2A;&#x540D;&#x5B57; Next.js &#x624D;&#x4F1A;&#x628A;&#x5B83;&#x5F53;&#x4F5C;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002;</p>
+<p><a id="populating-head"></a></p>
+<h3 id="&#x751F;&#x6210;head"><a name="&#x751F;&#x6210;head" class="plugin-anchor" href="#&#x751F;&#x6210;head"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x6210;<code>&lt;head&gt;</code></h3>
+<p><code>&lt;head&gt;</code></p>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="examples/head-elements">Head elements</a></li>
+    <li><a href="examples/layout-component">Layout component</a></li>
+  </ul>
+</details></p>
+
+<p>&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;&#x6765;&#x88C5;&#x8F7D;<code>&lt;head&gt;</code>&#x5230;&#x9875;&#x9762;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Head <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/head&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>My page title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;initial-scale=1.0, width=device-width&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello world!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<p>&#x6211;&#x4EEC;&#x5B9A;&#x4E49;<code>key</code>&#x5C5E;&#x6027;&#x6765;&#x907F;&#x514D;&#x91CD;&#x590D;&#x7684;<code>&lt;head&gt;</code>&#x6807;&#x7B7E;&#xFF0C;&#x4FDD;&#x8BC1;<code>&lt;head&gt;</code>&#x53EA;&#x6E32;&#x67D3;&#x4E00;&#x6B21;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Head <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/head&apos;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; (
+  &lt;div&gt;
+    &lt;Head&gt;
+      &lt;title&gt;My page title&lt;/title&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1.0, width=device-width&quot; key=&quot;viewport&quot; /&gt;
+    &lt;/Head&gt;
+    &lt;Head&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1.2, width=device-width&quot; key=&quot;viewport&quot; /&gt;
+    &lt;/Head&gt;
+    &lt;p&gt;Hello world!&lt;/p&gt;
+  &lt;/div&gt;
+)
+</code></pre>
+<p>&#x53EA;&#x6709;&#x7B2C;&#x4E8C;&#x4E2A;<code>&lt;meta name=&quot;viewport&quot; /&gt;</code>&#x624D;&#x88AB;&#x6E32;&#x67D3;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5728;&#x5378;&#x8F7D;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;<code>&lt;head&gt;</code>&#x7684;&#x5185;&#x5BB9;&#x5C06;&#x88AB;&#x6E05;&#x9664;&#x3002;&#x8BF7;&#x786E;&#x4FDD;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x90FD;&#x5728;&#x5176;<code>&lt;head&gt;</code>&#x5B9A;&#x4E49;&#x4E86;&#x6240;&#x9700;&#x8981;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5047;&#x8BBE;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x5DF2;&#x7ECF;&#x52A0;&#x8FC7;&#x4E86;</p>
+<p><a id="fetching-data-and-component-lifecycle"></a></p>
+<h3 id="&#x83B7;&#x53D6;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;"><a name="&#x83B7;&#x53D6;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;" class="plugin-anchor" href="#&#x83B7;&#x53D6;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x83B7;&#x53D6;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;</h3>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="examples/data-fetch">Data fetch</a></li></ul>
+</details></p>
+
+<p>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6709;&#x72B6;&#x6001;&#x3001;&#x751F;&#x547D;&#x5468;&#x671F;&#x6216;&#x6709;&#x521D;&#x59CB;&#x6570;&#x636E;&#x7684; React &#x7EC4;&#x4EF6;&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x65E0;&#x72B6;&#x6001;&#x51FD;&#x6570;&#xFF09;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> getInitialProps({ req }) {
+    <span class="hljs-keyword">const</span> userAgent = req ? req.headers[<span class="hljs-string">&apos;user-agent&apos;</span>] : navigator.userAgent
+    <span class="hljs-keyword">return</span> { userAgent }
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        Hello World {this.props.userAgent}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+  }
+}
+</code></pre>
+<p>&#x76F8;&#x4FE1;&#x4F60;&#x6CE8;&#x610F;&#x5230;&#xFF0C;&#x5F53;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x65F6;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x65B9;&#x6CD5;<code>getInitialProps</code>&#x3002;&#x5B83;&#x80FD;&#x5F02;&#x6B65;&#x83B7;&#x53D6; JS &#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x7ED1;&#x5B9A;&#x5728;<code>props</code>&#x4E0A;</p>
+<p>&#x5F53;&#x670D;&#x52A1;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;<code>getInitialProps</code>&#x5C06;&#x4F1A;&#x628A;&#x6570;&#x636E;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x5C31;&#x50CF;<code>JSON.stringify</code>&#x3002;&#x6240;&#x4EE5;&#x786E;&#x4FDD;<code>getInitialProps</code>&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A; JS &#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;<code>Date</code>, <code>Map</code> &#x6216; <code>Set</code>&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x5F53;&#x9875;&#x9762;&#x521D;&#x6B21;&#x52A0;&#x8F7D;&#x65F6;&#xFF0C;<code>getInitialProps</code>&#x53EA;&#x4F1A;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;<code>getInitialProps</code>&#x53EA;&#x6709;&#x5728;&#x8DEF;&#x7531;&#x5207;&#x6362;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x5982;<code>Link</code>&#x7EC4;&#x4EF6;&#x8DF3;&#x8F6C;&#x6216;&#x8DEF;&#x7531;&#x81EA;&#x5B9A;&#x4E49;&#x8DF3;&#x8F6C;&#xFF09;&#x65F6;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x624D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5F53;&#x9875;&#x9762;&#x521D;&#x59CB;&#x5316;&#x52A0;&#x8F7D;&#x65F6;&#xFF0C;<code>getInitialProps</code>&#x53EA;&#x4F1A;&#x52A0;&#x8F7D;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x3002;&#x53EA;&#x6709;&#x5F53;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#xFF08;<code>Link</code>&#x7EC4;&#x4EF6;&#x8DF3;&#x8F6C;&#x6216; API &#x65B9;&#x6CD5;&#x8DF3;&#x8F6C;&#xFF09;&#x65F6;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x624D;&#x4F1A;&#x6267;&#x884C;<code>getInitialProps</code>&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;<code>getInitialProps</code>&#x5C06;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x3002;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x5728;<code>pages</code>&#x9875;&#x9762;&#x4E2D;&#x3002;</p>
+<p><br></p>
+<blockquote>
+<p>&#x53EA;&#x6709;&#x670D;&#x52A1;&#x7AEF;&#x7528;&#x5230;&#x7684;&#x6A21;&#x5757;&#x653E;&#x5728;<code>getInitialProps</code>&#x91CC;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x6B63;&#x786E;&#x7684;&#x5BFC;&#x5165;&#x4E86;&#x5B83;&#x4EEC;&#xFF0C;&#x53EF;&#x53C2;&#x8003;<a href="https://arunoda.me/blog/ssr-and-server-only-modules" target="_blank">import them properly</a>&#x3002;
+&#x5426;&#x5219;&#x4F1A;&#x62D6;&#x6162;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x901F;&#x5EA6;&#x3002;</p>
+</blockquote>
+<p><br></p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7ED9;&#x65E0;&#x72B6;&#x6001;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;<code>getInitialProps</code>&#xFF1A;</p>
+<pre><code class="lang-jsx">const Page = ({ stars }) =&gt;
+  &lt;div&gt;
+    Next stars: {stars}
+  &lt;/div&gt;
+
+Page.getInitialProps = async ({ req }) =&gt; {
+  const res = await fetch(&apos;https://api.github.com/repos/zeit/next.js&apos;)
+  const json = await res.json()
+  return { stars: json.stargazers_count }
+}
+
+export default Page
+</code></pre>
+<p><code>getInitialProps</code>&#x5165;&#x53C2;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><code>pathname</code> - URL &#x7684; path &#x90E8;&#x5206;</li>
+<li><code>query</code> - URL &#x7684; query &#x90E8;&#x5206;&#xFF0C;&#x5E76;&#x88AB;&#x89E3;&#x6790;&#x6210;&#x5BF9;&#x8C61;</li>
+<li><code>asPath</code> - &#x663E;&#x793A;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x5B9E;&#x9645;&#x8DEF;&#x5F84;&#xFF08;&#x5305;&#x542B;&#x67E5;&#x8BE2;&#x90E8;&#x5206;&#xFF09;&#xFF0C;&#x4E3A;<code>String</code>&#x7C7B;&#x578B;</li>
+<li><code>req</code> - HTTP &#x8BF7;&#x6C42;&#x5BF9;&#x8C61; (&#x53EA;&#x6709;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6709;)</li>
+<li><code>res</code> - HTTP &#x8FD4;&#x56DE;&#x5BF9;&#x8C61; (&#x53EA;&#x6709;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6709;)</li>
+<li><code>jsonPageRes</code> - <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank">&#x83B7;&#x53D6;&#x6570;&#x636E;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;</a> (&#x53EA;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x6709;)</li>
+<li><code>err</code> - &#x6E32;&#x67D3;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;</li>
+</ul>
+<p><a id="routing"></a></p>
+<h3 id="&#x8DEF;&#x7531;"><a name="&#x8DEF;&#x7531;" class="plugin-anchor" href="#&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8DEF;&#x7531;</h3>
+<p><a id="with-link"></a></p>
+<h4 id="link&#x7528;&#x6CD5;"><a name="link&#x7528;&#x6CD5;" class="plugin-anchor" href="#link&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><code>&lt;Link&gt;</code>&#x7528;&#x6CD5;</h4>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="examples/hello-world">Hello World</a></li>
+  </ul>
+</details></p>
+
+<p>&#x53EF;&#x4EE5;&#x7528; <code>&lt;Link&gt;</code> &#x7EC4;&#x4EF6;&#x5B9E;&#x73B0;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8DEF;&#x7531;&#x5207;&#x6362;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// pages/index.js</span>
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/link&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Click{&apos; &apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/about&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>{&apos; &apos;}
+    to read more
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<pre><code class="lang-jsx"><span class="hljs-comment">// pages/about.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Welcome to About!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="#prefetching-pages"><code>&lt;Link prefetch&gt;</code></a>&#x4F7F;&#x94FE;&#x63A5;&#x548C;&#x9884;&#x52A0;&#x8F7D;&#x5728;&#x540E;&#x53F0;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#xFF0C;&#x6765;&#x8FBE;&#x5230;&#x9875;&#x9762;&#x7684;&#x6700;&#x4F73;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x8DEF;&#x7531;&#x884C;&#x4E3A;&#x4E0E;&#x6D4F;&#x89C8;&#x5668;&#x5F88;&#x76F8;&#x4F3C;&#xFF1A;</p>
+<ol>
+<li>&#x7EC4;&#x4EF6;&#x83B7;&#x53D6;</li>
+<li>&#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x4E86;<code>getInitialProps</code>&#xFF0C;&#x6570;&#x636E;&#x83B7;&#x53D6;&#x4E86;&#x3002;&#x5982;&#x679C;&#x6709;&#x9519;&#x8BEF;&#x60C5;&#x51B5;&#x5C06;&#x4F1A;&#x6E32;&#x67D3; <code>_error.js</code>&#x3002;</li>
+<li>1&#x548C;2&#x90FD;&#x5B8C;&#x6210;&#x4E86;&#xFF0C;<code>pushState</code>&#x6267;&#x884C;&#xFF0C;&#x65B0;&#x7EC4;&#x4EF6;&#x88AB;&#x6E32;&#x67D3;&#x3002;</li>
+</ol>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x6CE8;&#x5165;<code>pathname</code>, <code>query</code> &#x6216; <code>asPath</code>&#x5230;&#x4F60;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="#using-a-higher-order-component">withRouter</a>&#x3002;</p>
+<p><a id="with-url-object"></a></p>
+<h5 id="url-&#x5BF9;&#x8C61;"><a name="url-&#x5BF9;&#x8C61;" class="plugin-anchor" href="#url-&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>URL &#x5BF9;&#x8C61;</h5>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="examples/with-url-object-routing">With URL Object Routing</a></li>
+  </ul>
+</details></p>
+
+<p>&#x7EC4;&#x4EF6;<code>&lt;Link&gt;</code>&#x63A5;&#x6536; URL &#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E14;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x683C;&#x5F0F;&#x5316;&#x751F;&#x6210; URL &#x5B57;&#x7B26;&#x4E32;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// pages/index.js</span>
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/link&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Click{&apos; &apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">pathname:</span> &apos;/<span class="hljs-attr">about</span>&apos;, <span class="hljs-attr">query:</span> { <span class="hljs-attr">name:</span> &apos;<span class="hljs-attr">Zeit</span>&apos; }}}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>{&apos; &apos;}
+    to read more
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p>&#x5C06;&#x751F;&#x6210; URL &#x5B57;&#x7B26;&#x4E32;<code>/about?name=Zeit</code>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x5728;<a href="https://nodejs.org/api/url.html#url_url_strings_and_url_objects" target="_blank">Node.js URL module documentation</a>&#x5B9A;&#x4E49;&#x8FC7;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+<p><a id="replace-instead-of-push-url"></a></p>
+<h5 id="&#x66FF;&#x6362;&#x8DEF;&#x7531;"><a name="&#x66FF;&#x6362;&#x8DEF;&#x7531;" class="plugin-anchor" href="#&#x66FF;&#x6362;&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66FF;&#x6362;&#x8DEF;&#x7531;</h5>
+<p><code>&lt;Link&gt;</code>&#x7EC4;&#x4EF6;&#x9ED8;&#x8BA4;&#x5C06;&#x65B0; url &#x63A8;&#x5165;&#x8DEF;&#x7531;&#x6808;&#x4E2D;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>replace</code>&#x5C5E;&#x6027;&#x6765;&#x9632;&#x6B62;&#x6DFB;&#x52A0;&#x65B0;&#x8F93;&#x5165;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// pages/index.js</span>
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/link&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Click{&apos; &apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/about&quot;</span> <span class="hljs-attr">replace</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>{&apos; &apos;}
+    to read more
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p><a id="using-a-component-that-supports-onclick"></a></p>
+<h5 id="&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;-onclick"><a name="&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;-onclick" class="plugin-anchor" href="#&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;-onclick"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6; <code>onClick</code></h5>
+<p><code>&lt;Link&gt;</code>&#x652F;&#x6301;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x6240;&#x652F;&#x6301;&#x7684;<code>onClick</code>&#x4E8B;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x63D0;&#x4F9B;<code>&lt;a&gt;</code>&#x6807;&#x7B7E;&#xFF0C;&#x53EA;&#x4F1A;&#x5904;&#x7406;<code>onClick</code>&#x4E8B;&#x4EF6;&#x800C;<code>href</code>&#x5C06;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// pages/index.js</span>
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/link&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Click{&apos; &apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/about&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/static/image.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;image&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<p><a id="forcing-the-link-to-expose-href-to-its-child"></a></p>
+<h5 id="&#x66B4;&#x9732;-href-&#x7ED9;&#x5B50;&#x5143;&#x7D20;"><a name="&#x66B4;&#x9732;-href-&#x7ED9;&#x5B50;&#x5143;&#x7D20;" class="plugin-anchor" href="#&#x66B4;&#x9732;-href-&#x7ED9;&#x5B50;&#x5143;&#x7D20;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66B4;&#x9732; <code>href</code> &#x7ED9;&#x5B50;&#x5143;&#x7D20;</h5>
+<p>&#x5982;&#x5B50;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x6CA1;&#x6709; href &#x5C5E;&#x6027;&#x7684;<code>&lt;a&gt;</code>&#x6807;&#x7B7E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x6307;&#x5B9A;&#x5B83;&#x4EE5;&#x514D;&#x7528;&#x6237;&#x91CD;&#x590D;&#x64CD;&#x4F5C;&#x3002;&#x7136;&#x800C;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x91CC;&#x9762;&#x6709;<code>&lt;a&gt;</code>&#x6807;&#x7B7E;&#xFF0C;&#x4F46;&#x662F;<code>Link</code>&#x7EC4;&#x4EF6;&#x4E0D;&#x4F1A;&#x88AB;&#x8BC6;&#x522B;&#x6210;<em>&#x8D85;&#x94FE;&#x63A5;</em>&#xFF0C;&#x7ED3;&#x679C;&#x4E0D;&#x80FD;&#x5C06;<code>href</code>&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x5143;&#x7D20;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>Link</code>&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x5E03;&#x5C14;&#x5C5E;&#x6027;<code>passHref</code>&#xFF0C;&#x5F3A;&#x5236;&#x5C06;<code>href</code>&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x5143;&#x7D20;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong>: &#x4F7F;&#x7528;<code>a</code>&#x4E4B;&#x5916;&#x7684;&#x6807;&#x7B7E;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x901A;&#x8FC7;<code>passHref</code>&#x7684;&#x94FE;&#x63A5;&#x53EF;&#x80FD;&#x4F1A;&#x4F7F;&#x5BFC;&#x822A;&#x770B;&#x4E0A;&#x53BB;&#x6B63;&#x786E;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x722C;&#x884C;&#x68C0;&#x6D4B;&#x65F6;&#xFF0C;&#x5C06;&#x4E0D;&#x4F1A;&#x8BC6;&#x522B;&#x6210;&#x94FE;&#x63A5;&#xFF08;&#x7531;&#x4E8E;&#x7F3A;&#x4E4F; href &#x5C5E;&#x6027;&#xFF09;&#xFF0C;&#x8FD9;&#x4F1A;&#x5BF9;&#x4F60;&#x7F51;&#x7AD9;&#x7684; SEO &#x4EA7;&#x751F;&#x8D1F;&#x9762;&#x5F71;&#x54CD;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/link&apos;</span>
+<span class="hljs-keyword">import</span> Unexpected_A <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;third-library&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ({ href, name }) =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{href}</span> <span class="hljs-attr">passHref</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Unexpected_A</span>&gt;</span>
+      {name}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Unexpected_A</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>
+</code></pre>
+<p><a id="disabling-the-scroll-changes-to-top-on-page"></a></p>
+<h5 id="&#x7981;&#x6B62;&#x6EDA;&#x52A8;&#x5230;&#x9875;&#x9762;&#x9876;&#x90E8;"><a name="&#x7981;&#x6B62;&#x6EDA;&#x52A8;&#x5230;&#x9875;&#x9762;&#x9876;&#x90E8;" class="plugin-anchor" href="#&#x7981;&#x6B62;&#x6EDA;&#x52A8;&#x5230;&#x9875;&#x9762;&#x9876;&#x90E8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7981;&#x6B62;&#x6EDA;&#x52A8;&#x5230;&#x9875;&#x9762;&#x9876;&#x90E8;</h5>
+<p><code>&lt;Link&gt;</code>&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x5C31;&#x662F;&#x6EDA;&#x5230;&#x9875;&#x9762;&#x9876;&#x90E8;&#x3002;&#x5F53;&#x6709; hash &#x5B9A;&#x4E49;&#x65F6;&#xFF08;&#xFF03;&#xFF09;&#xFF0C;&#x9875;&#x9762;&#x5C06;&#x4F1A;&#x6EDA;&#x52A8;&#x5230;&#x5BF9;&#x5E94;&#x7684; id &#x4E0A;&#xFF0C;&#x5C31;&#x50CF;<code>&lt;a&gt;</code>&#x6807;&#x7B7E;&#x4E00;&#x6837;&#x3002;&#x4E3A;&#x4E86;&#x9884;&#x9632;&#x6EDA;&#x52A8;&#x5230;&#x9876;&#x90E8;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;<code>&lt;Link&gt;</code>&#x52A0;
+<code>scroll={false}</code>&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-jsx">&lt;Link scroll={<span class="hljs-literal">false</span>} href=<span class="hljs-string">&quot;/?counter=10&quot;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>Disables scrolling<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>
+&lt;Link href=<span class="hljs-string">&quot;/?counter=10&quot;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>Changes with scrolling to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>
+</code></pre>
+<p><a id="imperatively"></a></p>
+<h4 id="&#x547D;&#x4EE4;&#x5F0F;"><a name="&#x547D;&#x4EE4;&#x5F0F;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x5F0F;</h4>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="examples/using-router">Basic routing</a></li>
+    <li><a href="examples/with-loading">With a page loading indicator</a></li>
+  </ul>
+</details></p>
+
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;<code>next/router</code>&#x5B9E;&#x73B0;&#x5BA2;&#x6237;&#x7AEF;&#x8DEF;&#x7531;&#x5207;&#x6362;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/router&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Click <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> Router.push(&apos;/about&apos;)}&gt;here<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> to read more
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p><a id="intercepting-popstate"></a></p>
+<h4 id="&#x62E6;&#x622A;&#x5668;-popstate"><a name="&#x62E6;&#x622A;&#x5668;-popstate" class="plugin-anchor" href="#&#x62E6;&#x622A;&#x5668;-popstate"><i class="fa fa-link" aria-hidden="true"></i></a>&#x62E6;&#x622A;&#x5668; <code>popstate</code></h4>
+<p>&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#xFF08;&#x6BD4;&#x5982;&#x4F7F;&#x7528;<a href="#custom-server-and-routing">custom router</a>&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x60F3;&#x76D1;&#x542C;<a href="https://developer.mozilla.org/en-US/docs/Web/Events/popstate" target="_blank"><code>popstate</code></a>&#xFF0C;&#x5728;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x524D;&#x505A;&#x4E00;&#x4E9B;&#x52A8;&#x4F5C;&#x3002;
+&#x6BD4;&#x5982;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C; request &#x6216;&#x5F3A;&#x5236; SSR &#x5237;&#x65B0;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/router&apos;</span>
+
+Router.beforePopState(<span class="hljs-function">(<span class="hljs-params">{ url, <span class="hljs-keyword">as</span>, options }</span>) =&gt;</span> {
+  <span class="hljs-comment">// I only want to allow these two routes!</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">as</span> !== <span class="hljs-string">&quot;/&quot;</span> || <span class="hljs-keyword">as</span> !== <span class="hljs-string">&quot;/other&quot;</span>) {
+    <span class="hljs-comment">// Have SSR render bad routes as a 404.</span>
+    <span class="hljs-built_in">window</span>.location.href = <span class="hljs-keyword">as</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x5728;<code>beforePopState</code>&#x4E2D;&#x8FD4;&#x56DE; false&#xFF0C;<code>Router</code>&#x5C06;&#x4E0D;&#x4F1A;&#x6267;&#x884C;<code>popstate</code>&#x4E8B;&#x4EF6;&#x3002;
+&#x4F8B;&#x5982;<a href="#disabling-file-system-routing">Disabling File-System Routing</a>&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;<code>Router</code>&#x5BF9;&#x8C61;&#x7684; API &#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><code>route</code> - &#x5F53;&#x524D;&#x8DEF;&#x7531;&#x7684;<code>String</code>&#x7C7B;&#x578B;</li>
+<li><code>pathname</code> - &#x4E0D;&#x5305;&#x542B;&#x67E5;&#x8BE2;&#x5185;&#x5BB9;&#x7684;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#xFF0C;&#x4E3A;<code>String</code>&#x7C7B;&#x578B;</li>
+<li><code>query</code> - &#x67E5;&#x8BE2;&#x5185;&#x5BB9;&#xFF0C;&#x88AB;&#x89E3;&#x6790;&#x6210;<code>Object</code>&#x7C7B;&#x578B;. &#x9ED8;&#x8BA4;&#x4E3A;<code>{}</code></li>
+<li><code>asPath</code> - &#x5C55;&#x73B0;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x7684;&#x5B9E;&#x9645;&#x8DEF;&#x5F84;&#xFF0C;&#x5305;&#x542B;&#x67E5;&#x8BE2;&#x5185;&#x5BB9;&#xFF0C;&#x4E3A;<code>String</code>&#x7C7B;&#x578B;</li>
+<li><code>push(url, as=url)</code> - &#x9875;&#x9762;&#x6E32;&#x67D3;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570; url &#x7684;&#x9875;&#x9762;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x680F;&#x663E;&#x793A;&#x7684;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570; url</li>
+<li><code>replace(url, as=url)</code> - performs a <code>replaceState</code> call with the given url</li>
+<li><code>beforePopState(cb=function)</code> - &#x5728;&#x8DEF;&#x7531;&#x5668;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x4E4B;&#x524D;&#x62E6;&#x622A;.</li>
+</ul>
+<p><code>push</code> &#x548C; <code>replace</code> &#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;<code>as</code>&#xFF0C;&#x662F;&#x4E3A;&#x4E86;&#x88C5;&#x9970; URL &#x4F5C;&#x7528;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BBE;&#x7F6E;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x5C06;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<p><a id="with-url-object-1"></a></p>
+<h5 id="url-&#x5BF9;&#x8C61;&#x7528;&#x6CD5;"><a name="url-&#x5BF9;&#x8C61;&#x7528;&#x6CD5;" class="plugin-anchor" href="#url-&#x5BF9;&#x8C61;&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>URL &#x5BF9;&#x8C61;&#x7528;&#x6CD5;</h5>
+<p><code>push</code> &#x6216; <code>replace</code>&#x53EF;&#x63A5;&#x6536;&#x7684; URL &#x5BF9;&#x8C61;&#xFF08;<code>&lt;Link&gt;</code>&#x7EC4;&#x4EF6;&#x7684; URL &#x5BF9;&#x8C61;&#x4E00;&#x6837;&#xFF09;&#x6765;&#x751F;&#x6210; URL&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/router&apos;</span>
+
+<span class="hljs-keyword">const</span> handler = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
+  Router.push({
+    <span class="hljs-attr">pathname</span>: <span class="hljs-string">&apos;/about&apos;</span>,
+    <span class="hljs-attr">query</span>: { <span class="hljs-attr">name</span>: <span class="hljs-string">&apos;Zeit&apos;</span> }
+  })
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Click <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{handler}</span>&gt;</span>here<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> to read more
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x50CF;<code>&lt;Link&gt;</code>&#x7EC4;&#x4EF6;&#x4E00;&#x6837;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<p><a id="router-events"></a></p>
+<h5 id="&#x8DEF;&#x7531;&#x4E8B;&#x4EF6;"><a name="&#x8DEF;&#x7531;&#x4E8B;&#x4EF6;" class="plugin-anchor" href="#&#x8DEF;&#x7531;&#x4E8B;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8DEF;&#x7531;&#x4E8B;&#x4EF6;</h5>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x8DEF;&#x7531;&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#x3002;
+&#x4E0B;&#x9762;&#x662F;&#x4E8B;&#x4EF6;&#x652F;&#x6301;&#x5217;&#x8868;&#xFF1A;</p>
+<ul>
+<li><code>routeChangeStart(url)</code> - &#x8DEF;&#x7531;&#x5F00;&#x59CB;&#x5207;&#x6362;&#x65F6;&#x89E6;&#x53D1;</li>
+<li><code>routeChangeComplete(url)</code> - &#x5B8C;&#x6210;&#x8DEF;&#x7531;&#x5207;&#x6362;&#x65F6;&#x89E6;&#x53D1;</li>
+<li><code>routeChangeError(err, url)</code> - &#x8DEF;&#x7531;&#x5207;&#x6362;&#x62A5;&#x9519;&#x65F6;&#x89E6;&#x53D1;</li>
+<li><code>beforeHistoryChange(url)</code> - &#x6D4F;&#x89C8;&#x5668; history &#x6A21;&#x5F0F;&#x5F00;&#x59CB;&#x5207;&#x6362;&#x65F6;&#x89E6;&#x53D1;</li>
+<li><code>hashChangeStart(url)</code> - &#x5F00;&#x59CB;&#x5207;&#x6362; hash &#x503C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x5207;&#x6362;&#x9875;&#x9762;&#x8DEF;&#x7531;&#x65F6;&#x89E6;&#x53D1;</li>
+<li><code>hashChangeComplete(url)</code> - &#x5B8C;&#x6210;&#x5207;&#x6362; hash &#x503C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x5207;&#x6362;&#x9875;&#x9762;&#x8DEF;&#x7531;&#x65F6;&#x89E6;&#x53D1;</li>
+</ul>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x7684;<code>url</code>&#x662F;&#x6307;&#x663E;&#x793A;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684; url&#x3002;&#x5982;&#x679C;&#x4F60;&#x7528;&#x4E86;<code>Router.push(url, as)</code>&#xFF08;&#x6216;&#x7C7B;&#x4F3C;&#x7684;&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x90A3;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684; url &#x5C06;&#x4F1A;&#x663E;&#x793A; as &#x7684;&#x503C;&#x3002;</p>
+</blockquote>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x8DEF;&#x7531;&#x4E8B;&#x4EF6;<code>routeChangeStart</code>&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> handleRouteChange = <span class="hljs-function"><span class="hljs-params">url</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;App is changing to: &apos;</span>, url)
+}
+
+Router.events.on(<span class="hljs-string">&apos;routeChangeStart&apos;</span>, handleRouteChange)
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x60F3;&#x957F;&#x671F;&#x76D1;&#x542C;&#x8BE5;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528;<code>off</code>&#x4E8B;&#x4EF6;&#x53BB;&#x53D6;&#x6D88;&#x76D1;&#x542C;&#xFF1A;</p>
+<pre><code class="lang-js">Router.events.off(<span class="hljs-string">&apos;routeChangeStart&apos;</span>, handleRouteChange)
+</code></pre>
+<p>&#x5982;&#x679C;&#x8DEF;&#x7531;&#x52A0;&#x8F7D;&#x88AB;&#x53D6;&#x6D88;&#xFF08;&#x6BD4;&#x5982;&#x5FEB;&#x901F;&#x8FDE;&#x7EED;&#x53CC;&#x51FB;&#x94FE;&#x63A5;&#xFF09;</p>
+<pre><code class="lang-js">Router.events.on(<span class="hljs-string">&apos;routeChangeError&apos;</span>, (err, url) =&gt; {
+  <span class="hljs-keyword">if</span> (err.cancelled) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Route to <span class="hljs-subst">${url}</span> was cancelled!`</span>)
+  }
+})
+</code></pre>
+<p><a id="shallow-routing"></a></p>
+<h5 id="&#x6D45;&#x5C42;&#x8DEF;&#x7531;"><a name="&#x6D45;&#x5C42;&#x8DEF;&#x7531;" class="plugin-anchor" href="#&#x6D45;&#x5C42;&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D45;&#x5C42;&#x8DEF;&#x7531;</h5>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="examples/with-shallow-routing">Shallow Routing</a></li>
+  </ul>
+</details></p>
+
+<p>&#x6D45;&#x5C42;&#x8DEF;&#x7531;&#x5141;&#x8BB8;&#x4F60;&#x6539;&#x53D8; URL &#x4F46;&#x662F;&#x4E0D;&#x6267;&#x884C;<code>getInitialProps</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x52A0;&#x8F7D;&#x76F8;&#x540C;&#x9875;&#x9762;&#x7684; URL&#xFF0C;&#x5F97;&#x5230;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x8DEF;&#x7531;&#x5C5E;&#x6027;<code>pathname</code>&#x548C;<code>query</code>&#xFF0C;&#x5E76;&#x4E0D;&#x5931;&#x53BB; state &#x72B6;&#x6001;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x7ED9;<code>Router.push</code> &#x6216; <code>Router.replace</code>&#x65B9;&#x6CD5;&#x52A0;<code>shallow: true</code>&#x53C2;&#x6570;&#x3002;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Current URL is &quot;/&quot;</span>
+<span class="hljs-keyword">const</span> href = <span class="hljs-string">&apos;/?counter=10&apos;</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">as</span> = href
+Router.push(href, <span class="hljs-keyword">as</span>, { <span class="hljs-attr">shallow</span>: <span class="hljs-literal">true</span> })
+</code></pre>
+<p>&#x73B0;&#x5728; URL &#x66F4;&#x65B0;&#x4E3A;<code>/?counter=10</code>&#x3002;&#x5728;&#x7EC4;&#x4EF6;&#x91CC;&#x67E5;&#x770B;<code>this.props.router.query</code>&#x4F60;&#x5C06;&#x4F1A;&#x770B;&#x5230;&#x66F4;&#x65B0;&#x7684; URL&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="https://facebook.github.io/react/docs/react-component.html#componentdidupdate" target="_blank"><code>componentdidupdate</code></a>&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E2D;&#x76D1;&#x542C; URL &#x7684;&#x53D8;&#x5316;&#x3002;</p>
+<pre><code class="lang-js">componentDidUpdate(prevProps) {
+  <span class="hljs-keyword">const</span> { pathname, query } = <span class="hljs-keyword">this</span>.props.router
+  <span class="hljs-comment">// verify props have changed to avoid an infinite loop</span>
+  <span class="hljs-keyword">if</span> (query.id !== prevProps.router.query.id) {
+    <span class="hljs-comment">// fetch data based on the new query</span>
+  }
+}
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;:</p>
+<p>&#x6D45;&#x5C42;&#x8DEF;&#x7531;&#x53EA;&#x4F5C;&#x7528;&#x4E8E;&#x76F8;&#x540C; URL &#x7684;&#x53C2;&#x6570;&#x6539;&#x53D8;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x5047;&#x5B9A;&#x6709;&#x4E2A;&#x5176;&#x4ED6;&#x8DEF;&#x7531;<code>about</code>&#xFF0C;&#x800C;&#x4F60;&#x5411;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x6837;&#x8FD0;&#x884C;:</p>
+<pre><code class="lang-js">Router.push(<span class="hljs-string">&apos;/?counter=10&apos;</span>, <span class="hljs-string">&apos;/about?counter=10&apos;</span>, { <span class="hljs-attr">shallow</span>: <span class="hljs-literal">true</span> })
+</code></pre>
+<p>&#x90A3;&#x4E48;&#x8FD9;&#x5C06;&#x4F1A;&#x51FA;&#x73B0;&#x65B0;&#x9875;&#x9762;&#xFF0C;&#x5373;&#x4F7F;&#x6211;&#x4EEC;&#x52A0;&#x4E86;&#x6D45;&#x5C42;&#x8DEF;&#x7531;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x8FD8;&#x662F;&#x4F1A;&#x5378;&#x8F7D;&#x5F53;&#x524D;&#x9875;&#xFF0C;&#x4F1A;&#x52A0;&#x8F7D;&#x65B0;&#x7684;&#x9875;&#x9762;&#x5E76;&#x89E6;&#x53D1;&#x65B0;&#x9875;&#x9762;&#x7684;<code>getInitialProps</code>&#x3002;</p>
+</blockquote>
+<p><a id="using-a-higher-order-component"></a></p>
+<h4 id="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;"><a name="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</h4>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="examples/using-with-router">Using the `withRouter` utility</a></li>
+  </ul>
+</details></p>
+
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5E94;&#x7528;&#x91CC;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x90FD;&#x5904;&#x7406;&#x8DEF;&#x7531;&#x5BF9;&#x8C61;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>withRouter</code>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> { withRouter } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/router&apos;</span>
+
+<span class="hljs-keyword">const</span> ActiveLink = <span class="hljs-function">(<span class="hljs-params">{ children, router, href }</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> style = {
+    <span class="hljs-attr">marginRight</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">color</span>: router.pathname === href? <span class="hljs-string">&apos;red&apos;</span> : <span class="hljs-string">&apos;black&apos;</span>
+  }
+
+  <span class="hljs-keyword">const</span> handleClick = <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+    e.preventDefault()
+    router.push(href)
+  }
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{href}</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{handleClick}</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
+      {children}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>
+  )
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> withRouter(ActiveLink)
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x8DEF;&#x7531;&#x5BF9;&#x8C61;&#x7684; API &#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="#imperatively"><code>next/router</code></a>.</p>
+<p><a id="prefetching-pages"></a></p>
+<h3 id="&#x9884;&#x52A0;&#x8F7D;&#x9875;&#x9762;"><a name="&#x9884;&#x52A0;&#x8F7D;&#x9875;&#x9762;" class="plugin-anchor" href="#&#x9884;&#x52A0;&#x8F7D;&#x9875;&#x9762;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9884;&#x52A0;&#x8F7D;&#x9875;&#x9762;</h3>
+<p>&#x26A0;&#xFE0F; &#x53EA;&#x6709;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x624D;&#x6709;&#x6B64;&#x529F;&#x80FD; &#x26A0;&#xFE0F;</p>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="examples/with-prefetching">Prefetching</a></li></ul>
+</details></p>
+
+<p>Next.js &#x6709;&#x5141;&#x8BB8;&#x4F60;&#x9884;&#x52A0;&#x8F7D;&#x9875;&#x9762;&#x7684; API&#x3002;</p>
+<p>&#x7528; Next.js &#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x4F60;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x6240;&#x6709;&#x4F60;&#x5E94;&#x7528;&#x91CC;&#x6240;&#x6709;&#x672A;&#x6765;&#x4F1A;&#x8DF3;&#x8F6C;&#x7684;&#x8DEF;&#x5F84;&#x5373;&#x65F6;&#x54CD;&#x5E94;&#xFF0C;&#x6709;&#x6548;&#x7684;&#x5E94;&#x7528; Next.js&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9884;&#x52A0;&#x8F7D;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6700;&#x5927;&#x7A0B;&#x5EA6;&#x7684;&#x521D;&#x59CB;&#x5316;&#x7F51;&#x7AD9;&#x6027;&#x80FD;&#x3002;<a href="https://zeit.co/blog/next#anticipation-is-the-key-to-performance" target="_blank">&#x67E5;&#x770B;&#x66F4;&#x591A;</a>.</p>
+<blockquote>
+<p>Next.js &#x7684;&#x9884;&#x52A0;&#x8F7D;&#x529F;&#x80FD;&#x53EA;&#x9884;&#x52A0;&#x8F7D; JS &#x4EE3;&#x7801;&#x3002;&#x5F53;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x6570;&#x636E;&#x8BF7;&#x6C42;&#x3002;</p>
+</blockquote>
+<p><a id="with-link-1"></a></p>
+<h4 id="link&#x7528;&#x6CD5;"><a name="link&#x7528;&#x6CD5;" class="plugin-anchor" href="#link&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><code>&lt;Link&gt;</code>&#x7528;&#x6CD5;</h4>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x7ED9;<link>&#x6DFB;&#x52A0; <code>prefetch</code> &#x5C5E;&#x6027;&#xFF0C;Next.js &#x5C06;&#x4F1A;&#x5728;&#x540E;&#x53F0;&#x9884;&#x52A0;&#x8F7D;&#x8FD9;&#x4E9B;&#x9875;&#x9762;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/link&apos;</span>
+
+<span class="hljs-comment">// example header component</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">prefetch</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">prefetch</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/about&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">prefetch</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/contact&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span>
+</code></pre>
+<p><a id="imperatively-1"></a></p>
+<h4 id="&#x547D;&#x4EE4;&#x5F0F;-prefetch-&#x5199;&#x6CD5;"><a name="&#x547D;&#x4EE4;&#x5F0F;-prefetch-&#x5199;&#x6CD5;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x5F0F;-prefetch-&#x5199;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x5F0F; prefetch &#x5199;&#x6CD5;</h4>
+<p>&#x5927;&#x591A;&#x6570;&#x9884;&#x52A0;&#x8F7D;&#x662F;&#x901A;&#x8FC7;<link>&#x5904;&#x7406;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x547D;&#x4EE4;&#x5F0F; API &#x7528;&#x4E8E;&#x66F4;&#x590D;&#x6742;&#x7684;&#x573A;&#x666F;&#x3002;</p>
+<pre><code class="lang-jsx">import { withRouter } from &apos;next/router&apos;
+
+export default withRouter(({ router }) =&gt;
+  &lt;div&gt;
+    &lt;a onClick={() =&gt; setTimeout(() =&gt; router.push(&apos;/dynamic&apos;), 100)}&gt;
+      A route transition will happen after 100ms
+    &lt;/a&gt;
+    {// but we can prefetch it!
+    router.prefetch(&apos;/dynamic&apos;)}
+  &lt;/div&gt;
+)
+</code></pre>
+<p>&#x8DEF;&#x7531;&#x5B9E;&#x4F8B;&#x53EA;&#x5141;&#x8BB8;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x4EE5;&#x9632;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x5EFA;&#x8BAE; prefetch &#x4E8B;&#x4EF6;&#x5199;&#x5728;<code>componentDidMount()</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> { withRouter } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/router&apos;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyLink</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  componentDidMount() {
+    <span class="hljs-keyword">const</span> { router } = <span class="hljs-keyword">this</span>.props
+    router.prefetch(<span class="hljs-string">&apos;/dynamic&apos;</span>)
+  }
+
+  render() {
+    <span class="hljs-keyword">const</span> { router } = <span class="hljs-keyword">this</span>.props
+    <span class="hljs-keyword">return</span> (
+       <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setTimeout(() =&gt; router.push(&apos;/dynamic&apos;), 100)}&gt;
+          A route transition will happen after 100ms
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>   
+    )
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> withRouter(MyLink)
+</code></pre>
+<p><a id="custom-server-and-routing"></a></p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x7AEF;&#x8DEF;&#x7531;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x7AEF;&#x8DEF;&#x7531;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x7AEF;&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x7AEF;&#x8DEF;&#x7531;</h3>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="examples/custom-server">Basic custom server</a></li>
+    <li><a href="examples/custom-server-express">Express integration</a></li>
+    <li><a href="examples/custom-server-hapi">Hapi integration</a></li>
+    <li><a href="examples/custom-server-koa">Koa integration</a></li>
+    <li><a href="examples/parameterized-routing">Parameterized routing</a></li>
+    <li><a href="examples/ssr-caching">SSR caching</a></li>
+  </ul>
+</details></p>
+
+
+<p>&#x4E00;&#x822C;&#x4F60;&#x4F7F;&#x7528;<code>next start</code>&#x547D;&#x4EE4;&#x6765;&#x542F;&#x52A8; next &#x670D;&#x52A1;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#xFF0C;&#x5982;&#x4F7F;&#x7528;&#x8DEF;&#x7531;&#x6B63;&#x5219;&#x7B49;&#x3002;</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x6240;&#x793A;&#x53EB; server.js &#x65F6;&#xFF0C;&#x786E;&#x4FDD;&#x4F60;&#x66F4;&#x65B0;&#x4E86; package.json &#x4E2D;&#x7684;&#x811A;&#x672C;&#x3002;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;dev&quot;</span>: <span class="hljs-string">&quot;node server.js&quot;</span>,
+    <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;next build&quot;</span>,
+    <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;NODE_ENV=production node server.js&quot;</span>
+  }
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4F7F; <code>/a</code> &#x8DEF;&#x7531;&#x89E3;&#x6790;&#x4E3A;<code>./pages/b</code>&#xFF0C;&#x4EE5;&#x53CA;<code>/b</code> &#x8DEF;&#x7531;&#x89E3;&#x6790;&#x4E3A;<code>./pages/a</code>;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// This file doesn&apos;t go through babel or webpack transformation.</span>
+<span class="hljs-comment">// Make sure the syntax and sources this file requires are compatible with the current node version you are running</span>
+<span class="hljs-comment">// See https://github.com/zeit/next.js/issues/1245 for discussions on Universal Webpack or universal Babel</span>
+<span class="hljs-keyword">const</span> { createServer } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;http&apos;</span>)
+<span class="hljs-keyword">const</span> { parse } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;url&apos;</span>)
+<span class="hljs-keyword">const</span> next = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;next&apos;</span>)
+
+<span class="hljs-keyword">const</span> dev = process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>
+<span class="hljs-keyword">const</span> app = next({ dev })
+<span class="hljs-keyword">const</span> handle = app.getRequestHandler()
+
+app.prepare().then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  createServer(<span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+    <span class="hljs-comment">// Be sure to pass `true` as the second argument to `url.parse`.</span>
+    <span class="hljs-comment">// This tells it to parse the query portion of the URL.</span>
+    <span class="hljs-keyword">const</span> parsedUrl = parse(req.url, <span class="hljs-literal">true</span>)
+    <span class="hljs-keyword">const</span> { pathname, query } = parsedUrl
+
+    <span class="hljs-keyword">if</span> (pathname === <span class="hljs-string">&apos;/a&apos;</span>) {
+      app.render(req, res, <span class="hljs-string">&apos;/b&apos;</span>, query)
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pathname === <span class="hljs-string">&apos;/b&apos;</span>) {
+      app.render(req, res, <span class="hljs-string">&apos;/a&apos;</span>, query)
+    } <span class="hljs-keyword">else</span> {
+      handle(req, res, parsedUrl)
+    }
+  }).listen(<span class="hljs-number">3000</span>, err =&gt; {
+    <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&gt; Ready on http://localhost:3000&apos;</span>)
+  })
+})
+</code></pre>
+<p><code>next</code>&#x7684; API &#x5982;&#x4E0B;&#x6240;&#x793A;</p>
+<ul>
+<li><code>next(opts: object)</code></li>
+</ul>
+<p>opts &#x7684;&#x5C5E;&#x6027;&#x5982;&#x4E0B;:</p>
+<ul>
+<li><code>dev</code> (<code>boolean</code>) &#x5224;&#x65AD; Next.js &#x5E94;&#x7528;&#x662F;&#x5426;&#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883; - &#x9ED8;&#x8BA4;<code>false</code></li>
+<li><code>dir</code> (<code>string</code>) Next &#x9879;&#x76EE;&#x8DEF;&#x5F84; - &#x9ED8;&#x8BA4;<code>&apos;.&apos;</code></li>
+<li><code>quiet</code> (<code>boolean</code>) &#x662F;&#x5426;&#x9690;&#x85CF;&#x5305;&#x542B;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#x5728;&#x5185;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F; - &#x9ED8;&#x8BA4;<code>false</code></li>
+<li><code>conf</code> (<code>object</code>) &#x4E0E;<code>next.config.js</code>&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x540C; - &#x9ED8;&#x8BA4;<code>{}</code></li>
+</ul>
+<p>&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x6539; package.json &#x91CC;&#x7684;<code>start</code>&#x811A;&#x672C;&#x4E3A;<code>NODE_ENV=production node server.js</code>&#x3002;</p>
+<p><a id="disabling-file-system-routing"></a></p>
+<h4 id="&#x7981;&#x6B62;&#x6587;&#x4EF6;&#x8DEF;&#x7531;"><a name="&#x7981;&#x6B62;&#x6587;&#x4EF6;&#x8DEF;&#x7531;" class="plugin-anchor" href="#&#x7981;&#x6B62;&#x6587;&#x4EF6;&#x8DEF;&#x7531;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7981;&#x6B62;&#x6587;&#x4EF6;&#x8DEF;&#x7531;</h4>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#xFF0C;<code>Next</code>&#x5C06;&#x4F1A;&#x628A;<code>/pages</code>&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x5339;&#x914D;&#x8DEF;&#x7531;&#xFF08;&#x5982;<code>/pages/some-file.js</code> &#x6E32;&#x67D3;&#x4E3A; <code>site.com/some-file</code>&#xFF09;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#xFF0C;&#x90A3;&#x4E48;&#x6709;&#x53EF;&#x80FD;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x7531;&#x4F1A;&#x5F97;&#x5230;&#x76F8;&#x540C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x4F18;&#x5316; SEO &#x548C;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002;</p>
+<p>&#x7981;&#x6B62;&#x8DEF;&#x7531;&#x94FE;&#x63A5;&#x5230;<code>/pages</code>&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EA;&#x9700;&#x8BBE;&#x7F6E;<code>next.config.js</code>&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">useFileSystemPublicRoutes</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;<code>useFileSystemPublicRoutes</code>&#x53EA;&#x7981;&#x6B62;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x7531;&#xFF1B;&#x4F46;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8FD8;&#x662F;&#x7981;&#x6B62;&#x4E0D;&#x4E86;&#x3002;</p>
+<p>&#x4F60;&#x5982;&#x679C;&#x60F3;&#x914D;&#x7F6E;&#x5BA2;&#x6237;&#x7AEF;&#x8DEF;&#x7531;&#x4E0D;&#x80FD;&#x8DF3;&#x8F6C;&#x6587;&#x4EF6;&#x8DEF;&#x7531;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="#intercepting-popstate">Intercepting <code>popstate</code></a>&#x3002;</p>
+<p><a id="dynamic-assetprefix"></a></p>
+<h4 id="&#x52A8;&#x6001;&#x524D;&#x7F00;"><a name="&#x52A8;&#x6001;&#x524D;&#x7F00;" class="plugin-anchor" href="#&#x52A8;&#x6001;&#x524D;&#x7F00;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A8;&#x6001;&#x524D;&#x7F00;</h4>
+<p>&#x6709;&#x65F6;&#x4F60;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x52A8;&#x6001;&#x524D;&#x7F00;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8BF7;&#x6C42;&#x65F6;&#x8BBE;&#x7F6E;<code>assetPrefix</code>&#x6539;&#x53D8;&#x524D;&#x7F00;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> next = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;next&apos;</span>)
+<span class="hljs-keyword">const</span> micro = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;micro&apos;</span>)
+
+<span class="hljs-keyword">const</span> dev = process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>
+<span class="hljs-keyword">const</span> app = next({ dev })
+<span class="hljs-keyword">const</span> handleNextRequests = app.getRequestHandler()
+
+app.prepare().then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> server = micro(<span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+    <span class="hljs-comment">// Add assetPrefix support based on the hostname</span>
+    <span class="hljs-keyword">if</span> (req.headers.host === <span class="hljs-string">&apos;my-app.com&apos;</span>) {
+      app.setAssetPrefix(<span class="hljs-string">&apos;http://cdn.com/myapp&apos;</span>)
+    } <span class="hljs-keyword">else</span> {
+      app.setAssetPrefix(<span class="hljs-string">&apos;&apos;</span>)
+    }
+
+    handleNextRequests(req, res)
+  })
+
+  server.listen(port, (err) =&gt; {
+    <span class="hljs-keyword">if</span> (err) {
+      <span class="hljs-keyword">throw</span> err
+    }
+
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&gt; Ready on http://localhost:<span class="hljs-subst">${port}</span>`</span>)
+  })
+})
+</code></pre>
+<p><a id="dynamic-import"></a></p>
+<h3 id="&#x52A8;&#x6001;&#x5BFC;&#x5165;"><a name="&#x52A8;&#x6001;&#x5BFC;&#x5165;" class="plugin-anchor" href="#&#x52A8;&#x6001;&#x5BFC;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A8;&#x6001;&#x5BFC;&#x5165;</h3>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="examples/with-dynamic-import">With Dynamic Import</a></li>
+  </ul>
+</details></p>
+
+<p>ext.js &#x652F;&#x6301; JavaScript &#x7684; TC39 &#x63D0;&#x8BAE;<a href="https://github.com/tc39/proposal-dynamic-import" target="_blank">dynamic import proposal</a>&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5BFC;&#x5165; JavaScript &#x6A21;&#x5757;&#xFF08;&#x5982; React &#x7EC4;&#x4EF6;&#xFF09;&#x3002;</p>
+<p>&#x52A8;&#x6001;&#x5BFC;&#x5165;&#x76F8;&#x5F53;&#x4E8E;&#x628A;&#x4EE3;&#x7801;&#x5206;&#x6210;&#x5404;&#x4E2A;&#x5757;&#x7BA1;&#x7406;&#x3002;Next.js &#x670D;&#x52A1;&#x7AEF;&#x52A8;&#x6001;&#x5BFC;&#x5165;&#x529F;&#x80FD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x505A;&#x5F88;&#x591A;&#x70AB;&#x9177;&#x4E8B;&#x60C5;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x4E00;&#x4E9B;&#x52A8;&#x6001;&#x5BFC;&#x5165;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<p><a id="1-basic-usage-also-does-ssr"></a></p>
+<h4 id="1-&#x57FA;&#x7840;&#x652F;&#x6301;-&#x540C;&#x6837;&#x652F;&#x6301;-ssr"><a name="1-&#x57FA;&#x7840;&#x652F;&#x6301;-&#x540C;&#x6837;&#x652F;&#x6301;-ssr" class="plugin-anchor" href="#1-&#x57FA;&#x7840;&#x652F;&#x6301;-&#x540C;&#x6837;&#x652F;&#x6301;-ssr"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x57FA;&#x7840;&#x652F;&#x6301; (&#x540C;&#x6837;&#x652F;&#x6301; SSR)</h4>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> dynamic <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/dynamic&apos;</span>
+
+<span class="hljs-keyword">const</span> DynamicComponent = dynamic(<span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;../components/hello&apos;</span>))
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DynamicComponent</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>HOME PAGE is here!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p><a id="2-with-custom-loading-componen"></a></p>
+<h4 id="2-&#x81EA;&#x5B9A;&#x4E49;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;"><a name="2-&#x81EA;&#x5B9A;&#x4E49;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#2-&#x81EA;&#x5B9A;&#x4E49;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x81EA;&#x5B9A;&#x4E49;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;</h4>
+<pre><code class="lang-jsx">import dynamic from &apos;next/dynamic&apos;
+
+const DynamicComponentWithCustomLoading = dynamic(
+  import(&apos;../components/hello2&apos;),
+  {
+    loading: () =&gt; &lt;p&gt;...&lt;/p&gt;
+  }
+)
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Header /&gt;
+    &lt;DynamicComponentWithCustomLoading /&gt;
+    &lt;p&gt;HOME PAGE is here!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre>
+<p><a id="3-with-no-ssr"></a></p>
+<h4 id="3-&#x7981;&#x6B62;&#x4F7F;&#x7528;-ssr"><a name="3-&#x7981;&#x6B62;&#x4F7F;&#x7528;-ssr" class="plugin-anchor" href="#3-&#x7981;&#x6B62;&#x4F7F;&#x7528;-ssr"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x7981;&#x6B62;&#x4F7F;&#x7528; SSR</h4>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> dynamic <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/dynamic&apos;</span>
+
+<span class="hljs-keyword">const</span> DynamicComponentWithNoSSR = dynamic(<span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;../components/hello3&apos;</span>), {
+  <span class="hljs-attr">ssr</span>: <span class="hljs-literal">false</span>
+})
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DynamicComponentWithNoSSR</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>HOME PAGE is here!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<p><a id="4-with-multiple-modules-at-once"></a></p>
+<h4 id="4-&#x540C;&#x65F6;&#x52A0;&#x8F7D;&#x591A;&#x4E2A;&#x6A21;&#x5757;"><a name="4-&#x540C;&#x65F6;&#x52A0;&#x8F7D;&#x591A;&#x4E2A;&#x6A21;&#x5757;" class="plugin-anchor" href="#4-&#x540C;&#x65F6;&#x52A0;&#x8F7D;&#x591A;&#x4E2A;&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x540C;&#x65F6;&#x52A0;&#x8F7D;&#x591A;&#x4E2A;&#x6A21;&#x5757;</h4>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> dynamic <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/dynamic&apos;</span>
+
+<span class="hljs-keyword">const</span> HelloBundle = dynamic({
+  <span class="hljs-attr">modules</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> components = {
+      <span class="hljs-attr">Hello1</span>: <span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;../components/hello1&apos;</span>),
+      <span class="hljs-attr">Hello2</span>: <span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;../components/hello2&apos;</span>)
+    }
+
+    <span class="hljs-keyword">return</span> components
+  },
+  <span class="hljs-attr">render</span>: <span class="hljs-function">(<span class="hljs-params">props, { Hello1, Hello2 }</span>) =&gt;</span>
+    &lt;div&gt;
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+        {props.title}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+      &lt;Hello1 /&gt;
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Hello2</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+})
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">HelloBundle</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Dynamic Bundle&quot;</span> /&gt;</span>
+</span></code></pre>
+<p><a id="custom-app"></a></p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;-app"><a name="&#x81EA;&#x5B9A;&#x4E49;-app" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;-app"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49; <code>&lt;App&gt;</code></h3>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="examples/with-app-layout">Using `_app.js` for layout</a></li></ul>
+  <ul><li><a href="examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li></ul>
+</details></p>
+
+<p>&#x7EC4;&#x4EF6;&#x6765;&#x521D;&#x59CB;&#x5316;&#x9875;&#x9762;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x91CD;&#x5199;&#x5B83;&#x6765;&#x63A7;&#x5236;&#x9875;&#x9762;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4E8B;&#xFF1A;</p>
+<ul>
+<li>&#x5F53;&#x9875;&#x9762;&#x53D8;&#x5316;&#x65F6;&#x4FDD;&#x6301;&#x9875;&#x9762;&#x5E03;&#x5C40;</li>
+<li>&#x5F53;&#x8DEF;&#x7531;&#x53D8;&#x5316;&#x65F6;&#x4FDD;&#x6301;&#x9875;&#x9762;&#x72B6;&#x6001;</li>
+<li>&#x4F7F;&#x7528;<code>componentDidCatch</code>&#x81EA;&#x5B9A;&#x4E49;&#x5904;&#x7406;&#x9519;&#x8BEF;</li>
+<li>&#x6CE8;&#x5165;&#x989D;&#x5916;&#x6570;&#x636E;&#x5230;&#x9875;&#x9762;&#x91CC; (&#x5982; GraphQL &#x67E5;&#x8BE2;)</li>
+</ul>
+<p>&#x91CD;&#x5199;&#x7684;&#x8BDD;&#xFF0C;&#x65B0;&#x5EFA;<code>./pages/_app.js</code>&#x6587;&#x4EF6;&#xFF0C;&#x91CD;&#x5199; App &#x6A21;&#x5757;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> App, {Container} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/app&apos;</span>
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">App</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> getInitialProps ({ Component, router, ctx }) {
+    <span class="hljs-keyword">let</span> pageProps = {}
+
+    <span class="hljs-keyword">if</span> (Component.getInitialProps) {
+      pageProps = <span class="hljs-keyword">await</span> Component.getInitialProps(ctx)
+    }
+
+    <span class="hljs-keyword">return</span> {pageProps}
+  }
+
+  render () {
+    <span class="hljs-keyword">const</span> {Component, pageProps} = <span class="hljs-keyword">this</span>.props
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Component</span> {<span class="hljs-attr">...pageProps</span>} /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span>
+  }
+}
+</span></code></pre>
+<p><a id="custom-document"></a></p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;-document"><a name="&#x81EA;&#x5B9A;&#x4E49;-document" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;-document"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49; <code>&lt;Document&gt;</code></h3>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="examples/with-styled-components">Styled components custom document</a></li></ul>
+  <ul><li><a href="examples/with-amp">Google AMP</a></li></ul>
+</details></p>
+
+<ul>
+<li>&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x5448;&#x73B0;</li>
+<li>&#x521D;&#x59CB;&#x5316;&#x670D;&#x52A1;&#x7AEF;&#x65F6;&#x6DFB;&#x52A0;&#x6587;&#x6863;&#x6807;&#x8BB0;&#x5143;&#x7D20;</li>
+<li>&#x901A;&#x5E38;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x4F1A;&#x4F7F;&#x7528;&#x4E00;&#x4E9B; css-in-js &#x5E93;&#xFF0C;&#x5982;<a href="examples/with-styled-components">styled-components</a>, <a href="examples/with-glamorous">glamorous</a> &#x6216; <a href="with-emotion">emotion</a>&#x3002;<a href="https://github.com/zeit/styled-jsx" target="_blank">styled-jsx</a>&#x662F; Next.js &#x81EA;&#x5E26;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7684; css-in-js &#x5E93;</li>
+</ul>
+<p><code>Next.js</code>&#x4F1A;&#x81EA;&#x52A8;&#x5B9A;&#x4E49;&#x6587;&#x6863;&#x6807;&#x8BB0;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x4F60;&#x4ECE;&#x6765;&#x4E0D;&#x9700;&#x8981;&#x6DFB;&#x52A0;<code>&lt;html&gt;</code>, <code>&lt;body&gt;</code>&#x7B49;&#x3002;&#x5982;&#x679C;&#x60F3;&#x81EA;&#x5B9A;&#x4E49;&#x6587;&#x6863;&#x6807;&#x8BB0;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x65B0;&#x5EFA;<code>./pages/_document.js</code>&#xFF0C;&#x7136;&#x540E;&#x6269;&#x5C55;<code>Document</code>&#x7C7B;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// _document is only rendered on the server side and not on the client side</span>
+<span class="hljs-comment">// Event handlers like onClick can&apos;t be added to this file</span>
+
+<span class="hljs-comment">// ./pages/_document.js</span>
+<span class="hljs-keyword">import</span> Document, { Head, Main, NextScript } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/document&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyDocument</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Document</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> getInitialProps(ctx) {
+    <span class="hljs-keyword">const</span> initialProps = <span class="hljs-keyword">await</span> Document.getInitialProps(ctx)
+    <span class="hljs-keyword">return</span> { ...initialProps }
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Head</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">{`body { margin: 0 } /* custom! */`}</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;custom_class&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Main</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">NextScript</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span>
+    )
+  }
+}
+</code></pre>
+<p>&#x94A9;&#x5B50;<a href="#fetching-data-and-component-lifecycle"><code>getInitialProps</code></a>&#x63A5;&#x6536;&#x5230;&#x7684;&#x53C2;&#x6570;<code>ctx</code>&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;</p>
+<ul>
+<li>&#x56DE;&#x8C03;&#x51FD;&#x6570;<code>renderPage</code>&#x662F;&#x4F1A;&#x6267;&#x884C; React &#x6E32;&#x67D3;&#x903B;&#x8F91;&#x7684;&#x51FD;&#x6570;(&#x540C;&#x6B65;)&#xFF0C;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x6709;&#x52A9;&#x4E8E;&#x6B64;&#x51FD;&#x6570;&#x652F;&#x6301;&#x4E00;&#x4E9B;&#x7C7B;&#x4F3C;&#x4E8E; Aphrodite &#x7684; renderStatic &#x7B49;&#x4E00;&#x4E9B;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6E32;&#x67D3;&#x5BB9;&#x5668;&#x3002;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;<code>&lt;Main /&gt;</code>&#x5916;&#x7684; React &#x7EC4;&#x4EF6;&#x5C06;&#x4E0D;&#x4F1A;&#x6E32;&#x67D3;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x90A3;&#x6DFB;&#x52A0;&#x5E94;&#x7528;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x4F60;&#x9875;&#x9762;&#x9700;&#x8981;&#x516C;&#x5171;&#x7EC4;&#x4EF6;&#xFF08;&#x83DC;&#x5355;&#x6216;&#x5DE5;&#x5177;&#x680F;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x7167;&#x4E0A;&#x9762;&#x8BF4;&#x7684;<code>App</code>&#x7EC4;&#x4EF6;&#x4EE3;&#x66FF;&#x3002;</strong></p>
+<p><a id="custom-error-handling"></a></p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5904;&#x7406;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5904;&#x7406;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5904;&#x7406;</h3>
+<p>404&#x548C;500&#x9519;&#x8BEF;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x90FD;&#x4F1A;&#x901A;&#x8FC7;<code>error.js</code>&#x7EC4;&#x4EF6;&#x5904;&#x7406;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x6539;&#x5199;&#x5B83;&#xFF0C;&#x5219;&#x65B0;&#x5EFA;<code>_error.js</code>&#x5728;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Error</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">static</span> getInitialProps({ res, err }) {
+    <span class="hljs-keyword">const</span> statusCode = res ? res.statusCode : err ? err.statusCode : <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">return</span> { statusCode }
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        {this.props.statusCode
+          ? `An error ${this.props.statusCode} occurred on server`
+          : &apos;An error occurred on client&apos;}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+    )
+  }
+}
+</code></pre>
+<p><a id="reusing-the-built-in-error-page"></a></p>
+<h3 id="&#x6E32;&#x67D3;&#x5185;&#x7F6E;&#x9519;&#x8BEF;&#x9875;&#x9762;"><a name="&#x6E32;&#x67D3;&#x5185;&#x7F6E;&#x9519;&#x8BEF;&#x9875;&#x9762;" class="plugin-anchor" href="#&#x6E32;&#x67D3;&#x5185;&#x7F6E;&#x9519;&#x8BEF;&#x9875;&#x9762;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E32;&#x67D3;&#x5185;&#x7F6E;&#x9519;&#x8BEF;&#x9875;&#x9762;</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x6E32;&#x67D3;&#x5185;&#x7F6E;&#x9519;&#x8BEF;&#x9875;&#x9762;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>next/error</code>&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-built_in">Error</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/error&apos;</span>
+<span class="hljs-keyword">import</span> fetch <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;isomorphic-unfetch&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Page</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> getInitialProps() {
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(<span class="hljs-string">&apos;https://api.github.com/repos/zeit/next.js&apos;</span>)
+    <span class="hljs-keyword">const</span> statusCode = res.statusCode &gt; <span class="hljs-number">200</span> ? res.statusCode : <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">const</span> json = <span class="hljs-keyword">await</span> res.json()
+
+    <span class="hljs-keyword">return</span> { statusCode, <span class="hljs-attr">stars</span>: json.stargazers_count }
+  }
+
+  render() {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.statusCode) {
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Error</span> <span class="hljs-attr">statusCode</span>=<span class="hljs-string">{this.props.statusCode}</span> /&gt;</span>
+    }
+
+    return (
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        Next stars: {this.props.stars}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    )
+  }
+}
+</span></code></pre>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E2A;&#x9519;&#x8BEF;&#x9875;&#x9762;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5F15;&#x5165;&#x81EA;&#x5DF1;&#x7684;&#x9519;&#x8BEF;&#x9875;&#x9762;&#x6765;&#x4EE3;&#x66FF;<code>next/error</code></p>
+</blockquote>
+<p><a id="custom-configuration"></a></p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x81EA;&#x5B9A;&#x4E49; Next.js &#x7684;&#x9AD8;&#x7EA7;&#x914D;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;<code>next.config.js</code>&#x6587;&#x4EF6;&#xFF08;&#x4E0E;<code>pages/</code> &#x548C; <code>package.json</code>&#x4E00;&#x8D77;&#xFF09;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;<code>next.config.js</code>&#x662F;&#x4E00;&#x4E2A; Node.js &#x6A21;&#x5757;&#xFF0C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A; JSON &#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E; Next &#x542F;&#x52A8;&#x670D;&#x52A1;&#x5DF2;&#x7ECF;&#x6784;&#x5EFA;&#x9636;&#x6BB5;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4F5C;&#x7528;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">/* config options here */</span>
+}
+</code></pre>
+<p>&#x6216;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">phase, {defaultConfig}</span>) =&gt;</span> {
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">// https://github.com/zeit/</span>
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-comment">/* config options here */</span>
+  }
+}
+</code></pre>
+<p><code>phase</code>&#x662F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x88AB;&#x52A0;&#x8F7D;&#x65F6;&#x7684;&#x5F53;&#x524D;&#x5185;&#x5BB9;&#x3002;&#x4F60;&#x53EF;&#x770B;&#x5230;&#x6240;&#x6709;&#x7684; phases &#x5E38;&#x91CF;&#xFF1A;<a href="lib/constants.js">constants</a>
+&#x8FD9;&#x4E9B;&#x5E38;&#x91CF;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>next/constants</code>&#x5F15;&#x5165;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> {PHASE_DEVELOPMENT_SERVER} = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;next/constants&apos;</span>)
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">phase, {defaultConfig}</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span>(phase === PHASE_DEVELOPMENT_SERVER) {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-comment">/* development only config options here */</span>
+    }
+  }
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-comment">/* config options for all phases except development here */</span>
+  }
+}
+</code></pre>
+<p><a id="setting-a-custom-build-directory"></a></p>
+<h4 id="&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;&#x76EE;&#x5F55;"><a name="&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;&#x76EE;&#x5F55;" class="plugin-anchor" href="#&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;&#x76EE;&#x5F55;</h4>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x76EE;&#x5F55;&#xFF0C;&#x5982;&#x65B0;&#x5EFA;<code>build</code>&#x6587;&#x4EF6;&#x5939;&#x6765;&#x4EE3;&#x66FF;<code>.next</code> &#x6587;&#x4EF6;&#x5939;&#x6210;&#x4E3A;&#x6784;&#x5EFA;&#x76EE;&#x5F55;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#x6784;&#x5EFA;&#x76EE;&#x5F55;&#xFF0C;&#x6784;&#x5EFA;&#x65F6;&#x5C06;&#x4F1A;&#x81EA;&#x52A8;&#x65B0;&#x5EFA;<code>.next</code>&#x6587;&#x4EF6;&#x5939;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">distDir</span>: <span class="hljs-string">&apos;build&apos;</span>
+}
+</code></pre>
+<p><a id="disabling-etag-generation"></a></p>
+<h4 id="&#x7981;&#x6B62;-etag-&#x751F;&#x6210;"><a name="&#x7981;&#x6B62;-etag-&#x751F;&#x6210;" class="plugin-anchor" href="#&#x7981;&#x6B62;-etag-&#x751F;&#x6210;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7981;&#x6B62; etag &#x751F;&#x6210;</h4>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x7981;&#x6B62; etag &#x751F;&#x6210;&#x6839;&#x636E;&#x4F60;&#x7684;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#xFF0C;Next &#x5C06;&#x4F1A;&#x751F;&#x6210; etags &#x5230;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">generateEtags</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p><a id="configuring-the-ondemandentries"></a></p>
+<h4 id="&#x914D;&#x7F6E;-ondemandentries"><a name="&#x914D;&#x7F6E;-ondemandentries" class="plugin-anchor" href="#&#x914D;&#x7F6E;-ondemandentries"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E; onDemandEntries</h4>
+<p>Next &#x66B4;&#x9732;&#x4E00;&#x4E9B;&#x9009;&#x9879;&#x6765;&#x7ED9;&#x4F60;&#x63A7;&#x5236;&#x670D;&#x52A1;&#x5668;&#x90E8;&#x7F72;&#x4EE5;&#x53CA;&#x7F13;&#x5B58;&#x9875;&#x9762;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">onDemandEntries</span>: {
+    <span class="hljs-comment">// period (in ms) where the server will keep pages in the buffer</span>
+    maxInactiveAge: <span class="hljs-number">25</span> * <span class="hljs-number">1000</span>,
+    <span class="hljs-comment">// number of pages that should be kept simultaneously without being disposed</span>
+    pagesBufferLength: <span class="hljs-number">2</span>,
+  }
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x53EA;&#x662F;&#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x624D;&#x6709;&#x7684;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5728;&#x751F;&#x6210;&#x73AF;&#x5883;&#x4E2D;&#x60F3;&#x7F13;&#x5B58; SSR &#x9875;&#x9762;&#xFF0C;&#x8BF7;&#x67E5;&#x770B;<a href="https://github.com/zeit/next.js/tree/canary/examples/ssr-caching" target="_blank">SSR-caching</a></p>
+<p><a id="configuring-extensions-looked-for-when-resolving-pages-in-pages"></a></p>
+<h4 id="&#x914D;&#x7F6E;&#x9875;&#x9762;&#x540E;&#x7F00;&#x540D;&#x89E3;&#x6790;&#x6269;&#x5C55;"><a name="&#x914D;&#x7F6E;&#x9875;&#x9762;&#x540E;&#x7F00;&#x540D;&#x89E3;&#x6790;&#x6269;&#x5C55;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x9875;&#x9762;&#x540E;&#x7F00;&#x540D;&#x89E3;&#x6790;&#x6269;&#x5C55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x9875;&#x9762;&#x540E;&#x7F00;&#x540D;&#x89E3;&#x6790;&#x6269;&#x5C55;</h4>
+<p>&#x5982; typescript &#x6A21;&#x5757;<a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript" target="_blank"><code>@zeit/next-typescript</code></a>&#xFF0C;&#x9700;&#x8981;&#x652F;&#x6301;&#x89E3;&#x6790;&#x540E;&#x7F00;&#x540D;&#x4E3A;<code>.ts</code>&#x7684;&#x6587;&#x4EF6;&#x3002;<code>pageExtensions</code> &#x5141;&#x8BB8;&#x4F60;&#x6269;&#x5C55;&#x540E;&#x7F00;&#x540D;&#x6765;&#x89E3;&#x6790;&#x5404;&#x79CD; pages &#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">pageExtensions</span>: [<span class="hljs-string">&apos;jsx&apos;</span>, <span class="hljs-string">&apos;js&apos;</span>]
+}
+</code></pre>
+<p><a id="configuring-the-build-id"></a></p>
+<h4 id="&#x914D;&#x7F6E;&#x6784;&#x5EFA;-id"><a name="&#x914D;&#x7F6E;&#x6784;&#x5EFA;-id" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x6784;&#x5EFA;-id"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x6784;&#x5EFA; ID</h4>
+<p>Next.js &#x4F7F;&#x7528;&#x6784;&#x5EFA;&#x65F6;&#x751F;&#x6210;&#x7684;&#x5E38;&#x91CF;&#x6765;&#x6807;&#x8BC6;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x662F;&#x54EA;&#x4E2A;&#x7248;&#x672C;&#x3002;&#x5728;&#x6BCF;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x6784;&#x5EFA;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x591A;&#x670D;&#x52A1;&#x5668;&#x90E8;&#x7F72;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x3002;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x540C;&#x4E00;&#x4E2A;&#x6784;&#x5EFA; ID&#xFF0C;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;<code>generateBuildId</code>&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">generateBuildId</span>: <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-comment">// For example get the latest git commit hash here</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;my-build-id&apos;</span>
+  }
+}
+</code></pre>
+<p><a id="customizing-webpack-config"></a></p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;-webpack-&#x914D;&#x7F6E;"><a name="&#x81EA;&#x5B9A;&#x4E49;-webpack-&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;-webpack-&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49; webpack &#x914D;&#x7F6E;</h3>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li></ul>
+</details></p>
+
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E9B;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x6A21;&#x5757;</p>
+<ul>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-css" target="_blank">@zeit/next-css</a></li>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-sass" target="_blank">@zeit/next-sass</a></li>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-less" target="_blank">@zeit/next-less</a></li>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-preact" target="_blank">@zeit/next-preact</a></li>
+<li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript" target="_blank">@zeit/next-typescript</a></li>
+</ul>
+<p><em>&#x6CE8;&#x610F;&#xFF1A; <code>webpack</code>&#x65B9;&#x6CD5;&#x5C06;&#x88AB;&#x6267;&#x884C;&#x4E24;&#x6B21;&#xFF0C;&#x4E00;&#x6B21;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4E00;&#x6B21;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x7528;<code>isServer</code>&#x5C5E;&#x6027;&#x533A;&#x5206;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x6765;&#x914D;&#x7F6E;</em></p>
+<p>&#x591A;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> withTypescript = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@zeit/next-typescript&apos;</span>)
+<span class="hljs-keyword">const</span> withSass = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@zeit/next-sass&apos;</span>)
+
+<span class="hljs-built_in">module</span>.exports = withTypescript(withSass({
+  webpack(config, options) {
+    <span class="hljs-comment">// Further custom configuration here</span>
+    <span class="hljs-keyword">return</span> config
+  }
+}))
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x6269;&#x5C55;<code>webpack</code>&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<code>next.config.js</code>&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js is not transformed by Babel. So you can only use javascript features supported by your version of Node.js.</span>
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">webpack</span>: <span class="hljs-function">(<span class="hljs-params">config, { buildId, dev, isServer, defaultLoaders }</span>) =&gt;</span> {
+    <span class="hljs-comment">// Perform customizations to webpack config</span>
+    <span class="hljs-comment">// Important: return the modified config</span>
+    <span class="hljs-keyword">return</span> config
+  },
+  <span class="hljs-attr">webpackDevMiddleware</span>: <span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> {
+    <span class="hljs-comment">// Perform customizations to webpack dev middleware config</span>
+    <span class="hljs-comment">// Important: return the modified config</span>
+    <span class="hljs-keyword">return</span> config
+  }
+}
+</code></pre>
+<p><code>webpack</code>&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x5B83;&#xFF0C;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<ul>
+<li><code>buildId</code> - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;&#x6784;&#x5EFA;&#x7684;&#x552F;&#x4E00;&#x6807;&#x793A;</li>
+<li><code>dev</code> - <code>Boolean</code>&#x578B;&#xFF0C;&#x5224;&#x65AD;&#x4F60;&#x662F;&#x5426;&#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4E0B;</li>
+<li><code>isServer</code> - <code>Boolean</code> &#x578B;&#xFF0C;&#x4E3A;<code>true</code>&#x4F7F;&#x7528;&#x5728;&#x670D;&#x52A1;&#x7AEF;, &#x4E3A;<code>false</code>&#x4F7F;&#x7528;&#x5728;&#x5BA2;&#x6237;&#x7AEF;.</li>
+<li><code>defaultLoaders</code> - &#x5BF9;&#x8C61;&#x578B; &#xFF0C;&#x5185;&#x90E8;&#x52A0;&#x8F7D;&#x5668;, &#x4F60;&#x53EF;&#x4EE5;&#x5982;&#x4E0B;&#x914D;&#x7F6E;<ul>
+<li><code>babel</code> - &#x5BF9;&#x8C61;&#x578B;&#xFF0C;&#x914D;&#x7F6E;<code>babel-loader</code>.</li>
+<li><code>hotSelfAccept</code> - &#x5BF9;&#x8C61;&#x578B;&#xFF0C; <code>hot-self-accept-loader</code>&#x914D;&#x7F6E;&#x9009;&#x9879;.&#x8FD9;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x9AD8;&#x9636;&#x6848;&#x4F8B;&#x3002;&#x5982; <a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript" target="_blank"><code>@zeit/next-typescript</code></a>&#x6DFB;&#x52A0;&#x9876;&#x5C42; typescript &#x9875;&#x9762;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p><code>defaultLoaders.babel</code>&#x4F7F;&#x7528;&#x6848;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Example next.config.js for adding a loader that depends on babel-loader</span>
+<span class="hljs-comment">// This source was taken from the @zeit/next-mdx plugin source: </span>
+<span class="hljs-comment">// https://github.com/zeit/next-plugins/blob/master/packages/next-mdx</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">webpack</span>: <span class="hljs-function">(<span class="hljs-params">config, {}</span>) =&gt;</span> {
+    config.module.rules.push({
+      <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.mdx/</span>,
+      <span class="hljs-attr">use</span>: [
+        options.defaultLoaders.babel,
+        {
+          <span class="hljs-attr">loader</span>: <span class="hljs-string">&apos;@mdx-js/loader&apos;</span>,
+          <span class="hljs-attr">options</span>: pluginOptions.options
+        }
+      ]
+    })
+
+    <span class="hljs-keyword">return</span> config
+  }
+}
+</code></pre>
+<p><a id="customizing-babel-config"></a></p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;-babel-&#x914D;&#x7F6E;"><a name="&#x81EA;&#x5B9A;&#x4E49;-babel-&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;-babel-&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49; babel &#x914D;&#x7F6E;</h3>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="examples/with-custom-babel-config">Custom babel configuration</a></li></ul>
+</details></p>
+
+<p>&#x4E3A;&#x4E86;&#x6269;&#x5C55;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>babel</code>&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x6839;&#x76EE;&#x5F55;&#x65B0;&#x5EFA;<code>.babelrc</code>&#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x53EF;&#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6709;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x8003;&#x8651;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x9700;&#x8981;&#x5B9A;&#x4E49; next &#x9879;&#x76EE;&#x9700;&#x8981;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <code>next/babel</code>&#x9884;&#x8BBE;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x65B9;&#x6848;&#x5C06;&#x4F1A;&#x4F7F;&#x4F60;&#x4E0D;&#x8BE7;&#x5F02;&#x4E8E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9A;&#x5236; babel &#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;<code>.babelrc</code>&#x6587;&#x4EF6;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;presets&quot;</span>: [<span class="hljs-string">&quot;next/babel&quot;</span>],
+  <span class="hljs-string">&quot;plugins&quot;</span>: []
+}
+</code></pre>
+<p><code>next/babel</code>&#x9884;&#x8BBE;&#x53EF;&#x5904;&#x7406;&#x5404;&#x79CD; React &#x5E94;&#x7528;&#x6240;&#x9700;&#x8981;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>preset-env</li>
+<li>preset-react</li>
+<li>plugin-proposal-class-properties</li>
+<li>plugin-proposal-object-rest-spread</li>
+<li>plugin-transform-runtime</li>
+<li>styled-jsx</li>
+</ul>
+<p>presets / plugins &#x4E0D;&#x5141;&#x8BB8;&#x6DFB;&#x52A0;&#x5230;<code>.babelrc</code>&#x4E2D;&#xFF0C;&#x7136;&#x800C;&#x4F60;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;<code>next/babel</code>&#x9884;&#x8BBE;&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;presets&quot;</span>: [
+    [<span class="hljs-string">&quot;next/babel&quot;</span>, {
+      <span class="hljs-string">&quot;preset-env&quot;</span>: {},
+      <span class="hljs-string">&quot;transform-runtime&quot;</span>: {},
+      <span class="hljs-string">&quot;styled-jsx&quot;</span>: {},
+      <span class="hljs-string">&quot;class-properties&quot;</span>: {}
+    }]
+  ],
+  <span class="hljs-string">&quot;plugins&quot;</span>: []
+}
+</code></pre>
+<p><code>&quot;preset-env&quot;</code>&#x6A21;&#x5757;&#x9009;&#x9879;&#x5E94;&#x8BE5;&#x4FDD;&#x6301;&#x4E3A; false&#xFF0C;&#x5426;&#x5219; webpack &#x4EE3;&#x7801;&#x5206;&#x5272;&#x5C06;&#x88AB;&#x7981;&#x7528;&#x3002;</p>
+<p><a id="exposing-configuration-to-the-server--client-side"></a></p>
+<h3 id="&#x66B4;&#x9732;&#x914D;&#x7F6E;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;"><a name="&#x66B4;&#x9732;&#x914D;&#x7F6E;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;" class="plugin-anchor" href="#&#x66B4;&#x9732;&#x914D;&#x7F6E;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66B4;&#x9732;&#x914D;&#x7F6E;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;</h3>
+<p><code>next/config</code>&#x6A21;&#x5757;&#x4F7F;&#x4F60;&#x5E94;&#x7528;&#x8FD0;&#x884C;&#x65F6;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x4E9B;&#x5B58;&#x50A8;&#x5728;<code>next.config.js</code>&#x7684;&#x914D;&#x7F6E;&#x9879;&#x3002;<code>serverRuntimeConfig</code>&#x5C5E;&#x6027;&#x53EA;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53EF;&#x7528;&#xFF0C;<code>publicRuntimeConfig</code>&#x5C5E;&#x6027;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x7528;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">serverRuntimeConfig</span>: { <span class="hljs-comment">// Will only be available on the server side</span>
+    mySecret: <span class="hljs-string">&apos;secret&apos;</span>
+  },
+  <span class="hljs-attr">publicRuntimeConfig</span>: { <span class="hljs-comment">// Will be available on both server and client</span>
+    staticFolder: <span class="hljs-string">&apos;/static&apos;</span>,
+    <span class="hljs-attr">mySecret</span>: process.env.MY_SECRET <span class="hljs-comment">// Pass through env variables</span>
+  }
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// pages/index.js</span>
+<span class="hljs-keyword">import</span> getConfig <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;next/config&apos;</span>
+<span class="hljs-comment">// Only holds serverRuntimeConfig and publicRuntimeConfig from next.config.js nothing else.</span>
+<span class="hljs-keyword">const</span> {serverRuntimeConfig, publicRuntimeConfig} = getConfig()
+
+<span class="hljs-built_in">console</span>.log(serverRuntimeConfig.mySecret) <span class="hljs-comment">// Will only be available on the server side</span>
+<span class="hljs-built_in">console</span>.log(publicRuntimeConfig.staticFolder) <span class="hljs-comment">// Will be available on both server and client</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{</span>`${<span class="hljs-attr">publicRuntimeConfig.staticFolder</span>}/<span class="hljs-attr">logo.png</span>`} <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;logo&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<p><a id="starting-the-server-on-alternative-hostname"></a></p>
+<h3 id="&#x542F;&#x52A8;&#x670D;&#x52A1;&#x9009;&#x62E9;-hostname"><a name="&#x542F;&#x52A8;&#x670D;&#x52A1;&#x9009;&#x62E9;-hostname" class="plugin-anchor" href="#&#x542F;&#x52A8;&#x670D;&#x52A1;&#x9009;&#x62E9;-hostname"><i class="fa fa-link" aria-hidden="true"></i></a>&#x542F;&#x52A8;&#x670D;&#x52A1;&#x9009;&#x62E9; hostname</h3>
+<p>&#x542F;&#x52A8;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684; hostname&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x540E;&#x9762;&#x52A0;&#x4E0A;<code>--hostname &#x4E3B;&#x673A;&#x540D;</code> &#x6216; <code>-H &#x4E3B;&#x673A;&#x540D;</code>&#x3002;&#x5B83;&#x5C06;&#x4F1A;&#x542F;&#x52A8;&#x4E00;&#x4E2A; TCP &#x670D;&#x52A1;&#x5668;&#x6765;&#x76D1;&#x542C;&#x8FDE;&#x63A5;&#x6240;&#x63D0;&#x4F9B;&#x7684;&#x4E3B;&#x673A;&#x3002;</p>
+<p><a id="cdn-support-with-asset-prefix"></a></p>
+<h3 id="cdn-&#x652F;&#x6301;&#x524D;&#x7F00;"><a name="cdn-&#x652F;&#x6301;&#x524D;&#x7F00;" class="plugin-anchor" href="#cdn-&#x652F;&#x6301;&#x524D;&#x7F00;"><i class="fa fa-link" aria-hidden="true"></i></a>CDN &#x652F;&#x6301;&#x524D;&#x7F00;</h3>
+<p>&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A; CDN&#xFF0C;&#x4F60;&#x80FD;&#x914D;&#x7F6E;<code>assetPrefix</code>&#x9009;&#x9879;&#xFF0C;&#x53BB;&#x914D;&#x7F6E;&#x4F60;&#x7684; CDN &#x6E90;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> isProd = process.env.NODE_ENV === <span class="hljs-string">&apos;production&apos;</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// You may only need to add assetPrefix in the production.</span>
+  assetPrefix: isProd ? <span class="hljs-string">&apos;https://cdn.mydomain.com&apos;</span> : <span class="hljs-string">&apos;&apos;</span>
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;Next.js &#x8FD0;&#x884C;&#x65F6;&#x5C06;&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x524D;&#x7F00;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;<code>/static</code>&#x662F;&#x6CA1;&#x6709;&#x6548;&#x679C;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8FD9;&#x4E9B;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x4E5F;&#x80FD;&#x4F7F;&#x7528; CDN&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x6DFB;&#x52A0;&#x524D;&#x7F00;&#x3002;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x4F60;&#x7684;&#x73AF;&#x5883;&#x6765;&#x52A0;&#x524D;&#x7F00;&#xFF0C;&#x5982; <a href="https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration" target="_blank">in this example</a>&#x3002;</p>
+<p><a id="production-deployment"></a></p>
+<h2 id="&#x9879;&#x76EE;&#x90E8;&#x7F72;"><a name="&#x9879;&#x76EE;&#x90E8;&#x7F72;" class="plugin-anchor" href="#&#x9879;&#x76EE;&#x90E8;&#x7F72;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9879;&#x76EE;&#x90E8;&#x7F72;</h2>
+<p>&#x90E8;&#x7F72;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5148;&#x6784;&#x5EFA;&#x6253;&#x5305;&#x751F;&#x6210;&#x73AF;&#x5883;&#x4EE3;&#x7801;&#xFF0C;&#x518D;&#x542F;&#x52A8;&#x670D;&#x52A1;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6784;&#x5EFA;&#x548C;&#x542F;&#x52A8;&#x5206;&#x4E3A;&#x4E0B;&#x9762;&#x4E24;&#x6761;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-bash">next build
+next start
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4F7F;&#x7528;<a href="https://zeit.co/now" target="_blank"><code>now</code></a>&#x53BB;&#x90E8;&#x7F72;<code>package.json</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;my-app&quot;</span>,
+  <span class="hljs-string">&quot;dependencies&quot;</span>: {
+    <span class="hljs-string">&quot;next&quot;</span>: <span class="hljs-string">&quot;latest&quot;</span>
+  },
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;dev&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+    <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;next build&quot;</span>,
+    <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;next start&quot;</span>
+  }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD0;&#x884C;<code>now</code>&#x4E86;&#x3002;</p>
+<p>Next.js &#x4E5F;&#x6709;&#x5176;&#x4ED6;&#x6258;&#x7BA1;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;&#x8BF7;&#x67E5;&#x8003; wiki &#x7AE0;&#x8282;<a href="https://github.com/zeit/next.js/wiki/Deployment" target="_blank">&apos;Deployment&apos;</a> &#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;<code>NODE_ENV</code>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>next</code>&#x547D;&#x4EE4;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#xFF0C;&#x4F1A;&#x6700;&#x5927;&#x6E32;&#x67D3;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x7F16;&#x7A0B;&#x5F0F;&#x5199;&#x6CD5;&#x7684;&#x8BDD;<a href="#custom-server-and-routing">programmatically</a>&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;<code>NODE_ENV=production</code>&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x63A8;&#x8350;&#x5C06;<code>.next</code>&#x6216;&#x81EA;&#x5B9A;&#x4E49;&#x6253;&#x5305;&#x6587;&#x4EF6;&#x5939;<a href="https://github.com/zeit/next.js#custom-configuration" target="_blank">custom dist folder</a>&#x653E;&#x5165;<code>.gitignore</code> &#x6216; <code>.npmignore</code>&#x4E2D;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x4F7F;&#x7528;<code>files</code> &#x6216; <code>now.files</code>
+&#x6DFB;&#x52A0;&#x90E8;&#x7F72;&#x767D;&#x540D;&#x5355;&#xFF0C;&#x5E76;&#x6392;&#x9664;<code>.next</code>&#x6216;&#x81EA;&#x5B9A;&#x4E49;&#x6253;&#x5305;&#x6587;&#x4EF6;&#x5939;&#x3002;</p>
+<p><a id="browser-support"></a></p>
+<h2 id="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"><a name="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;" class="plugin-anchor" href="#&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;</h2>
+<p>Next.js &#x652F;&#x6301; IE11 &#x548C;&#x6240;&#x6709;&#x7684;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;&#x4E86;<a href="https://new.babeljs.io/docs/en/next/babel-preset-env.html" target="_blank"><code>@babel/preset-env</code></a>&#x3002;&#x4E3A;&#x4E86;&#x652F;&#x6301; IE11&#xFF0C;Next.js &#x9700;&#x8981;&#x5168;&#x5C40;&#x6DFB;&#x52A0;<code>Promise</code>&#x7684; polyfill&#x3002;&#x6709;&#x65F6;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x6216;&#x5F15;&#x5165;&#x7684;&#x5176;&#x4ED6; NPM &#x5305;&#x7684;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x7528; polyfills &#x53BB;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>ployflls &#x5B9E;&#x73B0;&#x6848;&#x4F8B;&#x4E3A;<a href="https://github.com/zeit/next.js/tree/canary/examples/with-polyfills" target="_blank">polyfills</a>&#x3002;</p>
+<p><a id="static-html-export"></a></p>
+<h2 id="&#x5BFC;&#x51FA;&#x9759;&#x6001;&#x9875;&#x9762;"><a name="&#x5BFC;&#x51FA;&#x9759;&#x6001;&#x9875;&#x9762;" class="plugin-anchor" href="#&#x5BFC;&#x51FA;&#x9759;&#x6001;&#x9875;&#x9762;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BFC;&#x51FA;&#x9759;&#x6001;&#x9875;&#x9762;</h2>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="examples/with-static-export">Static export</a></li></ul>
+</details></p>
+
+<p><code>next export</code>&#x53EF;&#x4EE5;&#x8F93;&#x51FA;&#x4E00;&#x4E2A; Next.js &#x5E94;&#x7528;&#x4F5C;&#x4E3A;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x5E94;&#x7528;&#x800C;&#x4E0D;&#x4F9D;&#x9760; Node.js &#x670D;&#x52A1;&#x3002;
+&#x8FD9;&#x4E2A;&#x8F93;&#x51FA;&#x7684;&#x5E94;&#x7528;&#x51E0;&#x4E4E;&#x652F;&#x6301; Next.js &#x7684;&#x6240;&#x6709;&#x529F;&#x80FD;&#xFF0C;&#x5305;&#x62EC;&#x52A8;&#x6001;&#x8DEF;&#x7531;&#xFF0C;&#x9884;&#x83B7;&#x53D6;&#xFF0C;&#x9884;&#x52A0;&#x8F7D;&#x4EE5;&#x53CA;&#x52A8;&#x6001;&#x5BFC;&#x5165;&#x3002;</p>
+<p><code>next export</code>&#x5C06;&#x628A;&#x6240;&#x6709;&#x6709;&#x53EF;&#x80FD;&#x6E32;&#x67D3;&#x51FA;&#x7684; HTML &#x90FD;&#x751F;&#x6210;&#x3002;&#x8FD9;&#x662F;&#x57FA;&#x4E8E;&#x6620;&#x5C04;&#x5BF9;&#x8C61;&#x7684;<code>pathname</code>&#x5173;&#x952E;&#x5B57;&#x5173;&#x8054;&#x5230;&#x9875;&#x9762;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x4E2A;&#x6620;&#x5C04;&#x53EB;&#x505A;<code>exportPathMap</code>&#x3002;</p>
+<p>&#x9875;&#x9762;&#x5BF9;&#x8C61;&#x6709;2&#x4E2A;&#x5C5E;&#x6027;:</p>
+<ul>
+<li><code>page</code> - &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;&#x9875;&#x9762;&#x751F;&#x6210;&#x76EE;&#x5F55;</li>
+<li><code>query</code> - &#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#xFF0C;&#x5F53;&#x9884;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;<code>query</code>&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x4F20;&#x5165;&#x9875;&#x9762;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;<code>getInitialProps</code>&#x4E2D;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;<code>{}</code>&#x3002;</li>
+</ul>
+<p><a id="usage"></a></p>
+<h3 id="&#x4F7F;&#x7528;"><a name="&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;</h3>
+<p>&#x901A;&#x5E38;&#x5F00;&#x53D1; Next.js &#x5E94;&#x7528;&#x4F60;&#x5C06;&#x4F1A;&#x8FD0;&#x884C;&#xFF1A;</p>
+<pre><code>next build
+next export
+</code></pre><p><code>next export</code>&#x547D;&#x4EE4;&#x9ED8;&#x8BA4;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x9ED8;&#x8BA4;<code>exportPathMap</code>&#x751F;&#x6210;<code>pages</code>&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x8DEF;&#x7531;&#x4F60;&#x9875;&#x9762;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x52A8;&#x6001;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<code>next.config.js</code>&#x4E2D;&#x6DFB;&#x52A0;&#x5F02;&#x6B65;&#x51FD;&#x6570;<code>exportPathMap</code>&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// next.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">exportPathMap</span>: <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">defaultPathMap</span>) </span>{
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-string">&apos;/&apos;</span>: { <span class="hljs-attr">page</span>: <span class="hljs-string">&apos;/&apos;</span> },
+      <span class="hljs-string">&apos;/about&apos;</span>: { <span class="hljs-attr">page</span>: <span class="hljs-string">&apos;/about&apos;</span> },
+      <span class="hljs-string">&apos;/readme.md&apos;</span>: { <span class="hljs-attr">page</span>: <span class="hljs-string">&apos;/readme&apos;</span> },
+      <span class="hljs-string">&apos;/p/hello-nextjs&apos;</span>: { <span class="hljs-attr">page</span>: <span class="hljs-string">&apos;/post&apos;</span>, <span class="hljs-attr">query</span>: { <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;hello-nextjs&apos;</span> } },
+      <span class="hljs-string">&apos;/p/learn-nextjs&apos;</span>: { <span class="hljs-attr">page</span>: <span class="hljs-string">&apos;/post&apos;</span>, <span class="hljs-attr">query</span>: { <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;learn-nextjs&apos;</span> } },
+      <span class="hljs-string">&apos;/p/deploy-nextjs&apos;</span>: { <span class="hljs-attr">page</span>: <span class="hljs-string">&apos;/post&apos;</span>, <span class="hljs-attr">query</span>: { <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;deploy-nextjs&apos;</span> } }
+    }
+  }
+}
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C; path &#x7684;&#x7ED3;&#x5C3E;&#x662F;&#x76EE;&#x5F55;&#x540D;&#xFF0C;&#x5219;&#x5C06;&#x5BFC;&#x51FA;<code>/dir-name/index.html</code>&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x7ED3;&#x5C3E;&#x6709;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x5C06;&#x4F1A;&#x5BFC;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4E0A;<code>/readme.md</code>&#x3002;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;<code>.html</code>&#x4EE5;&#x5916;&#x7684;&#x6269;&#x5C55;&#x540D;&#x89E3;&#x6790;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x8BBE;&#x7F6E; header &#x7684;<code>Content-Type</code>&#x5934;&#x4E3A;&quot;text/html&quot;.</p>
+</blockquote>
+<p>&#x8F93;&#x5165;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-sh">next build
+next <span class="hljs-built_in">export</span>
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;<code>package.json</code>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; NPM &#x811A;&#x672C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;next build&quot;</span>,
+    <span class="hljs-string">&quot;export&quot;</span>: <span class="hljs-string">&quot;npm run build &amp;&amp; next export&quot;</span>
+  }
+}
+</code></pre>
+<p>&#x63A5;&#x7740;&#x53EA;&#x7528;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-sh">npm run <span class="hljs-built_in">export</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x4F60;&#x5C06;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x9875;&#x9762;&#x5E94;&#x7528;&#x5728;<code>out</code> &#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
+<blockquote>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x3002;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;<code>next export -h</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5E2E;&#x52A9;&#x3002;</p>
+</blockquote>
+<p>&#x73B0;&#x5728;&#x4F60;&#x53EF;&#x4EE5;&#x90E8;&#x7F72;<code>out</code>&#x76EE;&#x5F55;&#x5230;&#x4EFB;&#x610F;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x3002;&#x6CE8;&#x610F;&#x5982;&#x679C;&#x90E8;&#x7F72; GitHub Pages &#x9700;&#x8981;&#x52A0;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;<a href="https://github.com/zeit/next.js/wiki/Deploying-a-Next.js-app-into-GitHub-Pages" target="_blank">&#x6587;&#x6863;&#x5982;&#x4E0B;</a></p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x8BBF;&#x95EE;<code>out</code>&#x76EE;&#x5F55;&#x5E76;&#x7528;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#x90E8;&#x7F72;&#x5E94;&#x7528;<a href="https://zeit.co/now" target="_blank">ZEIT Now</a>.</p>
+<pre><code class="lang-sh">now
+</code></pre>
+<p><a id="limitation"></a></p>
+<h3 id="&#x9650;&#x5236;"><a name="&#x9650;&#x5236;" class="plugin-anchor" href="#&#x9650;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9650;&#x5236;</h3>
+<p>&#x4F7F;&#x7528;<code>next export</code>&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;&#x4E2A;&#x9759;&#x6001; HTML &#x5E94;&#x7528;&#x3002;&#x6784;&#x5EFA;&#x65F6;&#x5C06;&#x4F1A;&#x8FD0;&#x884C;&#x9875;&#x9762;&#x91CC;&#x751F;&#x547D;&#x5468;&#x671F;<code>getInitialProps</code> &#x51FD;&#x6570;&#x3002;</p>
+<p><code>req</code>&#x548C;<code>res</code>&#x53EA;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x53EF;&#x7528;&#xFF0C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;<code>getInitialProps</code>&#x3002;</p>
+<blockquote>
+<p>&#x6240;&#x4EE5;&#x4F60;&#x4E0D;&#x80FD;&#x9884;&#x6784;&#x5EFA; HTML &#x6587;&#x4EF6;&#x65F6;&#x52A8;&#x6001;&#x6E32;&#x67D3; HTML &#x9875;&#x9762;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x52A8;&#x6001;&#x6E32;&#x67D3;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;<code>next start</code>&#x6216;&#x5176;&#x4ED6;&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x7AEF; API&#x3002;</p>
+</blockquote>
+<p><a id="multi-zones"></a></p>
+<h2 id="&#x591A;-zone"><a name="&#x591A;-zone" class="plugin-anchor" href="#&#x591A;-zone"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A; zone</h2>
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="examples/with-zones">With Zones</a></li></ul>
+</details></p>
+
+<p>&#x4E00;&#x4E2A; zone &#x65F6;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684; Next.js &#x5E94;&#x7528;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6709;&#x5F88;&#x591A; zone&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4F60;&#x5982;&#x4E0B;&#x6709;&#x4E24;&#x4E2A; zone&#xFF1A;</p>
+<ul>
+<li><a href="https://docs.my-app.com" target="_blank">https://docs.my-app.com</a> &#x670D;&#x52A1;&#x4E8E;&#x8DEF;&#x7531; <code>/docs/**</code></li>
+<li><a href="https://ui.my-app.com" target="_blank">https://ui.my-app.com</a> &#x670D;&#x52A1;&#x4E8E;&#x6240;&#x6709;&#x9875;&#x9762;</li>
+</ul>
+<p>&#x6709;&#x591A; zone &#x5E94;&#x7528;&#x6280;&#x672F;&#x652F;&#x6301;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x51E0;&#x4E2A;&#x5E94;&#x7528;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x4E2A;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49; URL &#x8DEF;&#x5F84;&#xFF0C;&#x4F7F;&#x4F60;&#x80FD;&#x540C;&#x65F6;&#x5355;&#x72EC;&#x5F00;&#x53D1;&#x5404;&#x4E2A;&#x5E94;&#x7528;&#x3002;</p>
+<blockquote>
+<p>&#x4E0E; microservices &#x89C2;&#x5FF5;&#x7C7B;&#x4F3C;, &#x53EA;&#x662F;&#x5E94;&#x7528;&#x4E8E;&#x524D;&#x7AEF;&#x5E94;&#x7528;.</p>
+</blockquote>
+<p><a id="how-to-define-a-zone"></a></p>
+<h3 id="&#x600E;&#x4E48;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;-zone"><a name="&#x600E;&#x4E48;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;-zone" class="plugin-anchor" href="#&#x600E;&#x4E48;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;-zone"><i class="fa fa-link" aria-hidden="true"></i></a>&#x600E;&#x4E48;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; zone</h3>
+<p>zone &#x6CA1;&#x6709;&#x5355;&#x72EC;&#x7684; API &#x6587;&#x6863;&#x3002;&#x4F60;&#x9700;&#x8981;&#x505A;&#x4E0B;&#x9762;&#x4E8B;&#x5373;&#x53EF;&#xFF1A;</p>
+<ul>
+<li>&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x91CC;&#x53EA;&#x6709;&#x9700;&#x8981;&#x7684;&#x9875;&#x9762; (&#x4F8B;&#x5982;, <a href="https://ui.my-app.com" target="_blank">https://ui.my-app.com</a> &#x4E0D;&#x5305;&#x542B; <code>/docs/**</code>)</li>
+<li>&#x786E;&#x4FDD;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x6709;&#x4E2A;&#x524D;&#x7F00;<a href="https://github.com/zeit/next.js#cdn-support-with-asset-prefix" target="_blank">assetPrefix</a>&#x3002;&#xFF08;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x52A8;&#x6001;&#x524D;&#x7F00;<a href="https://github.com/zeit/next.js#dynamic-assetprefix" target="_blank">dynamically</a>&#xFF09;</li>
+</ul>
+<p><a id="how-to-merge-them"></a></p>
+<h3 id="&#x600E;&#x4E48;&#x5408;&#x5E76;&#x4ED6;&#x4EEC;"><a name="&#x600E;&#x4E48;&#x5408;&#x5E76;&#x4ED6;&#x4EEC;" class="plugin-anchor" href="#&#x600E;&#x4E48;&#x5408;&#x5E76;&#x4ED6;&#x4EEC;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x600E;&#x4E48;&#x5408;&#x5E76;&#x4ED6;&#x4EEC;</h3>
+<p>&#x4F60;&#x80FD;&#x4F7F;&#x7528; HTTP &#x4EE3;&#x7406;&#x5408;&#x5E76; zone</p>
+<p>&#x4F60;&#x80FD;&#x4F7F;&#x7528;&#x4EE3;&#x7406;<a href="https://github.com/zeit/micro-proxy" target="_blank">micro proxy</a>&#x6765;&#x4F5C;&#x4E3A;&#x4F60;&#x7684;&#x672C;&#x5730;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x4F60;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;rules&quot;</span>: [
+    {<span class="hljs-string">&quot;pathname&quot;</span>: <span class="hljs-string">&quot;/docs**&quot;</span>, <span class="hljs-string">&quot;method&quot;</span>:[<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;OPTIONS&quot;</span>], <span class="hljs-string">&quot;dest&quot;</span>: <span class="hljs-string">&quot;https://docs.my-app.com&quot;</span>},
+    {<span class="hljs-string">&quot;pathname&quot;</span>: <span class="hljs-string">&quot;/**&quot;</span>, <span class="hljs-string">&quot;dest&quot;</span>: <span class="hljs-string">&quot;https://ui.my-app.com&quot;</span>}
+  ]
+}
+</code></pre>
+<p>&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x90E8;&#x7F72;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x4E86;<a href="https://zeit.co/now" target="_blank">ZEIT now</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5B83;&#x7684;&#x4F7F;&#x7528;<a href="https://zeit.co/docs/features/path-aliases" target="_blank">path alias</a> &#x529F;&#x80FD;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4F60;&#x5DF2;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x7F16;&#x5199;&#x4E0A;&#x9762;&#x89C4;&#x5219;&#x6765;&#x8DEF;&#x7531; HTML &#x9875;&#x9762;</p>
+<p><a id="recipes"></a></p>
+<h2 id="&#x6280;&#x5DE7;"><a name="&#x6280;&#x5DE7;" class="plugin-anchor" href="#&#x6280;&#x5DE7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6280;&#x5DE7;</h2>
+<ul>
+<li><a href="https://www.raygesualdo.com/posts/301-redirects-with-nextjs/" target="_blank">&#x8BBE;&#x7F6E;301&#x91CD;&#x5B9A;&#x5411;</a></li>
+<li><a href="https://arunoda.me/blog/ssr-and-server-only-modules" target="_blank">&#x53EA;&#x5904;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6A21;&#x5757;</a></li>
+<li><a href="https://github.com/builderbook/builderbook" target="_blank">&#x6784;&#x5EFA;&#x9879;&#x76EE; React-Material-UI-Next-Express-Mongoose-Mongodb</a></li>
+<li><a href="https://github.com/async-labs/saas" target="_blank">&#x6784;&#x5EFA;&#x4E00;&#x4E2A; SaaS &#x4EA7;&#x54C1; React-Material-UI-Next-MobX-Express-Mongoose-MongoDB-TypeScript</a></li>
+</ul>
+<p><a id="faq"></a></p>
+<h2 id="&#x95EE;&#x7B54;"><a name="&#x95EE;&#x7B54;" class="plugin-anchor" href="#&#x95EE;&#x7B54;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x95EE;&#x7B54;</h2>
+<details>
+  <summary>&#x8FD9;&#x4E2A;&#x4EA7;&#x54C1;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x5417;&#xFF1F;</summary>
+  https://zeit.co &#x90FD;&#x662F;&#x4E00;&#x76F4;&#x7528; Next.js &#x5199;&#x7684;&#x3002;
+
+  &#x5B83;&#x7684;&#x5F00;&#x53D1;&#x4F53;&#x9A8C;&#x548C;&#x7EC8;&#x7AEF;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x90FD;&#x5F88;&#x597D;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x51B3;&#x5B9A;&#x5F00;&#x6E90;&#x51FA;&#x6765;&#x7ED9;&#x5927;&#x5BB6;&#x5171;&#x4EAB;&#x3002;
+</details>
+
+<details>
+  <summary>&#x4F53;&#x79EF;&#x591A;&#x5927;&#xFF1F;</summary>
+
+&#x5BA2;&#x6237;&#x7AEF;&#x5927;&#x5C0F;&#x6839;&#x636E;&#x5E94;&#x7528;&#x9700;&#x6C42;&#x4E0D;&#x4E00;&#x6837;&#x5927;&#x5C0F;&#x4E5F;&#x4E0D;&#x4E00;&#x6837;&#x3002;
+
+&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x5355; Next &#x5E94;&#x8BE5;&#x7528; gzip &#x538B;&#x7F29;&#x540E;&#x5927;&#x7EA6;65kb
+
+</details>
+
+<details>
+  <summary>&#x8FD9;&#x4E2A;&#x50CF; `create-react-app`?</summary>
+
+&#x662F;&#x6216;&#x4E0D;&#x662F;.
+
+&#x662F;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x8BA9;&#x4F60;&#x7684; SSR &#x5F00;&#x53D1;&#x66F4;&#x7B80;&#x5355;&#x3002;
+
+&#x4E0D;&#x662F;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x89C4;&#x5B9A;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF0C;&#x4F7F;&#x6211;&#x4EEC;&#x80FD;&#x505A;&#x4EE5;&#x4E0B;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x4E8B;&#xFF1A;
+- &#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;
+- &#x81EA;&#x52A8;&#x4EE3;&#x7801;&#x5206;&#x5272;
+
+&#x6B64;&#x5916;&#xFF0C;Next.js &#x8FD8;&#x63D0;&#x4F9B;&#x4E24;&#x4E2A;&#x5185;&#x7F6E;&#x7279;&#x6027;&#xFF1A;
+- &#x8DEF;&#x7531;&#x4E0E;&#x61D2;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;: `<link>` (&#x901A;&#x8FC7;&#x5F15;&#x5165; `next/link`)
+- &#x4FEE;&#x6539;`<head>`&#x7684;&#x7EC4;&#x4EF6;: `<head>` (&#x901A;&#x8FC7;&#x5F15;&#x5165; `next/head`)
+
+&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5199;&#x5171;&#x7528;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5D4C;&#x5165; Next.js &#x5E94;&#x7528;&#x548C; React &#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;`create-react-app`&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x66F4;&#x6539;`import`&#x4FDD;&#x6301;&#x4EE3;&#x7801;&#x6E05;&#x6670;&#x3002;
+
+
+</head></head></details>
+
+<details>
+  <summary>&#x600E;&#x4E48;&#x89E3;&#x51B3; CSS &#x5D4C;&#x5165; JS &#x95EE;&#x9898;?</summary>
+
+Next.js &#x81EA;&#x5E26;[styled-jsx](https://github.com/zeit/styled-jsx)&#x5E93;&#x652F;&#x6301; CSS &#x5D4C;&#x5165; JS&#x3002;&#x800C;&#x4E14;&#x4F60;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5176;&#x4ED6;&#x5D4C;&#x5165;&#x65B9;&#x6CD5;&#x5230;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x53EF;&#x53C2;&#x8003;&#x6587;&#x6863;[as mentioned before](#css-in-js)&#x3002;
+
+</details>
+
+<details>
+  <summary>&#x54EA;&#x4E9B;&#x8BED;&#x6CD5;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#xFF1F;&#x600E;&#x4E48;&#x8F6C;&#x6362;&#x5B83;&#x4EEC;&#xFF1F;</summary>
+
+&#x6211;&#x4EEC;&#x9075;&#x5FAA; V8 &#x5F15;&#x64CE;&#x7684;&#xFF0C;&#x5982;&#x4ECA; V8 &#x5F15;&#x64CE;&#x5E7F;&#x6CDB;&#x652F;&#x6301; ES6 &#x8BED;&#x6CD5;&#x4EE5;&#x53CA;`async`&#x548C;`await`&#x8BED;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x652F;&#x6301;&#x8F6C;&#x6362;&#x5B83;&#x4EEC;&#x3002;&#x4F46;&#x662F; V8 &#x5F15;&#x64CE;&#x4E0D;&#x652F;&#x6301;&#x4FEE;&#x9970;&#x5668;&#x8BED;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4E5F;&#x4E0D;&#x652F;&#x6301;&#x8F6C;&#x6362;&#x8FD9;&#x8BED;&#x6CD5;&#x3002;
+
+&#x53EF;&#x4EE5;&#x53C2;&#x7167;[&#x8FD9;&#x4E9B;](https://github.com/zeit/next.js/blob/master/server/build/webpack.js#L79) &#x4EE5;&#x53CA; [&#x8FD9;&#x4E9B;](https://github.com/zeit/next.js/issues/26)
+
+</details>
+
+<details>
+  <summary>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x65B0;&#x8DEF;&#x7531;?</summary>
+
+Next.js &#x7684;&#x7279;&#x522B;&#x4E4B;&#x5904;&#x5982;&#x4E0B;&#x6240;&#x793A;:
+
+- &#x8DEF;&#x7531;&#x4E0D;&#x9700;&#x8981;&#x88AB;&#x63D0;&#x524D;&#x77E5;&#x9053;
+- &#x8DEF;&#x7531;&#x603B;&#x662F;&#x88AB;&#x61D2;&#x52A0;&#x8F7D;
+- &#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x751F;&#x547D;&#x5468;&#x671F;`getInitialProps`&#x6765;&#x963B;&#x6B62;&#x8DEF;&#x7531;&#x52A0;&#x8F7D;&#xFF08;&#x5F53;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x6216;&#x8DEF;&#x7531;&#x61D2;&#x52A0;&#x8F7D;&#x65F6;&#xFF09;
+
+&#x56E0;&#x6B64;,&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECB;&#x7ECD;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x8DEF;&#x7531;&#x65B9;&#x6CD5;,&#x5B83;&#x7531;&#x4E0B;&#x9762;&#x4E24;&#x90E8;&#x5206;&#x7EC4;&#x6210;:
+
+- &#x6BCF;&#x4E2A;&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x90FD;&#x5C06;&#x4F1A;&#x6536;&#x5230;&#x4E00;&#x4E2A;`url`&#x5BF9;&#x8C61;&#xFF0C;&#x6765;&#x68C0;&#x67E5; url &#x6216;&#x4FEE;&#x6539;&#x5386;&#x53F2;&#x8BB0;&#x5F55;
+- `<link>`&#x7EC4;&#x4EF6;&#x7528;&#x4E8E;&#x5305;&#x88C5;&#x5982;(`<a>`)&#x6807;&#x7B7E;&#x7684;&#x5143;&#x7D20;&#x5BB9;&#x5668;&#xFF0C;&#x6765;&#x6267;&#x884C;&#x5BA2;&#x6237;&#x7AEF;&#x8F6C;&#x6362;&#x3002;
+
+&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;&#x4E9B;&#x6709;&#x8DA3;&#x7684;&#x573A;&#x666F;&#x6765;&#x6D4B;&#x8BD5;&#x8DEF;&#x7531;&#x7684;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x53EF;&#x67E5;&#x770B;[nextgram](https://github.com/zeit/nextgram)&#x3002;
+
+</a></details>
+
+<details>
+<summary>&#x6211;&#x600E;&#x4E48;&#x5B9A;&#x4E49;&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;?</summary>
+
+&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x6765;[&#x6DFB;&#x52A0;](#custom-server-and-routing)&#x4EFB;&#x610F; URL &#x4E0E;&#x4EFB;&#x610F;&#x7EC4;&#x4EF6;&#x4E4B;&#x524D;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;
+
+&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x6211;&#x4EEC;`<link>`&#x7EC4;&#x4EF6;&#x6709;&#x4E2A;&#x5C5E;&#x6027;`as`&#xFF0C;&#x53EF;&#x4EE5;&#x88C5;&#x9970;&#x6539;&#x53D8;&#x83B7;&#x53D6;&#x5230;&#x7684; URL&#x3002;
+</details>
+
+<details>
+<summary>&#x600E;&#x4E48;&#x83B7;&#x53D6;&#x6570;&#x636E;?</summary>
+
+&#x8FD9;&#x7531;&#x4F60;&#x51B3;&#x5B9A;&#x3002;`getInitialProps`&#x662F;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x51FD;&#x6570;`async`&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;&#x4E2A;`Promise`&#xFF09;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x3002;
+</details>
+
+<details>
+  <summary>&#x6211;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; GraphQL &#x5417;?</summary>
+
+&#x662F;&#x7684;! &#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x4F8B;&#x5B50;[Apollo](./examples/with-apollo).
+
+</details>
+
+<details>
+<summary>&#x6211;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Redux &#x5417;?</summary>
+
+&#x662F;&#x7684;! &#x8FD9;&#x91CC;&#x6709;&#x4E2A;[&#x4F8B;&#x5B50;](./examples/with-redux)
+</details>
+
+<details>
+<summary>&#x6211;&#x53EF;&#x4EE5;&#x5728; Next &#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;&#x6211;&#x559C;&#x6B22;&#x7684; Javascript &#x5E93;&#x6216;&#x5DE5;&#x5177;&#x5305;&#x5417;?</summary>
+
+&#x4ECE;&#x6211;&#x4EEC;&#x7B2C;&#x4E00;&#x6B21;&#x53D1;&#x7248;&#x5C31;&#x5DF2;&#x7ECF;&#x63D0;&#x4F9B;**&#x5F88;&#x591A;**&#x4F8B;&#x5B50;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x8FD9;&#x4E9B;[&#x4F8B;&#x5B50;](./examples)&#x3002;
+</details>
+
+<details>
+<summary>&#x4EC0;&#x4E48;&#x542F;&#x53D1;&#x6211;&#x4EEC;&#x505A;&#x8FD9;&#x4E2A;?</summary>
+
+&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x7684;&#x5927;&#x90E8;&#x5206;&#x76EE;&#x6807;&#x90FD;&#x662F;&#x901A;&#x8FC7; Guillermo Rauch &#x7684;[Web &#x5E94;&#x7528;&#x7684;7&#x539F;&#x5219;](http://rauchg.com/2014/7-principles-of-rich-web-applications/)&#x6765;&#x542F;&#x53D1;&#x51FA;&#x7684;&#x3002;
+
+PHP &#x7684;&#x6613;&#x7528;&#x6027;&#x4E5F;&#x662F;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x7075;&#x611F;&#x6765;&#x6E90;&#xFF0C;&#x6211;&#x4EEC;&#x89C9;&#x5F97; Next.js &#x53EF;&#x4EE5;&#x66FF;&#x4EE3;&#x5F88;&#x591A;&#x9700;&#x8981;&#x7528; PHP &#x8F93;&#x51FA; HTML &#x7684;&#x573A;&#x666F;&#x3002;
+
+&#x4E0E; PHP &#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x5229;&#x4E8E; ES6 &#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x4F1A;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;**&#x7EC4;&#x4EF6;&#x6216;&#x65B9;&#x6CD5;**&#xFF0C;&#x4EE5;&#x4FBF;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x7684;&#x5BFC;&#x5165;&#x7528;&#x4E8E;&#x61D2;&#x52A0;&#x8F7D;&#x548C;&#x6D4B;&#x8BD5;
+
+&#x6211;&#x4EEC;&#x7814;&#x7A76; React &#x7684;&#x670D;&#x52A1;&#x5668;&#x6E32;&#x67D3;&#x65F6;&#x5E76;&#x6CA1;&#x6709;&#x82B1;&#x8D39;&#x5F88;&#x5927;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E; Next.js &#x7684;&#x4EA7;&#x54C1;&#xFF0C;React &#x4F5C;&#x8005; Jordan Walke &#x5199;&#x7684;[react-page](https://github.com/facebookarchive/react-page) (&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x5E9F;&#x5F03;)
+
+</details>
+
+<p><a id="contributing"></a></p>
+<h2 id="&#x8D21;&#x732E;"><a name="&#x8D21;&#x732E;" class="plugin-anchor" href="#&#x8D21;&#x732E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D21;&#x732E;</h2>
+<p>&#x53EF;&#x67E5;&#x770B; <a href="contributing.md">contributing.md</a></p>
+<p><a id="authors"></a></p>
+<h2 id="&#x4F5C;&#x8005;"><a name="&#x4F5C;&#x8005;" class="plugin-anchor" href="#&#x4F5C;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F5C;&#x8005;</h2>
+<ul>
+<li>Arunoda Susiripala (<a href="https://twitter.com/arunoda" target="_blank">@arunoda</a>) &#x2013; <a href="https://zeit.co" target="_blank">ZEIT</a></li>
+<li>Tim Neutkens (<a href="https://twitter.com/timneutkens" target="_blank">@timneutkens</a>) &#x2013; <a href="https://zeit.co" target="_blank">ZEIT</a></li>
+<li>Naoyuki Kanezawa (<a href="https://twitter.com/nkzawa" target="_blank">@nkzawa</a>) &#x2013; <a href="https://zeit.co" target="_blank">ZEIT</a></li>
+<li>Tony Kovanen (<a href="https://twitter.com/tonykovanen" target="_blank">@tonykovanen</a>) &#x2013; <a href="https://zeit.co" target="_blank">ZEIT</a></li>
+<li>Guillermo Rauch (<a href="https://twitter.com/rauchg" target="_blank">@rauchg</a>) &#x2013; <a href="https://zeit.co" target="_blank">ZEIT</a></li>
+<li>Dan Zajdband (<a href="https://twitter.com/impronunciable" target="_blank">@impronunciable</a>) &#x2013; Knight-Mozilla / Coral Project</li>
+</ul>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2018-09-03 15:37:02
+</span></footer>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Next.js中文文档","level":"1.1","depth":1,"dir":"ltr"},"config":{"tbfed-pagefooter":{"copyright":"Copyright &copy raoenhui.github.io 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"plugins":["-lunr","-search","-sharing","sharing-plus","highlight","github","github-buttons","tbfed-pagefooter","anchors","expandable-chapters-small","copy-code-button","versions","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{},"github":{"url":"https://github.com/raoenhui/next-site-cn"},"livereload":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"raoenhui/next-site-cn","types":["star","watch","fork"],"size":"small","count":true},"expandable-chapters-small":{},"copy-code-button":{},"versions":{"type":"branches"},"sharing":{"qq":true,"douban":false,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"raoenhui","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Next.js中文文档","language":"zh-hans","links":{"sidebar":{"主页":"https://github.com/raoenhui/next-site-cn"}},"gitbook":"=3.2.3","versions":{"type":"branches"},"description":"Next.js中文文档"},"file":{"path":"Introduction.md","mtime":"2018-09-03T07:37:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-04T07:29:24.293Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-versions/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

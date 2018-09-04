@@ -1,0 +1,4 @@
+http://gitbook.zhangjikai.com/settings.html
+gitbook install
+gitbook serve
+
