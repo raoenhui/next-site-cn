@@ -1,35 +1,52 @@
 {
-    "title": "Next.js中文文档",
-    "author": "raoenhui",
-    "description": "Next.js中文文档",
+    "title": "GitBook 使用教程",
+    "description": "记录 GitBook 的配置和一些插件的使用",
+    "author": "zhangjikai",
+    "output.name": "site",
     "language": "zh-hans",
-    "gitbook": "=3.2.3",
+    "gitbook": "3.2.3",
     "root": ".",
-    "structure":
-    {
+    "structure": {
         "readme": "introduction.md"
     },
-    "links":
-    {
-        "sidebar":
-        {
-            "blog主页": "https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"
+    "links": {
+        "sidebar": {
+            "Home": "http://www.zhangjikai.com"
         }
     },
-    "plugins": ["-lunr", "-search", "-sharing",
-        "sharing-plus",
-        "highlight",
-        "github",
-        "github-buttons",
-        "tbfed-pagefooter",
-        "anchors",
-        "expandable-chapters-small",
-        "copy-code-button",
-        "versions",
-        "favicon@^0.0.2"
+    "plugins": [
+        "-lunr",
+        "-search",
+        "-highlight",
+        "-livereload",
+        "search-plus@^0.0.11",
+        "github@^2.0.0",
+        "github-buttons@2.1.0",
+        "edit-link@^2.0.2",
+        "advanced-emoji@^0.2.1",
+        "anchors@^0.7.1",
+        "tbfed-pagefooter@^0.0.1",
+        "anchor-navigation-ex",
+        "favicon@^0.0.2",
+        "versions-select@^0.1.1",
+        "-sharing",
+        "sharing-plus@^0.0.2"
     ],
-    "pluginsConfig":
-    {
+
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/raoenhui/next-site-cn"
+        },
+        "github-buttons": {
+            "repo": "raoenhui/next-site-cn",
+            "types": [
+                "star",
+                "watch",
+                "fork"
+            ],
+            "size": "small",
+            "count": false
+        },
         "sharing":
         {
             "douban": false,
@@ -50,35 +67,39 @@
             "weibo": true,
             "whatsapp": false
         },
-        "github":
-        {
-            "url": "https://github.com/raoenhui/next-site-cn"
+        "tbfed-pagefooter": {
+            "copyright": "Copyright © www.frontendx.cn 2018",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
-        "github-buttons":
-        {
-            "repo": "raoenhui/next-site-cn",
-            "types": [
-                "star",
-                "watch",
-                "fork"
-            ],
-            "size": "small",
-            "count": true
-        }
-    },
-    "tbfed-pagefooter":
-    {
-        "copyright": "Copyright &copy raoenhui.github.io 2018",
-        "modify_label": "该文件修订时间：",
-        "modify_format": "YYYY-MM-DD HH:mm:ss"
-    },
-    "versions":
-    {
-        "type": "tags"
-    },
-    "favicon": {
+        "edit-link": {
+            "base": "https://github.com/raoenhui/next-site-cn/blob/master",
+            "label": "编辑页面"
+        },
+        "anchor-navigation-ex": {
+            "isRewritePageTitle": false,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right",
+            "showGoTop":true
+        },
+        "favicon": {
             "shortcut": "favicon.ico",
             "bookmark": "favicon.ico"
-        }
+        },
+        "terminal": {
+            "copyButtons": true,
+            "fade": false,
+            "style": "flat"
+        },
 
+        "versions": {
+            "options": [
+                {
+                    "value": "http://gitbook.zhangjikai.com/v2/",
+                    "text": "7.0.0-canary.11"
+                }
+            ]
+        }
+    }
 }

@@ -1,6 +1,7 @@
 http://gitbook.zhangjikai.com/settings.html
 gitbook install
 gitbook serve
+gitbook build . 7.0.0-canary.11
 
  "favicon":{
             "shortcut": "assets/images/favicon.ico",
