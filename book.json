@@ -11,7 +11,7 @@
     },
     "links": {
         "sidebar": {
-            "Home": "http://www.zhangjikai.com"
+            "blog": "https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3"
         }
     },
     "plugins": [
@@ -68,7 +68,7 @@
             "whatsapp": false
         },
         "tbfed-pagefooter": {
-            "copyright": "Copyright © www.frontendx.cn 2018",
+            "copyright": "Copyright © nextjs.frontendx.cn 2018",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
@@ -96,7 +96,7 @@
         "versions": {
             "options": [
                 {
-                    "value": "http://gitbook.zhangjikai.com/v2/",
+                    "value": "http://nextjs.frontendx.cn/",
                     "text": "7.0.0-canary.11"
                 }
             ]
