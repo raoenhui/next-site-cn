@@ -221,8 +221,6 @@ _注意：不要自定义静态文件夹的名字，只能叫`static` ，因为�
 <a id="populating-head"></a>
 ### 生成`<head>`
 
-`<head>`
-
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
@@ -1775,7 +1773,7 @@ PHP 的易用性也是个很好的灵感来源，我们觉得 Next.js 可以替�
 <a id="contributing"></a>
 ## 贡献
 
-可查看 [contributing.md](./contributing.md)
+可查看 [contributing.md](https://github.com/zeit/next.js/blob/canary/contributing.md)
 
 <a id="authors"></a>
 ## 作者
