@@ -2,3 +2,14 @@ http://gitbook.zhangjikai.com/settings.html
 gitbook install
 gitbook serve
 
+ "favicon":{
+            "shortcut": "assets/images/favicon.ico",
+            "bookmark": "assets/images/favicon.ico",
+            "appleTouch": "assets/images/apple-touch-icon-precomposed.png",
+            "appleTouchMore": {
+                "72x72": "assets/images/apple-touch-icon-72x72.png",
+                "114x114": "assets/images/apple-touch-icon-114x114.png",
+                "144x144": "assets/images/apple-touch-icon-144x144.png",
+                "152x152": "assets/images/apple-touch-icon-144x144.png"
+            }
+        },

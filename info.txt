@@ -2,37 +2,14 @@ http://gitbook.zhangjikai.com/settings.html
 gitbook install
 gitbook serve
 
-{ 
-  "title" : "Next.js中文文档",
-  "author" : "raoenhui",
-  "description" : "Next.js中文文档",
-  "language" : "zh-hans",
-  "gitbook" : "=3.2.3",
-  "root": ".",
-  "links" : {
-    "sidebar" : {
-    "主页" : "https://github.com/raoenhui/next-site-cn"
-	  }
-  },
-  "plugins": ["-lunr", "-search","highlight","github", "github-buttons","tbfed-pagefooter","anchors","expandable-chapters-small","copy-code-button"],
-  "pluginsConfig": {
-    "github": {
-        "url": "https://github.com/raoenhui/next-site-cn"
-    },
-    "github-buttons": {
-            "repo": "raoenhui/next-site-cn",
-            "types": [
-                "star",
-                "watch",
-                "fork"
-            ],
-            "size": "small",
-            "count": true
-        }
-   },
-   "tbfed-pagefooter": {
-        "copyright":"Copyright &copy raoenhui.github.io 2018",
-        "modify_label": "该文件修订时间：",
-        "modify_format": "YYYY-MM-DD HH:mm:ss"
-    }
-}
+ "favicon":{
+            "shortcut": "assets/images/favicon.ico",
+            "bookmark": "assets/images/favicon.ico",
+            "appleTouch": "assets/images/apple-touch-icon-precomposed.png",
+            "appleTouchMore": {
+                "72x72": "assets/images/apple-touch-icon-72x72.png",
+                "114x114": "assets/images/apple-touch-icon-114x114.png",
+                "144x144": "assets/images/apple-touch-icon-144x144.png",
+                "152x152": "assets/images/apple-touch-icon-144x144.png"
+            }
+        },

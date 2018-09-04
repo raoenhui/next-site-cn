@@ -25,7 +25,8 @@
         "anchors",
         "expandable-chapters-small",
         "copy-code-button",
-        "versions"
+        "versions",
+        "favicon@^0.0.2"
     ],
     "pluginsConfig":
     {
@@ -74,5 +75,10 @@
     "versions":
     {
         "type": "tags"
-    }
+    },
+    "favicon": {
+            "shortcut": "favicon.ico",
+            "bookmark": "favicon.ico"
+        }
+
 }

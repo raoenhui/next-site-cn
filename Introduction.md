@@ -8,10 +8,6 @@
 
 Next.js 是一个轻量级的 React 服务端渲染应用框架。
 
-**可访问 [nextjs.org/learn](https://nextjs.org/learn) 开始学习 Next.js.**
-
-[README in English](README.md)
-
 ---
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -148,8 +144,8 @@ export default () =>
 #### 支持嵌入样式
 
 <p><details>
-  <summary><b>案例</b></summary>
-  <ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/basic-css">Basic css</a></li></ul>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/basic-css">Basic css</a></li></ul>
 </details></p>
 
 我们绑定 [styled-jsx](https://github.com/zeit/styled-jsx) 来生成独立作用域的 CSS. 目标是支持 "shadow CSS",但是 [不支持独立模块作用域的 JS](https://github.com/w3c/webcomponents/issues/71).
@@ -189,7 +185,7 @@ export default () =>
   <summary>
     <b>Examples</b>
     </summary>
-  <ul><li><a href="./examples/with-styled-components">Styled components</a></li><li><a href="./examples/with-styletron">Styletron</a></li><li><a href="./examples/with-glamor">Glamor</a></li><li><a href="./examples/with-glamorous">Glamorous</a></li><li><a href="./examples/with-cxs">Cxs</a></li><li><a href="./examples/with-aphrodite">Aphrodite</a></li><li><a href="./examples/with-fela">Fela</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components">Styled components</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styletron">Styletron</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamor">Glamor</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamorous">Glamorous</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-cxs">Cxs</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-aphrodite">Aphrodite</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-fela">Fela</a></li></ul>
 </details></p>
 
 有些情况可以使用 CSS 内嵌 JS 写法。如下所示：
@@ -230,8 +226,8 @@ _注意：不要自定义静态文件夹的名字，只能叫`static` ，因为�
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="./examples/head-elements">Head elements</a></li>
-    <li><a href="./examples/layout-component">Layout component</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/head-elements">Head elements</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/layout-component">Layout component</a></li>
   </ul>
 </details></p>
 
@@ -277,7 +273,7 @@ export default () => (
 
 <p><details>
   <summary><b>Examples</b></summary>
-  <ul><li><a href="./examples/data-fetch">Data fetch</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/data-fetch">Data fetch</a></li></ul>
 </details></p>
 
 如果你需要一个有状态、生命周期或有初始数据的 React 组件（而不是上面的无状态函数），如下所示：
@@ -354,7 +350,7 @@ export default Page
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="./examples/hello-world">Hello World</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/hello-world">Hello World</a></li>
   </ul>
 </details></p>
 
@@ -395,7 +391,7 @@ export default () => <p>Welcome to About!</p>
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="./examples/with-url-object-routing">With URL Object Routing</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-url-object-routing">With URL Object Routing</a></li>
   </ul>
 </details></p>
 
@@ -491,8 +487,8 @@ export default ({ href, name }) =>
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="./examples/using-router">Basic routing</a></li>
-    <li><a href="./examples/with-loading">With a page loading indicator</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/using-router">Basic routing</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-loading">With a page loading indicator</a></li>
   </ul>
 </details></p>
 
@@ -613,7 +609,7 @@ Router.events.on('routeChangeError', (err, url) => {
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="./examples/with-shallow-routing">Shallow Routing</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-shallow-routing">Shallow Routing</a></li>
   </ul>
 </details></p>
 
@@ -656,7 +652,7 @@ componentDidUpdate(prevProps) {
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="./examples/using-with-router">Using the `withRouter` utility</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/using-with-router">Using the `withRouter` utility</a></li>
   </ul>
 </details></p>
 
@@ -695,7 +691,7 @@ export default withRouter(ActiveLink)
 
 <p><details>
   <summary><b>Examples</b></summary>
-  <ul><li><a href="./examples/with-prefetching">Prefetching</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-prefetching">Prefetching</a></li></ul>
 </details></p>
 
 Next.js 有允许你预加载页面的 API。
@@ -787,12 +783,12 @@ export default withRouter(MyLink)
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="./examples/custom-server">Basic custom server</a></li>
-    <li><a href="./examples/custom-server-express">Express integration</a></li>
-    <li><a href="./examples/custom-server-hapi">Hapi integration</a></li>
-    <li><a href="./examples/custom-server-koa">Koa integration</a></li>
-    <li><a href="./examples/parameterized-routing">Parameterized routing</a></li>
-    <li><a href="./examples/ssr-caching">SSR caching</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server">Basic custom server</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-express">Express integration</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-hapi">Hapi integration</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-koa">Koa integration</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/parameterized-routing">Parameterized routing</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/ssr-caching">SSR caching</a></li>
   </ul>
 </details></p>
 
@@ -920,7 +916,7 @@ app.prepare().then(() => {
 <p><details>
   <summary><b>Examples</b></summary>
   <ul>
-    <li><a href="./examples/with-dynamic-import">With Dynamic Import</a></li>
+    <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-dynamic-import">With Dynamic Import</a></li>
   </ul>
 </details></p>
 
@@ -1018,8 +1014,8 @@ export default () => <HelloBundle title="Dynamic Bundle" />
 
 <p><details>
   <summary><b>Examples</b></summary>
-  <ul><li><a href="./examples/with-app-layout">Using `_app.js` for layout</a></li></ul>
-  <ul><li><a href="./examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-app-layout">Using `_app.js` for layout</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li></ul>
 </details></p>
 
 组件来初始化页面。你可以重写它来控制页面初始化，如下面的事：
@@ -1060,8 +1056,8 @@ export default class MyApp extends App {
 
 <p><details>
   <summary><b>Examples</b></summary>
-  <ul><li><a href="./examples/with-styled-components">Styled components custom document</a></li></ul>
-  <ul><li><a href="./examples/with-amp">Google AMP</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components">Styled components custom document</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-amp">Google AMP</a></li></ul>
 </details></p>
 
 - 在服务端呈现
@@ -1284,7 +1280,7 @@ module.exports = {
 
 <p><details>
   <summary><b>Examples</b></summary>
-  <ul><li><a href="./examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li></ul>
 </details></p>
 
 可以使用些一些常见的模块
@@ -1368,7 +1364,7 @@ module.exports = {
 
 <p><details>
   <summary><b>Examples</b></summary>
-  <ul><li><a href="./examples/with-custom-babel-config">Custom babel configuration</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-custom-babel-config">Custom babel configuration</a></li></ul>
 </details></p>
 
 为了扩展方便我们使用`babel`，可以在应用根目录新建`.babelrc`文件，该文件可配置。
@@ -1513,7 +1509,7 @@ ployflls 实现案例为[polyfills](https://github.com/zeit/next.js/tree/canary/
 
 <p><details>
   <summary><b>Examples</b></summary>
-  <ul><li><a href="./examples/with-static-export">Static export</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-static-export">Static export</a></li></ul>
 </details></p>
 
 `next export`可以输出一个 Next.js 应用作为静态资源应用而不依靠 Node.js 服务。
@@ -1609,7 +1605,7 @@ now
 
 <p><details>
   <summary><b>Examples</b></summary>
-  <ul><li><a href="./examples/with-zones">With Zones</a></li></ul>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-zones">With Zones</a></li></ul>
 </details></p>
 
 一个 zone 时一个单独的 Next.js 应用。如果你有很多 zone，你可以合并成一个应用。
