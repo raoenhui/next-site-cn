@@ -144,7 +144,7 @@ export default () =>
 #### 支持嵌入样式
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/basic-css">Basic css</a></li></ul>
 </details></p>
 
@@ -182,7 +182,7 @@ export default () =>
 #### 内嵌样式
 
 <p><details>
-  <summary>
+  <summary markdown="span">
     <b>Examples</b>
     </summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components">Styled components</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styletron">Styletron</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamor">Glamor</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamorous">Glamorous</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-cxs">Cxs</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-aphrodite">Aphrodite</a></li><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-fela">Fela</a></li></ul>
@@ -222,7 +222,7 @@ _注意：不要自定义静态文件夹的名字，只能叫`static` ，因为�
 ### 生成`<head>`
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/head-elements">Head elements</a></li>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/layout-component">Layout component</a></li>
@@ -270,7 +270,7 @@ export default () => (
 ### 获取数据以及组件生命周期
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/data-fetch">Data fetch</a></li></ul>
 </details></p>
 
@@ -346,7 +346,7 @@ export default Page
 #### `<Link>`用法
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/hello-world">Hello World</a></li>
   </ul>
@@ -387,7 +387,7 @@ export default () => <p>Welcome to About!</p>
 ##### URL 对象
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-url-object-routing">With URL Object Routing</a></li>
   </ul>
@@ -483,7 +483,7 @@ export default ({ href, name }) =>
 #### 命令式
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/using-router">Basic routing</a></li>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-loading">With a page loading indicator</a></li>
@@ -605,7 +605,7 @@ Router.events.on('routeChangeError', (err, url) => {
 ##### 浅层路由
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-shallow-routing">Shallow Routing</a></li>
   </ul>
@@ -648,7 +648,7 @@ componentDidUpdate(prevProps) {
 #### 高阶组件
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/using-with-router">Using the `withRouter` utility</a></li>
   </ul>
@@ -688,7 +688,7 @@ export default withRouter(ActiveLink)
 ⚠️ 只有生产环境才有此功能 ⚠️
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-prefetching">Prefetching</a></li></ul>
 </details></p>
 
@@ -779,7 +779,7 @@ export default withRouter(MyLink)
 ### 自定义服务端路由
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server">Basic custom server</a></li>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-express">Express integration</a></li>
@@ -912,7 +912,7 @@ app.prepare().then(() => {
 ### 动态导入
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul>
     <li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-dynamic-import">With Dynamic Import</a></li>
   </ul>
@@ -1011,7 +1011,7 @@ export default () => <HelloBundle title="Dynamic Bundle" />
 ### 自定义 `<App>`
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-app-layout">Using `_app.js` for layout</a></li></ul>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li></ul>
 </details></p>
@@ -1053,14 +1053,14 @@ export default class MyApp extends App {
 ### 自定义 `<Document>`
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components">Styled components custom document</a></li></ul>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-amp">Google AMP</a></li></ul>
 </details></p>
 
 - 在服务端呈现
 - 初始化服务端时添加文档标记元素
-- 通常实现服务端渲染会使用一些 css-in-js 库，如[styled-components](./examples/with-styled-components), [glamorous](./examples/with-glamorous) 或 [emotion](with-emotion)。[styled-jsx](https://github.com/zeit/styled-jsx)是 Next.js 自带默认使用的 css-in-js 库
+- 通常实现服务端渲染会使用一些 css-in-js 库，如[styled-components](https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components), [glamorous](https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamorous) 或 [emotion](with-emotion)。[styled-jsx](https://github.com/zeit/styled-jsx)是 Next.js 自带默认使用的 css-in-js 库
 
 `Next.js`会自动定义文档标记，比如，你从来不需要添加`<html>`, `<body>`等。如果想自定义文档标记，你可以新建`./pages/_document.js`，然后扩展`Document`类：
 
@@ -1277,7 +1277,7 @@ module.exports = {
 ### 自定义 webpack 配置
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li></ul>
 </details></p>
 
@@ -1361,7 +1361,7 @@ module.exports = {
 ### 自定义 babel 配置
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-custom-babel-config">Custom babel configuration</a></li></ul>
 </details></p>
 
@@ -1506,7 +1506,7 @@ ployflls 实现案例为[polyfills](https://github.com/zeit/next.js/tree/canary/
 ## 导出静态页面
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-static-export">Static export</a></li></ul>
 </details></p>
 
@@ -1602,7 +1602,7 @@ now
 ## 多 zone
 
 <p><details>
-  <summary><b>Examples</b></summary>
+  <summary markdown="span"><b>Examples</b></summary>
   <ul><li><a href="https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-zones">With Zones</a></li></ul>
 </details></p>
 
@@ -1623,7 +1623,7 @@ now
 zone 没有单独的 API 文档。你需要做下面事即可：
 
 * 确保你的应用里只有需要的页面 (例如, https://ui.my-app.com 不包含 `/docs/**`)
-* 确保你的应用有个前缀[assetPrefix](https://github.com/zeit/next.js#cdn-support-with-asset-prefix)。（你也可以定义动态前缀[dynamically](https://github.com/zeit/next.js#dynamic-assetprefix)）
+* 确保你的应用有个前缀[assetPrefix](#cdn-support-with-asset-prefix)。（你也可以定义动态前缀[dynamically](#dynamic-assetprefix)）
 
 <a id="how-to-merge-them"></a>
 ### 怎么合并他们
@@ -1655,14 +1655,14 @@ zone 没有单独的 API 文档。你需要做下面事即可：
 ## 问答
 
 <details>
-  <summary>这个产品可以用于生产环境吗？</summary>
+  <summary markdown="span">这个产品可以用于生产环境吗？</summary>
   https://zeit.co 都是一直用 Next.js 写的。
 
   它的开发体验和终端用户体验都很好，所以我们决定开源出来给大家共享。
 </details>
 
 <details>
-  <summary>体积多大？</summary>
+  <summary markdown="span">体积多大？</summary>
 
 客户端大小根据应用需求不一样大小也不一样。
 
@@ -1671,7 +1671,7 @@ zone 没有单独的 API 文档。你需要做下面事即可：
 </details>
 
 <details>
-  <summary>这个像 `create-react-app`?</summary>
+  <summary markdown="span">这个像 `create-react-app`?</summary>
 
 是或不是.
 
@@ -1687,18 +1687,17 @@ zone 没有单独的 API 文档。你需要做下面事即可：
 
 如果你想写共用组件，可以嵌入 Next.js 应用和 React 应用中，推荐使用`create-react-app`。你可以更改`import`保持代码清晰。
 
-
 </details>
 
 <details>
-  <summary>怎么解决 CSS 嵌入 JS 问题?</summary>
+  <summary markdown="span">怎么解决 CSS 嵌入 JS 问题?</summary>
 
 Next.js 自带[styled-jsx](https://github.com/zeit/styled-jsx)库支持 CSS 嵌入 JS。而且你可以选择其他嵌入方法到你的项目中，可参考文档[as mentioned before](#css-in-js)。
 
 </details>
 
 <details>
-  <summary>哪些语法会被转换？怎么转换它们？</summary>
+  <summary markdown="span">哪些语法会被转换？怎么转换它们？</summary>
 
 我们遵循 V8 引擎的，如今 V8 引擎广泛支持 ES6 语法以及`async`和`await`语法，所以我们支持转换它们。但是 V8 引擎不支持修饰器语法，所以我们也不支持转换这语法。
 
@@ -1707,7 +1706,7 @@ Next.js 自带[styled-jsx](https://github.com/zeit/styled-jsx)库支持 CSS 嵌�
 </details>
 
 <details>
-  <summary>为什么使用新路由?</summary>
+  <summary markdown="span">为什么使用新路由?</summary>
 
 Next.js 的特别之处如下所示:
 
@@ -1725,7 +1724,7 @@ Next.js 的特别之处如下所示:
 </details>
 
 <details>
-<summary>我怎么定义自定义路由?</summary>
+<summary markdown="span">我怎么定义自定义路由?</summary>
 
 我们通过请求处理来[添加](#custom-server-and-routing)任意 URL 与任意组件之前的映射关系。
 
@@ -1733,32 +1732,32 @@ Next.js 的特别之处如下所示:
 </details>
 
 <details>
-<summary>怎么获取数据?</summary>
+<summary markdown="span">怎么获取数据?</summary>
 
 这由你决定。`getInitialProps`是一个异步函数`async`（也就是函数将会返回个`Promise`）。你可以在任意位置获取数据。
 </details>
 
 <details>
-  <summary>我可以使用 GraphQL 吗?</summary>
+  <summary markdown="span">我可以使用 GraphQL 吗?</summary>
 
-是的! 这里有个例子[Apollo](./examples/with-apollo).
+是的! 这里有个例子[Apollo](https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-apollo).
 
 </details>
 
 <details>
-<summary>我可以使用 Redux 吗?</summary>
+<summary markdown="span">我可以使用 Redux 吗?</summary>
 
-是的! 这里有个[例子](./examples/with-redux)
+是的! 这里有个[例子](https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-redux)
 </details>
 
 <details>
-<summary>我可以在 Next 应用中使用我喜欢的 Javascript 库或工具包吗?</summary>
+<summary markdown="span">我可以在 Next 应用中使用我喜欢的 Javascript 库或工具包吗?</summary>
 
 从我们第一次发版就已经提供**很多**例子，你可以查看这些[例子](./examples)。
 </details>
 
 <details>
-<summary>什么启发我们做这个?</summary>
+<summary markdown="span">什么启发我们做这个?</summary>
 
 我们实现的大部分目标都是通过 Guillermo Rauch 的[Web 应用的7原则](http://rauchg.com/2014/7-principles-of-rich-web-applications/)来启发出的。
 
