@@ -8,7 +8,8 @@ const NavigationItems = ({ isMobile }) => (
   <div className={`navigation-items ${isMobile ? 'is-mobile' : ''}`}>
     <Link href='/docs' prefetch><a>文档</a></Link>
     <Link href='/showcase' prefetch><a>案例</a></Link>
-    <a href='https://github.com/zeit/next.js'>GitHub</a>
+    <a href='https://github.com/zeit/next.js' target="_blank">Nextjs GitHub</a>
+    <a href='https://github.com/raoenhui/next-site-cn' target="_blank">Website GitHub</a>
     <a href='https://spectrum.chat/next-js' target="_blank" rel="noopener noreferrer">聊天</a>
 
     <style jsx>{`
