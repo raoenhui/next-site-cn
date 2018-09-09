@@ -5,10 +5,10 @@ import Title from './intro/title'
 
 function Intro() {
   return (
-  <>  
-    <NotificationBanner />
+  <>
+    {/*<NotificationBanner />*/}
     <Title />
-    <Video />
+    {/*<Video />*/}
   </>
   )
 }

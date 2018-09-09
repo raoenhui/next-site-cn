@@ -6,11 +6,10 @@ import ToggleIcon from '../components/icons/toggle'
 
 const NavigationItems = ({ isMobile }) => (
   <div className={`navigation-items ${isMobile ? 'is-mobile' : ''}`}>
-    <Link href='/docs' prefetch><a>Docs</a></Link>
-    <Link href='/showcase' prefetch><a>Showcase</a></Link>
+    <Link href='/docs' prefetch><a>文档</a></Link>
+    <Link href='/showcase' prefetch><a>案例</a></Link>
     <a href='https://github.com/zeit/next.js'>GitHub</a>
-    <Link href='/learn'><a>Learn</a></Link>
-    <a href='https://spectrum.chat/next-js' target="_blank" rel="noopener noreferrer">Chat</a>
+    <a href='https://spectrum.chat/next-js' target="_blank" rel="noopener noreferrer">聊天</a>
 
     <style jsx>{`
       a {
@@ -126,7 +125,7 @@ export default class Header extends Component {
               <NavigationItems />
             </nav>
             <div className="zeit-logo">
-              <ZeitLogo />            
+              <ZeitLogo />
             </div>
             <a className="header__nav-toggle" onClick={this.handleToggleMenu}><ToggleIcon /></a>
           </div>

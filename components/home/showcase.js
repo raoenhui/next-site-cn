@@ -5,10 +5,10 @@ import Image from '../image'
 function Showcase() {
   return (
   <section className="showcase">
-    <h2>The World's Leading Companies Use and Love Next.js</h2>
-    <p>We're honored some of the most talented creatives out there build with Next.js.</p>
+    <h2>全球领先公司使用Next.js</h2>
+    <p>我们很荣幸使用Next.js构建了一些很有才华的创意项目。</p>
     <CompanySlider />
-    <RoundButton className="button" color='white' href='/showcase'>View Showcase</RoundButton>
+    <RoundButton className="button" color='white' href='/showcase'>查看案例</RoundButton>
     <div className="image">
       <Image src="https://assets.zeit.co/image/upload/v1526678305/nextjs/home/showcase.png" width={1800}  height={1083} margin={0} />
     </div>
@@ -35,7 +35,7 @@ function Showcase() {
         margin-top: 13px;
         margin-bottom: 66px;
         padding-left: 25px;
-        padding-right: 25px;        
+        padding-right: 25px;
       }
       .showcase :global(.button) {
         margin-top: 57px;

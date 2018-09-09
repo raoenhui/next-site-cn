@@ -1,23 +1,20 @@
 export const meta = {
-  title: 'Getting Started',
-  description: 'Setting up Next.js for use in your project',
-  date: '2018-04-27T02:09:35.275Z',
-  url: 'https://nextjs.org/docs/getting-started/setup',
+  title: '快速开始',
+  description: '创建Next.js项目',
+  date: '2018-08-27T02:09:35.275Z',
+  url: 'http://nextjs.frontendx.cn/docs/getting-started/setup',
   link: '/docs/getting-started/setup'
 }
 
-### Setup
+### 安装
 
-Install it:
+安装它:
 
 ```bash
 npm install --save next react react-dom
 ```
 
-> Next.js only supports [React 16](https://reactjs.org/blog/2017/09/26/react-v16.0.html).<br/>
-> We had to drop React 15 support due to the way React 16 works and how we use it.
-
-and add a script to your package.json like this:
+将下面脚本添加到 package.json 中:
 
 ```json
 {
@@ -29,28 +26,33 @@ and add a script to your package.json like this:
 }
 ```
 
-After that, the file-system is the main API. Every `.js` file becomes a route that gets automatically processed and rendered.
+> Next.js 只支持[React 16](https://reactjs.org/blog/2017/09/26/react-v16.0.html).<br/>
+> 由于我们使用 React 16 的特性所以不得不放弃 React 16 的支持.
 
-Populate `./pages/index.js` inside your project:
+下面, 文件系统是主要的 API. 每个`.js` 文件将变成一个路由，自动处理和渲染。
+
+新建 `./pages/index.js` 到你的项目中:
 
 ```jsx
 export default () => <div>Welcome to next.js!</div>
 ```
 
-and then just run `npm run dev` and go to `http://localhost:3000`. To use another port, you can run `npm run dev -- -p <your port here>`.
+运行 `npm run dev` 命令并打开 `http://localhost:3000`。 如果你想使用其他端口，可运行 `npm run dev -- -p <设置端口号>`.
 
-So far, we get:
 
-- Automatic transpilation and bundling (with webpack and babel)
-- Hot code reloading
-- Server rendering and indexing of `./pages`
-- Static file serving. `./static/` is mapped to `/static/`
+目前为止我们可以了解到:
 
-To see how simple this is, check out the [sample app - nextgram](https://github.com/zeit/nextgram)
+- 自动打包编译 (使用 webpack 和 babel)
+- 热加载
+- 以 `./pages`作为服务端的渲染和索引
+- Static file serving. `./static/` is mapped to `/static/` (given you [create a `./static/` directory](#static-file-serving-eg-images) inside your project)
+- 静态文件服务. `./static/` 映射到 `/static/` (可以 [创建一个静态目录](#static-file-serving-eg-images) 在你的项目中)
 
-### Automatic code splitting
+这里有个简单的案例，可以下载看看 [sample app - nextgram](https://github.com/zeit/nextgram)
 
-Every `import` you declare gets bundled and served with each page. That means pages never load unnecessary code!
+### 代码自动分割
+
+每个页面只会导入`import`中绑定以及被用到的代码. 也就是说并不会加载不需要的代码!
 
 ```jsx
 import cowsay from 'cowsay-browser'
@@ -63,14 +65,14 @@ export default () =>
 
 ### CSS
 
-#### Built-in CSS support
+#### 支持嵌入样式
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/basic-css">Basic css</a></li>
-</ul>
+<p>
+  <summary><b>案例</b></summary>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/basic-css">Basic css</a></li></ul>
+</p>
 
-We bundle [styled-jsx](https://github.com/zeit/styled-jsx) to provide support for isolated scoped CSS. The aim is to support "shadow CSS" similar to Web Components, which unfortunately [do not support server-rendering and are JS-only](https://github.com/w3c/webcomponents/issues/71).
+我们绑定 [styled-jsx](https://github.com/zeit/styled-jsx) 来生成独立作用域的 CSS. 目标是支持 "shadow CSS",但是 [不支持独立模块作用域的 JS](https://github.com/w3c/webcomponents/issues/71).
 
 ```jsx
 export default () =>
@@ -98,55 +100,58 @@ export default () =>
   </div>
 ```
 
-Please see the [styled-jsx documentation](https://www.npmjs.com/package/styled-jsx) for more examples.
+想查看更多案例可以点击 [styled-jsx documentation](https://www.npmjs.com/package/styled-jsx)查看.
 
-#### CSS-in-JS
+#### 内嵌样式
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-styled-components">Styled components</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-styletron">Styletron</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-glamor">Glamor</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-glamorous">Glamorous</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-cxs">Cxs</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-aphrodite">Aphrodite</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-fela">Fela</a></li>
-</ul>
+<p>
+  <summary>
+    <b>Examples</b>
+    </summary>
+  <ul><li><a href="./examples/with-styled-components">Styled components</a></li><li><a href="./examples/with-styletron">Styletron</a></li><li><a href="./examples/with-glamor">Glamor</a></li><li><a href="./examples/with-glamorous">Glamorous</a></li><li><a href="./examples/with-cxs">Cxs</a></li><li><a href="./examples/with-aphrodite">Aphrodite</a></li><li><a href="./examples/with-fela">Fela</a></li></ul>
+</p>
 
-It's possible to use any existing CSS-in-JS solution. The simplest one is inline styles:
+有些情况可以使用 CSS 内嵌 JS 写法。如下所示：
 
 ```jsx
 export default () => <p style={{ color: 'red' }}>hi there</p>
 ```
 
-To use more sophisticated CSS-in-JS solutions, you typically have to implement style flushing for server-side rendering. We enable this by allowing you to define your own [custom `<Document>`](#user-content-custom-document) component that wraps each page.
+更复杂的内嵌样式解决方案，特别是服务端渲染的时样式更改。我们可以通过包裹自定义 Document，来添加样式，案例如下：[custom `<Document>`](#user-content-custom-document)
 
-#### Importing CSS / Sass / Less / Stylus files
+#### 使用 CSS / Sass / Less / Stylus files
 
-To support importing `.css`, `.scss`, `.less` or `.styl` files you can use these modules, which configure sensible defaults for server rendered applications.
+支持用`.css`, `.scss`, `.less` or `.styl`，需要配置默认文件 next.config.js，具体可查看下面链接
 
 - [@zeit/next-css](https://github.com/zeit/next-plugins/tree/master/packages/next-css)
 - [@zeit/next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass)
 - [@zeit/next-less](https://github.com/zeit/next-plugins/tree/master/packages/next-less)
 - [@zeit/next-stylus](https://github.com/zeit/next-plugins/tree/master/packages/next-stylus)
 
-### Static file serving (e.g.: images)
+### 静态文件服务（如图像）
 
-Create a folder called `static` in your project root directory. From your code you can then reference those files with `/static/` URLs:
+在根目录下新建文件夹叫`static`。代码可以通过`/static/`来引入相关的静态资源。
 
 ```jsx
 export default () => <img src="/static/my-image.png" alt="my image" />
 ```
 
-### Populating `<head>`
+_注意：不要自定义静态文件夹的名字，只能叫`static` ，因为只有这个名字 Next.js 才会把它当作静态资源。
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/head-elements">Head elements</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/layout-component">Layout component</a></li>
-</ul>
 
-We expose a built-in component for appending elements to the `<head>` of the page.
+### 生成`<head>`
+
+`<head>`
+
+<p>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/head-elements">Head elements</a></li>
+    <li><a href="./examples/layout-component">Layout component</a></li>
+  </ul>
+</p>
+
+我们设置一个内置组件来装载`<head>`到页面中。
 
 ```jsx
 import Head from 'next/head'
@@ -161,7 +166,7 @@ export default () =>
   </div>
 ```
 
-To avoid duplicate tags in your `<head>` you can use the `key` property, which will make sure the tag is only rendered once:
+我们定义`key`属性来避免重复的`<head>`标签，保证`<head>`只渲染一次，如下所示：
 
 ```jsx
 import Head from 'next/head'
@@ -179,18 +184,18 @@ export default () => (
 )
 ```
 
-In this case only the second `<meta name="viewport" />` is rendered.
+只有第二个`<meta name="viewport" />`才被渲染。
 
-_Note: The contents of `<head>` get cleared upon unmounting the component, so make sure each page completely defines what it needs in `<head>`, without making assumptions about what other pages added_
+注意：在卸载组件时，`<head>`的内容将被清除。请确保每个页面都在其`<head>`定义了所需要的内容，而不是假设其他页面已经加过了
 
-### Fetching data and component lifecycle
+### 获取数据以及组件生命周期
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/data-fetch">Data fetch</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/data-fetch">Data fetch</a></li></ul>
+</p>
 
-When you need state, lifecycle hooks or **initial data population** you can export a `React.Component` (instead of a stateless function, like shown above):
+如果你需要一个有状态、生命周期或有初始数据的 React 组件（而不是上面的无状态函数），如下所示：
 
 ```jsx
 import React from 'react'
@@ -211,22 +216,24 @@ export default class extends React.Component {
 }
 ```
 
-Notice that to load data when the page loads, we use `getInitialProps` which is an [`async`](https://zeit.co/blog/async-and-await) static method. It can asynchronously fetch anything that resolves to a JavaScript plain `Object`, which populates `props`.
+相信你注意到，当页面渲染时加载数据，我们使用了一个异步方法`getInitialProps`。它能异步获取 JS 普通对象，并绑定在`props`上
 
-Data returned from `getInitialProps` is serialized when server rendering, similar to a `JSON.stringify`. Make sure the returned object from `getInitialProps` is a plain `Object` and not using `Date`, `Map` or `Set`.
+当服务渲染时，`getInitialProps`将会把数据序列化，就像`JSON.stringify`。所以确保`getInitialProps`返回的是一个普通 JS 对象，而不是`Date`, `Map` 或 `Set`类型。
 
-For the initial page load, `getInitialProps` will execute on the server only. `getInitialProps` will only be executed on the client when navigating to a different route via the `Link` component or using the routing APIs.
+当页面初次加载时，`getInitialProps`只会在服务端执行一次。`getInitialProps`只有在路由切换的时候（如`Link`组件跳转或路由自定义跳转）时，客户端的才会被执行。
 
-_Note: `getInitialProps` can **not** be used in children components. Only in `pages`._
+当页面初始化加载时，`getInitialProps`只会加载在服务端。只有当路由跳转（`Link`组件跳转或 API 方法跳转）时，客户端才会执行`getInitialProps`。
 
-<br/>
-
-> If you are using some server only modules inside `getInitialProps`, make sure to [import them properly](https://arunoda.me/blog/ssr-and-server-only-modules).
-> Otherwise, it'll slow down your app.
+注意：`getInitialProps`将不能使用在子组件中。只能使用在`pages`页面中。
 
 <br/>
 
-You can also define the `getInitialProps` lifecycle method for stateless components:
+> 只有服务端用到的模块放在`getInitialProps`里，请确保正确的导入了它们，可参考[import them properly](https://arunoda.me/blog/ssr-and-server-only-modules)。
+> 否则会拖慢你的应用速度。
+
+<br/>
+
+你也可以给无状态组件定义`getInitialProps`：
 
 ```jsx
 const Page = ({ stars }) =>
@@ -243,26 +250,28 @@ Page.getInitialProps = async ({ req }) => {
 export default Page
 ```
 
-`getInitialProps` receives a context object with the following properties:
+`getInitialProps`入参对象的属性如下：
 
-- `pathname` - path section of URL
-- `query` - query string section of URL parsed as an object
-- `asPath` - `String` of the actual path (including the query) shows in the browser
-- `req` - HTTP request object (server only)
-- `res` - HTTP response object (server only)
-- `jsonPageRes` - [Fetch Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object (client only)
-- `err` - Error object if any error is encountered during the rendering
+- `pathname` - URL 的 path 部分
+- `query` - URL 的 query 部分，并被解析成对象
+- `asPath` - 显示在浏览器中的实际路径（包含查询部分），为`String`类型
+- `req` - HTTP 请求对象 (只有服务器端有)
+- `res` - HTTP 返回对象 (只有服务器端有)
+- `jsonPageRes` - [获取数据响应对象](https://developer.mozilla.org/en-US/docs/Web/API/Response) (只有客户端有)
+- `err` - 渲染过程中的任何错误
 
-### Routing
+### 路由
 
-#### With `<Link>`
+#### `<Link>`用法
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/hello-world">Hello World</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/hello-world">Hello World</a></li>
+  </ul>
+</p>
 
-Client-side transitions between routes can be enabled via a `<Link>` component. Consider these two pages:
+可以用 `<Link>` 组件实现客户端的路由切换。
 
 ```jsx
 // pages/index.js
@@ -283,32 +292,26 @@ export default () =>
 export default () => <p>Welcome to About!</p>
 ```
 
-__Note: use [`<Link prefetch>`](#prefetching-pages) for maximum performance, to link and prefetch in the background at the same time__
+注意：可以使用[`<Link prefetch>`](#prefetching-pages)使链接和预加载在后台同时进行，来达到页面的最佳性能。
 
-Client-side routing behaves exactly like the browser:
+客户端路由行为与浏览器很相似：
 
-1. The component is fetched
-2. If it defines `getInitialProps`, data is fetched. If an error occurs, `_error.js` is rendered
-3. After 1 and 2 complete, `pushState` is performed and the new component is rendered
+1. 组件获取
+2. 如果组件定义了`getInitialProps`，数据获取了。如果有错误情况将会渲染 `_error.js`。
+3. 1和2都完成了，`pushState`执行，新组件被渲染。
 
-Each top-level component receives a `url` property with the following API:
+如果需要注入`pathname`, `query` 或 `asPath`到你组件中，你可以使用[withRouter](#using-a-higher-order-component)。
 
-- `pathname` - `String` of the current path excluding the query string
-- `query` - `Object` with the parsed query string. Defaults to `{}`
-- `asPath` - `String` of the actual path (including the query) shows in the browser
-- `push(url, as=url)` - performs a `pushState` call with the given url
-- `replace(url, as=url)` - performs a `replaceState` call with the given url
+##### URL 对象
 
-The second `as` parameter for `push` and `replace` is an optional _decoration_ of the URL. Useful if you configured custom routes on the server.
+<p>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/with-url-object-routing">With URL Object Routing</a></li>
+  </ul>
+</p>
 
-##### With URL object
-
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-url-object-routing">With URL Object Routing</a></li>
-</ul>
-
-The component `<Link>` can also receive an URL object and it will automatically format it to create the URL string.
+组件`<Link>`接收 URL 对象，而且它会自动格式化生成 URL 字符串
 
 ```jsx
 // pages/index.js
@@ -317,18 +320,19 @@ import Link from 'next/link'
 export default () =>
   <div>
     Click{' '}
-    <Link href={{ pathname: '/about', query: { name: 'Zeit' } }}>
+    <Link href={{ pathname: '/about', query: { name: 'Zeit' }}}>
       <a>here</a>
     </Link>{' '}
     to read more
   </div>
 ```
 
-That will generate the URL string `/about?name=Zeit`, you can use every property as defined in the [Node.js URL module documentation](https://nodejs.org/api/url.html#url_url_strings_and_url_objects).
+将生成 URL 字符串`/about?name=Zeit`，你可以使用任何在[Node.js URL module documentation](https://nodejs.org/api/url.html#url_url_strings_and_url_objects)定义过的属性。
 
-##### Replace instead of push url
 
-The default behaviour for the `<Link>` component is to `push` a new url into the stack. You can use the `replace` prop to prevent adding a new entry.
+##### 替换路由
+
+`<Link>`组件默认将新 url 推入路由栈中。你可以使用`replace`属性来防止添加新输入。
 
 ```jsx
 // pages/index.js
@@ -344,9 +348,9 @@ export default () =>
   </div>
 ```
 
-##### Using a component that supports `onClick`
+##### 组件支持点击事件 `onClick`
 
-`<Link>` supports any component that supports the `onClick` event. In case you don't provide an `<a>` tag, it will only add the `onClick` event handler and won't pass the `href` property.
+`<Link>`支持每个组件所支持的`onClick`事件。如果你不提供`<a>`标签，只会处理`onClick`事件而`href`将不起作用。
 
 ```jsx
 // pages/index.js
@@ -361,11 +365,11 @@ export default () =>
   </div>
 ```
 
-##### Forcing the Link to expose `href` to its child
+##### 暴露 `href` 给子元素
 
-If child is an `<a>` tag and doesn't have a href attribute we specify it so that the repetition is not needed by the user. However, sometimes, you’ll want to pass an `<a>` tag inside of a wrapper and the `Link` won’t recognize it as a *hyperlink*, and, consequently, won’t transfer its `href` to the child. In cases like that, you should define a boolean `passHref` property to the `Link`, forcing it to expose its `href` property to the child.
+如子元素是一个没有 href 属性的`<a>`标签，我们将会指定它以免用户重复操作。然而有些时候，我们需要里面有`<a>`标签，但是`Link`组件不会被识别成*超链接*，结果不能将`href`传递给子元素。在这种场景下，你可以定义一个`Link`组件中的布尔属性`passHref`，强制将`href`传递给子元素。
 
-**Please note**: using a tag other than `a` and failing to pass `passHref` may result in links that appear to navigate correctly, but, when being crawled by search engines, will not be recognized as links (owing to the lack of `href` attribute). This may result in negative effects on your sites SEO.
+**注意**: 使用`a`之外的标签而且没有通过`passHref`的链接可能会使导航看上去正确，但是当搜索引擎爬行检测时，将不会识别成链接（由于缺乏 href 属性），这会对你网站的 SEO 产生负面影响。
 
 ```jsx
 import Link from 'next/link'
@@ -379,24 +383,28 @@ export default ({ href, name }) =>
   </Link>
 ```
 
-##### Disabling the scroll changes to top on page
+##### 禁止滚动到页面顶部
 
-The default behaviour of `<Link>` is to scroll to the top of the page. When there is a hash defined it will scroll to the specific id, just like a normal `<a>` tag. To prevent scrolling to the top / hash `scroll={false}` can be added to `<Link>`:
+`<Link>`的默认行为就是滚到页面顶部。当有 hash 定义时（＃），页面将会滚动到对应的 id 上，就像`<a>`标签一样。为了预防滚动到顶部，可以给`<Link>`加
+`scroll={false}`属性：
 
 ```jsx
 <Link scroll={false} href="/?counter=10"><a>Disables scrolling</a></Link>
 <Link href="/?counter=10"><a>Changes with scrolling to top</a></Link>
 ```
 
-#### Imperatively
+#### 命令式
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/using-router">Basic routing</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-loading">With a page loading indicator</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/using-router">Basic routing</a></li>
+    <li><a href="./examples/with-loading">With a page loading indicator</a></li>
+  </ul>
+</p>
 
-You can also do client-side page transitions using the `next/router`
+你也可以用`next/router`实现客户端路由切换
+
 
 ```jsx
 import Router from 'next/router'
@@ -407,11 +415,10 @@ export default () =>
   </div>
 ```
 
-#### Intercepting `popstate`
+#### 拦截器 `popstate`
 
-In some cases (for example, if using a [custom router](#custom-server-and-routing)), you may wish
-to listen to [`popstate`](https://developer.mozilla.org/en-US/docs/Web/Events/popstate) and react before the router acts on it.
-For example, you could use this to manipulate the request, or force an SSR refresh.
+有些情况（比如使用[custom router](#custom-server-and-routing)），你可能想监听[`popstate`](https://developer.mozilla.org/en-US/docs/Web/Events/popstate)，在路由跳转前做一些动作。
+比如，你可以操作 request 或强制 SSR 刷新
 
 ```jsx
 import Router from 'next/router'
@@ -428,26 +435,24 @@ Router.beforePopState(({ url, as, options }) => {
 });
 ```
 
-If you return a falsy value from `beforePopState`, `Router` will not handle `popstate`;
-you'll be responsible for handling it, in that case.
-See [Disabling File-System Routing](#disabling-file-system-routing).
+如果你在`beforePopState`中返回 false，`Router`将不会执行`popstate`事件。
+例如[Disabling File-System Routing](#disabling-file-system-routing)。
 
-Above `Router` object comes with the following API:
+以上`Router`对象的 API 如下：
 
-- `route` - `String` of the current route
-- `pathname` - `String` of the current path excluding the query string
-- `query` - `Object` with the parsed query string. Defaults to `{}`
-- `asPath` - `String` of the actual path (including the query) shows in the browser
-- `push(url, as=url)` - performs a `pushState` call with the given url
+- `route` - 当前路由的`String`类型
+- `pathname` - 不包含查询内容的当前路径，为`String`类型
+- `query` - 查询内容，被解析成`Object`类型. 默认为`{}`
+- `asPath` - 展现在浏览器上的实际路径，包含查询内容，为`String`类型
+- `push(url, as=url)` - 页面渲染第一个参数 url 的页面，浏览器栏显示的是第二个参数 url
 - `replace(url, as=url)` - performs a `replaceState` call with the given url
-- `beforePopState(cb=function)` - intercept popstate before router processes the event.
+- `beforePopState(cb=function)` - 在路由器处理事件之前拦截.
 
-The second `as` parameter for `push` and `replace` is an optional _decoration_ of the URL. Useful if you configured custom routes on the server.
+`push` 和 `replace` 函数的第二个参数`as`，是为了装饰 URL 作用。如果你在服务器端设置了自定义路由将会起作用。
 
-_Note: in order to programmatically change the route without triggering navigation and component-fetching, use `props.url.push` and `props.url.replace` within a component_
+##### URL 对象用法
 
-##### With URL object
-You can use an URL object the same way you use it in a `<Link>` component to `push` and `replace` an URL.
+`push` 或 `replace`可接收的 URL 对象（`<Link>`组件的 URL 对象一样）来生成 URL。
 
 ```jsx
 import Router from 'next/router'
@@ -464,54 +469,60 @@ export default () =>
   </div>
 ```
 
-This uses the same exact parameters as in the `<Link>` component.
+也可以像`<Link>`组件一样添加额外的参数。
 
-##### Router Events
+##### 路由事件
 
-You can also listen to different events happening inside the Router.
-Here's a list of supported events:
+你可以监听路由相关事件。
+下面是事件支持列表：
 
-- `onRouteChangeStart(url)` - Fires when a route starts to change
-- `onRouteChangeComplete(url)` - Fires when a route changed completely
-- `onRouteChangeError(err, url)` - Fires when there's an error when changing routes
-- `onBeforeHistoryChange(url)` - Fires just before changing the browser's history
+- `routeChangeStart(url)` - 路由开始切换时触发
+- `routeChangeComplete(url)` - 完成路由切换时触发
+- `routeChangeError(err, url)` - 路由切换报错时触发
+- `beforeHistoryChange(url)` - 浏览器 history 模式开始切换时触发
+- `hashChangeStart(url)` - 开始切换 hash 值但是没有切换页面路由时触发
+- `hashChangeComplete(url)` - 完成切换 hash 值但是没有切换页面路由时触发
 
-> Here `url` is the URL shown in the browser. If you call `Router.push(url, as)` (or similar), then the value of `url` will be `as`.
+> 这里的`url`是指显示在浏览器中的 url。如果你用了`Router.push(url, as)`（或类似的方法），那浏览器中的 url 将会显示 as 的值。
 
-Here's how to properly listen to the router event `onRouteChangeStart`:
+下面是如何正确使用路由事件`routeChangeStart`的例子：
 
 ```js
-Router.onRouteChangeStart = url => {
+const handleRouteChange = url => {
   console.log('App is changing to: ', url)
 }
+
+Router.events.on('routeChangeStart', handleRouteChange)
 ```
 
-If you no longer want to listen to that event, you can simply unset the event listener like this:
+如果你不想长期监听该事件，你可以用`off`事件去取消监听：
 
 ```js
-Router.onRouteChangeStart = null
+Router.events.off('routeChangeStart', handleRouteChange)
 ```
 
-If a route load is cancelled (for example by clicking two links rapidly in succession), `routeChangeError` will fire. The passed `err` will contain a `cancelled` property set to `true`.
+如果路由加载被取消（比如快速连续双击链接）
 
 ```js
-Router.onRouteChangeError = (err, url) => {
+Router.events.on('routeChangeError', (err, url) => {
   if (err.cancelled) {
     console.log(`Route to ${url} was cancelled!`)
   }
-}
+})
 ```
 
-##### Shallow Routing
+##### 浅层路由
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-shallow-routing">Shallow Routing</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/with-shallow-routing">Shallow Routing</a></li>
+  </ul>
+</p>
 
-Shallow routing allows you to change the URL without running `getInitialProps`. You'll receive the updated `pathname` and the `query` via the `url` prop of the same page that's loaded, without losing state.
+浅层路由允许你改变 URL 但是不执行`getInitialProps`生命周期。你可以加载相同页面的 URL，得到更新后的路由属性`pathname`和`query`，并不失去 state 状态。
 
-You can do this by invoking either `Router.push` or `Router.replace` with the `shallow: true` option. Here's an example:
+你可以给`Router.push` 或 `Router.replace`方法加`shallow: true`参数。如下面的例子所示：
 
 ```js
 // Current URL is "/"
@@ -520,33 +531,38 @@ const as = href
 Router.push(href, as, { shallow: true })
 ```
 
-Now, the URL is updated to `/?counter=10`. You can see the updated URL with `this.props.url` inside the `Component`.
+现在 URL 更新为`/?counter=10`。在组件里查看`this.props.router.query`你将会看到更新的 URL。
 
-You can watch for URL changes via [`componentWillReceiveProps`](https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops) hook as shown below:
+你可以在[`componentdidupdate`](https://facebook.github.io/react/docs/react-component.html#componentdidupdate)钩子函数中监听 URL 的变化。
 
 ```js
-componentWillReceiveProps(nextProps) {
-  const { pathname, query } = nextProps.url
-  // fetch data based on the new query
+componentDidUpdate(prevProps) {
+  const { pathname, query } = this.props.router
+  // verify props have changed to avoid an infinite loop
+  if (query.id !== prevProps.router.query.id) {
+    // fetch data based on the new query
+  }
 }
 ```
 
-> NOTES:
+> 注意:
 >
-> Shallow routing works **only** for same page URL changes. For an example, let's assume we have another page called `about`, and you run this:
+> 浅层路由只作用于相同 URL 的参数改变，比如我们假定有个其他路由`about`，而你向下面代码样运行:
 > ```js
 > Router.push('/?counter=10', '/about?counter=10', { shallow: true })
 > ```
-> Since that's a new page, it'll unload the current page, load the new one and call `getInitialProps` even though we asked to do shallow routing.
+> 那么这将会出现新页面，即使我们加了浅层路由，但是它还是会卸载当前页，会加载新的页面并触发新页面的`getInitialProps`。
 
-#### Using a Higher Order Component
+#### 高阶组件
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/using-with-router">Using the `withRouter` utility</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/using-with-router">Using the `withRouter` utility</a></li>
+  </ul>
+</p>
 
-If you want to access the `router` object inside any component in your app, you can use the `withRouter` Higher-Order Component. Here's how to use it:
+如果你想应用里每个组件都处理路由对象，你可以使用`withRouter`高阶组件。下面是如何使用它：
 
 ```jsx
 import { withRouter } from 'next/router'
@@ -572,26 +588,26 @@ const ActiveLink = ({ children, router, href }) => {
 export default withRouter(ActiveLink)
 ```
 
-The above `router` object comes with an API similar to [`next/router`](#imperatively).
+上面路由对象的 API 可以参考[`next/router`](#imperatively).
 
-### Prefetching Pages
+### 预加载页面
 
-⚠️ This is a production only feature ⚠️
+⚠️ 只有生产环境才有此功能 ⚠️
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-prefetching">Prefetching</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-prefetching">Prefetching</a></li></ul>
+</p>
 
-Next.js has an API which allows you to prefetch pages.
+Next.js 有允许你预加载页面的 API。
 
-Since Next.js server-renders your pages, this allows all the future interaction paths of your app to be instant. Effectively Next.js gives you the great initial download performance of a _website_, with the ahead-of-time download capabilities of an _app_. [Read more](https://zeit.co/blog/next#anticipation-is-the-key-to-performance).
+用 Next.js 服务端渲染你的页面，可以达到所有你应用里所有未来会跳转的路径即时响应，有效的应用 Next.js，可以通过预加载应用程序的功能，最大程度的初始化网站性能。[查看更多](https://zeit.co/blog/next#anticipation-is-the-key-to-performance).
 
-> With prefetching Next.js only downloads JS code. When the page is getting rendered, you may need to wait for the data.
+> Next.js 的预加载功能只预加载 JS 代码。当页面渲染时，你可能需要等待数据请求。
 
-#### With `<Link>`
+#### `<Link>`用法
 
-You can add `prefetch` prop to any `<Link>` and Next.js will prefetch those pages in the background.
+你可以给`<Link>`添加 `prefetch` 属性，Next.js 将会在后台预加载这些页面。
 
 ```jsx
 import Link from 'next/link'
@@ -619,38 +635,69 @@ export default () =>
   </nav>
 ```
 
-#### Imperatively
+#### 命令式 prefetch 写法
 
-Most prefetching needs are addressed by `<Link />`, but we also expose an imperative API for advanced usage:
+大多数预加载是通过`<Link />`处理的，但是我们还提供了命令式 API 用于更复杂的场景。
 
 ```jsx
-import Router from 'next/router'
+import { withRouter } from 'next/router'
 
-export default ({ url }) =>
+export default withRouter(({ router }) =>
   <div>
-    <a onClick={() => setTimeout(() => url.pushTo('/dynamic'), 100)}>
+    <a onClick={() => setTimeout(() => router.push('/dynamic'), 100)}>
       A route transition will happen after 100ms
     </a>
     {// but we can prefetch it!
-    Router.prefetch('/dynamic')}
+    router.prefetch('/dynamic')}
   </div>
+)
 ```
 
-### Custom server and routing
+路由实例只允许在应用程序的客户端。以防服务端渲染发生错误，建议 prefetch 事件写在`componentDidMount()`生命周期里。
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/custom-server">Basic custom server</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/custom-server-express">Express integration</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/custom-server-hapi">Hapi integration</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/custom-server-koa">Koa integration</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/parameterized-routing">Parameterized routing</a></li>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/ssr-caching">SSR caching</a></li>
-</ul>
+```jsx
+import React from 'react'
+import { withRouter } from 'next/router'
 
-Typically you start your next server with `next start`. It's possible, however, to start a server 100% programmatically in order to customize routes, use route patterns, etc.
+class MyLink extends React.Component {
+  componentDidMount() {
+    const { router } = this.props
+    router.prefetch('/dynamic')
+  }
 
-When using a custom server with a server file, for example called `server.js`, make sure you update the scripts key in `package.json` to:
+  render() {
+    const { router } = this.props
+    return (
+       <div>
+        <a onClick={() => setTimeout(() => router.push('/dynamic'), 100)}>
+          A route transition will happen after 100ms
+        </a>
+      </div>
+    )
+  }
+}
+
+export default withRouter(MyLink)
+```
+
+### 自定义服务端路由
+
+<p>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/custom-server">Basic custom server</a></li>
+    <li><a href="./examples/custom-server-express">Express integration</a></li>
+    <li><a href="./examples/custom-server-hapi">Hapi integration</a></li>
+    <li><a href="./examples/custom-server-koa">Koa integration</a></li>
+    <li><a href="./examples/parameterized-routing">Parameterized routing</a></li>
+    <li><a href="./examples/ssr-caching">SSR caching</a></li>
+  </ul>
+</p>
+
+
+一般你使用`next start`命令来启动 next 服务，你还可以编写代码来自定义路由，如使用路由正则等。
+
+当使用自定义服务文件，如下面例子所示叫 server.js 时，确保你更新了 package.json 中的脚本。
 
 ```json
 {
@@ -662,7 +709,7 @@ When using a custom server with a server file, for example called `server.js`, m
 }
 ```
 
-This example makes `/a` resolve to `./pages/b`, and `/b` resolve to `./pages/a`:
+下面这个例子使 `/a` 路由解析为`./pages/b`，以及`/b` 路由解析为`./pages/a`;
 
 ```js
 // This file doesn't go through babel or webpack transformation.
@@ -697,23 +744,23 @@ app.prepare().then(() => {
 })
 ```
 
-The `next` API is as follows:
+`next`的 API 如下所示
 - `next(opts: object)`
 
-Supported options:
-- `dev` (`bool`) whether to launch Next.js in dev mode - default `false`
-- `dir` (`string`) where the Next project is located - default `'.'`
-- `quiet` (`bool`) Hide error messages containing server information - default `false`
-- `conf` (`object`) the same object you would use in `next.config.js` - default `{}`
+opts 的属性如下:
+- `dev` (`boolean`) 判断 Next.js 应用是否在开发环境 - 默认`false`
+- `dir` (`string`) Next 项目路径 - 默认`'.'`
+- `quiet` (`boolean`) 是否隐藏包含服务端消息在内的错误信息 - 默认`false`
+- `conf` (`object`) 与`next.config.js`的对象相同 - 默认`{}`
 
-Then, change your `start` script to `NODE_ENV=production node server.js`.
+生产环境的话，可以更改 package.json 里的`start`脚本为`NODE_ENV=production node server.js`。
 
-#### Disabling file-system routing
-By default, `Next` will serve each file in `/pages` under a pathname matching the filename (eg, `/pages/some-file.js` is served at `site.com/some-file`.
+#### 禁止文件路由
+默认情况，`Next`将会把`/pages`下的所有文件匹配路由（如`/pages/some-file.js` 渲染为 `site.com/some-file`）
 
-If your project uses custom routing, this behavior may result in the same content being served from multiple paths, which can present problems with SEO and UX.
+如果你的项目使用自定义路由，那么有可能不同的路由会得到相同的内容，可以优化 SEO 和用户体验。
 
-To disable this behavior & prevent routing based on files in `/pages`, simply set the following option in your `next.config.js`:
+禁止路由链接到`/pages`下的文件，只需设置`next.config.js`文件如下所示：
 
 ```js
 // next.config.js
@@ -722,19 +769,15 @@ module.exports = {
 }
 ```
 
-Note that `useFileSystemPublicRoutes` simply disables filename routes from SSR; client-side routing
-may still access those paths. If using this option, you should guard against navigation to routes
-you do not want programmatically.
+注意`useFileSystemPublicRoutes`只禁止服务端的文件路由；但是客户端的还是禁止不了。
 
-You may also wish to configure the client-side Router to disallow client-side redirects to filename
-routes; please refer to [Intercepting `popstate`](#intercepting-popstate).
+你如果想配置客户端路由不能跳转文件路由，可以参考[Intercepting `popstate`](#intercepting-popstate)。
 
-#### Dynamic assetPrefix
+#### 动态前缀
 
-Sometimes we need to set the `assetPrefix` dynamically. This is useful when changing the `assetPrefix` based on incoming requests.
-For that, we can use `app.setAssetPrefix`.
+有时你需要设置动态前缀，可以在请求时设置`assetPrefix`改变前缀。
 
-Here's an example usage of it:
+使用方法如下：
 
 ```js
 const next = require('next')
@@ -742,7 +785,7 @@ const micro = require('micro')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
-const handle = app.getRequestHandler()
+const handleNextRequests = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = micro((req, res) => {
@@ -767,22 +810,22 @@ app.prepare().then(() => {
 
 ```
 
-### Dynamic Import
+### 动态导入
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-dynamic-import">With Dynamic Import</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/with-dynamic-import">With Dynamic Import</a></li>
+  </ul>
+</p>
 
-Next.js supports TC39 [dynamic import proposal](https://github.com/tc39/proposal-dynamic-import) for JavaScript.
-With that, you could import JavaScript modules (inc. React Components) dynamically and work with them.
+ext.js 支持 JavaScript 的 TC39 提议[dynamic import proposal](https://github.com/tc39/proposal-dynamic-import)。你可以动态导入 JavaScript 模块（如 React 组件）。
 
-You can think dynamic imports as another way to split your code into manageable chunks.
-Since Next.js supports dynamic imports with SSR, you could do amazing things with it.
+动态导入相当于把代码分成各个块管理。Next.js 服务端动态导入功能，你可以做很多炫酷事情。
 
-Here are a few ways to use dynamic imports.
+下面介绍一些动态导入方式：
 
-#### 1. Basic Usage (Also does SSR)
+#### 1. 基础支持 (同样支持 SSR)
 
 ```jsx
 import dynamic from 'next/dynamic'
@@ -797,7 +840,7 @@ export default () =>
   </div>
 ```
 
-#### 2. With Custom Loading Component
+#### 2. 自定义加载组件
 
 ```jsx
 import dynamic from 'next/dynamic'
@@ -817,7 +860,7 @@ export default () =>
   </div>
 ```
 
-#### 3. With No SSR
+#### 3. 禁止使用 SSR
 
 ```jsx
 import dynamic from 'next/dynamic'
@@ -834,19 +877,17 @@ export default () =>
   </div>
 ```
 
-#### 4. With Multiple Modules At Once
+#### 4. 同时加载多个模块
 
 ```jsx
 import dynamic from 'next/dynamic'
 
 const HelloBundle = dynamic({
-  modules: props => {
+  modules: () => {
     const components = {
       Hello1: import('../components/hello1'),
       Hello2: import('../components/hello2')
     }
-
-    // Add remove components based on props
 
     return components
   },
@@ -863,24 +904,22 @@ const HelloBundle = dynamic({
 export default () => <HelloBundle title="Dynamic Bundle" />
 ```
 
-### Custom `<App>`
+### 自定义`<App>`
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-app-layout">Using `_app.js` for layout</a></li>
-</ul>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-app-layout">Using `_app.js` for layout</a></li></ul>
+  <ul><li><a href="./examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li></ul>
+</p>
 
-Next.js uses the `App` component to initialize pages. You can override it and control the page initialization. Which allows you to do amazing things like:
+组件来初始化页面。你可以重写它来控制页面初始化，如下面的事：
 
-- Persisting layout between page changes
-- Keeping state when navigating pages
-- Custom error handling using `componentDidCatch`
-- Inject additional data into pages (for example by processing GraphQL queries)
+- 当页面变化时保持页面布局
+- 当路由变化时保持页面状态
+- 使用`componentDidCatch`自定义处理错误
+- 注入额外数据到页面里 (如 GraphQL 查询)
 
-To override, create the `./pages/_app.js` file and override the App class as shown below:
+重写的话，新建`./pages/_app.js`文件，重写 App 模块如下所示：
 
 ```js
 import App, {Container} from 'next/app'
@@ -906,17 +945,19 @@ export default class MyApp extends App {
 }
 ```
 
-### Custom `<Document>`
+### 自定义`<Document>`
 
-<b>Examples</b>
-<ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-styled-components">Styled components custom document</a></li></ul>
-<ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-amp">Google AMP</a></li></ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-styled-components">Styled components custom document</a></li></ul>
+  <ul><li><a href="./examples/with-amp">Google AMP</a></li></ul>
+</p>
 
-- Is rendered on the server side
-- Is used to change the initial server side rendered document markup
-- Commonly used to implement server side rendering for css-in-js libraries like [styled-components](https://github.com/zeit/next.js/tree/canary/examples/with-styled-components), [glamorous](https://github.com/zeit/next.js/tree/canary/examples/with-glamorous) or [emotion](https://github.com/zeit/next.js/tree/canary/examples/with-emotion). [styled-jsx](https://github.com/zeit/styled-jsx) is included with Next.js by default.
+- 在服务端呈现
+- 初始化服务端时添加文档标记元素
+- 通常实现服务端渲染会使用一些 css-in-js 库，如[styled-components](./examples/with-styled-components), [glamorous](./examples/with-glamorous) 或 [emotion](with-emotion)。[styled-jsx](https://github.com/zeit/styled-jsx)是 Next.js 自带默认使用的 css-in-js 库
 
-Pages in `Next.js` skip the definition of the surrounding document's markup. For example, you never include `<html>`, `<body>`, etc. To override that default behavior, you must create a file at `./pages/_document.js`, where you can extend the `Document` class:
+`Next.js`会自动定义文档标记，比如，你从来不需要添加`<html>`, `<body>`等。如果想自定义文档标记，你可以新建`./pages/_document.js`，然后扩展`Document`类：
 
 ```jsx
 // _document is only rendered on the server side and not on the client side
@@ -947,15 +988,15 @@ export default class MyDocument extends Document {
 }
 ```
 
-The `ctx` object is equivalent to the one received in all [`getInitialProps`](#fetching-data-and-component-lifecycle) hooks, with one addition:
+钩子[`getInitialProps`](#fetching-data-and-component-lifecycle)接收到的参数`ctx`对象都是一样的
 
-- `renderPage` (`Function`) a callback that executes the actual React rendering logic (synchronously). It's useful to decorate this function in order to support server-rendering wrappers like Aphrodite's [`renderStatic`](https://github.com/Khan/aphrodite#server-side-rendering)
+- 回调函数`renderPage`是会执行 React 渲染逻辑的函数(同步)，这种做法有助于此函数支持一些类似于 Aphrodite 的 renderStatic 等一些服务器端渲染容器。
 
-__Note: React-components outside of `<Main />` will not be initialised by the browser. Do _not_ add application logic here. If you need shared components in all your pages (like a menu or a toolbar), take a look at the `App` component instead.__
+__注意：`<Main />`外的 React 组件将不会渲染到浏览器中，所以那添加应用逻辑代码。如果你页面需要公共组件（菜单或工具栏），可以参照上面说的`App`组件代替。__
 
-### Custom error handling
+### 自定义错误处理
 
-404 or 500 errors are handled both client and server side by a default component `error.js`. If you wish to override it, define a `_error.js` in the pages folder:
+404和500错误客户端和服务端都会通过`error.js`组件处理。如果你想改写它，则新建`_error.js`在文件夹中：
 
 ```jsx
 import React from 'react'
@@ -978,9 +1019,9 @@ export default class Error extends React.Component {
 }
 ```
 
-### Reusing the built-in error page
+### 渲染内置错误页面
 
-If you want to render the built-in error page you can by using `next/error`:
+如果你想渲染内置错误页面，你可以使用`next/error`：
 
 ```jsx
 import React from 'react'
@@ -1010,13 +1051,13 @@ export default class Page extends React.Component {
 }
 ```
 
-> If you have created a custom error page you have to import your own `_error` component instead of `next/error`
+> 如果你自定义了个错误页面，你可以引入自己的错误页面来代替`next/error`
 
-### Custom configuration
+### 自定义配置
 
-For custom advanced behavior of Next.js, you can create a `next.config.js` in the root of your project directory (next to `pages/` and `package.json`).
+如果你想自定义 Next.js 的高级配置，可以在根目录下新建`next.config.js`文件（与`pages/` 和 `package.json`一起）
 
-Note: `next.config.js` is a regular Node.js module, not a JSON file. It gets used by the Next server and build phases, and not included in the browser build.
+注意：`next.config.js`是一个 Node.js 模块，不是一个 JSON 文件，可以用于 Next 启动服务已经构建阶段，但是不作用于浏览器端。
 
 ```js
 // next.config.js
@@ -1025,7 +1066,7 @@ module.exports = {
 }
 ```
 
-Or use a function:
+或使用一个函数：
 
 ```js
 module.exports = (phase, {defaultConfig}) => {
@@ -1037,8 +1078,8 @@ module.exports = (phase, {defaultConfig}) => {
 }
 ```
 
-`phase` is the current context in which the configuration is loaded. You can see all phases here: [constants](https://github.com/zeit/next.js/blob/master/lib/constants.js).
-Phases can be imported from `next/constants`:
+`phase`是配置文件被加载时的当前内容。你可看到所有的 phases 常量：[constants](./lib/constants.js)
+这些常量可以通过`next/constants`引入：
 
 ```js
 const {PHASE_DEVELOPMENT_SERVER} = require('next/constants')
@@ -1055,9 +1096,9 @@ module.exports = (phase, {defaultConfig}) => {
 }
 ```
 
-#### Setting a custom build directory
+#### 设置自定义构建目录
 
-You can specify a name to use for a custom build directory. For example, the following config will create a `build` folder instead of a `.next` folder. If no configuration is specified then next will create a `.next` folder.
+你可以自定义一个构建目录，如新建`build`文件夹来代替`.next` 文件夹成为构建目录。如果没有配置构建目录，构建时将会自动新建`.next`文件夹
 
 ```js
 // next.config.js
@@ -1066,9 +1107,9 @@ module.exports = {
 }
 ```
 
-#### Disabling etag generation
+#### 禁止 etag 生成
 
-You can disable etag generation for HTML pages depending on your cache strategy. If no configuration is specified then Next will generate etags for every page.
+你可以禁止 etag 生成根据你的缓存策略。如果没有配置，Next 将会生成 etags 到每个页面中。
 
 ```js
 // next.config.js
@@ -1077,9 +1118,9 @@ module.exports = {
 }
 ```
 
-#### Configuring the onDemandEntries
+#### 配置 onDemandEntries
 
-Next exposes some options that give you some control over how the server will dispose or keep in memories pages built:
+Next 暴露一些选项来给你控制服务器部署以及缓存页面：
 
 ```js
 module.exports = {
@@ -1092,11 +1133,11 @@ module.exports = {
 }
 ```
 
-This is development-only feature. If you want to cache SSR pages in production, please see [SSR-caching](https://github.com/zeit/next.js/tree/canary/examples/ssr-caching) example.
+这个只是在开发环境才有的功能。如果你在生成环境中想缓存 SSR 页面，请查看[SSR-caching](https://github.com/zeit/next.js/tree/canary/examples/ssr-caching)
 
-#### Configuring extensions looked for when resolving pages in `pages`
+#### 配置页面后缀名解析扩展
 
-Aimed at modules like [`@zeit/next-typescript`](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript), that add support for pages ending in `.ts`. `pageExtensions` allows you to configure the extensions looked for in the `pages` directory when resolving pages.
+如 typescript 模块[`@zeit/next-typescript`](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript)，需要支持解析后缀名为`.ts`的文件。`pageExtensions` 允许你扩展后缀名来解析各种 pages 下的文件。
 
 ```js
 // next.config.js
@@ -1105,11 +1146,11 @@ module.exports = {
 }
 ```
 
-#### Configuring the build ID
+#### 配置构建 ID
 
-Next.js uses a constant generated at build time to identify which version of your application is being served. This can cause problems in multi-server deployments when `next build` is ran on every server. In order to keep a static build id between builds you can provide the `generateBuildId` function:
+Next.js 使用构建时生成的常量来标识你的应用服务是哪个版本。在每台服务器上运行构建命令时，可能会导致多服务器部署出现问题。为了保持同一个构建 ID，可以配置`generateBuildId`函数：
 
-```js
+```es6
 // next.config.js
 module.exports = {
   generateBuildId: async () => {
@@ -1119,37 +1160,14 @@ module.exports = {
 }
 ```
 
-### Customizing webpack config
+### 自定义 webpack 配置
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li></ul>
+</p>
 
-In order to extend our usage of `webpack`, you can define a function that extends its config via `next.config.js`.
-
-```js
-// This file is not going through babel transformation.
-// So, we write it in vanilla JS
-// (But you could use ES2015 features supported by your Node.js version)
-
-module.exports = {
-  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-    // Perform customizations to webpack config
-
-    // Important: return the modified config
-    return config
-  },
-  webpackDevMiddleware: config => {
-    // Perform customizations to webpack dev middleware config
-
-    // Important: return the modified config
-    return config
-  }
-}
-```
-
-Some commonly asked for features are available as modules:
+可以使用些一些常见的模块
 
 - [@zeit/next-css](https://github.com/zeit/next-plugins/tree/master/packages/next-css)
 - [@zeit/next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass)
@@ -1157,9 +1175,9 @@ Some commonly asked for features are available as modules:
 - [@zeit/next-preact](https://github.com/zeit/next-plugins/tree/master/packages/next-preact)
 - [@zeit/next-typescript](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript)
 
-*Warning: The `webpack` function is executed twice, once for the server and once for the client. This allows you to distinguish between client and server configuration using the `isServer` property*
+*注意： `webpack`方法将被执行两次，一次在服务端一次在客户端。你可以用`isServer`属性区分客户端和服务端来配置*
 
-Multiple configurations can be combined together with function composition. For example:
+多配置可以组合在一起，如：
 
 ```js
 const withTypescript = require('@zeit/next-typescript')
@@ -1173,21 +1191,72 @@ module.exports = withTypescript(withSass({
 }))
 ```
 
+为了扩展`webpack`使用，可以在`next.config.js`定义函数。
 
-### Customizing babel config
+```js
+// next.config.js is not transformed by Babel. So you can only use javascript features supported by your version of Node.js.
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-custom-babel-config">Custom babel configuration</a></li>
-</ul>
+module.exports = {
+  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+    // Perform customizations to webpack config
+    // Important: return the modified config
+    return config
+  },
+  webpackDevMiddleware: config => {
+    // Perform customizations to webpack dev middleware config
+    // Important: return the modified config
+    return config
+  }
+}
+```
 
-In order to extend our usage of `babel`, you can simply define a `.babelrc` file at the root of your app. This file is optional.
+`webpack`的第二个参数是个对象，你可以自定义配置它，对象属性如下所示：
 
-If found, we're going to consider it the *source of truth*, therefore it needs to define what next needs as well, which is the `next/babel` preset.
+- `buildId` - 字符串类型，构建的唯一标示
+- `dev` - `Boolean`型，判断你是否在开发环境下
+- `isServer` - `Boolean` 型，为`true`使用在服务端, 为`false`使用在客户端.
+- `defaultLoaders` - 对象型 ，内部加载器, 你可以如下配置
+  - `babel` - 对象型，配置`babel-loader`.
+  - `hotSelfAccept` - 对象型， `hot-self-accept-loader`配置选项.这个加载器只能用于高阶案例。如 [`@zeit/next-typescript`](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript)添加顶层 typescript 页面。
 
-This is designed so that you are not surprised by modifications we could make to the babel configurations.
+`defaultLoaders.babel`使用案例如下：
 
-Here's an example `.babelrc` file:
+```js
+// Example next.config.js for adding a loader that depends on babel-loader
+// This source was taken from the @zeit/next-mdx plugin source:
+// https://github.com/zeit/next-plugins/blob/master/packages/next-mdx
+module.exports = {
+  webpack: (config, {}) => {
+    config.module.rules.push({
+      test: /\.mdx/,
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: '@mdx-js/loader',
+          options: pluginOptions.options
+        }
+      ]
+    })
+
+    return config
+  }
+}
+```
+
+### 自定义 babel 配置
+
+<p>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-custom-babel-config">Custom babel configuration</a></li></ul>
+</p>
+
+为了扩展方便我们使用`babel`，可以在应用根目录新建`.babelrc`文件，该文件可配置。
+
+如果有该文件，我们将会考虑数据源，因此也需要定义 next 项目需要的东西，也就是 `next/babel`预设。
+
+这种设计方案将会使你不诧异于我们可以定制 babel 配置。
+
+下面是`.babelrc`文件案例：
 
 ```json
 {
@@ -1196,9 +1265,37 @@ Here's an example `.babelrc` file:
 }
 ```
 
-#### Exposing configuration to the server / client side
+`next/babel`预设可处理各种 React 应用所需要的情况。包括：
 
-The `config` key allows for exposing runtime configuration in your app. All keys are server only by default. To expose a configuration to both the server and client side you can use the `public` key.
+- preset-env
+- preset-react
+- plugin-proposal-class-properties
+- plugin-proposal-object-rest-spread
+- plugin-transform-runtime
+- styled-jsx
+
+presets / plugins 不允许添加到`.babelrc`中，然而你可以配置`next/babel`预设：
+
+```json
+{
+  "presets": [
+    ["next/babel", {
+      "preset-env": {},
+      "transform-runtime": {},
+      "styled-jsx": {},
+      "class-properties": {}
+    }]
+  ],
+  "plugins": []
+}
+```
+
+`"preset-env"`模块选项应该保持为 false，否则 webpack 代码分割将被禁用。
+
+
+### 暴露配置到服务端和客户端
+
+`next/config`模块使你应用运行时可以读取些存储在`next.config.js`的配置项。`serverRuntimeConfig`属性只在服务器端可用，`publicRuntimeConfig`属性在服务端和客户端可用。
 
 ```js
 // next.config.js
@@ -1207,7 +1304,8 @@ module.exports = {
     mySecret: 'secret'
   },
   publicRuntimeConfig: { // Will be available on both server and client
-    staticFolder: '/static'
+    staticFolder: '/static',
+    mySecret: process.env.MY_SECRET // Pass through env variables
   }
 }
 ```
@@ -1226,9 +1324,13 @@ export default () => <div>
 </div>
 ```
 
-### CDN support with Asset Prefix
+### 启动服务选择 hostname
 
-To set up a CDN, you can set up the `assetPrefix` setting and configure your CDN's origin to resolve to the domain that Next.js is hosted on.
+启动开发环境服务可以设置不同的 hostname，你可以在启动命令后面加上`--hostname 主机名` 或 `-H 主机名`。它将会启动一个 TCP 服务器来监听连接所提供的主机。
+
+### CDN 支持前缀
+
+建立一个 CDN，你能配置`assetPrefix`选项，去配置你的 CDN 源。
 
 ```js
 const isProd = process.env.NODE_ENV === 'production'
@@ -1238,18 +1340,18 @@ module.exports = {
 }
 ```
 
-Note: Next.js will automatically use that prefix in the scripts it loads, but this has no effect whatsoever on `/static`. If you want to serve those assets over the CDN, you'll have to introduce the prefix yourself. One way of introducing a prefix that works inside your components and varies by environment is documented [in this example](https://github.com/zeit/next.js/tree/canary/examples/with-universal-configuration).
+注意：Next.js 运行时将会自动添加前缀，但是对于`/static`是没有效果的，如果你想这些静态资源也能使用 CDN，你需要自己添加前缀。有一个方法可以判断你的环境来加前缀，如 [in this example](https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration)。
 
-## Production deployment
+## 项目部署
 
-To deploy, instead of running `next`, you want to build for production usage ahead of time. Therefore, building and starting are separate commands:
+部署中，你可以先构建打包生成环境代码，再启动服务。因此，构建和启动分为下面两条命令：
 
 ```bash
 next build
 next start
 ```
 
-For example, to deploy with [`now`](https://zeit.co/now) a `package.json` like follows is recommended:
+例如，使用[`now`](https://zeit.co/now)去部署`package.json`配置文件如下：
 
 ```json
 {
@@ -1265,31 +1367,56 @@ For example, to deploy with [`now`](https://zeit.co/now) a `package.json` like f
 }
 ```
 
-Then run `now` and enjoy!
+然后就可以直接运行`now`了。
 
-Next.js can be deployed to other hosting solutions too. Please have a look at the ['Deployment'](https://github.com/zeit/next.js/wiki/Deployment) section of the wiki.
+Next.js 也有其他托管解决方案。请查考 wiki 章节['Deployment'](https://github.com/zeit/next.js/wiki/Deployment) 。
 
-Note: `NODE_ENV` is properly configured by the `next` subcommands, if absent, to maximize performance. if you’re using Next.js [programmatically](#custom-server-and-routing), it’s your responsibility to set `NODE_ENV=production` manually!
+注意：`NODE_ENV`可以通过`next`命令配置，如果没有配置，会最大渲染，如果你使用编程式写法的话[programmatically](#custom-server-and-routing)，你需要手动设置`NODE_ENV=production`。
 
-Note: we recommend putting `.next`, or your [custom dist folder](https://github.com/zeit/next.js#custom-configuration), in `.gitignore` or `.npmignore`. Otherwise, use `files` or `now.files` to opt-into a whitelist of files you want to deploy, excluding `.next` or your custom dist folder.
+注意：推荐将`.next`或自定义打包文件夹[custom dist folder](https://github.com/zeit/next.js#custom-configuration)放入`.gitignore` 或 `.npmignore`中。否则，使用`files` 或 `now.files`
+添加部署白名单，并排除`.next`或自定义打包文件夹。
 
-## Static HTML export
+## 浏览器支持
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-static-export">Static export</a></li>
-</ul>
+Next.js 支持 IE11 和所有的现代浏览器使用了[`@babel/preset-env`](https://new.babeljs.io/docs/en/next/babel-preset-env.html)。为了支持 IE11，Next.js 需要全局添加`Promise`的 polyfill。有时你的代码或引入的其他 NPM 包的部分功能现代浏览器不支持，则需要用 polyfills 去实现。
 
-This is a way to run your Next.js app as a standalone static app without any Node.js server. The export app supports almost every feature of Next.js including dynamic urls, prefetching, preloading and dynamic imports.
+ployflls 实现案例为[polyfills](https://github.com/zeit/next.js/tree/canary/examples/with-polyfills)。
 
-### Usage
+## 导出静态页面
 
-Simply develop your app as you normally do with Next.js. Then create a custom Next.js [config](https://github.com/zeit/next.js#custom-configuration) as shown below:
+<p>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-static-export">Static export</a></li></ul>
+</p>
+
+`next export`可以输出一个 Next.js 应用作为静态资源应用而不依靠 Node.js 服务。
+这个输出的应用几乎支持 Next.js 的所有功能，包括动态路由，预获取，预加载以及动态导入。
+
+`next export`将把所有有可能渲染出的 HTML 都生成。这是基于映射对象的`pathname`关键字关联到页面对象。这个映射叫做`exportPathMap`。
+
+页面对象有2个属性:
+
+- `page` - 字符串类型，页面生成目录
+- `query` - 对象类型，当预渲染时，`query`对象将会传入页面的生命周期`getInitialProps`中。默认为`{}`。
+
+
+### 使用
+
+通常开发 Next.js 应用你将会运行：
+
+```
+next build
+next export
+```
+
+`next export`命令默认不需要任何配置，将会自动生成默认`exportPathMap`生成`pages`目录下的路由你页面。
+
+如果你想动态配置路由，可以在`next.config.js`中添加异步函数`exportPathMap`。
 
 ```js
 // next.config.js
 module.exports = {
-  exportPathMap: function(defaultPathMap) {
+  exportPathMap: async function (defaultPathMap) {
     return {
       '/': { page: '/' },
       '/about': { page: '/about' },
@@ -1302,83 +1429,82 @@ module.exports = {
 }
 ```
 
-> Note that if the path ends with a directory, it will be exported as `/dir-name/index.html`, but if it ends with an extension, it will be exported as the specified filename, e.g. `/readme.md` above. If you use a file extension other than `.html`, you may need to set the `Content-Type` header to `text/html` when serving this content.
+> 注意：如果 path 的结尾是目录名，则将导出`/dir-name/index.html`，但是如果结尾有扩展名，将会导出对应的文件，如上`/readme.md`。如果你使用`.html`以外的扩展名解析文件时，你需要设置 header 的`Content-Type`头为"text/html".
 
-In that, you specify what are the pages you need to export as static HTML.
-
-Then simply run these commands:
+输入下面命令：
 
 ```sh
 next build
 next export
 ```
 
-For that you may need to add a NPM script to `package.json` like this:
+你可以在`package.json`添加一个 NPM 脚本，如下所示：
 
 ```json
 {
   "scripts": {
-    "build": "next build && next export"
+    "build": "next build",
+    "export": "npm run build && next export"
   }
 }
 ```
 
-And run it at once with:
+接着只用执行一次下面命令：
 
 ```sh
-npm run build
+npm run export
 ```
 
-Then you've a static version of your app in the “out" directory.
+然后你将会有一个静态页面应用在`out` 目录下。
 
-> You can also customize the output directory. For that run `next export -h` for the help.
+> 你也可以自定义输出目录。可以运行`next export -h`命令查看帮助。
 
-Now you can deploy that directory to any static hosting service. Note that there is an additional step for deploying to GitHub Pages, [documented here](https://github.com/zeit/next.js/wiki/Deploying-a-Next.js-app-into-GitHub-Pages).
+现在你可以部署`out`目录到任意静态资源服务器上。注意如果部署 GitHub Pages 需要加个额外的步骤，[文档如下](https://github.com/zeit/next.js/wiki/Deploying-a-Next.js-app-into-GitHub-Pages)
 
-For an example, simply visit the “out” directory and run following command to deploy your app to [ZEIT now](https://zeit.co/now).
+例如，访问`out`目录并用下面命令部署应用[ZEIT Now](https://zeit.co/now).
 
 ```sh
 now
 ```
 
-### Limitation
+### 限制
 
-With next export, we build HTML version of your app when you run the command `next export`. In that time, we'll run the `getInitialProps` functions of your pages.
+使用`next export`，我们创建了个静态 HTML 应用。构建时将会运行页面里生命周期`getInitialProps` 函数。
 
-So, you could only use `pathname`, `query` and `asPath` fields of the `context` object passed to `getInitialProps`. You can't use `req` or `res` fields.
+`req`和`res`只在服务端可用，不能通过`getInitialProps`。
 
-> Basically, you won't be able to render HTML content dynamically as we pre-build HTML files. If you need that, you need run your app with `next start`.
+> 所以你不能预构建 HTML 文件时动态渲染 HTML 页面。如果你想动态渲染可以运行`next start`或其他自定义服务端 API。
 
-## Multi Zones
+## 多 zone
 
-<b>Examples</b>
-<ul>
-  <li><a href="https://github.com/zeit/next.js/tree/canary/examples/with-zones">With Zones</a></li>
-</ul>
+<p>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-zones">With Zones</a></li></ul>
+</p>
 
-A zone is a single deployment of a Next.js app. Just like that, you can have multiple zones. Then you can merge them as a single app.
+一个 zone 时一个单独的 Next.js 应用。如果你有很多 zone，你可以合并成一个应用。
 
-For an example, you can have two zones like this:
+例如，你如下有两个 zone：
 
-* https://docs.my-app.com for serving `/docs/**`
-* https://ui.my-app.com for serving all other pages
+* https://docs.my-app.com 服务于路由 `/docs/**`
+* https://ui.my-app.com 服务于所有页面
 
-With multi zones support, you can merge both these apps into a single one. Which allows your customers to browse it using a single URL. But you can develop and deploy both apps independently.
+有多 zone 应用技术支持，你可以将几个应用合并到一个，而且可以自定义 URL 路径，使你能同时单独开发各个应用。
 
-> This is exactly the same concept as microservices, but for frontend apps.
+> 与 microservices 观念类似, 只是应用于前端应用.
 
-### How to define a zone
+### 怎么定义一个 zone
 
-There are no special zones related APIs. You only need to do following things:
+zone 没有单独的 API 文档。你需要做下面事即可：
 
-* Make sure to keep only the pages you need in your app. (For an example, https://ui.my-app.com should not contain pages for `/docs/**`)
-* Make sure your app has an [assetPrefix](https://github.com/zeit/next.js#cdn-support-with-asset-prefix). (You can also define the assetPrefix [dynamically](https://github.com/zeit/next.js#dynamic-assetprefix).)
+* 确保你的应用里只有需要的页面 (例如, https://ui.my-app.com 不包含 `/docs/**`)
+* 确保你的应用有个前缀[assetPrefix](https://github.com/zeit/next.js#cdn-support-with-asset-prefix)。（你也可以定义动态前缀[dynamically](https://github.com/zeit/next.js#dynamic-assetprefix)）
 
-### How to merge them
+### 怎么合并他们
 
-You can merge zones using any HTTP proxy.
+你能使用 HTTP 代理合并 zone
 
-You can use [micro proxy](https://github.com/zeit/micro-proxy) as your local proxy server. It allows you to easily define routing rules like below:
+你能使用代理[micro proxy](https://github.com/zeit/micro-proxy)来作为你的本地代理服务。它允许你定义路由规则如下：
 
 ```json
 {
@@ -1389,104 +1515,139 @@ You can use [micro proxy](https://github.com/zeit/micro-proxy) as your local pro
 }
 ```
 
-For the production deployment, you can use the [path alias](https://zeit.co/docs/features/path-aliases) feature if you are using [ZEIT now](https://zeit.co/now). Otherwise, you can configure your existing proxy server to route HTML pages using a set of rules as show above.
+生产环境部署，如果你使用了[ZEIT now](https://zeit.co/now)，可以它的使用[path alias](https://zeit.co/docs/features/path-aliases) 功能。否则，你可以设置你已使用的代理服务编写上面规则来路由 HTML 页面
 
-## Recipes
+## 技巧
 
-- [Setting up 301 redirects](https://www.raygesualdo.com/posts/301-redirects-with-nextjs/)
-- [Dealing with SSR and server only modules](https://arunoda.me/blog/ssr-and-server-only-modules)
-- [Building with React-Material-UI-Next-Express-Mongoose-Mongodb](https://github.com/builderbook/builderbook)
+- [设置301重定向](https://www.raygesualdo.com/posts/301-redirects-with-nextjs/)
+- [只处理服务器端模块](https://arunoda.me/blog/ssr-and-server-only-modules)
+- [构建项目 React-Material-UI-Next-Express-Mongoose-Mongodb](https://github.com/builderbook/builderbook)
+- [构建一个 SaaS 产品 React-Material-UI-Next-MobX-Express-Mongoose-MongoDB-TypeScript](https://github.com/async-labs/saas)
 
-### FAQ
-
-#### Is this production ready?
-  Next.js has been powering https://zeit.co since its inception.
-
-  We’re ecstatic about both the developer experience and end-user performance, so we decided to share it with the community.
-
-#### How big is it?
-
-The client side bundle size should be measured in a per-app basis.
-A small Next main bundle is around 65kb gzipped.
-
-#### Is this like `create-react-app`?
-
-Yes and No.
-
-Yes in that both make your life easier.
-
-No in that it enforces a _structure_ so that we can do more advanced things like:
-- Server side rendering
-- Automatic code splitting
-
-In addition, Next.js provides two built-in features that are critical for every single website:
-- Routing with lazy component loading: `<Link>` (by importing `next/link`)
-- A way for components to alter `<head>`: `<Head>` (by importing `next/head`)
-
-If you want to create re-usable React components that you can embed in your Next.js app or other React applications, using `create-react-app` is a great idea. You can later `import` it and keep your codebase clean!
-
-#### How do I use CSS-in-JS solutions?
-
-Next.js bundles [styled-jsx](https://github.com/zeit/styled-jsx) supporting scoped css. However you can use any CSS-in-JS solution in your Next app by just including your favorite library [as mentioned before](#css-in-js) in the document.
-
-#### What syntactic features are transpiled? How do I change them?
-
-We track V8. Since V8 has wide support for ES6 and `async` and `await`, we transpile those. Since V8 doesn’t support class decorators, we don’t transpile those.
-
-See [this](https://github.com/zeit/next.js/blob/master/server/build/webpack.js#L79) and [this](https://github.com/zeit/next.js/issues/26)
+## 问答
 
 
-#### Why a new Router?
+  <summary>这个产品可以用于生产环境吗？</summary>
+  https://zeit.co 都是一直用 Next.js 写的。
 
-Next.js is special in that:
+  它的开发体验和终端用户体验都很好，所以我们决定开源出来给大家共享。
 
-- Routes don’t need to be known ahead of time
-- Routes are always lazy-loadable
-- Top-level components can define `getInitialProps` that should _block_ the loading of the route (either when server-rendering or lazy-loading)
 
-As a result, we were able to introduce a very simple approach to routing that consists of two pieces:
 
-- Every top level component receives a `url` object to inspect the url or perform modifications to the history
-- A `<Link />` component is used to wrap elements like anchors (`<a/>`) to perform client-side transitions
+  <summary>体积多大？</summary>
 
-We tested the flexibility of the routing with some interesting scenarios. For an example, check out [nextgram](https://github.com/zeit/nextgram).
+客户端大小根据应用需求不一样大小也不一样。
 
-#### How do I define a custom fancy route?
+一个最简单 Next 应该用 gzip 压缩后大约65kb
 
-We [added](#custom-server-and-routing) the ability to map between an arbitrary URL and any component by supplying a request handler.
 
-On the client side, we have a parameter call `as` on `<Link>` that _decorates_ the URL differently from the URL it _fetches_.
 
-#### How do I fetch data?
 
-It’s up to you. `getInitialProps` is an `async` function (or a regular function that returns a `Promise`). It can retrieve data from anywhere.
+  <summary>这个像 `create-react-app`?</summary>
 
-#### Can I use it with GraphQL?
+是或不是.
 
-Yes! Here's an example with [Apollo](https://github.com/zeit/next.js/tree/canary/examples/with-apollo).
+是，因为它让你的 SSR 开发更简单。
 
-#### Can I use it with Redux?
+不是，因为它规定了一定的目录结构，使我们能做以下更高级的事：
+- 服务端渲染
+- 自动代码分割
 
-Yes! Here's an [example](https://github.com/zeit/next.js/tree/canary/examples/with-redux)
+此外，Next.js 还提供两个内置特性：
+- 路由与懒加载组件: `<Link>` (通过引入 `next/link`)
+- 修改`<head>`的组件: `<Head>` (通过引入 `next/head`)
 
-#### Why aren't routes I have for my static export accessible in the development server?
+如果你想写共用组件，可以嵌入 Next.js 应用和 React 应用中，推荐使用`create-react-app`。你可以更改`import`保持代码清晰。
 
-This is a known issue with the architecture of Next.js. Until a solution is built into the framework, take a look at [this example solution](https://github.com/zeit/next.js/wiki/Centralizing-Routing) to centralize your routing.
 
-#### Can I use Next with my favorite Javascript library or toolkit?
 
-Since our first release we've had **many** example contributions, you can check them out in the [examples](https://github.com/zeit/next.js/tree/canary/examples) directory
 
-#### What is this inspired by?
 
-Many of the goals we set out to accomplish were the ones listed in [The 7 principles of Rich Web Applications](http://rauchg.com/2014/7-principles-of-rich-web-applications/) by Guillermo Rauch.
+  <summary>怎么解决 CSS 嵌入 JS 问题?</summary>
 
-The ease-of-use of PHP is a great inspiration. We feel Next.js is a suitable replacement for many scenarios where you otherwise would use PHP to output HTML.
+Next.js 自带[styled-jsx](https://github.com/zeit/styled-jsx)库支持 CSS 嵌入 JS。而且你可以选择其他嵌入方法到你的项目中，可参考文档[as mentioned before](#css-in-js)。
 
-Unlike PHP, we benefit from the ES6 module system and every file exports a **component or function** that can be easily imported for lazy evaluation or testing.
 
-As we were researching options for server-rendering React that didn’t involve a large number of steps, we came across [react-page](https://github.com/facebookarchive/react-page) (now deprecated), a similar approach to Next.js by the creator of React Jordan Walke.
 
-## Contributing
 
-Please see our [contributing.md](https://github.com/zeit/next.js/blob/canary/contributing.md)
+  <summary>哪些语法会被转换？怎么转换它们？</summary>
+
+我们遵循 V8 引擎的，如今 V8 引擎广泛支持 ES6 语法以及`async`和`await`语法，所以我们支持转换它们。但是 V8 引擎不支持修饰器语法，所以我们也不支持转换这语法。
+
+可以参照[这些](https://github.com/zeit/next.js/blob/master/server/build/webpack.js#L79) 以及 [这些](https://github.com/zeit/next.js/issues/26)
+
+
+
+
+  <summary>为什么使用新路由?</summary>
+
+Next.js 的特别之处如下所示:
+
+- 路由不需要被提前知道
+- 路由总是被懒加载
+- 顶层组件可以定义生命周期`getInitialProps`来阻止路由加载（当服务端渲染或路由懒加载时）
+
+因此,我们可以介绍一个非常简单的路由方法,它由下面两部分组成:
+
+- 每个顶层组件都将会收到一个`url`对象，来检查 url 或修改历史记录
+- `<Link />`组件用于包装如(`<a/>`)标签的元素容器，来执行客户端转换。
+
+我们使用了些有趣的场景来测试路由的灵活性，例如，可查看[nextgram](https://github.com/zeit/nextgram)。
+
+
+
+
+<summary>我怎么定义自定义路由?</summary>
+
+我们通过请求处理来[添加](#custom-server-and-routing)任意 URL 与任意组件之前的映射关系。
+
+在客户端，我们`<Link>`组件有个属性`as`，可以装饰改变获取到的 URL。
+
+
+
+<summary>怎么获取数据?</summary>
+
+这由你决定。`getInitialProps`是一个异步函数`async`（也就是函数将会返回个`Promise`）。你可以在任意位置获取数据。
+
+
+
+  <summary>我可以使用 GraphQL 吗?</summary>
+
+是的! 这里有个例子[Apollo](./examples/with-apollo).
+
+
+
+
+<summary>我可以使用 Redux 吗?</summary>
+
+是的! 这里有个[例子](./examples/with-redux)
+
+
+
+<summary>我可以在 Next 应用中使用我喜欢的 Javascript 库或工具包吗?</summary>
+
+从我们第一次发版就已经提供**很多**例子，你可以查看这些[例子](./examples)。
+
+
+
+<summary>什么启发我们做这个?</summary>
+
+我们实现的大部分目标都是通过 Guillermo Rauch 的[Web 应用的7原则](http://rauchg.com/2014/7-principles-of-rich-web-applications/)来启发出的。
+
+PHP 的易用性也是个很好的灵感来源，我们觉得 Next.js 可以替代很多需要用 PHP 输出 HTML 的场景。
+
+与 PHP 不同的是，我们得利于 ES6 模块系统，每个文件会输出一个**组件或方法**，以便可以轻松的导入用于懒加载和测试
+
+我们研究 React 的服务器渲染时并没有花费很大的步骤，因为我们发现一个类似于 Next.js 的产品，React 作者 Jordan Walke 写的[react-page](https://github.com/facebookarchive/react-page) (现在已经废弃)
+
+
+
+## 贡献
+
+可查看 [contributing.md](./contributing.md)
+
+## 讨论
+
+- ([@前端妹子blog](https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3))
+- ([@github issue](https://github.com/raoenhui/raoenhui.github.io/issues/18))
+

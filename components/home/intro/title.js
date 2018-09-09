@@ -2,9 +2,9 @@ import RoundButton from '../../round-button'
 
 function Title() {
   return <section>
-    <h1>React Applications<br/> Made Simple</h1>
-    <p className='subtitle'><strong>Next.js</strong> is a lightweight framework for static and server&#8209;rendered applications.</p>
-    <RoundButton color='black' href='/learn'>Learn More</RoundButton>                
+    <h1>使React应用<br/> 更简单</h1>
+    <p className='subtitle'><strong>Next.js</strong> 是一个轻量级的 React 服务端渲染应用框架。</p>
+    <RoundButton color='black' href='/docs'>文档</RoundButton>
     <style jsx>{`
       section {
         display: flex;
