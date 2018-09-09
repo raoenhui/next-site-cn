@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "export": "next export",
+    "export": "next build && next export -o 7.0.0-canary.11",
+    "help": "next -h",
     "start": "next start"
   },
   "repository": {
