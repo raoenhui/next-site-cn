@@ -1,5 +1,5 @@
 # 前言
-[next.js中文文档](Introduction.md)
+[next.js中文文档](http://nextjs.frontendx.cn)
 
 ## 安装运行
 
