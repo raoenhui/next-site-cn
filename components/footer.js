@@ -5,12 +5,12 @@ function Footer() {
     <div className="container">
       <nav>
         <a href="https://github.com/zeit/next.js/releases">Changelog</a>
-        <a className="github" href="https://github.com/zeit/next.js">GitHub</a>
+        <a className="github" href="https://github.com/raoenhui/next-site-cn">GitHub</a>
         <span>
           License: <strong>MIT</strong>
         </span>
       </nav>
-      <ZeitLogo />      
+      <ZeitLogo />
     </div>
     <style jsx>{`
       footer {
@@ -24,8 +24,8 @@ function Footer() {
       a {
         text-decoration: none;
         color: #999999;
-        font-size: 1.4rem;     
-        transition: color 0.2s ease;           
+        font-size: 1.4rem;
+        transition: color 0.2s ease;
       }
 
       a:hover {
@@ -33,7 +33,7 @@ function Footer() {
       }
 
       a, span {
-        margin-left: 10px;        
+        margin-left: 10px;
       }
 
       a:first-child {

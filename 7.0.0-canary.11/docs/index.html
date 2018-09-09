@@ -1,0 +1,760 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" class="next-head next-head"/><title class="next-head">Getting Started - Next.js Documentation</title><meta name="twitter:card" content="summary" class="next-head"/><meta name="twitter:site" content="@zeithq" class="next-head"/><meta name="og:title" content="Getting Started" class="next-head"/><meta name="og:description" class="next-head"/><style class="next-head">
+              html {
+                height: 100%;
+                box-sizing: border-box;
+                font-size: 62.5%;
+              }
+
+              *,
+              *:before,
+              *:after {
+                box-sizing: inherit;
+              }
+
+              body {
+                position: relative;
+                min-height: 100%;
+                margin: 0;
+                padding-bottom: 6rem;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                text-rendering: optimizeLegibility;
+                line-height: 1.5;
+                font-size: 1.6rem;
+              }
+
+              a {
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+              }
+
+              html, body {
+                background-color: #FFF;
+                color: #000;
+              }
+
+              ::selection {
+                background-color: #000;
+                color: #FFF;
+              }
+            </style><link rel="preload" href="/_next/fe606fde-827a-494d-a1af-4f7c79a42568/page/docs.js" as="script"/><link rel="preload" href="/_next/fe606fde-827a-494d-a1af-4f7c79a42568/page/_app.js" as="script"/><link rel="preload" href="/_next/fe606fde-827a-494d-a1af-4f7c79a42568/page/_error.js" as="script"/><link rel="preload" href="/_next/static/commons/main-eebd0ff7d129ec443088.js" as="script"/><style id="__jsx-2389262978">a.jsx-2389262978{-webkit-text-decoration:none;text-decoration:none;color:#3333FF;font-size:inherit;}
+a.jsx-2389262978:hover{-webkit-text-decoration:underline;text-decoration:underline;}</style><style id="__jsx-3417251989">header.jsx-3417251989{position:fixed;z-index:1000;top:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:144px;padding:0 56px;}
+.logo.jsx-3417251989 svg{height:50px;}
+@media only screen and (max-width:912px){header.jsx-3417251989{position:relative;}}</style><style id="__jsx-372674438">a.jsx-372674438{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:1.4rem;color:#000000;-webkit-text-decoration:none;text-decoration:none;margin-left:-56px;padding:6px 0;padding-left:56px;position:relative;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;}
+a.active.jsx-372674438{font-weight:500;}
+a.jsx-372674438:after{content:'';position:absolute;left:0;top:0;width:4px;height:100%;-webkit-transition:border-width 0.2s ease;transition:border-width 0.2s ease;}
+a.active.jsx-372674438:after{border-left:4px solid #000;padding-left:52px;}
+a.jsx-372674438:not(.active):hover:after{border-left:4px solid #DDDDDD;padding-left:52px;}</style><style id="__jsx-141781163">.documentation__sidebar.jsx-141781163{width:312px;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;position:relative;padding-right:56px;}
+.documentation__sidebar.jsx-141781163 nav.jsx-141781163{position:fixed;overflow-y:scroll;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:256px;height:calc(100vh - 144px);padding:6px 0 56px 56px;}
+.documentation__sidebar-heading.jsx-141781163{color:#999999;text-transform:uppercase;font-size:1.2rem;margin-bottom:12px;}
+.documentation__sidebar.jsx-141781163 nav.jsx-141781163 a.active.jsx-141781163{font-weight:600;}
+@media only screen and (max-width:912px){.documentation__sidebar.jsx-141781163{display:none;}}</style><style id="__jsx-2234459629">.jsx-2234459629{font-size:2.6rem;font-weight:400;margin-top:0;}</style><style id="__jsx-573693548">a.jsx-573693548{border-bottom:1px solid transparent;color:inherit;-webkit-text-decoration:none;text-decoration:none;}
+a.jsx-573693548:hover{border-bottom-color:inherit;}
+h1[data-components-heading] a.jsx-573693548::before{content:'# ';}
+h2[data-components-heading] a.jsx-573693548::before{content:'## ';}
+h3[data-components-heading] a.jsx-573693548::before{content:'### ';}
+.lean[data-components-heading] a.jsx-573693548::before{content:'';}
+h1[data-components-heading]::before,h2[data-components-heading]::before,h3[data-components-heading]::before,h4[data-components-heading]::before{display:none;}
+.target.jsx-573693548{display:block;margin-top:-20px;padding-top:20px;visibility:hidden;position:absolute;}
+.permalink.jsx-573693548{text-align:center;vertical-align:middle;visibility:hidden;display:none;}
+a.jsx-573693548:hover~.permalink.jsx-573693548{visibility:visible;}
+@media (min-width:992px){a.jsx-573693548{margin-right:10px;}.permalink.jsx-573693548{display:inline-block;}}</style><style id="__jsx-2439276997">.jsx-2439276997{font-size:2rem;font-weight:600;}</style><style id="__jsx-276056394">div.jsx-276056394{margin:30px 0 0 0;}</style><style id="__jsx-2288494592">pre.jsx-2288494592{border:1px solid #eaeaea;padding:20px;margin:40px 0;white-space:pre;overflow:auto;-webkit-overflow-scrolling:touch;}
+code.jsx-2288494592{color:#000000;font-family:Menlo,Monaco,Lucida Console,Liberation Mono, DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace, serif;font-size:13px;line-height:20px;}</style><style id="__jsx-3433991402">a.jsx-3433991402{-webkit-text-decoration:none;text-decoration:none;color:#3333FF;font-size:inherit;}
+a.jsx-3433991402:hover{-webkit-text-decoration:underline;text-decoration:underline;}</style><style id="__jsx-2455155431">blockquote.jsx-2455155431{padding:14px 0;border-left:6px solid #000;margin-left:0;padding-left:32px;}
+blockquote.jsx-2455155431 p{margin:0;}</style><style id="__jsx-2699122292">code.jsx-2699122292{color:#000000;font-family:Menlo,Monaco,Lucida Console,Liberation Mono, DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace, serif;font-size:0.9em;white-space:pre-wrap;}
+code.no-wrap.jsx-2699122292{white-space:nowrap;}
+code.jsx-2699122292::before{content:'`';}
+code.jsx-2699122292::after{content:'`';}</style><style id="__jsx-2148262467">.jsx-2148262467{font-size:1.6rem;font-weight:600;}</style><style id="__jsx-3557574343">.jsx-3557574343{font-size:2.4rem;font-weight:500;}</style><style id="__jsx-2821545348">div.jsx-2821545348{margin:40px 0 0 0;}</style><style id="__jsx-790107873">.documentation.jsx-790107873{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-top:144px;}
+.documentation__sidebar.jsx-790107873{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-left:56px;}
+.documentation__header.jsx-790107873 h1.jsx-790107873{margin-top:0;}
+.documentation__content.jsx-790107873{width:calc(100vw - 312px);max-width:600px;padding-right:56px;}
+@media only screen and (max-width:912px){.documentation.jsx-790107873{padding-top:0px;}.documentation__content.jsx-790107873{width:calc(100vw - 10px);padding-right:5px;padding-left:5px;}}</style><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="Next.js is a lightweight framework for static and server-rendered applications"/><meta property="twitter:card" content="https://nextjs.org/static/images/twitter_card.png"/><meta property="twitter:site" content="@zeithq"/><meta property="og:type" content="website"/><meta propetty="og:url" content="https://nextjs.org"/><meta property="og:title" content="Next.js"/><meta property="og:description" content="Next.js is a lightweight framework for static and server-rendered applications"/><meta property="og:image" content="https://nextjs.org/static/images/twitter_card.png"/><link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png"/><link rel="manifest" href="/static/favicon/site.webmanifest"/><link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#000000"/><link rel="shortcut icon" href="/static/favicon/favicon.ico"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-config" content="/static/favicon/browserconfig.xml"/><meta name="theme-color" content="#000"/></head><body><div id="__next"><header class="jsx-3417251989"><a class="jsx-2389262978" href="/"><a class="jsx-3417251989 logo"><svg width="82" height="50" viewBox="0 0 148 90" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M34.992 23.495h27.855v2.219H37.546v16.699h23.792v2.219H37.546v18.334h25.591v2.219H34.992v-41.69zm30.35 0h2.96l13.115 18.334 13.405-18.334L113.055.207 83.1 43.756l15.436 21.429H95.46L81.417 45.683 67.316 65.185h-3.018L79.85 43.756 65.343 23.495zm34.297 2.219v-2.219h31.742v2.219h-14.623v39.47h-2.554v-39.47H99.64zM.145 23.495h3.192l44.011 66.003L29.16 65.185 2.814 26.648l-.116 38.537H.145v-41.69zm130.98 38.801c-.523 0-.914-.405-.914-.928 0-.524.391-.929.913-.929.528 0 .913.405.913.929 0 .523-.385.928-.913.928zm2.508-2.443H135c.019.742.56 1.24 1.354 1.24.888 0 1.391-.535 1.391-1.539v-6.356h1.391v6.362c0 1.808-1.043 2.849-2.77 2.849-1.62 0-2.732-1.01-2.732-2.556zm7.322-.08h1.379c.118.853.95 1.395 2.149 1.395 1.117 0 1.937-.58 1.937-1.377 0-.685-.521-1.097-1.708-1.377l-1.155-.28c-1.62-.38-2.36-1.166-2.36-2.487 0-1.602 1.304-2.668 3.26-2.668 1.82 0 3.15 1.066 3.23 2.58h-1.354c-.13-.828-.85-1.346-1.894-1.346-1.1 0-1.832.53-1.832 1.34 0 .642.472 1.01 1.64 1.284l.987.243c1.838.43 2.596 1.178 2.596 2.53 0 1.72-1.33 2.799-3.453 2.799-1.987 0-3.323-1.029-3.422-2.637z" fill="#000" fill-rule="nonzero"></path></svg></a></a></header><div class="jsx-790107873 documentation"><div class="jsx-141781163 documentation__sidebar"><nav class="jsx-141781163"><span class="jsx-141781163 documentation__sidebar-heading">Getting Started</span><a href="#安装" class="jsx-372674438 ">安装</a><a href="#代码自动分割" class="jsx-372674438 ">代码自动分割</a><a href="#css" class="jsx-372674438 ">CSS</a><a href="#静态文件服务（如图像）" class="jsx-372674438 ">静态文件服务（如图像）</a><a href="#生成&lt;head&gt;" class="jsx-372674438 ">生成&lt;Head&gt;</a><a href="#获取数据以及组件生命周期" class="jsx-372674438 ">获取数据以及组件生命周期</a><a href="#路由" class="jsx-372674438 ">路由</a><a href="#预加载页面" class="jsx-372674438 ">预加载页面</a><a href="#自定义服务端路由" class="jsx-372674438 ">自定义服务端路由</a><a href="#动态导入" class="jsx-372674438 ">动态导入</a><a href="#自定义&lt;app&gt;" class="jsx-372674438 ">自定义&lt;App&gt;</a><a href="#自定义&lt;document&gt;" class="jsx-372674438 ">自定义&lt;Document&gt;</a><a href="#自定义错误处理" class="jsx-372674438 ">自定义错误处理</a><a href="#渲染内置错误页面" class="jsx-372674438 ">渲染内置错误页面</a><a href="#自定义配置" class="jsx-372674438 ">自定义配置</a><a href="#自定义-webpack-配置" class="jsx-372674438 ">自定义-webpack-配置</a><a href="#自定义-babel-配置" class="jsx-372674438 ">自定义-babel-配置</a><a href="#项目部署" class="jsx-372674438 ">项目部署</a><a href="#浏览器支持" class="jsx-372674438 ">浏览器支持</a><a href="#导出静态页面" class="jsx-372674438 ">导出静态页面</a><a href="#使用" class="jsx-372674438 ">使用</a><a href="#多-zone" class="jsx-372674438 ">多-zone</a><a href="#技巧" class="jsx-372674438 ">技巧</a><a href="#问答" class="jsx-372674438 ">问答</a><a href="#贡献" class="jsx-372674438 ">贡献</a></nav></div><div class="jsx-790107873 documentation__content"><div class="jsx-790107873 documentation__header"><h1 active="something" class="jsx-2234459629 ">快速开始</h1></div><div class="jsx-790107873 documentation__content"><div><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="安装" class="jsx-573693548 target"></span><a href="#安装" class="jsx-573693548">安装</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>安装它:</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">npm install --save next react react-dom
+</code></pre></pre><p>将下面脚本添加到 package.json 中:</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">{
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;next&quot;,
+    &quot;build&quot;: &quot;next build&quot;,
+    &quot;start&quot;: &quot;next start&quot;
+  }
+}
+</code></pre></pre><blockquote class="jsx-2455155431 "><p>Next.js 只支持<a href="https://reactjs.org/blog/2017/09/26/react-v16.0.html" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">React 16</a>.<br/>由于我们使用 React 16 的特性所以不得不放弃 React 16 的支持.</p></blockquote><p>下面, 文件系统是主要的 API. 每个<code class="jsx-2699122292 ">.js</code> 文件将变成一个路由，自动处理和渲染。</p><p>新建 <code class="jsx-2699122292 ">./pages/index.js</code> 到你的项目中:</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">export default () =&gt; &lt;div&gt;Welcome to next.js!&lt;/div&gt;
+</code></pre></pre><p>运行 <code class="jsx-2699122292 ">npm run dev</code> 命令并打开 <code class="jsx-2699122292 ">http://localhost:3000</code>。 如果你想使用其他端口，可运行 <code class="jsx-2699122292 ">npm run dev -- -p &lt;设置端口号&gt;</code>.</p><p>目前为止我们可以了解到:</p><ul><li>自动打包编译 (使用 webpack 和 babel)</li><li>热加载</li><li>以 <code class="jsx-2699122292 ">./pages</code>作为服务端的渲染和索引</li><li>Static file serving. <code class="jsx-2699122292 ">./static/</code> is mapped to <code class="jsx-2699122292 ">/static/</code> (given you <a href="#static-file-serving-eg-images" class="jsx-3433991402">create a <code class="jsx-2699122292 ">./static/</code> directory</a> inside your project)</li><li>静态文件服务. <code class="jsx-2699122292 ">./static/</code> 映射到 <code class="jsx-2699122292 ">/static/</code> (可以 <a href="#static-file-serving-eg-images" class="jsx-3433991402">创建一个静态目录</a> 在你的项目中)</li></ul><p>这里有个简单的案例，可以下载看看 <a href="https://github.com/zeit/nextgram" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">sample app - nextgram</a></p><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="代码自动分割" class="jsx-573693548 target"></span><a href="#代码自动分割" class="jsx-573693548">代码自动分割</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>每个页面只会导入<code class="jsx-2699122292 ">import</code>中绑定以及被用到的代码. 也就是说并不会加载不需要的代码!</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import cowsay from &#x27;cowsay-browser&#x27;
+
+export default () =&gt;
+  &lt;pre&gt;
+    {cowsay.say({ text: &#x27;hi there!&#x27; })}
+  &lt;/pre&gt;
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="css" class="jsx-573693548 target"></span><a href="#css" class="jsx-573693548">CSS</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><h4 class="jsx-2148262467 ">支持嵌入样式</h4><p><summary><b>案例</b></summary><ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/basic-css">Basic css</a></li></ul></p><p>我们绑定 <a href="https://github.com/zeit/styled-jsx" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">styled-jsx</a> 来生成独立作用域的 CSS. 目标是支持 &quot;shadow CSS&quot;,但是 <a href="https://github.com/w3c/webcomponents/issues/71" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">不支持独立模块作用域的 JS</a>.</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">export default () =&gt;
+  &lt;div&gt;
+    Hello world
+    &lt;p&gt;scoped!&lt;/p&gt;
+    &lt;style jsx&gt;{`
+      p {
+        color: blue;
+      }
+      div {
+        background: red;
+      }
+      @media (max-width: 600px) {
+        div {
+          background: blue;
+        }
+      }
+    `}&lt;/style&gt;
+    &lt;style global jsx&gt;{`
+      body {
+        background: black;
+      }
+    `}&lt;/style&gt;
+  &lt;/div&gt;
+</code></pre></pre><p>想查看更多案例可以点击 <a href="https://www.npmjs.com/package/styled-jsx" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">styled-jsx documentation</a>查看.</p><h4 class="jsx-2148262467 ">内嵌样式</h4><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-styled-components">Styled components</a></li><li><a href="./examples/with-styletron">Styletron</a></li><li><a href="./examples/with-glamor">Glamor</a></li><li><a href="./examples/with-glamorous">Glamorous</a></li><li><a href="./examples/with-cxs">Cxs</a></li><li><a href="./examples/with-aphrodite">Aphrodite</a></li><li><a href="./examples/with-fela">Fela</a></li></ul></p><p>有些情况可以使用 CSS 内嵌 JS 写法。如下所示：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">export default () =&gt; &lt;p style={{ color: &#x27;red&#x27; }}&gt;hi there&lt;/p&gt;
+</code></pre></pre><p>更复杂的内嵌样式解决方案，特别是服务端渲染的时样式更改。我们可以通过包裹自定义 Document，来添加样式，案例如下：<a href="#user-content-custom-document" class="jsx-3433991402">custom <code class="jsx-2699122292 ">&lt;Document&gt;</code></a></p><h4 class="jsx-2148262467 ">使用 CSS / Sass / Less / Stylus files</h4><p>支持用<code class="jsx-2699122292 ">.css</code>, <code class="jsx-2699122292 ">.scss</code>, <code class="jsx-2699122292 ">.less</code> or <code class="jsx-2699122292 ">.styl</code>，需要配置默认文件 next.config.js，具体可查看下面链接</p><ul><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-css" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-css</a></li><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-sass" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-sass</a></li><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-less" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-less</a></li><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-stylus" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-stylus</a></li></ul><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="静态文件服务（如图像）" class="jsx-573693548 target"></span><a href="#静态文件服务（如图像）" class="jsx-573693548">静态文件服务（如图像）</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>在根目录下新建文件夹叫<code class="jsx-2699122292 ">static</code>。代码可以通过<code class="jsx-2699122292 ">/static/</code>来引入相关的静态资源。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">export default () =&gt; &lt;img src=&quot;/static/my-image.png&quot; alt=&quot;my image&quot; /&gt;
+</code></pre></pre><p>_注意：不要自定义静态文件夹的名字，只能叫<code class="jsx-2699122292 ">static</code> ，因为只有这个名字 Next.js 才会把它当作静态资源。</p><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="生成&lt;head&gt;" class="jsx-573693548 target"></span><a href="#生成&lt;head&gt;" class="jsx-573693548">生成<code class="jsx-2699122292 ">&lt;head&gt;</code></a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><code class="jsx-2699122292 ">&lt;head&gt;</code></p><p><summary><b>Examples</b></summary><ul><li><a href="./examples/head-elements">Head elements</a></li><li><a href="./examples/layout-component">Layout component</a></li></ul></p><p>我们设置一个内置组件来装载<code class="jsx-2699122292 ">&lt;head&gt;</code>到页面中。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import Head from &#x27;next/head&#x27;
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Head&gt;
+      &lt;title&gt;My page title&lt;/title&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1.0, width=device-width&quot; /&gt;
+    &lt;/Head&gt;
+    &lt;p&gt;Hello world!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre></pre><p>我们定义<code class="jsx-2699122292 ">key</code>属性来避免重复的<code class="jsx-2699122292 ">&lt;head&gt;</code>标签，保证<code class="jsx-2699122292 ">&lt;head&gt;</code>只渲染一次，如下所示：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import Head from &#x27;next/head&#x27;
+export default () =&gt; (
+  &lt;div&gt;
+    &lt;Head&gt;
+      &lt;title&gt;My page title&lt;/title&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1.0, width=device-width&quot; key=&quot;viewport&quot; /&gt;
+    &lt;/Head&gt;
+    &lt;Head&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1.2, width=device-width&quot; key=&quot;viewport&quot; /&gt;
+    &lt;/Head&gt;
+    &lt;p&gt;Hello world!&lt;/p&gt;
+  &lt;/div&gt;
+)
+</code></pre></pre><p>只有第二个<code class="jsx-2699122292 ">&lt;meta name=&quot;viewport&quot; /&gt;</code>才被渲染。</p><p>注意：在卸载组件时，<code class="jsx-2699122292 ">&lt;head&gt;</code>的内容将被清除。请确保每个页面都在其<code class="jsx-2699122292 ">&lt;head&gt;</code>定义了所需要的内容，而不是假设其他页面已经加过了</p><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="获取数据以及组件生命周期" class="jsx-573693548 target"></span><a href="#获取数据以及组件生命周期" class="jsx-573693548">获取数据以及组件生命周期</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/data-fetch">Data fetch</a></li></ul></p><p>如果你需要一个有状态、生命周期或有初始数据的 React 组件（而不是上面的无状态函数），如下所示：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import React from &#x27;react&#x27;
+
+export default class extends React.Component {
+  static async getInitialProps({ req }) {
+    const userAgent = req ? req.headers[&#x27;user-agent&#x27;] : navigator.userAgent
+    return { userAgent }
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        Hello World {this.props.userAgent}
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre></pre><p>相信你注意到，当页面渲染时加载数据，我们使用了一个异步方法<code class="jsx-2699122292 ">getInitialProps</code>。它能异步获取 JS 普通对象，并绑定在<code class="jsx-2699122292 ">props</code>上</p><p>当服务渲染时，<code class="jsx-2699122292 ">getInitialProps</code>将会把数据序列化，就像<code class="jsx-2699122292 ">JSON.stringify</code>。所以确保<code class="jsx-2699122292 ">getInitialProps</code>返回的是一个普通 JS 对象，而不是<code class="jsx-2699122292 ">Date</code>, <code class="jsx-2699122292 ">Map</code> 或 <code class="jsx-2699122292 ">Set</code>类型。</p><p>当页面初次加载时，<code class="jsx-2699122292 ">getInitialProps</code>只会在服务端执行一次。<code class="jsx-2699122292 ">getInitialProps</code>只有在路由切换的时候（如<code class="jsx-2699122292 ">Link</code>组件跳转或路由自定义跳转）时，客户端的才会被执行。</p><p>当页面初始化加载时，<code class="jsx-2699122292 ">getInitialProps</code>只会加载在服务端。只有当路由跳转（<code class="jsx-2699122292 ">Link</code>组件跳转或 API 方法跳转）时，客户端才会执行<code class="jsx-2699122292 ">getInitialProps</code>。</p><p>注意：<code class="jsx-2699122292 ">getInitialProps</code>将不能使用在子组件中。只能使用在<code class="jsx-2699122292 ">pages</code>页面中。</p><br/><blockquote class="jsx-2455155431 "><p>只有服务端用到的模块放在<code class="jsx-2699122292 ">getInitialProps</code>里，请确保正确的导入了它们，可参考<a href="https://arunoda.me/blog/ssr-and-server-only-modules" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">import them properly</a>。 否则会拖慢你的应用速度。</p></blockquote><br/><p>你也可以给无状态组件定义<code class="jsx-2699122292 ">getInitialProps</code>：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">const Page = ({ stars }) =&gt;
+  &lt;div&gt;
+    Next stars: {stars}
+  &lt;/div&gt;
+
+Page.getInitialProps = async ({ req }) =&gt; {
+  const res = await fetch(&#x27;https://api.github.com/repos/zeit/next.js&#x27;)
+  const json = await res.json()
+  return { stars: json.stargazers_count }
+}
+
+export default Page
+</code></pre></pre><p><code class="jsx-2699122292 ">getInitialProps</code>入参对象的属性如下：</p><ul><li><code class="jsx-2699122292 ">pathname</code> - URL 的 path 部分</li><li><code class="jsx-2699122292 ">query</code> - URL 的 query 部分，并被解析成对象</li><li><code class="jsx-2699122292 ">asPath</code> - 显示在浏览器中的实际路径（包含查询部分），为<code class="jsx-2699122292 ">String</code>类型</li><li><code class="jsx-2699122292 ">req</code> - HTTP 请求对象 (只有服务器端有)</li><li><code class="jsx-2699122292 ">res</code> - HTTP 返回对象 (只有服务器端有)</li><li><code class="jsx-2699122292 ">jsonPageRes</code> - <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">获取数据响应对象</a> (只有客户端有)</li><li><code class="jsx-2699122292 ">err</code> - 渲染过程中的任何错误</li></ul><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="路由" class="jsx-573693548 target"></span><a href="#路由" class="jsx-573693548">路由</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><h4 class="jsx-2148262467 "><code class="jsx-2699122292 ">&lt;Link&gt;</code>用法</h4><p><summary><b>Examples</b></summary><ul><li><a href="./examples/hello-world">Hello World</a></li></ul></p><p>可以用 <code class="jsx-2699122292 ">&lt;Link&gt;</code> 组件实现客户端的路由切换。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// pages/index.js
+import Link from &#x27;next/link&#x27;
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{&#x27; &#x27;}
+    &lt;Link href=&quot;/about&quot;&gt;
+      &lt;a&gt;here&lt;/a&gt;
+    &lt;/Link&gt;{&#x27; &#x27;}
+    to read more
+  &lt;/div&gt;
+</code></pre></pre><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// pages/about.js
+export default () =&gt; &lt;p&gt;Welcome to About!&lt;/p&gt;
+</code></pre></pre><p>注意：可以使用<a href="#prefetching-pages" class="jsx-3433991402"><code class="jsx-2699122292 ">&lt;Link prefetch&gt;</code></a>使链接和预加载在后台同时进行，来达到页面的最佳性能。</p><p>客户端路由行为与浏览器很相似：</p><ol><li>组件获取</li><li>如果组件定义了<code class="jsx-2699122292 ">getInitialProps</code>，数据获取了。如果有错误情况将会渲染 <code class="jsx-2699122292 ">_error.js</code>。</li><li>1和2都完成了，<code class="jsx-2699122292 ">pushState</code>执行，新组件被渲染。</li></ol><p>如果需要注入<code class="jsx-2699122292 ">pathname</code>, <code class="jsx-2699122292 ">query</code> 或 <code class="jsx-2699122292 ">asPath</code>到你组件中，你可以使用<a href="#using-a-higher-order-component" class="jsx-3433991402">withRouter</a>。</p><h5>URL 对象</h5><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-url-object-routing">With URL Object Routing</a></li></ul></p><p>组件<code class="jsx-2699122292 ">&lt;Link&gt;</code>接收 URL 对象，而且它会自动格式化生成 URL 字符串</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// pages/index.js
+import Link from &#x27;next/link&#x27;
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{&#x27; &#x27;}
+    &lt;Link href={{ pathname: &#x27;/about&#x27;, query: { name: &#x27;Zeit&#x27; }}}&gt;
+      &lt;a&gt;here&lt;/a&gt;
+    &lt;/Link&gt;{&#x27; &#x27;}
+    to read more
+  &lt;/div&gt;
+</code></pre></pre><p>将生成 URL 字符串<code class="jsx-2699122292 ">/about?name=Zeit</code>，你可以使用任何在<a href="https://nodejs.org/api/url.html#url_url_strings_and_url_objects" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">Node.js URL module documentation</a>定义过的属性。</p><h5>替换路由</h5><p><code class="jsx-2699122292 ">&lt;Link&gt;</code>组件默认将新 url 推入路由栈中。你可以使用<code class="jsx-2699122292 ">replace</code>属性来防止添加新输入。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// pages/index.js
+import Link from &#x27;next/link&#x27;
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{&#x27; &#x27;}
+    &lt;Link href=&quot;/about&quot; replace&gt;
+      &lt;a&gt;here&lt;/a&gt;
+    &lt;/Link&gt;{&#x27; &#x27;}
+    to read more
+  &lt;/div&gt;
+</code></pre></pre><h5>组件支持点击事件 <code class="jsx-2699122292 ">onClick</code></h5><p><code class="jsx-2699122292 ">&lt;Link&gt;</code>支持每个组件所支持的<code class="jsx-2699122292 ">onClick</code>事件。如果你不提供<code class="jsx-2699122292 ">&lt;a&gt;</code>标签，只会处理<code class="jsx-2699122292 ">onClick</code>事件而<code class="jsx-2699122292 ">href</code>将不起作用。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// pages/index.js
+import Link from &#x27;next/link&#x27;
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{&#x27; &#x27;}
+    &lt;Link href=&quot;/about&quot;&gt;
+      &lt;img src=&quot;/static/image.png&quot; alt=&quot;image&quot; /&gt;
+    &lt;/Link&gt;
+  &lt;/div&gt;
+</code></pre></pre><h5>暴露 <code class="jsx-2699122292 ">href</code> 给子元素</h5><p>如子元素是一个没有 href 属性的<code class="jsx-2699122292 ">&lt;a&gt;</code>标签，我们将会指定它以免用户重复操作。然而有些时候，我们需要里面有<code class="jsx-2699122292 ">&lt;a&gt;</code>标签，但是<code class="jsx-2699122292 ">Link</code>组件不会被识别成<em>超链接</em>，结果不能将<code class="jsx-2699122292 ">href</code>传递给子元素。在这种场景下，你可以定义一个<code class="jsx-2699122292 ">Link</code>组件中的布尔属性<code class="jsx-2699122292 ">passHref</code>，强制将<code class="jsx-2699122292 ">href</code>传递给子元素。</p><p><strong>注意</strong>: 使用<code class="jsx-2699122292 ">a</code>之外的标签而且没有通过<code class="jsx-2699122292 ">passHref</code>的链接可能会使导航看上去正确，但是当搜索引擎爬行检测时，将不会识别成链接（由于缺乏 href 属性），这会对你网站的 SEO 产生负面影响。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import Link from &#x27;next/link&#x27;
+import Unexpected_A from &#x27;third-library&#x27;
+
+export default ({ href, name }) =&gt;
+  &lt;Link href={href} passHref&gt;
+    &lt;Unexpected_A&gt;
+      {name}
+    &lt;/Unexpected_A&gt;
+  &lt;/Link&gt;
+</code></pre></pre><h5>禁止滚动到页面顶部</h5><p><code class="jsx-2699122292 ">&lt;Link&gt;</code>的默认行为就是滚到页面顶部。当有 hash 定义时（＃），页面将会滚动到对应的 id 上，就像<code class="jsx-2699122292 ">&lt;a&gt;</code>标签一样。为了预防滚动到顶部，可以给<code class="jsx-2699122292 ">&lt;Link&gt;</code>加<code class="jsx-2699122292 ">scroll={false}</code>属性：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">&lt;Link scroll={false} href=&quot;/?counter=10&quot;&gt;&lt;a&gt;Disables scrolling&lt;/a&gt;&lt;/Link&gt;
+&lt;Link href=&quot;/?counter=10&quot;&gt;&lt;a&gt;Changes with scrolling to top&lt;/a&gt;&lt;/Link&gt;
+</code></pre></pre><h4 class="jsx-2148262467 ">命令式</h4><p><summary><b>Examples</b></summary><ul><li><a href="./examples/using-router">Basic routing</a></li><li><a href="./examples/with-loading">With a page loading indicator</a></li></ul></p><p>你也可以用<code class="jsx-2699122292 ">next/router</code>实现客户端路由切换</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import Router from &#x27;next/router&#x27;
+
+export default () =&gt;
+  &lt;div&gt;
+    Click &lt;span onClick={() =&gt; Router.push(&#x27;/about&#x27;)}&gt;here&lt;/span&gt; to read more
+  &lt;/div&gt;
+</code></pre></pre><h4 class="jsx-2148262467 ">拦截器 <code class="jsx-2699122292 ">popstate</code></h4><p>有些情况（比如使用<a href="#custom-server-and-routing" class="jsx-3433991402">custom router</a>），你可能想监听<a href="https://developer.mozilla.org/en-US/docs/Web/Events/popstate" target="_blank" rel="noopener noreferrer" class="jsx-3433991402"><code class="jsx-2699122292 ">popstate</code></a>，在路由跳转前做一些动作。 比如，你可以操作 request 或强制 SSR 刷新</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import Router from &#x27;next/router&#x27;
+
+Router.beforePopState(({ url, as, options }) =&gt; {
+  // I only want to allow these two routes!
+  if (as !== &quot;/&quot; || as !== &quot;/other&quot;) {
+    // Have SSR render bad routes as a 404.
+    window.location.href = as
+    return false
+  }
+
+  return true
+});
+</code></pre></pre><p>如果你在<code class="jsx-2699122292 ">beforePopState</code>中返回 false，<code class="jsx-2699122292 ">Router</code>将不会执行<code class="jsx-2699122292 ">popstate</code>事件。 例如<a href="#disabling-file-system-routing" class="jsx-3433991402">Disabling File-System Routing</a>。</p><p>以上<code class="jsx-2699122292 ">Router</code>对象的 API 如下：</p><ul><li><code class="jsx-2699122292 ">route</code> - 当前路由的<code class="jsx-2699122292 ">String</code>类型</li><li><code class="jsx-2699122292 ">pathname</code> - 不包含查询内容的当前路径，为<code class="jsx-2699122292 ">String</code>类型</li><li><code class="jsx-2699122292 ">query</code> - 查询内容，被解析成<code class="jsx-2699122292 ">Object</code>类型. 默认为<code class="jsx-2699122292 ">{}</code></li><li><code class="jsx-2699122292 ">asPath</code> - 展现在浏览器上的实际路径，包含查询内容，为<code class="jsx-2699122292 ">String</code>类型</li><li><code class="jsx-2699122292 ">push(url, as=url)</code> - 页面渲染第一个参数 url 的页面，浏览器栏显示的是第二个参数 url</li><li><code class="jsx-2699122292 ">replace(url, as=url)</code> - performs a <code class="jsx-2699122292 ">replaceState</code> call with the given url</li><li><code class="jsx-2699122292 ">beforePopState(cb=function)</code> - 在路由器处理事件之前拦截.</li></ul><p><code class="jsx-2699122292 ">push</code> 和 <code class="jsx-2699122292 ">replace</code> 函数的第二个参数<code class="jsx-2699122292 ">as</code>，是为了装饰 URL 作用。如果你在服务器端设置了自定义路由将会起作用。</p><h5>URL 对象用法</h5><p><code class="jsx-2699122292 ">push</code> 或 <code class="jsx-2699122292 ">replace</code>可接收的 URL 对象（<code class="jsx-2699122292 ">&lt;Link&gt;</code>组件的 URL 对象一样）来生成 URL。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import Router from &#x27;next/router&#x27;
+
+const handler = () =&gt;
+  Router.push({
+    pathname: &#x27;/about&#x27;,
+    query: { name: &#x27;Zeit&#x27; }
+  })
+
+export default () =&gt;
+  &lt;div&gt;
+    Click &lt;span onClick={handler}&gt;here&lt;/span&gt; to read more
+  &lt;/div&gt;
+</code></pre></pre><p>也可以像<code class="jsx-2699122292 ">&lt;Link&gt;</code>组件一样添加额外的参数。</p><h5>路由事件</h5><p>你可以监听路由相关事件。 下面是事件支持列表：</p><ul><li><code class="jsx-2699122292 ">routeChangeStart(url)</code> - 路由开始切换时触发</li><li><code class="jsx-2699122292 ">routeChangeComplete(url)</code> - 完成路由切换时触发</li><li><code class="jsx-2699122292 ">routeChangeError(err, url)</code> - 路由切换报错时触发</li><li><code class="jsx-2699122292 ">beforeHistoryChange(url)</code> - 浏览器 history 模式开始切换时触发</li><li><code class="jsx-2699122292 ">hashChangeStart(url)</code> - 开始切换 hash 值但是没有切换页面路由时触发</li><li><code class="jsx-2699122292 ">hashChangeComplete(url)</code> - 完成切换 hash 值但是没有切换页面路由时触发</li></ul><blockquote class="jsx-2455155431 "><p>这里的<code class="jsx-2699122292 ">url</code>是指显示在浏览器中的 url。如果你用了<code class="jsx-2699122292 ">Router.push(url, as)</code>（或类似的方法），那浏览器中的 url 将会显示 as 的值。</p></blockquote><p>下面是如何正确使用路由事件<code class="jsx-2699122292 ">routeChangeStart</code>的例子：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">const handleRouteChange = url =&gt; {
+  console.log(&#x27;App is changing to: &#x27;, url)
+}
+
+Router.events.on(&#x27;routeChangeStart&#x27;, handleRouteChange)
+</code></pre></pre><p>如果你不想长期监听该事件，你可以用<code class="jsx-2699122292 ">off</code>事件去取消监听：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">Router.events.off(&#x27;routeChangeStart&#x27;, handleRouteChange)
+</code></pre></pre><p>如果路由加载被取消（比如快速连续双击链接）</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">Router.events.on(&#x27;routeChangeError&#x27;, (err, url) =&gt; {
+  if (err.cancelled) {
+    console.log(`Route to ${url} was cancelled!`)
+  }
+})
+</code></pre></pre><h5>浅层路由</h5><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-shallow-routing">Shallow Routing</a></li></ul></p><p>浅层路由允许你改变 URL 但是不执行<code class="jsx-2699122292 ">getInitialProps</code>生命周期。你可以加载相同页面的 URL，得到更新后的路由属性<code class="jsx-2699122292 ">pathname</code>和<code class="jsx-2699122292 ">query</code>，并不失去 state 状态。</p><p>你可以给<code class="jsx-2699122292 ">Router.push</code> 或 <code class="jsx-2699122292 ">Router.replace</code>方法加<code class="jsx-2699122292 ">shallow: true</code>参数。如下面的例子所示：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// Current URL is &quot;/&quot;
+const href = &#x27;/?counter=10&#x27;
+const as = href
+Router.push(href, as, { shallow: true })
+</code></pre></pre><p>现在 URL 更新为<code class="jsx-2699122292 ">/?counter=10</code>。在组件里查看<code class="jsx-2699122292 ">this.props.router.query</code>你将会看到更新的 URL。</p><p>你可以在<a href="https://facebook.github.io/react/docs/react-component.html#componentdidupdate" target="_blank" rel="noopener noreferrer" class="jsx-3433991402"><code class="jsx-2699122292 ">componentdidupdate</code></a>钩子函数中监听 URL 的变化。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">componentDidUpdate(prevProps) {
+  const { pathname, query } = this.props.router
+  // verify props have changed to avoid an infinite loop
+  if (query.id !== prevProps.router.query.id) {
+    // fetch data based on the new query
+  }
+}
+</code></pre></pre><blockquote class="jsx-2455155431 "><p>注意:</p><p>浅层路由只作用于相同 URL 的参数改变，比如我们假定有个其他路由<code class="jsx-2699122292 ">about</code>，而你向下面代码样运行:</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">Router.push(&#x27;/?counter=10&#x27;, &#x27;/about?counter=10&#x27;, { shallow: true })
+</code></pre></pre><p>那么这将会出现新页面，即使我们加了浅层路由，但是它还是会卸载当前页，会加载新的页面并触发新页面的<code class="jsx-2699122292 ">getInitialProps</code>。</p></blockquote><h4 class="jsx-2148262467 ">高阶组件</h4><p><summary><b>Examples</b></summary><ul><li><a href="./examples/using-with-router">Using the `withRouter` utility</a></li></ul></p><p>如果你想应用里每个组件都处理路由对象，你可以使用<code class="jsx-2699122292 ">withRouter</code>高阶组件。下面是如何使用它：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import { withRouter } from &#x27;next/router&#x27;
+
+const ActiveLink = ({ children, router, href }) =&gt; {
+  const style = {
+    marginRight: 10,
+    color: router.pathname === href? &#x27;red&#x27; : &#x27;black&#x27;
+  }
+
+  const handleClick = (e) =&gt; {
+    e.preventDefault()
+    router.push(href)
+  }
+
+  return (
+    &lt;a href={href} onClick={handleClick} style={style}&gt;
+      {children}
+    &lt;/a&gt;
+  )
+}
+
+export default withRouter(ActiveLink)
+</code></pre></pre><p>上面路由对象的 API 可以参考<a href="#imperatively" class="jsx-3433991402"><code class="jsx-2699122292 ">next/router</code></a>.</p><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="预加载页面" class="jsx-573693548 target"></span><a href="#预加载页面" class="jsx-573693548">预加载页面</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>⚠️ 只有生产环境才有此功能 ⚠️</p><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-prefetching">Prefetching</a></li></ul></p><p>Next.js 有允许你预加载页面的 API。</p><p>用 Next.js 服务端渲染你的页面，可以达到所有你应用里所有未来会跳转的路径即时响应，有效的应用 Next.js，可以通过预加载应用程序的功能，最大程度的初始化网站性能。<a href="https://zeit.co/blog/next#anticipation-is-the-key-to-performance" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">查看更多</a>.</p><blockquote class="jsx-2455155431 "><p>Next.js 的预加载功能只预加载 JS 代码。当页面渲染时，你可能需要等待数据请求。</p></blockquote><h4 class="jsx-2148262467 "><code class="jsx-2699122292 ">&lt;Link&gt;</code>用法</h4><p>你可以给<code class="jsx-2699122292 ">&lt;Link&gt;</code>添加 <code class="jsx-2699122292 ">prefetch</code> 属性，Next.js 将会在后台预加载这些页面。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import Link from &#x27;next/link&#x27;
+
+// example header component
+export default () =&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;Link prefetch href=&quot;/&quot;&gt;
+          &lt;a&gt;Home&lt;/a&gt;
+        &lt;/Link&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;Link prefetch href=&quot;/about&quot;&gt;
+          &lt;a&gt;About&lt;/a&gt;
+        &lt;/Link&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;Link prefetch href=&quot;/contact&quot;&gt;
+          &lt;a&gt;Contact&lt;/a&gt;
+        &lt;/Link&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+</code></pre></pre><h4 class="jsx-2148262467 ">命令式 prefetch 写法</h4><p>大多数预加载是通过<code class="jsx-2699122292 ">&lt;Link /&gt;</code>处理的，但是我们还提供了命令式 API 用于更复杂的场景。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import { withRouter } from &#x27;next/router&#x27;
+
+export default withRouter(({ router }) =&gt;
+  &lt;div&gt;
+    &lt;a onClick={() =&gt; setTimeout(() =&gt; router.push(&#x27;/dynamic&#x27;), 100)}&gt;
+      A route transition will happen after 100ms
+    &lt;/a&gt;
+    {// but we can prefetch it!
+    router.prefetch(&#x27;/dynamic&#x27;)}
+  &lt;/div&gt;
+)
+</code></pre></pre><p>路由实例只允许在应用程序的客户端。以防服务端渲染发生错误，建议 prefetch 事件写在<code class="jsx-2699122292 ">componentDidMount()</code>生命周期里。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import React from &#x27;react&#x27;
+import { withRouter } from &#x27;next/router&#x27;
+
+class MyLink extends React.Component {
+  componentDidMount() {
+    const { router } = this.props
+    router.prefetch(&#x27;/dynamic&#x27;)
+  }
+
+  render() {
+    const { router } = this.props
+    return (
+       &lt;div&gt;
+        &lt;a onClick={() =&gt; setTimeout(() =&gt; router.push(&#x27;/dynamic&#x27;), 100)}&gt;
+          A route transition will happen after 100ms
+        &lt;/a&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default withRouter(MyLink)
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="自定义服务端路由" class="jsx-573693548 target"></span><a href="#自定义服务端路由" class="jsx-573693548">自定义服务端路由</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/custom-server">Basic custom server</a></li><li><a href="./examples/custom-server-express">Express integration</a></li><li><a href="./examples/custom-server-hapi">Hapi integration</a></li><li><a href="./examples/custom-server-koa">Koa integration</a></li><li><a href="./examples/parameterized-routing">Parameterized routing</a></li><li><a href="./examples/ssr-caching">SSR caching</a></li></ul></p><p>一般你使用<code class="jsx-2699122292 ">next start</code>命令来启动 next 服务，你还可以编写代码来自定义路由，如使用路由正则等。</p><p>当使用自定义服务文件，如下面例子所示叫 server.js 时，确保你更新了 package.json 中的脚本。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">{
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;node server.js&quot;,
+    &quot;build&quot;: &quot;next build&quot;,
+    &quot;start&quot;: &quot;NODE_ENV=production node server.js&quot;
+  }
+}
+</code></pre></pre><p>下面这个例子使 <code class="jsx-2699122292 ">/a</code> 路由解析为<code class="jsx-2699122292 ">./pages/b</code>，以及<code class="jsx-2699122292 ">/b</code> 路由解析为<code class="jsx-2699122292 ">./pages/a</code>;</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// This file doesn&#x27;t go through babel or webpack transformation.
+// Make sure the syntax and sources this file requires are compatible with the current node version you are running
+// See https://github.com/zeit/next.js/issues/1245 for discussions on Universal Webpack or universal Babel
+const { createServer } = require(&#x27;http&#x27;)
+const { parse } = require(&#x27;url&#x27;)
+const next = require(&#x27;next&#x27;)
+
+const dev = process.env.NODE_ENV !== &#x27;production&#x27;
+const app = next({ dev })
+const handle = app.getRequestHandler()
+
+app.prepare().then(() =&gt; {
+  createServer((req, res) =&gt; {
+    // Be sure to pass `true` as the second argument to `url.parse`.
+    // This tells it to parse the query portion of the URL.
+    const parsedUrl = parse(req.url, true)
+    const { pathname, query } = parsedUrl
+
+    if (pathname === &#x27;/a&#x27;) {
+      app.render(req, res, &#x27;/b&#x27;, query)
+    } else if (pathname === &#x27;/b&#x27;) {
+      app.render(req, res, &#x27;/a&#x27;, query)
+    } else {
+      handle(req, res, parsedUrl)
+    }
+  }).listen(3000, err =&gt; {
+    if (err) throw err
+    console.log(&#x27;&gt; Ready on http://localhost:3000&#x27;)
+  })
+})
+</code></pre></pre><p><code class="jsx-2699122292 ">next</code>的 API 如下所示</p><ul><li><code class="jsx-2699122292 ">next(opts: object)</code></li></ul><p>opts 的属性如下:</p><ul><li><code class="jsx-2699122292 ">dev</code> (<code class="jsx-2699122292 ">boolean</code>) 判断 Next.js 应用是否在开发环境 - 默认<code class="jsx-2699122292 ">false</code></li><li><code class="jsx-2699122292 ">dir</code> (<code class="jsx-2699122292 ">string</code>) Next 项目路径 - 默认<code class="jsx-2699122292 ">&#x27;.&#x27;</code></li><li><code class="jsx-2699122292 ">quiet</code> (<code class="jsx-2699122292 ">boolean</code>) 是否隐藏包含服务端消息在内的错误信息 - 默认<code class="jsx-2699122292 ">false</code></li><li><code class="jsx-2699122292 ">conf</code> (<code class="jsx-2699122292 ">object</code>) 与<code class="jsx-2699122292 ">next.config.js</code>的对象相同 - 默认<code class="jsx-2699122292 ">{}</code></li></ul><p>生产环境的话，可以更改 package.json 里的<code class="jsx-2699122292 ">start</code>脚本为<code class="jsx-2699122292 ">NODE_ENV=production node server.js</code>。</p><h4 class="jsx-2148262467 ">禁止文件路由</h4><p>默认情况，<code class="jsx-2699122292 ">Next</code>将会把<code class="jsx-2699122292 ">/pages</code>下的所有文件匹配路由（如<code class="jsx-2699122292 ">/pages/some-file.js</code> 渲染为 <code class="jsx-2699122292 ">site.com/some-file</code>）</p><p>如果你的项目使用自定义路由，那么有可能不同的路由会得到相同的内容，可以优化 SEO 和用户体验。</p><p>禁止路由链接到<code class="jsx-2699122292 ">/pages</code>下的文件，只需设置<code class="jsx-2699122292 ">next.config.js</code>文件如下所示：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js
+module.exports = {
+  useFileSystemPublicRoutes: false
+}
+</code></pre></pre><p>注意<code class="jsx-2699122292 ">useFileSystemPublicRoutes</code>只禁止服务端的文件路由；但是客户端的还是禁止不了。</p><p>你如果想配置客户端路由不能跳转文件路由，可以参考<a href="#intercepting-popstate" class="jsx-3433991402">Intercepting <code class="jsx-2699122292 ">popstate</code></a>。</p><h4 class="jsx-2148262467 ">动态前缀</h4><p>有时你需要设置动态前缀，可以在请求时设置<code class="jsx-2699122292 ">assetPrefix</code>改变前缀。</p><p>使用方法如下：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">const next = require(&#x27;next&#x27;)
+const micro = require(&#x27;micro&#x27;)
+
+const dev = process.env.NODE_ENV !== &#x27;production&#x27;
+const app = next({ dev })
+const handleNextRequests = app.getRequestHandler()
+
+app.prepare().then(() =&gt; {
+  const server = micro((req, res) =&gt; {
+    // Add assetPrefix support based on the hostname
+    if (req.headers.host === &#x27;my-app.com&#x27;) {
+      app.setAssetPrefix(&#x27;http://cdn.com/myapp&#x27;)
+    } else {
+      app.setAssetPrefix(&#x27;&#x27;)
+    }
+
+    handleNextRequests(req, res)
+  })
+
+  server.listen(port, (err) =&gt; {
+    if (err) {
+      throw err
+    }
+
+    console.log(`&gt; Ready on http://localhost:${port}`)
+  })
+})
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="动态导入" class="jsx-573693548 target"></span><a href="#动态导入" class="jsx-573693548">动态导入</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-dynamic-import">With Dynamic Import</a></li></ul></p><p>ext.js 支持 JavaScript 的 TC39 提议<a href="https://github.com/tc39/proposal-dynamic-import" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">dynamic import proposal</a>。你可以动态导入 JavaScript 模块（如 React 组件）。</p><p>动态导入相当于把代码分成各个块管理。Next.js 服务端动态导入功能，你可以做很多炫酷事情。</p><p>下面介绍一些动态导入方式：</p><h4 class="jsx-2148262467 ">1. 基础支持 (同样支持 SSR)</h4><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import dynamic from &#x27;next/dynamic&#x27;
+
+const DynamicComponent = dynamic(import(&#x27;../components/hello&#x27;))
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Header /&gt;
+    &lt;DynamicComponent /&gt;
+    &lt;p&gt;HOME PAGE is here!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre></pre><h4 class="jsx-2148262467 ">2. 自定义加载组件</h4><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import dynamic from &#x27;next/dynamic&#x27;
+
+const DynamicComponentWithCustomLoading = dynamic(
+  import(&#x27;../components/hello2&#x27;),
+  {
+    loading: () =&gt; &lt;p&gt;...&lt;/p&gt;
+  }
+)
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Header /&gt;
+    &lt;DynamicComponentWithCustomLoading /&gt;
+    &lt;p&gt;HOME PAGE is here!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre></pre><h4 class="jsx-2148262467 ">3. 禁止使用 SSR</h4><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import dynamic from &#x27;next/dynamic&#x27;
+
+const DynamicComponentWithNoSSR = dynamic(import(&#x27;../components/hello3&#x27;), {
+  ssr: false
+})
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Header /&gt;
+    &lt;DynamicComponentWithNoSSR /&gt;
+    &lt;p&gt;HOME PAGE is here!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre></pre><h4 class="jsx-2148262467 ">4. 同时加载多个模块</h4><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import dynamic from &#x27;next/dynamic&#x27;
+
+const HelloBundle = dynamic({
+  modules: () =&gt; {
+    const components = {
+      Hello1: import(&#x27;../components/hello1&#x27;),
+      Hello2: import(&#x27;../components/hello2&#x27;)
+    }
+
+    return components
+  },
+  render: (props, { Hello1, Hello2 }) =&gt;
+    &lt;div&gt;
+      &lt;h1&gt;
+        {props.title}
+      &lt;/h1&gt;
+      &lt;Hello1 /&gt;
+      &lt;Hello2 /&gt;
+    &lt;/div&gt;
+})
+
+export default () =&gt; &lt;HelloBundle title=&quot;Dynamic Bundle&quot; /&gt;
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="自定义&lt;app&gt;" class="jsx-573693548 target"></span><a href="#自定义&lt;app&gt;" class="jsx-573693548">自定义<code class="jsx-2699122292 ">&lt;App&gt;</code></a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-app-layout">Using `_app.js` for layout</a></li></ul><ul><li><a href="./examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li></ul></p><p>组件来初始化页面。你可以重写它来控制页面初始化，如下面的事：</p><ul><li>当页面变化时保持页面布局</li><li>当路由变化时保持页面状态</li><li>使用<code class="jsx-2699122292 ">componentDidCatch</code>自定义处理错误</li><li>注入额外数据到页面里 (如 GraphQL 查询)</li></ul><p>重写的话，新建<code class="jsx-2699122292 ">./pages/_app.js</code>文件，重写 App 模块如下所示：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import App, {Container} from &#x27;next/app&#x27;
+import React from &#x27;react&#x27;
+
+export default class MyApp extends App {
+  static async getInitialProps ({ Component, router, ctx }) {
+    let pageProps = {}
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+
+    return {pageProps}
+  }
+
+  render () {
+    const {Component, pageProps} = this.props
+    return &lt;Container&gt;
+      &lt;Component {...pageProps} /&gt;
+    &lt;/Container&gt;
+  }
+}
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="自定义&lt;document&gt;" class="jsx-573693548 target"></span><a href="#自定义&lt;document&gt;" class="jsx-573693548">自定义<code class="jsx-2699122292 ">&lt;Document&gt;</code></a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-styled-components">Styled components custom document</a></li></ul><ul><li><a href="./examples/with-amp">Google AMP</a></li></ul></p><ul><li>在服务端呈现</li><li>初始化服务端时添加文档标记元素</li><li>通常实现服务端渲染会使用一些 css-in-js 库，如<a href="./examples/with-styled-components" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">styled-components</a>, <a href="./examples/with-glamorous" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">glamorous</a> 或 <a href="with-emotion" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">emotion</a>。<a href="https://github.com/zeit/styled-jsx" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">styled-jsx</a>是 Next.js 自带默认使用的 css-in-js 库</li></ul><p><code class="jsx-2699122292 ">Next.js</code>会自动定义文档标记，比如，你从来不需要添加<code class="jsx-2699122292 ">&lt;html&gt;</code>, <code class="jsx-2699122292 ">&lt;body&gt;</code>等。如果想自定义文档标记，你可以新建<code class="jsx-2699122292 ">./pages/_document.js</code>，然后扩展<code class="jsx-2699122292 ">Document</code>类：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// _document is only rendered on the server side and not on the client side
+// Event handlers like onClick can&#x27;t be added to this file
+
+// ./pages/_document.js
+import Document, { Head, Main, NextScript } from &#x27;next/document&#x27;
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      &lt;html&gt;
+        &lt;Head&gt;
+          &lt;style&gt;{`body { margin: 0 } /* custom! */`}&lt;/style&gt;
+        &lt;/Head&gt;
+        &lt;body className=&quot;custom_class&quot;&gt;
+          &lt;Main /&gt;
+          &lt;NextScript /&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    )
+  }
+}
+</code></pre></pre><p>钩子<a href="#fetching-data-and-component-lifecycle" class="jsx-3433991402"><code class="jsx-2699122292 ">getInitialProps</code></a>接收到的参数<code class="jsx-2699122292 ">ctx</code>对象都是一样的</p><ul><li>回调函数<code class="jsx-2699122292 ">renderPage</code>是会执行 React 渲染逻辑的函数(同步)，这种做法有助于此函数支持一些类似于 Aphrodite 的 renderStatic 等一些服务器端渲染容器。</li></ul><p><strong>注意：<code class="jsx-2699122292 ">&lt;Main /&gt;</code>外的 React 组件将不会渲染到浏览器中，所以那添加应用逻辑代码。如果你页面需要公共组件（菜单或工具栏），可以参照上面说的<code class="jsx-2699122292 ">App</code>组件代替。</strong></p><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="自定义错误处理" class="jsx-573693548 target"></span><a href="#自定义错误处理" class="jsx-573693548">自定义错误处理</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>404和500错误客户端和服务端都会通过<code class="jsx-2699122292 ">error.js</code>组件处理。如果你想改写它，则新建<code class="jsx-2699122292 ">_error.js</code>在文件夹中：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import React from &#x27;react&#x27;
+
+export default class Error extends React.Component {
+  static getInitialProps({ res, err }) {
+    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+    return { statusCode }
+  }
+
+  render() {
+    return (
+      &lt;p&gt;
+        {this.props.statusCode
+          ? `An error ${this.props.statusCode} occurred on server`
+          : &#x27;An error occurred on client&#x27;}
+      &lt;/p&gt;
+    )
+  }
+}
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="渲染内置错误页面" class="jsx-573693548 target"></span><a href="#渲染内置错误页面" class="jsx-573693548">渲染内置错误页面</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>如果你想渲染内置错误页面，你可以使用<code class="jsx-2699122292 ">next/error</code>：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">import React from &#x27;react&#x27;
+import Error from &#x27;next/error&#x27;
+import fetch from &#x27;isomorphic-unfetch&#x27;
+
+export default class Page extends React.Component {
+  static async getInitialProps() {
+    const res = await fetch(&#x27;https://api.github.com/repos/zeit/next.js&#x27;)
+    const statusCode = res.statusCode &gt; 200 ? res.statusCode : false
+    const json = await res.json()
+
+    return { statusCode, stars: json.stargazers_count }
+  }
+
+  render() {
+    if (this.props.statusCode) {
+      return &lt;Error statusCode={this.props.statusCode} /&gt;
+    }
+
+    return (
+      &lt;div&gt;
+        Next stars: {this.props.stars}
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre></pre><blockquote class="jsx-2455155431 "><p>如果你自定义了个错误页面，你可以引入自己的错误页面来代替<code class="jsx-2699122292 ">next/error</code></p></blockquote><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="自定义配置" class="jsx-573693548 target"></span><a href="#自定义配置" class="jsx-573693548">自定义配置</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>如果你想自定义 Next.js 的高级配置，可以在根目录下新建<code class="jsx-2699122292 ">next.config.js</code>文件（与<code class="jsx-2699122292 ">pages/</code> 和 <code class="jsx-2699122292 ">package.json</code>一起）</p><p>注意：<code class="jsx-2699122292 ">next.config.js</code>是一个 Node.js 模块，不是一个 JSON 文件，可以用于 Next 启动服务已经构建阶段，但是不作用于浏览器端。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js
+module.exports = {
+  /* config options here */
+}
+</code></pre></pre><p>或使用一个函数：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">module.exports = (phase, {defaultConfig}) =&gt; {
+  //
+  // https://github.com/zeit/
+  return {
+    /* config options here */
+  }
+}
+</code></pre></pre><p><code class="jsx-2699122292 ">phase</code>是配置文件被加载时的当前内容。你可看到所有的 phases 常量：<a href="./lib/constants.js" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">constants</a>这些常量可以通过<code class="jsx-2699122292 ">next/constants</code>引入：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">const {PHASE_DEVELOPMENT_SERVER} = require(&#x27;next/constants&#x27;)
+module.exports = (phase, {defaultConfig}) =&gt; {
+  if(phase === PHASE_DEVELOPMENT_SERVER) {
+    return {
+      /* development only config options here */
+    }
+  }
+
+  return {
+    /* config options for all phases except development here */
+  }
+}
+</code></pre></pre><h4 class="jsx-2148262467 ">设置自定义构建目录</h4><p>你可以自定义一个构建目录，如新建<code class="jsx-2699122292 ">build</code>文件夹来代替<code class="jsx-2699122292 ">.next</code> 文件夹成为构建目录。如果没有配置构建目录，构建时将会自动新建<code class="jsx-2699122292 ">.next</code>文件夹</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js
+module.exports = {
+  distDir: &#x27;build&#x27;
+}
+</code></pre></pre><h4 class="jsx-2148262467 ">禁止 etag 生成</h4><p>你可以禁止 etag 生成根据你的缓存策略。如果没有配置，Next 将会生成 etags 到每个页面中。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js
+module.exports = {
+  generateEtags: false
+}
+</code></pre></pre><h4 class="jsx-2148262467 ">配置 onDemandEntries</h4><p>Next 暴露一些选项来给你控制服务器部署以及缓存页面：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">module.exports = {
+  onDemandEntries: {
+    // period (in ms) where the server will keep pages in the buffer
+    maxInactiveAge: 25 * 1000,
+    // number of pages that should be kept simultaneously without being disposed
+    pagesBufferLength: 2,
+  }
+}
+</code></pre></pre><p>这个只是在开发环境才有的功能。如果你在生成环境中想缓存 SSR 页面，请查看<a href="https://github.com/zeit/next.js/tree/canary/examples/ssr-caching" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">SSR-caching</a></p><h4 class="jsx-2148262467 ">配置页面后缀名解析扩展</h4><p>如 typescript 模块<a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript" target="_blank" rel="noopener noreferrer" class="jsx-3433991402"><code class="jsx-2699122292 ">@zeit/next-typescript</code></a>，需要支持解析后缀名为<code class="jsx-2699122292 ">.ts</code>的文件。<code class="jsx-2699122292 ">pageExtensions</code> 允许你扩展后缀名来解析各种 pages 下的文件。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js
+module.exports = {
+  pageExtensions: [&#x27;jsx&#x27;, &#x27;js&#x27;]
+}
+</code></pre></pre><h4 class="jsx-2148262467 ">配置构建 ID</h4><p>Next.js 使用构建时生成的常量来标识你的应用服务是哪个版本。在每台服务器上运行构建命令时，可能会导致多服务器部署出现问题。为了保持同一个构建 ID，可以配置<code class="jsx-2699122292 ">generateBuildId</code>函数：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js
+module.exports = {
+  generateBuildId: async () =&gt; {
+    // For example get the latest git commit hash here
+    return &#x27;my-build-id&#x27;
+  }
+}
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="自定义-webpack-配置" class="jsx-573693548 target"></span><a href="#自定义-webpack-配置" class="jsx-573693548">自定义 webpack 配置</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li></ul></p><p>可以使用些一些常见的模块</p><ul><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-css" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-css</a></li><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-sass" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-sass</a></li><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-less" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-less</a></li><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-preact" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-preact</a></li><li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@zeit/next-typescript</a></li></ul><p><em>注意： <code class="jsx-2699122292 ">webpack</code>方法将被执行两次，一次在服务端一次在客户端。你可以用<code class="jsx-2699122292 ">isServer</code>属性区分客户端和服务端来配置</em></p><p>多配置可以组合在一起，如：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">const withTypescript = require(&#x27;@zeit/next-typescript&#x27;)
+const withSass = require(&#x27;@zeit/next-sass&#x27;)
+
+module.exports = withTypescript(withSass({
+  webpack(config, options) {
+    // Further custom configuration here
+    return config
+  }
+}))
+</code></pre></pre><p>为了扩展<code class="jsx-2699122292 ">webpack</code>使用，可以在<code class="jsx-2699122292 ">next.config.js</code>定义函数。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js is not transformed by Babel. So you can only use javascript features supported by your version of Node.js.
+
+module.exports = {
+  webpack: (config, { buildId, dev, isServer, defaultLoaders }) =&gt; {
+    // Perform customizations to webpack config
+    // Important: return the modified config
+    return config
+  },
+  webpackDevMiddleware: config =&gt; {
+    // Perform customizations to webpack dev middleware config
+    // Important: return the modified config
+    return config
+  }
+}
+</code></pre></pre><p><code class="jsx-2699122292 ">webpack</code>的第二个参数是个对象，你可以自定义配置它，对象属性如下所示：</p><ul><li><code class="jsx-2699122292 ">buildId</code> - 字符串类型，构建的唯一标示</li><li><code class="jsx-2699122292 ">dev</code> - <code class="jsx-2699122292 ">Boolean</code>型，判断你是否在开发环境下</li><li><code class="jsx-2699122292 ">isServer</code> - <code class="jsx-2699122292 ">Boolean</code> 型，为<code class="jsx-2699122292 ">true</code>使用在服务端, 为<code class="jsx-2699122292 ">false</code>使用在客户端.</li><li><p><code class="jsx-2699122292 ">defaultLoaders</code> - 对象型 ，内部加载器, 你可以如下配置</p><ul><li><code class="jsx-2699122292 ">babel</code> - 对象型，配置<code class="jsx-2699122292 ">babel-loader</code>.</li><li><code class="jsx-2699122292 ">hotSelfAccept</code> - 对象型， <code class="jsx-2699122292 ">hot-self-accept-loader</code>配置选项.这个加载器只能用于高阶案例。如 <a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript" target="_blank" rel="noopener noreferrer" class="jsx-3433991402"><code class="jsx-2699122292 ">@zeit/next-typescript</code></a>添加顶层 typescript 页面。</li></ul></li></ul><p><code class="jsx-2699122292 ">defaultLoaders.babel</code>使用案例如下：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// Example next.config.js for adding a loader that depends on babel-loader
+// This source was taken from the @zeit/next-mdx plugin source:
+// https://github.com/zeit/next-plugins/blob/master/packages/next-mdx
+module.exports = {
+  webpack: (config, {}) =&gt; {
+    config.module.rules.push({
+      test: /.mdx/,
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: &#x27;@mdx-js/loader&#x27;,
+          options: pluginOptions.options
+        }
+      ]
+    })
+
+    return config
+  }
+}
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="自定义-babel-配置" class="jsx-573693548 target"></span><a href="#自定义-babel-配置" class="jsx-573693548">自定义 babel 配置</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-custom-babel-config">Custom babel configuration</a></li></ul></p><p>为了扩展方便我们使用<code class="jsx-2699122292 ">babel</code>，可以在应用根目录新建<code class="jsx-2699122292 ">.babelrc</code>文件，该文件可配置。</p><p>如果有该文件，我们将会考虑数据源，因此也需要定义 next 项目需要的东西，也就是 <code class="jsx-2699122292 ">next/babel</code>预设。</p><p>这种设计方案将会使你不诧异于我们可以定制 babel 配置。</p><p>下面是<code class="jsx-2699122292 ">.babelrc</code>文件案例：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">{
+  &quot;presets&quot;: [&quot;next/babel&quot;],
+  &quot;plugins&quot;: []
+}
+</code></pre></pre><p><code class="jsx-2699122292 ">next/babel</code>预设可处理各种 React 应用所需要的情况。包括：</p><ul><li>preset-env</li><li>preset-react</li><li>plugin-proposal-class-properties</li><li>plugin-proposal-object-rest-spread</li><li>plugin-transform-runtime</li><li>styled-jsx</li></ul><p>presets / plugins 不允许添加到<code class="jsx-2699122292 ">.babelrc</code>中，然而你可以配置<code class="jsx-2699122292 ">next/babel</code>预设：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">{
+  &quot;presets&quot;: [
+    [&quot;next/babel&quot;, {
+      &quot;preset-env&quot;: {},
+      &quot;transform-runtime&quot;: {},
+      &quot;styled-jsx&quot;: {},
+      &quot;class-properties&quot;: {}
+    }]
+  ],
+  &quot;plugins&quot;: []
+}
+</code></pre></pre><p><code class="jsx-2699122292 ">&quot;preset-env&quot;</code>模块选项应该保持为 false，否则 webpack 代码分割将被禁用。</p><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="暴露配置到服务端和客户端" class="jsx-573693548 target"></span><a href="#暴露配置到服务端和客户端" class="jsx-573693548">暴露配置到服务端和客户端</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p><code class="jsx-2699122292 ">next/config</code>模块使你应用运行时可以读取些存储在<code class="jsx-2699122292 ">next.config.js</code>的配置项。<code class="jsx-2699122292 ">serverRuntimeConfig</code>属性只在服务器端可用，<code class="jsx-2699122292 ">publicRuntimeConfig</code>属性在服务端和客户端可用。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js
+module.exports = {
+  serverRuntimeConfig: { // Will only be available on the server side
+    mySecret: &#x27;secret&#x27;
+  },
+  publicRuntimeConfig: { // Will be available on both server and client
+    staticFolder: &#x27;/static&#x27;,
+    mySecret: process.env.MY_SECRET // Pass through env variables
+  }
+}
+</code></pre></pre><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// pages/index.js
+import getConfig from &#x27;next/config&#x27;
+// Only holds serverRuntimeConfig and publicRuntimeConfig from next.config.js nothing else.
+const {serverRuntimeConfig, publicRuntimeConfig} = getConfig()
+
+console.log(serverRuntimeConfig.mySecret) // Will only be available on the server side
+console.log(publicRuntimeConfig.staticFolder) // Will be available on both server and client
+
+export default () =&gt; &lt;div&gt;
+  &lt;img src={`${publicRuntimeConfig.staticFolder}/logo.png`} alt=&quot;logo&quot; /&gt;
+&lt;/div&gt;
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="启动服务选择-hostname" class="jsx-573693548 target"></span><a href="#启动服务选择-hostname" class="jsx-573693548">启动服务选择 hostname</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>启动开发环境服务可以设置不同的 hostname，你可以在启动命令后面加上<code class="jsx-2699122292 ">--hostname 主机名</code> 或 <code class="jsx-2699122292 ">-H 主机名</code>。它将会启动一个 TCP 服务器来监听连接所提供的主机。</p><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="cdn-支持前缀" class="jsx-573693548 target"></span><a href="#cdn-支持前缀" class="jsx-573693548">CDN 支持前缀</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>建立一个 CDN，你能配置<code class="jsx-2699122292 ">assetPrefix</code>选项，去配置你的 CDN 源。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">const isProd = process.env.NODE_ENV === &#x27;production&#x27;
+module.exports = {
+  // You may only need to add assetPrefix in the production.
+  assetPrefix: isProd ? &#x27;https://cdn.mydomain.com&#x27; : &#x27;&#x27;
+}
+</code></pre></pre><p>注意：Next.js 运行时将会自动添加前缀，但是对于<code class="jsx-2699122292 ">/static</code>是没有效果的，如果你想这些静态资源也能使用 CDN，你需要自己添加前缀。有一个方法可以判断你的环境来加前缀，如 <a href="https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">in this example</a>。</p><div class="jsx-2821545348"><h2 class="jsx-3557574343 lean " data-components-heading="true"><span id="项目部署" class="jsx-573693548 target"></span><a href="#项目部署" class="jsx-573693548">项目部署</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h2></div><p>部署中，你可以先构建打包生成环境代码，再启动服务。因此，构建和启动分为下面两条命令：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">next build
+next start
+</code></pre></pre><p>例如，使用<a href="https://zeit.co/now" target="_blank" rel="noopener noreferrer" class="jsx-3433991402"><code class="jsx-2699122292 ">now</code></a>去部署<code class="jsx-2699122292 ">package.json</code>配置文件如下：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">{
+  &quot;name&quot;: &quot;my-app&quot;,
+  &quot;dependencies&quot;: {
+    &quot;next&quot;: &quot;latest&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;next&quot;,
+    &quot;build&quot;: &quot;next build&quot;,
+    &quot;start&quot;: &quot;next start&quot;
+  }
+}
+</code></pre></pre><p>然后就可以直接运行<code class="jsx-2699122292 ">now</code>了。</p><p>Next.js 也有其他托管解决方案。请查考 wiki 章节<a href="https://github.com/zeit/next.js/wiki/Deployment" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">&#x27;Deployment&#x27;</a> 。</p><p>注意：<code class="jsx-2699122292 ">NODE_ENV</code>可以通过<code class="jsx-2699122292 ">next</code>命令配置，如果没有配置，会最大渲染，如果你使用编程式写法的话<a href="#custom-server-and-routing" class="jsx-3433991402">programmatically</a>，你需要手动设置<code class="jsx-2699122292 ">NODE_ENV=production</code>。</p><p>注意：推荐将<code class="jsx-2699122292 ">.next</code>或自定义打包文件夹<a href="https://github.com/zeit/next.js#custom-configuration" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">custom dist folder</a>放入<code class="jsx-2699122292 ">.gitignore</code> 或 <code class="jsx-2699122292 ">.npmignore</code>中。否则，使用<code class="jsx-2699122292 ">files</code> 或 <code class="jsx-2699122292 ">now.files</code>添加部署白名单，并排除<code class="jsx-2699122292 ">.next</code>或自定义打包文件夹。</p><div class="jsx-2821545348"><h2 class="jsx-3557574343 lean " data-components-heading="true"><span id="浏览器支持" class="jsx-573693548 target"></span><a href="#浏览器支持" class="jsx-573693548">浏览器支持</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h2></div><p>Next.js 支持 IE11 和所有的现代浏览器使用了<a href="https://new.babeljs.io/docs/en/next/babel-preset-env.html" target="_blank" rel="noopener noreferrer" class="jsx-3433991402"><code class="jsx-2699122292 ">@babel/preset-env</code></a>。为了支持 IE11，Next.js 需要全局添加<code class="jsx-2699122292 ">Promise</code>的 polyfill。有时你的代码或引入的其他 NPM 包的部分功能现代浏览器不支持，则需要用 polyfills 去实现。</p><p>ployflls 实现案例为<a href="https://github.com/zeit/next.js/tree/canary/examples/with-polyfills" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">polyfills</a>。</p><div class="jsx-2821545348"><h2 class="jsx-3557574343 lean " data-components-heading="true"><span id="导出静态页面" class="jsx-573693548 target"></span><a href="#导出静态页面" class="jsx-573693548">导出静态页面</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h2></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-static-export">Static export</a></li></ul></p><p><code class="jsx-2699122292 ">next export</code>可以输出一个 Next.js 应用作为静态资源应用而不依靠 Node.js 服务。 这个输出的应用几乎支持 Next.js 的所有功能，包括动态路由，预获取，预加载以及动态导入。</p><p><code class="jsx-2699122292 ">next export</code>将把所有有可能渲染出的 HTML 都生成。这是基于映射对象的<code class="jsx-2699122292 ">pathname</code>关键字关联到页面对象。这个映射叫做<code class="jsx-2699122292 ">exportPathMap</code>。</p><p>页面对象有2个属性:</p><ul><li><code class="jsx-2699122292 ">page</code> - 字符串类型，页面生成目录</li><li><code class="jsx-2699122292 ">query</code> - 对象类型，当预渲染时，<code class="jsx-2699122292 ">query</code>对象将会传入页面的生命周期<code class="jsx-2699122292 ">getInitialProps</code>中。默认为<code class="jsx-2699122292 ">{}</code>。</li></ul><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="使用" class="jsx-573693548 target"></span><a href="#使用" class="jsx-573693548">使用</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>通常开发 Next.js 应用你将会运行：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">next build
+next export
+</code></pre></pre><p><code class="jsx-2699122292 ">next export</code>命令默认不需要任何配置，将会自动生成默认<code class="jsx-2699122292 ">exportPathMap</code>生成<code class="jsx-2699122292 ">pages</code>目录下的路由你页面。</p><p>如果你想动态配置路由，可以在<code class="jsx-2699122292 ">next.config.js</code>中添加异步函数<code class="jsx-2699122292 ">exportPathMap</code>。</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">// next.config.js
+module.exports = {
+  exportPathMap: async function (defaultPathMap) {
+    return {
+      &#x27;/&#x27;: { page: &#x27;/&#x27; },
+      &#x27;/about&#x27;: { page: &#x27;/about&#x27; },
+      &#x27;/readme.md&#x27;: { page: &#x27;/readme&#x27; },
+      &#x27;/p/hello-nextjs&#x27;: { page: &#x27;/post&#x27;, query: { title: &#x27;hello-nextjs&#x27; } },
+      &#x27;/p/learn-nextjs&#x27;: { page: &#x27;/post&#x27;, query: { title: &#x27;learn-nextjs&#x27; } },
+      &#x27;/p/deploy-nextjs&#x27;: { page: &#x27;/post&#x27;, query: { title: &#x27;deploy-nextjs&#x27; } }
+    }
+  }
+}
+</code></pre></pre><blockquote class="jsx-2455155431 "><p>注意：如果 path 的结尾是目录名，则将导出<code class="jsx-2699122292 ">/dir-name/index.html</code>，但是如果结尾有扩展名，将会导出对应的文件，如上<code class="jsx-2699122292 ">/readme.md</code>。如果你使用<code class="jsx-2699122292 ">.html</code>以外的扩展名解析文件时，你需要设置 header 的<code class="jsx-2699122292 ">Content-Type</code>头为&quot;text/html&quot;.</p></blockquote><p>输入下面命令：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">next build
+next export
+</code></pre></pre><p>你可以在<code class="jsx-2699122292 ">package.json</code>添加一个 NPM 脚本，如下所示：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">{
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;next build&quot;,
+    &quot;export&quot;: &quot;npm run build &amp;&amp; next export&quot;
+  }
+}
+</code></pre></pre><p>接着只用执行一次下面命令：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">npm run export
+</code></pre></pre><p>然后你将会有一个静态页面应用在<code class="jsx-2699122292 ">out</code> 目录下。</p><blockquote class="jsx-2455155431 "><p>你也可以自定义输出目录。可以运行<code class="jsx-2699122292 ">next export -h</code>命令查看帮助。</p></blockquote><p>现在你可以部署<code class="jsx-2699122292 ">out</code>目录到任意静态资源服务器上。注意如果部署 GitHub Pages 需要加个额外的步骤，<a href="https://github.com/zeit/next.js/wiki/Deploying-a-Next.js-app-into-GitHub-Pages" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">文档如下</a></p><p>例如，访问<code class="jsx-2699122292 ">out</code>目录并用下面命令部署应用<a href="https://zeit.co/now" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">ZEIT Now</a>.</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">now
+</code></pre></pre><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="限制" class="jsx-573693548 target"></span><a href="#限制" class="jsx-573693548">限制</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>使用<code class="jsx-2699122292 ">next export</code>，我们创建了个静态 HTML 应用。构建时将会运行页面里生命周期<code class="jsx-2699122292 ">getInitialProps</code> 函数。</p><p><code class="jsx-2699122292 ">req</code>和<code class="jsx-2699122292 ">res</code>只在服务端可用，不能通过<code class="jsx-2699122292 ">getInitialProps</code>。</p><blockquote class="jsx-2455155431 "><p>所以你不能预构建 HTML 文件时动态渲染 HTML 页面。如果你想动态渲染可以运行<code class="jsx-2699122292 ">next start</code>或其他自定义服务端 API。</p></blockquote><div class="jsx-2821545348"><h2 class="jsx-3557574343 lean " data-components-heading="true"><span id="多-zone" class="jsx-573693548 target"></span><a href="#多-zone" class="jsx-573693548">多 zone</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h2></div><p><summary><b>Examples</b></summary><ul><li><a href="./examples/with-zones">With Zones</a></li></ul></p><p>一个 zone 时一个单独的 Next.js 应用。如果你有很多 zone，你可以合并成一个应用。</p><p>例如，你如下有两个 zone：</p><ul><li><a href="https://docs.my-app.com" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">https://docs.my-app.com</a> 服务于路由 <code class="jsx-2699122292 ">/docs/**</code></li><li><a href="https://ui.my-app.com" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">https://ui.my-app.com</a> 服务于所有页面</li></ul><p>有多 zone 应用技术支持，你可以将几个应用合并到一个，而且可以自定义 URL 路径，使你能同时单独开发各个应用。</p><blockquote class="jsx-2455155431 "><p>与 microservices 观念类似, 只是应用于前端应用.</p></blockquote><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="怎么定义一个-zone" class="jsx-573693548 target"></span><a href="#怎么定义一个-zone" class="jsx-573693548">怎么定义一个 zone</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>zone 没有单独的 API 文档。你需要做下面事即可：</p><ul><li>确保你的应用里只有需要的页面 (例如, <a href="https://ui.my-app.com" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">https://ui.my-app.com</a> 不包含 <code class="jsx-2699122292 ">/docs/**</code>)</li><li>确保你的应用有个前缀<a href="https://github.com/zeit/next.js#cdn-support-with-asset-prefix" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">assetPrefix</a>。（你也可以定义动态前缀<a href="https://github.com/zeit/next.js#dynamic-assetprefix" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">dynamically</a>）</li></ul><div class="jsx-276056394"><h3 class="jsx-2439276997 lean " data-components-heading="true"><span id="怎么合并他们" class="jsx-573693548 target"></span><a href="#怎么合并他们" class="jsx-573693548">怎么合并他们</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h3></div><p>你能使用 HTTP 代理合并 zone</p><p>你能使用代理<a href="https://github.com/zeit/micro-proxy" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">micro proxy</a>来作为你的本地代理服务。它允许你定义路由规则如下：</p><pre><pre class="jsx-2288494592 "><code class="jsx-2288494592">{
+  &quot;rules&quot;: [
+    {&quot;pathname&quot;: &quot;/docs**&quot;, &quot;method&quot;:[&quot;GET&quot;, &quot;POST&quot;, &quot;OPTIONS&quot;], &quot;dest&quot;: &quot;https://docs.my-app.com&quot;},
+    {&quot;pathname&quot;: &quot;/**&quot;, &quot;dest&quot;: &quot;https://ui.my-app.com&quot;}
+  ]
+}
+</code></pre></pre><p>生产环境部署，如果你使用了<a href="https://zeit.co/now" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">ZEIT now</a>，可以它的使用<a href="https://zeit.co/docs/features/path-aliases" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">path alias</a> 功能。否则，你可以设置你已使用的代理服务编写上面规则来路由 HTML 页面</p><div class="jsx-2821545348"><h2 class="jsx-3557574343 lean " data-components-heading="true"><span id="技巧" class="jsx-573693548 target"></span><a href="#技巧" class="jsx-573693548">技巧</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h2></div><ul><li><a href="https://www.raygesualdo.com/posts/301-redirects-with-nextjs/" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">设置301重定向</a></li><li><a href="https://arunoda.me/blog/ssr-and-server-only-modules" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">只处理服务器端模块</a></li><li><a href="https://github.com/builderbook/builderbook" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">构建项目 React-Material-UI-Next-Express-Mongoose-Mongodb</a></li><li><a href="https://github.com/async-labs/saas" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">构建一个 SaaS 产品 React-Material-UI-Next-MobX-Express-Mongoose-MongoDB-TypeScript</a></li></ul><div class="jsx-2821545348"><h2 class="jsx-3557574343 lean " data-components-heading="true"><span id="问答" class="jsx-573693548 target"></span><a href="#问答" class="jsx-573693548">问答</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h2></div><summary>这个产品可以用于生产环境吗？</summary>https://zeit.co 都是一直用 Next.js 写的。<p>  它的开发体验和终端用户体验都很好，所以我们决定开源出来给大家共享。</p><summary>体积多大？</summary><p>客户端大小根据应用需求不一样大小也不一样。</p><p>一个最简单 Next 应该用 gzip 压缩后大约65kb</p><summary>这个像 `create-react-app`?</summary><p>是或不是.</p><p>是，因为它让你的 SSR 开发更简单。</p><p>不是，因为它规定了一定的目录结构，使我们能做以下更高级的事：</p><ul><li>服务端渲染</li><li>自动代码分割</li></ul><p>此外，Next.js 还提供两个内置特性：</p><ul><li>路由与懒加载组件: <code class="jsx-2699122292 ">&lt;Link&gt;</code> (通过引入 <code class="jsx-2699122292 ">next/link</code>)</li><li>修改<code class="jsx-2699122292 ">&lt;head&gt;</code>的组件: <code class="jsx-2699122292 ">&lt;Head&gt;</code> (通过引入 <code class="jsx-2699122292 ">next/head</code>)</li></ul><p>如果你想写共用组件，可以嵌入 Next.js 应用和 React 应用中，推荐使用<code class="jsx-2699122292 ">create-react-app</code>。你可以更改<code class="jsx-2699122292 ">import</code>保持代码清晰。</p><summary>怎么解决 CSS 嵌入 JS 问题?</summary><p>Next.js 自带<a href="https://github.com/zeit/styled-jsx" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">styled-jsx</a>库支持 CSS 嵌入 JS。而且你可以选择其他嵌入方法到你的项目中，可参考文档<a href="#css-in-js" class="jsx-3433991402">as mentioned before</a>。</p><summary>哪些语法会被转换？怎么转换它们？</summary><p>我们遵循 V8 引擎的，如今 V8 引擎广泛支持 ES6 语法以及<code class="jsx-2699122292 ">async</code>和<code class="jsx-2699122292 ">await</code>语法，所以我们支持转换它们。但是 V8 引擎不支持修饰器语法，所以我们也不支持转换这语法。</p><p>可以参照<a href="https://github.com/zeit/next.js/blob/master/server/build/webpack.js#L79" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">这些</a> 以及 <a href="https://github.com/zeit/next.js/issues/26" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">这些</a></p><summary>为什么使用新路由?</summary><p>Next.js 的特别之处如下所示:</p><ul><li>路由不需要被提前知道</li><li>路由总是被懒加载</li><li>顶层组件可以定义生命周期<code class="jsx-2699122292 ">getInitialProps</code>来阻止路由加载（当服务端渲染或路由懒加载时）</li></ul><p>因此,我们可以介绍一个非常简单的路由方法,它由下面两部分组成:</p><ul><li>每个顶层组件都将会收到一个<code class="jsx-2699122292 ">url</code>对象，来检查 url 或修改历史记录</li><li><code class="jsx-2699122292 ">&lt;Link /&gt;</code>组件用于包装如(<code class="jsx-2699122292 ">&lt;a/&gt;</code>)标签的元素容器，来执行客户端转换。</li></ul><p>我们使用了些有趣的场景来测试路由的灵活性，例如，可查看<a href="https://github.com/zeit/nextgram" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">nextgram</a>。</p><summary>我怎么定义自定义路由?</summary><p>我们通过请求处理来<a href="#custom-server-and-routing" class="jsx-3433991402">添加</a>任意 URL 与任意组件之前的映射关系。</p><p>在客户端，我们<code class="jsx-2699122292 ">&lt;Link&gt;</code>组件有个属性<code class="jsx-2699122292 ">as</code>，可以装饰改变获取到的 URL。</p><summary>怎么获取数据?</summary><p>这由你决定。<code class="jsx-2699122292 ">getInitialProps</code>是一个异步函数<code class="jsx-2699122292 ">async</code>（也就是函数将会返回个<code class="jsx-2699122292 ">Promise</code>）。你可以在任意位置获取数据。</p><summary>我可以使用 GraphQL 吗?</summary><p>是的! 这里有个例子<a href="./examples/with-apollo" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">Apollo</a>.</p><summary>我可以使用 Redux 吗?</summary><p>是的! 这里有个<a href="./examples/with-redux" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">例子</a></p><summary>我可以在 Next 应用中使用我喜欢的 Javascript 库或工具包吗?</summary><p>从我们第一次发版就已经提供<strong>很多</strong>例子，你可以查看这些<a href="./examples" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">例子</a>。</p><summary>什么启发我们做这个?</summary><p>我们实现的大部分目标都是通过 Guillermo Rauch 的<a href="http://rauchg.com/2014/7-principles-of-rich-web-applications/" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">Web 应用的7原则</a>来启发出的。</p><p>PHP 的易用性也是个很好的灵感来源，我们觉得 Next.js 可以替代很多需要用 PHP 输出 HTML 的场景。</p><p>与 PHP 不同的是，我们得利于 ES6 模块系统，每个文件会输出一个<strong>组件或方法</strong>，以便可以轻松的导入用于懒加载和测试</p><p>我们研究 React 的服务器渲染时并没有花费很大的步骤，因为我们发现一个类似于 Next.js 的产品，React 作者 Jordan Walke 写的<a href="https://github.com/facebookarchive/react-page" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">react-page</a> (现在已经废弃)</p><div class="jsx-2821545348"><h2 class="jsx-3557574343 lean " data-components-heading="true"><span id="贡献" class="jsx-573693548 target"></span><a href="#贡献" class="jsx-573693548">贡献</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h2></div><p>可查看 <a href="./contributing.md" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">contributing.md</a></p><div class="jsx-2821545348"><h2 class="jsx-3557574343 lean " data-components-heading="true"><span id="讨论" class="jsx-573693548 target"></span><a href="#讨论" class="jsx-573693548">讨论</a><span class="jsx-573693548 permalink"><svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"><path d="M10.37 3.674L8.542 5.5a2.142 2.142 0 0 1-1.819.602l1.21-1.21 1.827-1.827A1.292 1.292 0 0 0 7.935 1.24L6.109 3.065l-1.211 1.21A2.142 2.142 0 0 1 5.5 2.458L7.326.63a2.15 2.15 0 1 1 3.043 3.043zM6.716 4.892L4.891 6.718l-.609-.61L6.11 4.284l.608.609zM1.24 7.935A1.291 1.291 0 0 0 3.065 9.76l1.826-1.826 1.21-1.21A2.141 2.141 0 0 1 5.5 8.542L3.674 10.37A2.151 2.151 0 1 1 .63 7.326L2.457 5.5a2.141 2.141 0 0 1 1.819-.602l-1.21 1.21-1.827 1.827z" fill="#9B9B9B" fill-rule="evenodd"></path></svg></span></h2></div><ul><li>(<a href="https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@前端妹子blog</a>)</li><li>(<a href="https://github.com/raoenhui/raoenhui.github.io/issues/18" target="_blank" rel="noopener noreferrer" class="jsx-3433991402">@github issue</a>)</li></ul></div></div></div></div></div><div id="__next-error"></div><script>
+          __NEXT_DATA__ = {"props":{"pageProps":{}},"page":"/docs","pathname":"/docs","query":{},"buildId":"fe606fde-827a-494d-a1af-4f7c79a42568","assetPrefix":"","nextExport":true,"err":null,"chunks":[]}
+          module={}
+          __NEXT_LOADED_PAGES__ = []
+          __NEXT_LOADED_CHUNKS__ = []
+
+          __NEXT_REGISTER_PAGE = function (route, fn) {
+            __NEXT_LOADED_PAGES__.push({ route: route, fn: fn })
+          }
+
+          __NEXT_REGISTER_CHUNK = function (chunkName, fn) {
+            __NEXT_LOADED_CHUNKS__.push({ chunkName: chunkName, fn: fn })
+          }
+
+          false
+        </script><script async="" id="__NEXT_PAGE__/docs" src="/_next/fe606fde-827a-494d-a1af-4f7c79a42568/page/docs.js"></script><script async="" id="__NEXT_PAGE__/_app" src="/_next/fe606fde-827a-494d-a1af-4f7c79a42568/page/_app.js"></script><script async="" id="__NEXT_PAGE__/_error" src="/_next/fe606fde-827a-494d-a1af-4f7c79a42568/page/_error.js"></script><script src="/_next/static/commons/main-eebd0ff7d129ec443088.js" async=""></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-117491914-2"></script><script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-117491914-2');
+              </script></body></html>

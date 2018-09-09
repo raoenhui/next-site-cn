@@ -181,6 +181,12 @@ export default class Sidebar extends React.Component {
             font-weight: 600;
           }
 
+          @media only screen and (max-width: 912px) {
+            .documentation__sidebar{
+              display:none
+            }
+          }
+
         `}</style>
     </div>
     )

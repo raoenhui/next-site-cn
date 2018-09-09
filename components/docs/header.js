@@ -24,6 +24,11 @@ export default function Header () {
         .logo :global(svg) {
           height: 50px;
         }
+        @media only screen and (max-width: 912px) {
+            header{
+              position: relative;
+            }
+          }
       `}</style>
     </header>
   )

@@ -194,6 +194,17 @@ export default class Documentation extends Component {
             max-width: 600px;
             padding-right: 56px;
           }
+
+          @media only screen and (max-width: 912px) {
+            .documentation{
+              padding-top: 0px;
+            }
+            .documentation__content{
+              width: calc(100vw - 10px);
+              padding-right: 5px;
+              padding-left: 5px;
+            }
+          }
         `}</style>
         </div>
       </Fragment>
