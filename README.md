@@ -1,5 +1,10 @@
 # 前言
+Next.js 是一个轻量级的 React 服务端渲染应用框架。
+
+本站就是next.js编写的，是个很好的 Demo, ^ ^.
+
 [next.js中文文档](http://nextjs.frontendx.cn)
+
 
 ## 安装运行
 

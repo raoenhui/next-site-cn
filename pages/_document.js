@@ -11,13 +11,14 @@ export default class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <meta name="description" content="Next.js is a lightweight framework for static and server-rendered applications" />
+          <meta name="description" content="Next.js 是一个轻量级的 React 服务端渲染应用框架。" />
+          <meta name="keywords" content="Next.js,React,Next.js中文,Next.js中文翻译" />
           <meta property="twitter:card" content="https://nextjs.org/static/images/twitter_card.png" />
           <meta property="twitter:site" content="@zeithq" />
           <meta property="og:type" content="website" />
-          <meta propetty="og:url" content="https://nextjs.org" />
-          <meta property="og:title" content="Next.js" />
-          <meta property="og:description" content="Next.js is a lightweight framework for static and server-rendered applications" />
+          <meta propetty="og:url" content="Next.js 是一个轻量级的 React 服务端渲染应用框架。" />
+          <meta property="og:title" content="Next.js中文站" />
+          <meta property="og:description" content="Next.js 是一个轻量级的 React 服务端渲染应用框架。" />
           <meta property="og:image" content="https://nextjs.org/static/images/twitter_card.png" />
 
           <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />
