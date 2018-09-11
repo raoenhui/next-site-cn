@@ -37,19 +37,23 @@ export const InlineCode = ({ children, noWrap }) => (
             serif;
           font-size: 0.9em;
           white-space: pre-wrap;
+          padding: 0.2em 0.4em;
+          margin: 0;
+          background-color: rgba(27,31,35,0.05);
+          border-radius: 0.3em;
         }
 
         code.no-wrap {
           white-space: nowrap;
         }
 
-        code::before {
+      /*  code::before {
           content: '\`';
         }
 
         code::after {
           content: '\`';
-        }
+        }*/
       `}
     </style>
   </code>
