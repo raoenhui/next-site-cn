@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: "nextjs",
+    name: "nextcn",
     script: "./app.js",
     env: {
       NODE_ENV: "development",
@@ -26,7 +26,7 @@ module.exports = {
       // GIT remote
       repo: "git@github.com:raoenhui/next-site-cn.git",
       // path in the server
-      path: "/ice/test",
+      path: "/ice/pm2",
       // Pre-setup command or path to a script on your local machine
       "pre-setup": "echo 'This is a pre-setup command'",
       // Post-setup commands or path to a script on the host machine
