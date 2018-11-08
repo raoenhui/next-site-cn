@@ -13,7 +13,7 @@ module.exports = {
     // "production" is the environment name
     production: {
       // SSH key path, default to $HOME/.ssh
-      // key: "/path/to/some.pem",
+      key: "$HOME/.ssh",
       // SSH user
       user: "root",
       // SSH host
@@ -35,7 +35,7 @@ module.exports = {
       // pre-deploy action
       "pre-deploy-local": "echo 'This is a pre-deploy-local command'",
       // post-deploy action
-      "post-deploy": "git pull"
+      "post-deploy": "echo 'finish post-deploy'"
     },
   }
 }
