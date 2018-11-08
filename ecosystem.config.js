@@ -13,7 +13,7 @@ module.exports = {
     // "production" is the environment name
     production: {
       // SSH key path, default to $HOME/.ssh
-      key: "$HOME/.ssh",
+      // key: "$HOME/.ssh",
       // SSH user
       user: "root",
       // SSH host
@@ -26,7 +26,7 @@ module.exports = {
       // GIT remote
       repo: "git@github.com:raoenhui/next-site-cn.git",
       // path in the server
-      path: "/ice/pm2",
+      path: "/ice/pm2/next-site-cn",
       // Pre-setup command or path to a script on your local machine
       "pre-setup": "echo 'This is a pre-setup command'",
       // Post-setup commands or path to a script on the host machine
