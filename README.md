@@ -5,6 +5,7 @@ Next.js 是一个轻量级的 React 服务端渲染应用框架。
 
 [next.js中文文档](http://nextjs.frontendx.cn)
 
+当前翻译版本为 7.0.0-canary.8。
 
 ## 安装运行
 
