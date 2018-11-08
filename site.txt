@@ -1,1 +1,2 @@
 http://nextjs.frontendx.cn
+pm2 deploy production update
