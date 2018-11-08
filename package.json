@@ -32,5 +32,8 @@
     "react-slick": "0.23.1",
     "react-transition-group": "2.3.1",
     "scroll-into-view-if-needed": "1.5.0"
+  },
+  "devDependencies": {
+    "express": "^4.16.4"
   }
 }
