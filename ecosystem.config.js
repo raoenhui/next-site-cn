@@ -26,7 +26,16 @@ module.exports = {
       // GIT remote
       repo: "git@github.com:raoenhui/next-site-cn.git",
       // path in the server
-      path: "/ice/test"
+      path: "/ice/test",
+      // Pre-setup command or path to a script on your local machine
+      "pre-setup": "echo 'This is a pre-setup command'",
+      // Post-setup commands or path to a script on the host machine
+      // eg: placing configurations in the shared dir etc
+      "post-setup": "ls -la",
+      // pre-deploy action
+      "pre-deploy-local": "echo 'This is a pre-deploy-local command'",
+      // post-deploy action
+      "post-deploy": "git pull"
     },
   }
 }

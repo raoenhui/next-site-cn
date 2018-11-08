@@ -10,7 +10,7 @@ const NavigationItems = ({ isMobile }) => (
     <Link href='/showcase' prefetch><a>案例</a></Link>
     <a href='https://github.com/zeit/next.js' target="_blank">Nextjs GitHub</a>
     <a href='https://github.com/raoenhui/next-site-cn' target="_blank">Website GitHub</a>
-    <a href='https://spectrum.chat/next-js' target="_blank" rel="noopener noreferrer">聊天</a>
+    <a href='https://gitter.im/next-site-cn/nextjs?utm_source=share-link&utm_medium=link&utm_campaign=share-link' target="_blank" rel="noopener noreferrer">讨论</a>
 
     <style jsx>{`
       a {
