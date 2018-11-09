@@ -2,6 +2,9 @@ module.exports = {
   apps : [{
     name: "nextcn",
     script: "./app.js",
+    output: '../out.log',
+    error: '../error.log',
+    log: '../combined.outerr.log',
     env: {
       NODE_ENV: "development",
     },
