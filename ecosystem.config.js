@@ -2,9 +2,9 @@ module.exports = {
   apps : [{
     name: "nextcn",
     script: "./app.js",
-    output: '../out.log',
-    error: '../error.log',
-    log: '../combined.outerr.log',
+    output: './log/out.log',
+    error: './log/error.log',
+    log: './log/combined.outerr.log',
     env: {
       NODE_ENV: "development",
     },
@@ -38,7 +38,7 @@ module.exports = {
       // pre-deploy action
       "pre-deploy-local": "echo 'This is a pre-deploy-local command'",
       // post-deploy action
-      "post-deploy": "echo 'finish post-deploy'"
+      "post-deploy": "npm install'"
     },
   }
 }
