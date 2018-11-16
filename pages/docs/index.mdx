@@ -46,8 +46,7 @@ export default () => <div>Welcome to next.js!</div>
 - 自动打包编译 (使用 webpack 和 babel)
 - 热加载
 - 以 `./pages`作为服务端的渲染和索引
-- Static file serving. `./static/` is mapped to `/static/` (given you [create a `./static/` directory](#static-file-serving-eg-images) inside your project)
-- 静态文件服务. `./static/` 映射到 `/static/` (可以 [创建一个静态目录](#static-file-serving-eg-images) 在你的项目中)
+- 静态文件服务. `./static/` 映射到 `/static/` (可以 [创建一个静态目录](#静态文件服务（如图像）) 在你的项目中)
 
 这里有个简单的案例，可以下载看看 [sample app - nextgram](https://github.com/zeit/nextgram)
 
@@ -66,7 +65,7 @@ export default () =>
 
 ### CSS
 
-#### 支持嵌入样式
+### 支持嵌入样式
 
 <p>
   <summary><b>案例</b></summary>
@@ -118,7 +117,7 @@ export default () =>
 export default () => <p style={{ color: 'red' }}>hi there</p>
 ```
 
-更复杂的内嵌样式解决方案，特别是服务端渲染的时样式更改。我们可以通过包裹自定义 Document，来添加样式，案例如下：[custom `<Document>`](#user-content-custom-document)
+更复杂的内嵌样式解决方案，特别是服务端渲染的时样式更改。我们可以通过包裹自定义 Document，来添加样式，案例如下：[custom `<Document>`](#自定义<document>)
 
 #### 使用 CSS / Sass / Less / Stylus files
 
@@ -301,7 +300,7 @@ export default () => <p>Welcome to About!</p>
 2. 如果组件定义了`getInitialProps`，数据获取了。如果有错误情况将会渲染 `_error.js`。
 3. 1和2都完成了，`pushState`执行，新组件被渲染。
 
-如果需要注入`pathname`, `query` 或 `asPath`到你组件中，你可以使用[withRouter](#using-a-higher-order-component)。
+如果需要注入`pathname`, `query` 或 `asPath`到你组件中，你可以使用[withRouter](#高阶组件)。
 
 ##### URL 对象
 
@@ -418,7 +417,7 @@ export default () =>
 
 #### 拦截器 `popstate`
 
-有些情况（比如使用[custom router](#custom-server-and-routing)），你可能想监听[`popstate`](https://developer.mozilla.org/en-US/docs/Web/Events/popstate)，在路由跳转前做一些动作。
+有些情况（比如使用[custom router](#自定义服务端路由)），你可能想监听[`popstate`](https://developer.mozilla.org/en-US/docs/Web/Events/popstate)，在路由跳转前做一些动作。
 比如，你可以操作 request 或强制 SSR 刷新
 
 ```jsx
@@ -437,7 +436,7 @@ Router.beforePopState(({ url, as, options }) => {
 ```
 
 如果你在`beforePopState`中返回 false，`Router`将不会执行`popstate`事件。
-例如[Disabling File-System Routing](#disabling-file-system-routing)。
+例如[Disabling File-System Routing](#禁止文件路由)。
 
 以上`Router`对象的 API 如下：
 
@@ -554,7 +553,7 @@ componentDidUpdate(prevProps) {
 > ```
 > 那么这将会出现新页面，即使我们加了浅层路由，但是它还是会卸载当前页，会加载新的页面并触发新页面的`getInitialProps`。
 
-#### 高阶组件
+### 高阶组件
 
 <p>
   <summary><b>Examples</b></summary>
@@ -756,7 +755,7 @@ opts 的属性如下:
 
 生产环境的话，可以更改 package.json 里的`start`脚本为`NODE_ENV=production node server.js`。
 
-#### 禁止文件路由
+### 禁止文件路由
 默认情况，`Next`将会把`/pages`下的所有文件匹配路由（如`/pages/some-file.js` 渲染为 `site.com/some-file`）
 
 如果你的项目使用自定义路由，那么有可能不同的路由会得到相同的内容，可以优化 SEO 和用户体验。
@@ -957,7 +956,7 @@ export default class MyApp extends App {
 解释
 - 在服务端呈现
 - 初始化服务端时添加文档标记元素
-- 通常实现服务端渲染会使用一些 css-in-js 库，如[styled-components](https://github.com/zeit/next.js/tree/7.0.0-canary.8/examples/with-styled-components), [glamorous](https://github.com/zeit/next.js/tree/7.0.0-canary.8/examples/with-glamorous) 或 [emotion](with-emotion)。[styled-jsx](https://github.com/zeit/styled-jsx)是 Next.js 自带默认使用的 css-in-js 库
+- 通常实现服务端渲染会使用一些 css-in-js 库，如[styled-components](https://github.com/zeit/next.js/tree/7.0.0-canary.8/examples/with-styled-components), [glamorous](https://github.com/zeit/next.js/tree/7.0.0-canary.8/examples/with-glamorous) 或 [emotion](https://github.com/zeit/next.js/tree/7.0.0-canary.8/examples/with-emotion)。[styled-jsx](https://github.com/zeit/styled-jsx)是 Next.js 自带默认使用的 css-in-js 库
 
 `Next.js`会自动定义文档标记，比如，你从来不需要添加`<html>`, `<body>`等。如果想自定义文档标记，你可以新建`./pages/_document.js`，然后扩展`Document`类：
 
@@ -1080,7 +1079,7 @@ module.exports = (phase, {defaultConfig}) => {
 }
 ```
 
-`phase`是配置文件被加载时的当前内容。你可看到所有的 phases 常量：[constants](./lib/constants.js)
+`phase`是配置文件被加载时的当前内容。你可看到所有的 phases [常量](https://github.com/zeit/next.js/blob/7.0.0-canary.8/lib/constants.js):
 这些常量可以通过`next/constants`引入：
 
 ```js
@@ -1373,7 +1372,7 @@ next start
 
 Next.js 也有其他托管解决方案。请查考 wiki 章节['Deployment'](https://github.com/zeit/next.js/wiki/Deployment) 。
 
-注意：`NODE_ENV`可以通过`next`命令配置，如果没有配置，会最大渲染，如果你使用编程式写法的话[programmatically](#custom-server-and-routing)，你需要手动设置`NODE_ENV=production`。
+注意：`NODE_ENV`可以通过`next`命令配置，如果没有配置，会最大渲染，如果你使用编程式写法的话[programmatically](#自定义服务端路由)，你需要手动设置`NODE_ENV=production`。
 
 注意：推荐将`.next`或自定义打包文件夹[custom dist folder](https://github.com/zeit/next.js#custom-configuration)放入`.gitignore` 或 `.npmignore`中。否则，使用`files` 或 `now.files`
 添加部署白名单，并排除`.next`或自定义打包文件夹。
@@ -1567,7 +1566,7 @@ zone 没有单独的 API 文档。你需要做下面事即可：
 
   <summary>怎么解决 CSS 嵌入 JS 问题?</summary>
 
-Next.js 自带[styled-jsx](https://github.com/zeit/styled-jsx)库支持 CSS 嵌入 JS。而且你可以选择其他嵌入方法到你的项目中，可参考文档[as mentioned before](#css-in-js)。
+Next.js 自带[styled-jsx](https://github.com/zeit/styled-jsx)库支持 CSS 嵌入 JS。而且你可以选择其他你喜欢的嵌入方法到你的项目中，可参考文档[嵌入样式](#支持嵌入样式)。
 
 
 
@@ -1601,7 +1600,7 @@ Next.js 的特别之处如下所示:
 
 <summary>我怎么定义自定义路由?</summary>
 
-我们通过请求处理来[添加](#custom-server-and-routing)任意 URL 与任意组件之前的映射关系。
+我们通过请求处理来[添加](#自定义服务端路由)任意 URL 与任意组件之前的映射关系。
 
 在客户端，我们`<Link>`组件有个属性`as`，可以装饰改变获取到的 URL。
 
@@ -1646,7 +1645,7 @@ PHP 的易用性也是个很好的灵感来源，我们觉得 Next.js 可以替�
 
 ## 贡献
 
-可查看 [contributing.md](./contributing.md)
+[可点击查看](https://github.com/zeit/next.js/blob/7.0.0-canary.8/contributing.md)
 
 ## 讨论
 

@@ -1,13 +1,18 @@
 # 前言
 Next.js 是一个轻量级的 React 服务端渲染应用框架。
 
-本站就是next.js编写的，是个很好的 Demo, ^ ^.
-
 next.js中文文档:[http://nextjs.frontendx.cn](http://nextjs.frontendx.cn)
 
 当前翻译版本为 7.0.0-canary.8。
 
-讨论组：[https://gitter.im/next-site-cn/nextjs?utm_source=share-link&utm_medium=link&utm_campaign=share-link](https://gitter.im/next-site-cn/nextjs?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+
+## 案例
+ - 用nextjs + express + MongoDB的增删改查项目:[程序员英语学习](https://github.com/raoenhui/code-english)
+    
+ - 本站就是next.js编写的生成静态网站，是个很好的 Demo, ^ ^.
+ 
+## 讨论组
+ [https://gitter.im/next-site-cn/nextjs?utm_source=share-link&utm_medium=link&utm_campaign=share-link](https://gitter.im/next-site-cn/nextjs?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ## 安装运行
 

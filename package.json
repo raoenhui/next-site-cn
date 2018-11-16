@@ -7,7 +7,8 @@
     "build": "next build",
     "export": "next build && next export -o 7.0.0-canary.11",
     "help": "next -h",
-    "start": "next start"
+    "start": "next start",
+    "scp":"scp -r /HD/mycode/ssr/next-site-cn/7.0.0-canary.11/ root@47.98.138.195:/ice/next-site-cn/"
   },
   "repository": {
     "type": "git",
