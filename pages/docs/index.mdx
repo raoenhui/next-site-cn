@@ -220,8 +220,6 @@ export default class extends React.Component {
 
 当服务渲染时，`getInitialProps`将会把数据序列化，就像`JSON.stringify`。所以确保`getInitialProps`返回的是一个普通 JS 对象，而不是`Date`, `Map` 或 `Set`类型。
 
-当页面初次加载时，`getInitialProps`只会在服务端执行一次。`getInitialProps`只有在路由切换的时候（如`Link`组件跳转或路由自定义跳转）时，客户端的才会被执行。
-
 当页面初始化加载时，`getInitialProps`只会加载在服务端。只有当路由跳转（`Link`组件跳转或 API 方法跳转）时，客户端才会执行`getInitialProps`。
 
 注意：`getInitialProps`将不能使用在子组件中。只能使用在`pages`页面中。
