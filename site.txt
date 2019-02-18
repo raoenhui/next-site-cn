@@ -2,3 +2,5 @@ http://nextjs.frontendx.cn
 pm2 deploy production --force
 pm2 deploy production setup
 pm2 deploy production update
+
+npm run export
