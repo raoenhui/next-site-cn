@@ -346,9 +346,9 @@ export default () =>
   </div>
 ```
 
-##### 组件支持点击事件 `onClick`
+##### 支持有点击事件 `onClick`的组件
 
-`<Link>`支持每个组件所支持的`onClick`事件。如果你不提供`<a>`标签，只会处理`onClick`事件而`href`将不起作用。
+`<Link>`支持任何有`onClick`事件的组件。 如果你不包含`<a>`标签，它仅给组件添加`onClick`事件，而不会添加`href`属性。
 
 ```jsx
 // pages/index.js
